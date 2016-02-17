@@ -7,6 +7,8 @@ using System.Runtime.Serialization.Json;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 using Microsoft.Xrm.Sdk.Client;
+using Microsoft.Xrm.Sdk.Messages;
+using Microsoft.Xrm.Sdk.Metadata;
 
 namespace Webhook
 {
@@ -26,7 +28,7 @@ namespace Webhook
                     IOrganizationServiceFactory serviceFactory = (IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory));
                     IOrganizationService service = serviceFactory.CreateOrganizationService(context.UserId);
                     var contexto = new OrganizationServiceContext(service);
-
+                    
                     string json = "";
                     if (context.InputParameters.Contains("OpportunityClose") &&
                         context.InputParameters["OpportunityClose"] is Entity)

@@ -280,7 +280,7 @@ namespace Webhook
         public string versionnumber { get; set; }
 
         public OpportunityLocal() { }
-
+        
         public void SetOpportunityLocal(Entity opportunityWin)
         {
             test = "teste";
@@ -334,7 +334,7 @@ namespace Webhook
             }
             if (opportunityWin.Attributes.ContainsKey("createdby"))
             {
-                this.createdby = opportunityWin["createdby"].ToString();
+                this.createdby = ((EntityReference)opportunityWin["createdby"]).Name;
             }
             if (opportunityWin.Attributes.ContainsKey("createdon"))
             {
@@ -350,7 +350,7 @@ namespace Webhook
             }
             if (opportunityWin.Attributes.ContainsKey("customerid"))
             {
-                this.customerid = opportunityWin["customerid"].ToString();
+                this.customerid = ((EntityReference)opportunityWin["customerid"]).Name;
             }
             if (opportunityWin.Attributes.ContainsKey("customerneed"))
             {
@@ -458,31 +458,31 @@ namespace Webhook
             }
             if (opportunityWin.Attributes.ContainsKey("i9_forma_pgto_adesao"))
             {
-                this.i9_forma_pgto_adesao = opportunityWin["i9_forma_pgto_adesao"].ToString();
+                this.i9_forma_pgto_adesao = ((OptionSetValue)opportunityWin["i9_forma_pgto_adesao"]).Value.ToString();
             }
             if (opportunityWin.Attributes.ContainsKey("i9_forma_pgto_ass_por_usuario"))
             {
-                this.i9_forma_pgto_ass_por_usuario = opportunityWin["i9_forma_pgto_ass_por_usuario"].ToString();
+                this.i9_forma_pgto_ass_por_usuario = ((OptionSetValue)opportunityWin["i9_forma_pgto_ass_por_usuario"]).Value.ToString();
             }
             if (opportunityWin.Attributes.ContainsKey("i9_forma_pgto_atualizacao"))
             {
-                this.i9_forma_pgto_atualizacao = opportunityWin["i9_forma_pgto_atualizacao"].ToString();
+                this.i9_forma_pgto_atualizacao = ((OptionSetValue)opportunityWin["i9_forma_pgto_atualizacao"]).Value.ToString();
             }
             if (opportunityWin.Attributes.ContainsKey("i9_forma_pgto_customizacao"))
             {
-                this.i9_forma_pgto_customizacao = opportunityWin["i9_forma_pgto_customizacao"].ToString();
+                this.i9_forma_pgto_customizacao = ((OptionSetValue)opportunityWin["i9_forma_pgto_customizacao"]).Value.ToString();
             }
             if (opportunityWin.Attributes.ContainsKey("i9_forma_pgto_implantacao"))
             {
-                this.i9_forma_pgto_implantacao = opportunityWin["i9_forma_pgto_implantacao"].ToString();
+                this.i9_forma_pgto_implantacao = ((OptionSetValue)opportunityWin["i9_forma_pgto_implantacao"]).Value.ToString();
             }
             if (opportunityWin.Attributes.ContainsKey("i9_forma_pgto_manutencao"))
             {
-                this.i9_forma_pgto_manutencao = opportunityWin["i9_forma_pgto_manutencao"].ToString();
+                this.i9_forma_pgto_manutencao = ((OptionSetValue)opportunityWin["i9_forma_pgto_manutencao"]).Value.ToString();
             }
             if (opportunityWin.Attributes.ContainsKey("i9_forma_pgto_venda"))
             {
-                this.i9_forma_pgto_venda = opportunityWin["i9_forma_pgto_venda"].ToString();
+                this.i9_forma_pgto_venda = ((OptionSetValue)opportunityWin["i9_forma_pgto_venda"]).Value.ToString();
             }
             if (opportunityWin.Attributes.ContainsKey("i9_gerente_desconto"))
             {
@@ -550,7 +550,7 @@ namespace Webhook
             }
             if (opportunityWin.Attributes.ContainsKey("i9_unidade_negocio"))
             {
-                this.i9_unidade_negocio = opportunityWin["i9_unidade_negocio"].ToString();
+                this.i9_unidade_negocio = ((EntityReference)opportunityWin["i9_unidade_negocio"]).Name;
             }
             if (opportunityWin.Attributes.ContainsKey("i9_vice_presidente_desconto"))
             {
@@ -586,7 +586,7 @@ namespace Webhook
             }
             if (opportunityWin.Attributes.ContainsKey("modifiedby"))
             {
-                this.modifiedby = opportunityWin["modifiedby"].ToString();
+                this.modifiedby = ((EntityReference)opportunityWin["modifiedby"]).Name;
             }
             if (opportunityWin.Attributes.ContainsKey("modifiedon"))
             {
@@ -606,7 +606,7 @@ namespace Webhook
             }
             if (opportunityWin.Attributes.ContainsKey("new_cessodedireitodeusocdu"))
             {
-                this.new_cessodedireitodeusocdu = opportunityWin["new_cessodedireitodeusocdu"].ToString();
+                this.new_cessodedireitodeusocdu = ((OptionSetValue)opportunityWin["new_cessodedireitodeusocdu"]).Value.ToString();
             }
             if (opportunityWin.Attributes.ContainsKey("new_cronograma_ajustado"))
             {
@@ -626,7 +626,7 @@ namespace Webhook
             }
             if (opportunityWin.Attributes.ContainsKey("opportunityratingcode"))
             {
-                this.opportunityratingcode = opportunityWin["opportunityratingcode"].ToString();
+                this.opportunityratingcode = ((OptionSetValue)opportunityWin["opportunityratingcode"]).Value.ToString();
             }
             if (opportunityWin.Attributes.ContainsKey("originatingleadid"))
             {
@@ -638,11 +638,11 @@ namespace Webhook
             }
             if (opportunityWin.Attributes.ContainsKey("ownerid"))
             {
-                this.ownerid = opportunityWin["ownerid"].ToString();
+                this.ownerid = ((EntityReference)opportunityWin["ownerid"]).Name;
             }
             if (opportunityWin.Attributes.ContainsKey("owningbusinessunit"))
             {
-                this.owningbusinessunit = opportunityWin["owningbusinessunit"].ToString();
+                this.owningbusinessunit = ((EntityReference)opportunityWin["owningbusinessunit"]).Name;
             }
             if (opportunityWin.Attributes.ContainsKey("owningteam"))
             {
@@ -650,11 +650,11 @@ namespace Webhook
             }
             if (opportunityWin.Attributes.ContainsKey("owninguser"))
             {
-                this.owninguser = opportunityWin["owninguser"].ToString();
+                this.owninguser = ((EntityReference)opportunityWin["owninguser"]).Name;
             }
             if (opportunityWin.Attributes.ContainsKey("parentaccountid"))
             {
-                this.parentaccountid = opportunityWin["parentaccountid"].ToString();
+                this.parentaccountid = ((EntityReference)opportunityWin["parentaccountid"]).Name;
             }
             if (opportunityWin.Attributes.ContainsKey("parentcontactid"))
             {
@@ -702,11 +702,11 @@ namespace Webhook
             }
             if (opportunityWin.Attributes.ContainsKey("salesstage"))
             {
-                this.salesstage = opportunityWin["salesstage"].ToString();
+                this.salesstage = ((OptionSetValue)opportunityWin["salesstage"]).Value.ToString();
             }
             if (opportunityWin.Attributes.ContainsKey("salesstagecode"))
             {
-                this.salesstagecode = opportunityWin["salesstagecode"].ToString();
+                this.salesstagecode = ((OptionSetValue)opportunityWin["salesstagecode"]).Value.ToString();
             }
             if (opportunityWin.Attributes.ContainsKey("schedulefollowup_prospect"))
             {
@@ -730,11 +730,11 @@ namespace Webhook
             }
             if (opportunityWin.Attributes.ContainsKey("statecode"))
             {
-                this.statecode = opportunityWin["statecode"].ToString();
+                this.statecode = ((OptionSetValue)opportunityWin["statecode"]).Value.ToString();
             }
             if (opportunityWin.Attributes.ContainsKey("statuscode"))
             {
-                this.statuscode = opportunityWin["statuscode"].ToString();
+                this.statuscode = ((OptionSetValue)opportunityWin["statuscode"]).Value.ToString();
             }
             if (opportunityWin.Attributes.ContainsKey("stepid"))
             {
@@ -798,11 +798,11 @@ namespace Webhook
             }
             if (opportunityWin.Attributes.ContainsKey("totaltax_base"))
             {
-                this.totaltax_base = opportunityWin["totaltax_base"].ToString();
+                this.totaltax_base = ((Money)opportunityWin["totaltax_base"]).Value.ToString();
             }
             if (opportunityWin.Attributes.ContainsKey("transactioncurrencyid"))
             {
-                this.transactioncurrencyid = opportunityWin["transactioncurrencyid"].ToString();
+                this.transactioncurrencyid = ((EntityReference)opportunityWin["transactioncurrencyid"]).Name;
             }
             if (opportunityWin.Attributes.ContainsKey("traversedpath"))
             {
