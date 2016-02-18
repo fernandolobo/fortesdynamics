@@ -1,0 +1,3163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="urn:AGIntf" name="IAGservice" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema xmlns="urn:AGIntf" targetNamespace="urn:AGIntf">
+      <xs:complexType name="TContasaReceber">
+        <xs:sequence>
+          <xs:element name="estabelecimento" type="xs:string" />
+          <xs:element name="centroResultados" type="xs:string" />
+          <xs:element name="cliente" type="xs:string" />
+          <xs:element name="receita" type="xs:string" />
+          <xs:element name="documento" type="xs:string" />
+          <xs:element name="tipoGeracao" type="xs:string" />
+          <xs:element name="emissao" type="xs:dateTime" />
+          <xs:element name="exportaAC" type="xs:int" />
+          <xs:element name="ISS" type="xs:double" />
+          <xs:element name="IRRF" type="xs:double" />
+          <xs:element name="INSS" type="xs:double" />
+          <xs:element name="PIS" type="xs:double" />
+          <xs:element name="DescontoIncondicional" type="xs:double" />
+          <xs:element name="COFINS" type="xs:double" />
+          <xs:element name="CSLL" type="xs:double" />
+          <xs:element name="obs" type="xs:string" />
+          <xs:element name="mesAno" type="xs:string" />
+          <xs:element name="vencimentosaReceber" type="ns1:TArrayofVencimentosaReceber" />
+          <xs:element name="vencimentosChequeaReceber" type="ns1:TArrayofVencimentosChequeaReceber" />
+          <xs:element name="vencimentosCartaoaReceber" type="ns1:TArrayofVencimentosCartaoaReceber" />
+          <xs:element name="servicosaReceber" type="ns1:TArrayofServicosaReceber" />
+          <xs:element name="itensaReceber" type="ns1:TArrayofItensaReceber" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TArrayofVencimentosaReceber">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TVencimentosaReceber[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TArrayofVencimentosChequeaReceber">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TVencimentosChequeaReceber[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TArrayofVencimentosCartaoaReceber">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TVencimentosCartaoaReceber[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TArrayofServicosaReceber">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TServicosaReceber[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TArrayofItensaReceber">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TItensaReceber[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TVencimentosaReceber">
+        <xs:sequence>
+          <xs:element name="codigo" type="xs:string" />
+          <xs:element name="sequencial" type="xs:int" />
+          <xs:element name="vencimento" type="xs:dateTime" />
+          <xs:element name="valor" type="xs:double" />
+          <xs:element name="tipoDocumento" type="xs:string" />
+          <xs:element name="titulo" type="xs:string" />
+          <xs:element name="agenteCobrador" type="xs:string" />
+          <xs:element name="nrBoleto" type="xs:string" />
+          <xs:element name="idBloquete" type="xs:int" />
+          <xs:element name="descontoPrevisto" type="xs:double" />
+          <xs:element name="dtCancelamento" type="xs:dateTime" />
+          <xs:element name="Quitado" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TVencimentosChequeaReceber">
+        <xs:sequence>
+          <xs:element name="codigo" type="xs:string" />
+          <xs:element name="sequencial" type="xs:int" />
+          <xs:element name="vencimento" type="xs:dateTime" />
+          <xs:element name="valor" type="xs:double" />
+          <xs:element name="codBanco" type="xs:string" />
+          <xs:element name="agencia" type="xs:string" />
+          <xs:element name="cc" type="xs:string" />
+          <xs:element name="numero" type="xs:string" />
+          <xs:element name="titular" type="xs:string" />
+          <xs:element name="bancoNumero" type="xs:string" />
+          <xs:element name="Quitado" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TVencimentosCartaoaReceber">
+        <xs:sequence>
+          <xs:element name="codigo" type="xs:string" />
+          <xs:element name="sequencial" type="xs:int" />
+          <xs:element name="administradora" type="xs:string" />
+          <xs:element name="vencimento" type="xs:dateTime" />
+          <xs:element name="valor" type="xs:double" />
+          <xs:element name="TAD_Valor" type="xs:double" />
+          <xs:element name="Quitado" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TServicosaReceber">
+        <xs:sequence>
+          <xs:element name="codigo" type="xs:string" />
+          <xs:element name="sequencial" type="xs:int" />
+          <xs:element name="servico" type="xs:string" />
+          <xs:element name="modalidade" type="xs:string" />
+          <xs:element name="valor" type="xs:double" />
+          <xs:element name="comissionadosservicosareceber" type="ns1:TArrayofComissionadosServicosaReceber" />
+          <xs:element name="DescontoIncondicional" type="xs:double" />
+          <xs:element name="ValorBruto" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TArrayofComissionadosServicosaReceber">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TComissionadosServicosaReceber[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TComissionadosServicosaReceber">
+        <xs:sequence>
+          <xs:element name="codigo_cre" type="xs:string" />
+          <xs:element name="scr_sequencial" type="xs:int" />
+          <xs:element name="vendedorrepresentante" type="xs:string" />
+          <xs:element name="percentual" type="xs:double" />
+          <xs:element name="sequencial" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TItensaReceber">
+        <xs:sequence>
+          <xs:element name="Codigo" type="xs:string" />
+          <xs:element name="Produto" type="xs:string" />
+          <xs:element name="Sequencial" type="xs:int" />
+          <xs:element name="Quantidade" type="xs:double" />
+          <xs:element name="Valor" type="xs:double" />
+          <xs:element name="CFOP_Codigo" type="xs:string" />
+          <xs:element name="STA_Codigo" type="xs:string" />
+          <xs:element name="STB_Codigo" type="xs:string" />
+          <xs:element name="AliquotaICMS" type="xs:double" />
+          <xs:element name="AliquotaIPI" type="xs:double" />
+          <xs:element name="Unidade" type="xs:string" />
+          <xs:element name="CompDescricao" type="xs:string" />
+          <xs:element name="AliqICMSSubst" type="xs:double" />
+          <xs:element name="BaseICMSSubst" type="xs:double" />
+          <xs:element name="ValorICMSSubst" type="xs:double" />
+          <xs:element name="Frete" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TSaidas">
+        <xs:sequence>
+          <xs:element name="Estabelecimento" type="xs:string" />
+          <xs:element name="Requisitante" type="xs:string" />
+          <xs:element name="CentroDeEstoque" type="xs:string" />
+          <xs:element name="CentroDeResultados" type="xs:string" />
+          <xs:element name="CentroDeResultadosOrigem" type="xs:string" />
+          <xs:element name="Documento" type="xs:string" />
+          <xs:element name="Data" type="xs:dateTime" />
+          <xs:element name="Hora" type="xs:dateTime" />
+          <xs:element name="Obs" type="xs:string" />
+          <xs:element name="ItensSaida" type="ns1:TArrayofItensSaida" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TArrayofItensSaida">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TItensSaida[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TItensSaida">
+        <xs:sequence>
+          <xs:element name="Codigo" type="xs:string" />
+          <xs:element name="Item" type="xs:string" />
+          <xs:element name="Sequencial" type="xs:int" />
+          <xs:element name="Quantidade" type="xs:double" />
+          <xs:element name="LOT_Sequencial" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TRequisicoes">
+        <xs:sequence>
+          <xs:element name="Estabelecimento" type="xs:string" />
+          <xs:element name="Requisitante" type="xs:string" />
+          <xs:element name="UsuarioResponsavel" type="xs:string" />
+          <xs:element name="CentroDeEstoque" type="xs:string" />
+          <xs:element name="CentroDeResultados" type="xs:string" />
+          <xs:element name="Documento" type="xs:string" />
+          <xs:element name="Data" type="xs:dateTime" />
+          <xs:element name="Hora" type="xs:dateTime" />
+          <xs:element name="Obs" type="xs:string" />
+          <xs:element name="ItensRequisicao" type="ns1:TArrayofItensRequisicao" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TArrayofItensRequisicao">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TItensRequisicao[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TItensRequisicao">
+        <xs:sequence>
+          <xs:element name="Codigo" type="xs:string" />
+          <xs:element name="Item" type="xs:string" />
+          <xs:element name="Quantidade" type="xs:double" />
+          <xs:element name="Obs" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TEntradas">
+        <xs:sequence>
+          <xs:element name="Estabelecimento" type="xs:string" />
+          <xs:element name="CentroDeEstoque" type="xs:string" />
+          <xs:element name="CentroDeResultados" type="xs:string" />
+          <xs:element name="Fornecedor" type="xs:string" />
+          <xs:element name="Pedido" type="xs:string" />
+          <xs:element name="Transportadora" type="xs:string" />
+          <xs:element name="Data" type="xs:dateTime" />
+          <xs:element name="Hora" type="xs:dateTime" />
+          <xs:element name="OBS" type="xs:string" />
+          <xs:element name="Documento" type="xs:string" />
+          <xs:element name="Valor" type="xs:double" />
+          <xs:element name="Frete" type="xs:double" />
+          <xs:element name="ItensEntrada" type="ns1:TArrayofItensEntrada" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TArrayofItensEntrada">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TItensEntrada[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TItensEntrada">
+        <xs:sequence>
+          <xs:element name="Codigo" type="xs:string" />
+          <xs:element name="Item" type="xs:string" />
+          <xs:element name="Sequencial" type="xs:int" />
+          <xs:element name="Quantidade" type="xs:double" />
+          <xs:element name="LOT_Sequencial" type="xs:int" />
+          <xs:element name="AliquotaIPI" type="xs:double" />
+          <xs:element name="AliquotaICMSSUBST" type="xs:double" />
+          <xs:element name="Frete" type="xs:double" />
+          <xs:element name="ICMSSobreIPI" type="xs:int" />
+          <xs:element name="AliqICMSDiferenciada" type="xs:double" />
+          <xs:element name="ICMSNaoDeduzTotal" type="xs:int" />
+          <xs:element name="ICMSBase" type="xs:double" />
+          <xs:element name="AliquotaICMS" type="xs:double" />
+          <xs:element name="FreteCompoeBaseICMSSubst" type="xs:int" />
+          <xs:element name="UnidadeEntrada" type="xs:string" />
+          <xs:element name="FatorConversao" type="xs:double" />
+          <xs:element name="Acrescimo" type="xs:double" />
+          <xs:element name="Desconto" type="xs:double" />
+          <xs:element name="Valor" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TCliente">
+        <xs:sequence>
+          <xs:element name="codigo" type="xs:string" />
+          <xs:element name="nome" type="xs:string" />
+          <xs:element name="nomeFantasia" type="xs:string" />
+          <xs:element name="cnpjcpf" type="xs:string" />
+          <xs:element name="cep" type="xs:string" />
+          <xs:element name="logradouro" type="xs:string" />
+          <xs:element name="bairro" type="xs:string" />
+          <xs:element name="numero" type="xs:string" />
+          <xs:element name="complemento" type="xs:string" />
+          <xs:element name="uf" type="xs:string" />
+          <xs:element name="cidade" type="xs:string" />
+          <xs:element name="ddd" type="xs:string" />
+          <xs:element name="fone" type="xs:string" />
+          <xs:element name="fax" type="xs:string" />
+          <xs:element name="identificador" type="xs:string" />
+          <xs:element name="celular" type="xs:string" />
+          <xs:element name="email" type="xs:string" />
+          <xs:element name="contato" type="xs:string" />
+          <xs:element name="site" type="xs:string" />
+          <xs:element name="rg" type="xs:string" />
+          <xs:element name="ie" type="xs:string" />
+          <xs:element name="grupo" type="xs:string" />
+          <xs:element name="agenteCobrador" type="xs:string" />
+          <xs:element name="receita" type="xs:string" />
+          <xs:element name="contaContabil" type="xs:string" />
+          <xs:element name="Representante" type="xs:string" />
+          <xs:element name="Vencimento" type="xs:int" />
+          <xs:element name="Etiqueta" type="xs:int" />
+          <xs:element name="GeraNFAuto" type="xs:int" />
+          <xs:element name="RetemISS" type="xs:int" />
+          <xs:element name="RetemINSS" type="xs:int" />
+          <xs:element name="AliquotaISS" type="xs:double" />
+          <xs:element name="IM" type="xs:string" />
+          <xs:element name="CampoExtra1" type="xs:string" />
+          <xs:element name="CampoExtra2" type="xs:string" />
+          <xs:element name="CampoExtra3" type="xs:string" />
+          <xs:element name="CampoExtra4" type="xs:string" />
+          <xs:element name="CampoExtra5" type="xs:string" />
+          <xs:element name="CampoExtra6" type="xs:string" />
+          <xs:element name="CampoExtra7" type="xs:string" />
+          <xs:element name="CampoExtra8" type="xs:string" />
+          <xs:element name="CampoExtra9" type="xs:string" />
+          <xs:element name="CampoExtra10" type="xs:string" />
+          <xs:element name="ServicosCliente" type="ns1:TServicosCliente" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TServicosCliente">
+        <xs:sequence>
+          <xs:element name="Servico" type="xs:string" />
+          <xs:element name="Sequencial" type="xs:int" />
+          <xs:element name="Estabelecimento" type="xs:string" />
+          <xs:element name="Modalidade" type="xs:string" />
+          <xs:element name="Indexador" type="xs:string" />
+          <xs:element name="QtdIndexador" type="xs:double" />
+          <xs:element name="AnoMesPrimeiraCobranca" type="xs:string" />
+          <xs:element name="Aquisicao" type="xs:dateTime" />
+          <xs:element name="AnoMesReajuste" type="xs:string" />
+          <xs:element name="Observacao" type="xs:string" />
+          <xs:element name="DescricaoNota" type="xs:string" />
+          <xs:element name="ComplementoDescricaoNota" type="xs:string" />
+          <xs:element name="Contrato" type="xs:string" />
+          <xs:element name="DtCancelamento" type="xs:dateTime" />
+          <xs:element name="ObsCancelamento" type="xs:string" />
+          <xs:element name="CRS_Codigo" type="xs:string" />
+          <xs:element name="DescPrevisto" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TServico">
+        <xs:sequence>
+          <xs:element name="Codigo" type="xs:string" />
+          <xs:element name="Nome" type="xs:string" />
+          <xs:element name="NomeApresentar" type="xs:string" />
+          <xs:element name="Valor" type="xs:double" />
+          <xs:element name="ISS" type="xs:int" />
+          <xs:element name="INSS" type="xs:int" />
+          <xs:element name="IRRF" type="xs:int" />
+          <xs:element name="PISCOFINSCSLL" type="xs:int" />
+          <xs:element name="AliqISS" type="xs:double" />
+          <xs:element name="AliqINSS" type="xs:double" />
+          <xs:element name="AliqIRRF" type="xs:double" />
+          <xs:element name="AliqPIS" type="xs:double" />
+          <xs:element name="AliqCOFINS" type="xs:double" />
+          <xs:element name="AliqCSL" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TCentroDeResultado">
+        <xs:sequence>
+          <xs:element name="Codigo" type="xs:string" />
+          <xs:element name="Nome" type="xs:string" />
+          <xs:element name="CRS_Codigo_Mae" type="xs:string" />
+          <xs:element name="ContaContabil" type="xs:string" />
+          <xs:element name="GCR_Codigo" type="xs:string" />
+          <xs:element name="Inativo" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TFornecedor">
+        <xs:sequence>
+          <xs:element name="Codigo" type="xs:string" />
+          <xs:element name="Nome" type="xs:string" />
+          <xs:element name="CNPJCPF" type="xs:string" />
+          <xs:element name="CEP" type="xs:string" />
+          <xs:element name="Logradouro" type="xs:string" />
+          <xs:element name="Bairro" type="xs:string" />
+          <xs:element name="Numero" type="xs:string" />
+          <xs:element name="Complemento" type="xs:string" />
+          <xs:element name="UF" type="xs:string" />
+          <xs:element name="Cidade" type="xs:string" />
+          <xs:element name="DDD" type="xs:string" />
+          <xs:element name="Fone" type="xs:string" />
+          <xs:element name="Fax" type="xs:string" />
+          <xs:element name="Email" type="xs:string" />
+          <xs:element name="Contato" type="xs:string" />
+          <xs:element name="Site" type="xs:string" />
+          <xs:element name="RG" type="xs:string" />
+          <xs:element name="IE" type="xs:string" />
+          <xs:element name="Grupo" type="xs:string" />
+          <xs:element name="Receita" type="xs:string" />
+          <xs:element name="IM" type="xs:string" />
+          <xs:element name="Referencia" type="xs:string" />
+          <xs:element name="FinalidadeTED" type="xs:string" />
+          <xs:element name="FinalidadeDOC" type="xs:string" />
+          <xs:element name="Celular" type="xs:string" />
+          <xs:element name="Leiaute" type="xs:string" />
+          <xs:element name="Banco" type="xs:string" />
+          <xs:element name="BancoNumero" type="xs:string" />
+          <xs:element name="Agencia" type="xs:string" />
+          <xs:element name="CC" type="xs:string" />
+          <xs:element name="DVAg" type="xs:string" />
+          <xs:element name="DVCC" type="xs:string" />
+          <xs:element name="ServicoPublico" type="xs:int" />
+          <xs:element name="ICMS" type="xs:int" />
+          <xs:element name="IPI" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TItem">
+        <xs:sequence>
+          <xs:element name="Valor" type="xs:double" />
+          <xs:element name="Codigo" type="xs:string" />
+          <xs:element name="Nome" type="xs:string" />
+          <xs:element name="Unidade" type="xs:string" />
+          <xs:element name="ICMSSubstTipo" type="xs:string" />
+          <xs:element name="CompDescricao" type="xs:string" />
+          <xs:element name="CodUtilizadoESTFiscal" type="xs:string" />
+          <xs:element name="CodigoNCM" type="xs:string" />
+          <xs:element name="CodigoBarra" type="xs:string" />
+          <xs:element name="CodigoBarraUnidadeTribut" type="xs:string" />
+          <xs:element name="CodigoNVE" type="xs:string" />
+          <xs:element name="CodigoANP" type="xs:string" />
+          <xs:element name="CodProFortesFiscal" type="xs:int" />
+          <xs:element name="RegistroAnvisa" type="xs:string" />
+          <xs:element name="Despesa" type="xs:string" />
+          <xs:element name="Referencia" type="xs:string" />
+          <xs:element name="UtilizarAliquotaNCM" type="xs:int" />
+          <xs:element name="ClassificacaoFiscal" type="xs:string" />
+          <xs:element name="DescricaoUnidade" type="xs:string" />
+          <xs:element name="CalculaICMS" type="xs:int" />
+          <xs:element name="DeducaoICMS" type="xs:int" />
+          <xs:element name="CalculaIRRF" type="xs:int" />
+          <xs:element name="CalculaPIS" type="xs:int" />
+          <xs:element name="CalculaCOFINS" type="xs:int" />
+          <xs:element name="CalculaCSL" type="xs:int" />
+          <xs:element name="AliquotaIPI" type="xs:double" />
+          <xs:element name="SitTribIPISaida" type="xs:string" />
+          <xs:element name="SitTribCOFINSSaida" type="xs:string" />
+          <xs:element name="SitTribPISSaida" type="xs:string" />
+          <xs:element name="NaturezaReceitaCOFINS" type="xs:int" />
+          <xs:element name="NaturezaReceitaPIS" type="xs:int" />
+          <xs:element name="ICMSSubstituicao" type="xs:int" />
+          <xs:element name="AliquotaICMSSubstAgregacao" type="xs:double" />
+          <xs:element name="ValorPautaICMSSubst" type="xs:double" />
+          <xs:element name="IPIFixo" type="xs:int" />
+          <xs:element name="ValorIPIFixo" type="xs:double" />
+          <xs:element name="Categoria" type="xs:string" />
+          <xs:element name="Acabamento" type="xs:string" />
+          <xs:element name="Material" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TListaReceitasDespesas">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="xs:string[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TListaEmpresas">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="xs:string[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TListaEstabelecimentos">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="xs:string[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TListaCentrosDeResultado">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="xs:string[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TListaModalidades">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="xs:string[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TListaServicos">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="xs:string[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TListaBancos">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="xs:string[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TListaMunicipios">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="xs:string[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TListaAdministradorasDeCartoes">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="xs:string[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TListaAgentesCobradores">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="xs:string[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TListaGrupoClientes">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="xs:string[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TListaCentroDeResultado">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="xs:string[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TListaCentroEstoque">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="xs:string[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TListaEstoquesPRO_CES_LOTE">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="xs:string[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TListaEstoqueAtivoComLote">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="xs:string[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TListaItens">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="xs:string[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TListaRequisitantes">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="xs:string[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TListaRequisicoes">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TRequisicoes[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TBaixaContasaReceber">
+        <xs:sequence>
+          <xs:element name="CRE_Codigo" type="xs:string" />
+          <xs:element name="SequencialVencimento" type="xs:int" />
+          <xs:element name="Sequencial" type="xs:int" />
+          <xs:element name="ExportaAC" type="xs:int" />
+          <xs:element name="Data" type="xs:dateTime" />
+          <xs:element name="Valor" type="xs:double" />
+          <xs:element name="Desconto" type="xs:double" />
+          <xs:element name="Juros" type="xs:double" />
+          <xs:element name="Multa" type="xs:double" />
+          <xs:element name="LAN_ContaFinanceira" type="xs:string" />
+          <xs:element name="LAN_Historico" type="xs:string" />
+          <xs:element name="LAN_CRD_Desconto" type="xs:string" />
+          <xs:element name="LAN_CRD_Juros" type="xs:string" />
+          <xs:element name="LAN_CRD_Multa" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TBaixaVencimentoCartaoaReceber">
+        <xs:sequence>
+          <xs:element name="CRE_Codigo" type="xs:string" />
+          <xs:element name="SequencialVencimento" type="xs:int" />
+          <xs:element name="Sequencial" type="xs:int" />
+          <xs:element name="Data" type="xs:dateTime" />
+          <xs:element name="Valor" type="xs:double" />
+          <xs:element name="Taxa" type="xs:double" />
+          <xs:element name="DtCancel" type="xs:dateTime" />
+          <xs:element name="MotivoCancel" type="xs:string" />
+          <xs:element name="LAN_ContaFinanceira" type="xs:string" />
+          <xs:element name="LAN_Historico" type="xs:string" />
+          <xs:element name="LAN_CRD_Taxa" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TLancamentos">
+        <xs:sequence>
+          <xs:element name="Codigo" type="xs:string" />
+          <xs:element name="Estabelecimento" type="xs:string" />
+          <xs:element name="Conta" type="xs:string" />
+          <xs:element name="Data" type="xs:dateTime" />
+          <xs:element name="Sequencial" type="xs:int" />
+          <xs:element name="CentroResultados" type="xs:string" />
+          <xs:element name="ReceitaDespesa" type="xs:string" />
+          <xs:element name="Valor" type="xs:double" />
+          <xs:element name="Natureza" type="xs:string" />
+          <xs:element name="ExportaAC" type="xs:int" />
+          <xs:element name="Historico" type="xs:string" />
+          <xs:element name="RateioLancamento" type="ns1:TArrayRateioLancamentos" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TArrayRateioLancamentos">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TRateioLancamentos[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TRateioLancamentos">
+        <xs:sequence>
+          <xs:element name="Codigo" type="xs:string" />
+          <xs:element name="Sequencial" type="xs:int" />
+          <xs:element name="Estabelecimento" type="xs:string" />
+          <xs:element name="CentroResultados" type="xs:string" />
+          <xs:element name="ReceitaDespesa" type="xs:string" />
+          <xs:element name="Natureza" type="xs:string" />
+          <xs:element name="Valor" type="xs:double" />
+          <xs:element name="Historico" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TAdiantamentoCliente">
+        <xs:sequence>
+          <xs:element name="Estabelecimento" type="xs:string" />
+          <xs:element name="ContaFinanceira" type="xs:string" />
+          <xs:element name="Data" type="xs:dateTime" />
+          <xs:element name="CentroResultados" type="xs:string" />
+          <xs:element name="ReceitaAdiantamento" type="xs:string" />
+          <xs:element name="Cliente" type="xs:string" />
+          <xs:element name="Valor" type="xs:double" />
+          <xs:element name="Observacao" type="xs:string" />
+          <xs:element name="ExportaAC" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TPedidoDeVenda">
+        <xs:sequence>
+          <xs:element name="PEV_Codigo" type="xs:string" />
+          <xs:element name="EST_CODIGO" type="xs:string" />
+          <xs:element name="CLI_Codigo" type="xs:string" />
+          <xs:element name="Data" type="xs:dateTime" />
+          <xs:element name="DATAPREVENTREGA" type="xs:dateTime" />
+          <xs:element name="CONDICAOPAGAMENTO" type="xs:string" />
+          <xs:element name="OBSERVACAO" type="xs:string" />
+          <xs:element name="Rejeitado" type="xs:int" />
+          <xs:element name="TPP_Codigo" type="xs:string" />
+          <xs:element name="TDC_Codigo" type="xs:string" />
+          <xs:element name="COB_Codigo" type="xs:string" />
+          <xs:element name="Documento" type="xs:string" />
+          <xs:element name="BaseICMSSubst" type="xs:double" />
+          <xs:element name="ValorICMSSubst" type="xs:double" />
+          <xs:element name="USU_CODIGO" type="xs:string" />
+          <xs:element name="IAG_CODIGO" type="xs:int" />
+          <xs:element name="HIS_CODIGO" type="xs:string" />
+          <xs:element name="ServicosPedidoDeVenda" type="ns1:TArrayofServicosPedidoDeVenda" />
+          <xs:element name="ItensPedidoDeVenda" type="ns1:TArrayofItensPedidoDeVenda" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TArrayofServicosPedidoDeVenda">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TServicosPedidoDeVenda[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TArrayofItensPedidoDeVenda">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TItensPedidoDeVenda[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TServicosPedidoDeVenda">
+        <xs:sequence>
+          <xs:element name="PEV_Codigo" type="xs:string" />
+          <xs:element name="Sequencial" type="xs:int" />
+          <xs:element name="SER_Codigo" type="xs:string" />
+          <xs:element name="MDS_Codigo" type="xs:string" />
+          <xs:element name="Valor" type="xs:double" />
+          <xs:element name="Observacao" type="xs:string" />
+          <xs:element name="QTDSERVICOS" type="xs:double" />
+          <xs:element name="DESCONTO" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TItensPedidoDeVenda">
+        <xs:sequence>
+          <xs:element name="PEV_CODIGO" type="xs:string" />
+          <xs:element name="PRO_CODIGO" type="xs:string" />
+          <xs:element name="SEQUENCIAL" type="xs:int" />
+          <xs:element name="QTDE" type="xs:double" />
+          <xs:element name="VALOR" type="xs:double" />
+          <xs:element name="AliquotaICMS" type="xs:double" />
+          <xs:element name="AliquotaIPI" type="xs:double" />
+          <xs:element name="CFOP_Codigo" type="xs:string" />
+          <xs:element name="STA_Codigo" type="xs:string" />
+          <xs:element name="STB_Codigo" type="xs:string" />
+          <xs:element name="Unidade" type="xs:string" />
+          <xs:element name="Frete" type="xs:double" />
+          <xs:element name="COMPDESCRICAO" type="xs:string" />
+          <xs:element name="Comprimento" type="xs:double" />
+          <xs:element name="Altura" type="xs:double" />
+          <xs:element name="Largura" type="xs:double" />
+          <xs:element name="Desconto" type="xs:double" />
+          <xs:element name="STBSN_Codigo" type="xs:string" />
+          <xs:element name="AliqICMSSubst" type="xs:double" />
+          <xs:element name="BaseICMSSubst" type="xs:double" />
+          <xs:element name="ValorICMSSubst" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TDevolucoesSaida">
+        <xs:sequence>
+          <xs:element name="Estabelecimento" type="xs:string" />
+          <xs:element name="CentroDeEstoque" type="xs:string" />
+          <xs:element name="CentroDeResultados" type="xs:string" />
+          <xs:element name="CentroDeResultadosDestino" type="xs:string" />
+          <xs:element name="NumeroNotaFiscal" type="xs:string" />
+          <xs:element name="Especie" type="xs:string" />
+          <xs:element name="Data" type="xs:dateTime" />
+          <xs:element name="Hora" type="xs:dateTime" />
+          <xs:element name="OBS" type="xs:string" />
+          <xs:element name="ItensDevolucoesSaida" type="ns1:TArrayofItensDevolucoesSaida" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TArrayofItensDevolucoesSaida">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TItensDevolucoesSaida[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TItensDevolucoesSaida">
+        <xs:sequence>
+          <xs:element name="Sequencial" type="xs:int" />
+          <xs:element name="Item" type="xs:string" />
+          <xs:element name="Quantidade" type="xs:double" />
+          <xs:element name="LOT_Sequencial" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TTransfEstoque">
+        <xs:sequence>
+          <xs:element name="Estabelecimento" type="xs:string" />
+          <xs:element name="Data" type="xs:dateTime" />
+          <xs:element name="CentroDeEstoqueOrigem" type="xs:string" />
+          <xs:element name="CentroDeEstoqueDestino" type="xs:string" />
+          <xs:element name="Descricao" type="xs:string" />
+          <xs:element name="Hora" type="xs:dateTime" />
+          <xs:element name="ItensTransfEstoque" type="ns1:TArrayofItensTES" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TArrayofItensTES">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TItensTES[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TItensTES">
+        <xs:sequence>
+          <xs:element name="Codigo" type="xs:string" />
+          <xs:element name="Item" type="xs:string" />
+          <xs:element name="Sequencial" type="xs:int" />
+          <xs:element name="Quantidade" type="xs:double" />
+          <xs:element name="LOT_Sequencial" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TDadosRenegociacao">
+        <xs:sequence>
+          <xs:element name="Empresa" type="xs:string" />
+          <xs:element name="ContasaReceber" type="xs:string" />
+          <xs:element name="DataVencimento" type="xs:dateTime" />
+          <xs:element name="SequencialVencimento" type="xs:int" />
+          <xs:element name="Juros" type="xs:double" />
+          <xs:element name="Multa" type="xs:double" />
+          <xs:element name="Desconto" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TArrayDadosColetaRemotable">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TDadosColetaRemotable[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TDadosColetaRemotable">
+        <xs:sequence>
+          <xs:element name="Emp_Codigo" type="xs:string" />
+          <xs:element name="Codigo" type="xs:string" />
+          <xs:element name="Est_Codigo" type="xs:string" />
+          <xs:element name="Est_Nome" type="xs:string" />
+          <xs:element name="Data" type="xs:string" />
+          <xs:element name="Criterio" type="xs:int" />
+          <xs:element name="Obs" type="xs:string" />
+          <xs:element name="Usu_Codigo" type="xs:string" />
+          <xs:element name="Ces_Codigo" type="xs:string" />
+          <xs:element name="Ces_Nome" type="xs:string" />
+          <xs:element name="ArrayDadosColetaItemRemotable" type="ns1:TArrayDadosColetaItemRemotable" />
+          <xs:element name="Requisicoes" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TArrayDadosColetaItemRemotable">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TDadosColetaItemRemotable[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TDadosColetaItemRemotable">
+        <xs:sequence>
+          <xs:element name="Emp_Codigo" type="xs:string" />
+          <xs:element name="Clt_Codigo" type="xs:string" />
+          <xs:element name="Pro_Codigo" type="xs:string" />
+          <xs:element name="Pro_Nome" type="xs:string" />
+          <xs:element name="Quantidade" type="xs:double" />
+          <xs:element name="UndEntrada" type="xs:string" />
+          <xs:element name="UndSaida" type="xs:string" />
+          <xs:element name="Saldo" type="xs:double" />
+          <xs:element name="Pro_Compdescricao" type="xs:string" />
+          <xs:element name="DataValidade" type="xs:string" />
+          <xs:element name="ValidadeMinima" type="xs:int" />
+          <xs:element name="DtlimiteEntrega" type="xs:string" />
+          <xs:element name="Pro_Codigointerno" type="xs:string" />
+          <xs:element name="Pro_FatorConversao" type="xs:double" />
+          <xs:element name="ArrayDadosColetaFornecedorRemotable" type="ns1:TArrayDadosColetaFornecedorRemotable" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TArrayDadosColetaFornecedorRemotable">
+        <xs:complexContent mixed="false">
+          <xs:restriction base="soapenc:Array">
+            <xs:sequence />
+            <xs:attribute xmlns:n1="http://schemas.xmlsoap.org/wsdl/" n1:arrayType="ns1:TDadosColetaFornecedorRemotable[]" ref="soapenc:arrayType" />
+          </xs:restriction>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="TDadosColetaFornecedorRemotable">
+        <xs:sequence>
+          <xs:element name="Emp_Codigo" type="xs:string" />
+          <xs:element name="Clt_Codigo" type="xs:string" />
+          <xs:element name="Pro_Codigo" type="xs:string" />
+          <xs:element name="Frn_Codigo" type="xs:string" />
+          <xs:element name="Sequencial" type="xs:int" />
+          <xs:element name="Frn_Nome" type="xs:string" />
+          <xs:element name="Situacao" type="xs:int" />
+          <xs:element name="DataUltimaSituacao" type="xs:string" />
+          <xs:element name="Quantidade" type="xs:double" />
+          <xs:element name="Valor" type="xs:double" />
+          <xs:element name="Valortotal" type="xs:double" />
+          <xs:element name="Mar_Codigo" type="xs:string" />
+          <xs:element name="Mar_Nome" type="xs:string" />
+          <xs:element name="Obs" type="xs:string" />
+          <xs:element name="Condicaopagamento" type="xs:string" />
+          <xs:element name="Frete" type="xs:double" />
+          <xs:element name="Previsao" type="xs:string" />
+          <xs:element name="Tipofrete" type="xs:string" />
+          <xs:element name="Desconto" type="xs:double" />
+          <xs:element name="DescontoTotal" type="xs:double" />
+          <xs:element name="DataValidade" type="xs:string" />
+          <xs:element name="ValorOriginal" type="xs:double" />
+          <xs:element name="Acrescimo" type="xs:double" />
+          <xs:element name="DtlimiteEntrega" type="xs:string" />
+          <xs:element name="FatorConversao" type="xs:double" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TDadosPDFNotaFiscal">
+        <xs:sequence>
+          <xs:element name="NumeroNF" type="xs:string" />
+          <xs:element name="MensagemErro" type="xs:string" />
+          <xs:element name="TamanhoPDFStream" type="xs:int" />
+          <xs:element name="PDFStream" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="ObtemCredencial0Request">
+    <part name="Usuario" type="xs:string" />
+    <part name="Senha" type="xs:string" />
+    <part name="CdSistema" type="xs:string" />
+    <part name="CdEmpresa" type="xs:string" />
+  </message>
+  <message name="ObtemCredencial0Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="LiberaCredencial1Request">
+    <part name="Credencial" type="xs:string" />
+  </message>
+  <message name="LiberaCredencial1Response" />
+  <message name="Eco2Request">
+    <part name="s" type="xs:string" />
+  </message>
+  <message name="Eco2Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="EcoContasAReceber3Request">
+    <part name="ContasaReceber" type="ns1:TContasaReceber" />
+  </message>
+  <message name="EcoContasAReceber3Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="EcoSaidas4Request">
+    <part name="Saida" type="ns1:TSaidas" />
+  </message>
+  <message name="EcoSaidas4Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="EcoRequisicoes5Request">
+    <part name="Requisicao" type="ns1:TRequisicoes" />
+  </message>
+  <message name="EcoRequisicoes5Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="EcoEntradas6Request">
+    <part name="Entrada" type="ns1:TEntradas" />
+  </message>
+  <message name="EcoEntradas6Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="IncluiCliente7Request">
+    <part name="Cliente" type="ns1:TCliente" />
+  </message>
+  <message name="IncluiCliente7Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="AlteraCliente8Request">
+    <part name="Cliente" type="ns1:TCliente" />
+  </message>
+  <message name="AlteraCliente8Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="AlteraServicosCliente9Request">
+    <part name="CNPJ" type="xs:string" />
+    <part name="ServicosCliente" type="ns1:TServicosCliente" />
+  </message>
+  <message name="AlteraServicosCliente9Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="ExcluiCliente10Request">
+    <part name="Cliente" type="ns1:TCliente" />
+  </message>
+  <message name="ExcluiCliente10Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="ExcluiClienteWithCNPJCPF11Request">
+    <part name="CNPJCPF" type="xs:string" />
+  </message>
+  <message name="ExcluiClienteWithCNPJCPF11Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetSenhaPortalComCNPJCPF12Request">
+    <part name="CNPJCPF" type="xs:string" />
+  </message>
+  <message name="GetSenhaPortalComCNPJCPF12Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="SetSenhaPortalComCNPJCPF13Request">
+    <part name="CNPJCPF" type="xs:string" />
+    <part name="NovaSenha" type="xs:string" />
+  </message>
+  <message name="SetSenhaPortalComCNPJCPF13Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="IncluiServico14Request">
+    <part name="Servico" type="ns1:TServico" />
+  </message>
+  <message name="IncluiServico14Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="AlteraServico15Request">
+    <part name="Servico" type="ns1:TServico" />
+  </message>
+  <message name="AlteraServico15Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="ExcluiServico16Request">
+    <part name="Servico" type="ns1:TServico" />
+  </message>
+  <message name="ExcluiServico16Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="IncluiCentroDeResultado17Request">
+    <part name="CentroDeResultado" type="ns1:TCentroDeResultado" />
+  </message>
+  <message name="IncluiCentroDeResultado17Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="AlteraCentroDeResultado18Request">
+    <part name="CentroDeResultado" type="ns1:TCentroDeResultado" />
+  </message>
+  <message name="AlteraCentroDeResultado18Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="ExcluiCentroDeResultado19Request">
+    <part name="CentroDeResultado" type="ns1:TCentroDeResultado" />
+  </message>
+  <message name="ExcluiCentroDeResultado19Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="IncluiFornecedor20Request">
+    <part name="Fornecedor" type="ns1:TFornecedor" />
+  </message>
+  <message name="IncluiFornecedor20Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="AlteraFornecedor21Request">
+    <part name="Fornecedor" type="ns1:TFornecedor" />
+  </message>
+  <message name="AlteraFornecedor21Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="ExcluiFornecedor22Request">
+    <part name="Fornecedor" type="ns1:TFornecedor" />
+  </message>
+  <message name="ExcluiFornecedor22Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="IncluiItem23Request">
+    <part name="Item" type="ns1:TItem" />
+  </message>
+  <message name="IncluiItem23Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="AlteraItem24Request">
+    <part name="Item" type="ns1:TItem" />
+  </message>
+  <message name="AlteraItem24Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="ExcluiItem25Request">
+    <part name="Item" type="ns1:TItem" />
+  </message>
+  <message name="ExcluiItem25Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="IncluiCentroEstoque26Request">
+    <part name="CES_Codigo_Mae" type="xs:string" />
+    <part name="Codigo" type="xs:string" />
+    <part name="Nome" type="xs:string" />
+  </message>
+  <message name="IncluiCentroEstoque26Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetListaReceitasDespesas27Request">
+    <part name="Natureza" type="xs:string" />
+    <part name="ContaMae" type="xs:string" />
+  </message>
+  <message name="GetListaReceitasDespesas27Response">
+    <part name="return" type="ns1:TListaReceitasDespesas" />
+  </message>
+  <message name="getClienteWithCPFCNPJ28Request">
+    <part name="CNPJCPF" type="xs:string" />
+  </message>
+  <message name="getClienteWithCPFCNPJ28Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="getObjetoClienteWithCPFCNPJ29Request">
+    <part name="CNPJCPF" type="xs:string" />
+  </message>
+  <message name="getObjetoClienteWithCPFCNPJ29Response">
+    <part name="return" type="ns1:TCliente" />
+  </message>
+  <message name="GetObjetoClienteCodigo30Request">
+    <part name="CODIGO" type="xs:string" />
+  </message>
+  <message name="GetObjetoClienteCodigo30Response">
+    <part name="return" type="ns1:TCliente" />
+  </message>
+  <message name="getClienteWithIdentificador31Request">
+    <part name="Identificador" type="xs:string" />
+  </message>
+  <message name="getClienteWithIdentificador31Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetObjetoClienteCPFCNPJ32Request">
+    <part name="CPFCNPJ" type="xs:string" />
+  </message>
+  <message name="GetObjetoClienteCPFCNPJ32Response">
+    <part name="return" type="ns1:TCliente" />
+  </message>
+  <message name="getListaClientes33Request">
+    <part name="ConsiderarCancelados" type="xs:boolean" />
+    <part name="CPFCNPJ" type="xs:string" />
+    <part name="DetalhaContatosEServicos" type="xs:boolean" />
+  </message>
+  <message name="getListaClientes33Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="getListaClientesXML34Request">
+    <part name="ConsiderarCancelados" type="xs:boolean" />
+    <part name="CPFCNPJ" type="xs:string" />
+    <part name="DetalhaContatosEServicos" type="xs:boolean" />
+  </message>
+  <message name="getListaClientesXML34Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="getListaFornecedores35Request" />
+  <message name="getListaFornecedores35Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="getListaFornecedoresXML36Request" />
+  <message name="getListaFornecedoresXML36Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="getBoletosAbertosClienteWithIdentificador37Request">
+    <part name="Identificador" type="xs:string" />
+  </message>
+  <message name="getBoletosAbertosClienteWithIdentificador37Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="getDebitosWithCodigoCliente38Request">
+    <part name="CodigoCliente" type="xs:string" />
+  </message>
+  <message name="getDebitosWithCodigoCliente38Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="getTodosVencimentosComCodigoCliente39Request">
+    <part name="CodigoCliente" type="xs:string" />
+    <part name="ConsideraCancelados" type="xs:boolean" />
+  </message>
+  <message name="getTodosVencimentosComCodigoCliente39Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="getObjetoContasaReceber40Request">
+    <part name="CodContasaReceber" type="xs:string" />
+  </message>
+  <message name="getObjetoContasaReceber40Response">
+    <part name="return" type="ns1:TContasaReceber" />
+  </message>
+  <message name="GetContasaReceberWithDocumento41Request">
+    <part name="aDocumento" type="xs:string" />
+  </message>
+  <message name="GetContasaReceberWithDocumento41Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetContasaReceberWithBoleto42Request">
+    <part name="aBoleto" type="xs:string" />
+    <part name="aIdBloquete" type="xs:int" />
+  </message>
+  <message name="GetContasaReceberWithBoleto42Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetVencimentosEmAbertoCRE43Request">
+    <part name="CNPJCPF" type="xs:string" />
+    <part name="Data" type="xs:dateTime" />
+  </message>
+  <message name="GetVencimentosEmAbertoCRE43Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetBoletosAbertosClienteCPFCNPJ44Request">
+    <part name="CPFCNPJ" type="xs:string" />
+  </message>
+  <message name="GetBoletosAbertosClienteCPFCNPJ44Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetListaEmpresas45Request" />
+  <message name="GetListaEmpresas45Response">
+    <part name="return" type="ns1:TListaEmpresas" />
+  </message>
+  <message name="GetListaEstabelecimentos46Request">
+    <part name="EMP_Codigo" type="xs:string" />
+  </message>
+  <message name="GetListaEstabelecimentos46Response">
+    <part name="return" type="ns1:TListaEstabelecimentos" />
+  </message>
+  <message name="GetListaCentrosDeResultado47Request">
+    <part name="EMP_Codigo" type="xs:string" />
+  </message>
+  <message name="GetListaCentrosDeResultado47Response">
+    <part name="return" type="ns1:TListaCentrosDeResultado" />
+  </message>
+  <message name="GetListaModalidades48Request">
+    <part name="EMP_Codigo" type="xs:string" />
+  </message>
+  <message name="GetListaModalidades48Response">
+    <part name="return" type="ns1:TListaModalidades" />
+  </message>
+  <message name="GetListaServicos49Request">
+    <part name="EMP_Codigo" type="xs:string" />
+  </message>
+  <message name="GetListaServicos49Response">
+    <part name="return" type="ns1:TListaServicos" />
+  </message>
+  <message name="GetListaBancos50Request">
+    <part name="EMP_Codigo" type="xs:string" />
+  </message>
+  <message name="GetListaBancos50Response">
+    <part name="return" type="ns1:TListaBancos" />
+  </message>
+  <message name="GetListaMunicipiosArray51Request">
+    <part name="UF" type="xs:string" />
+  </message>
+  <message name="GetListaMunicipiosArray51Response">
+    <part name="return" type="ns1:TListaMunicipios" />
+  </message>
+  <message name="GetListaAdministradorasDeCartoes52Request">
+    <part name="EMP_Codigo" type="xs:string" />
+  </message>
+  <message name="GetListaAdministradorasDeCartoes52Response">
+    <part name="return" type="ns1:TListaAdministradorasDeCartoes" />
+  </message>
+  <message name="GetListaAgentesCobradores53Request">
+    <part name="EMP_Codigo" type="xs:string" />
+  </message>
+  <message name="GetListaAgentesCobradores53Response">
+    <part name="return" type="ns1:TListaAgentesCobradores" />
+  </message>
+  <message name="GetListaGrupoClientes54Request">
+    <part name="EMP_Codigo" type="xs:string" />
+  </message>
+  <message name="GetListaGrupoClientes54Response">
+    <part name="return" type="ns1:TListaGrupoClientes" />
+  </message>
+  <message name="GetValorEmAbertoVencimentosDiversosCRE55Request">
+    <part name="Codigo_ContasAReceber" type="xs:string" />
+    <part name="Sequencial_Vencimento" type="xs:int" />
+  </message>
+  <message name="GetValorEmAbertoVencimentosDiversosCRE55Response">
+    <part name="return" type="xs:double" />
+  </message>
+  <message name="GetValorEmAbertoVencimentosCartaoCRE56Request">
+    <part name="Codigo_ContasAReceber" type="xs:string" />
+    <part name="Sequencial_Vencimento" type="xs:int" />
+  </message>
+  <message name="GetValorEmAbertoVencimentosCartaoCRE56Response">
+    <part name="return" type="xs:double" />
+  </message>
+  <message name="GetValorEmAbertoVencimentosChequeCRE57Request">
+    <part name="Codigo_ContasAReceber" type="xs:string" />
+    <part name="Sequencial_Vencimento" type="xs:int" />
+  </message>
+  <message name="GetValorEmAbertoVencimentosChequeCRE57Response">
+    <part name="return" type="xs:double" />
+  </message>
+  <message name="getListaCFOP58Request" />
+  <message name="getListaCFOP58Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetListaSTA59Request" />
+  <message name="GetListaSTA59Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetListaSTB60Request" />
+  <message name="GetListaSTB60Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetListaSTBSN61Request" />
+  <message name="GetListaSTBSN61Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetListaCentroDeResultado62Request" />
+  <message name="GetListaCentroDeResultado62Response">
+    <part name="return" type="ns1:TListaCentroDeResultado" />
+  </message>
+  <message name="GetListaMunicipiosJSON63Request">
+    <part name="UF" type="xs:string" />
+  </message>
+  <message name="GetListaMunicipiosJSON63Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetListaCentroEstoque64Request">
+    <part name="CES_Mae" type="xs:string" />
+  </message>
+  <message name="GetListaCentroEstoque64Response">
+    <part name="return" type="ns1:TListaCentroEstoque" />
+  </message>
+  <message name="GetSaldoEstoqueAlmoxarifado65Request">
+    <part name="ces_codigo" type="xs:string" />
+    <part name="pro_codigo" type="xs:string" />
+    <part name="aData" type="xs:dateTime" />
+    <part name="lot_sequencial" type="xs:int" />
+  </message>
+  <message name="GetSaldoEstoqueAlmoxarifado65Response">
+    <part name="return" type="xs:double" />
+  </message>
+  <message name="GetSaldoEstoqueAlmoxarifadoGeral66Request">
+    <part name="ces_codigo" type="xs:string" />
+    <part name="aData" type="xs:dateTime" />
+  </message>
+  <message name="GetSaldoEstoqueAlmoxarifadoGeral66Response">
+    <part name="return" type="ns1:TListaEstoquesPRO_CES_LOTE" />
+  </message>
+  <message name="GetSaldoEstoqueAtivoComLote67Request">
+    <part name="CES_Codigo" type="xs:string" />
+    <part name="aData" type="xs:dateTime" />
+  </message>
+  <message name="GetSaldoEstoqueAtivoComLote67Response">
+    <part name="return" type="ns1:TListaEstoqueAtivoComLote" />
+  </message>
+  <message name="GetSaldoEstoqueAtivoComLoteXML68Request">
+    <part name="CES_Codigo" type="xs:string" />
+    <part name="aData" type="xs:dateTime" />
+  </message>
+  <message name="GetSaldoEstoqueAtivoComLoteXML68Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetListaItens69Request" />
+  <message name="GetListaItens69Response">
+    <part name="return" type="ns1:TListaItens" />
+  </message>
+  <message name="GetListaItensXML70Request" />
+  <message name="GetListaItensXML70Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetListaServicosFull71Request" />
+  <message name="GetListaServicosFull71Response">
+    <part name="return" type="ns1:TListaServicos" />
+  </message>
+  <message name="GetListaServicosXML72Request" />
+  <message name="GetListaServicosXML72Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetListaItensPorCentroEstoque73Request">
+    <part name="CES_Codigo" type="xs:string" />
+  </message>
+  <message name="GetListaItensPorCentroEstoque73Response">
+    <part name="return" type="ns1:TListaItens" />
+  </message>
+  <message name="GetListaItensPorCentroEstoqueXML74Request">
+    <part name="CES_Codigo" type="xs:string" />
+  </message>
+  <message name="GetListaItensPorCentroEstoqueXML74Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetListaRequisitantes75Request">
+    <part name="SQLComplementar" type="xs:string" />
+  </message>
+  <message name="GetListaRequisitantes75Response">
+    <part name="return" type="ns1:TListaRequisitantes" />
+  </message>
+  <message name="GetListaRequisicoes76Request">
+    <part name="CodCentroDeResultados" type="xs:string" />
+    <part name="CodGrupoItem" type="xs:string" />
+    <part name="Data" type="xs:dateTime" />
+  </message>
+  <message name="GetListaRequisicoes76Response">
+    <part name="return" type="ns1:TListaRequisicoes" />
+  </message>
+  <message name="IncluiContasaReceber77Request">
+    <part name="ContasaReceber" type="ns1:TContasaReceber" />
+  </message>
+  <message name="IncluiContasaReceber77Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="AlteraContasaReceber78Request">
+    <part name="ContasaReceber" type="ns1:TContasaReceber" />
+    <part name="Codigo" type="xs:string" />
+  </message>
+  <message name="AlteraContasaReceber78Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="ExcluiContasaReceber79Request">
+    <part name="Codigo" type="xs:string" />
+  </message>
+  <message name="ExcluiContasaReceber79Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="IncluiBaixaContasReceber80Request">
+    <part name="BaixaContasaReceber" type="ns1:TBaixaContasaReceber" />
+  </message>
+  <message name="IncluiBaixaContasReceber80Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="IncluiBaixaContasReceberCartao81Request">
+    <part name="BaixaVencimentoCartaoaReceber" type="ns1:TBaixaVencimentoCartaoaReceber" />
+  </message>
+  <message name="IncluiBaixaContasReceberCartao81Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="CancelaBaixaContasReceber82Request">
+    <part name="CodigoCRE" type="xs:string" />
+    <part name="SequencialVencimento" type="xs:int" />
+    <part name="Sequencial" type="xs:int" />
+    <part name="DataCancelamento" type="xs:dateTime" />
+    <part name="MotivoCancelamento" type="xs:string" />
+  </message>
+  <message name="CancelaBaixaContasReceber82Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="CancelaBaixaContasReceberCartao83Request">
+    <part name="CodigoCRE" type="xs:string" />
+    <part name="SequencialVencimento" type="xs:int" />
+    <part name="Sequencial" type="xs:int" />
+    <part name="DataCancelamento" type="xs:dateTime" />
+    <part name="MotivoCancelamento" type="xs:string" />
+  </message>
+  <message name="CancelaBaixaContasReceberCartao83Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="CancelaVencimentosDiversosEmAberto84Request">
+    <part name="CodContasReceber" type="xs:string" />
+    <part name="sDtCancel" type="xs:dateTime" />
+    <part name="aMotCancel" type="xs:string" />
+  </message>
+  <message name="CancelaVencimentosDiversosEmAberto84Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="AlteraVencimentoDiversoEmAberto85Request">
+    <part name="CodContasReceber" type="xs:string" />
+    <part name="aOldNrBoleto" type="xs:string" />
+    <part name="aNewNrBoleto" type="xs:string" />
+    <part name="aOldIdBloquete" type="xs:int" />
+    <part name="aNewIdBloquete" type="xs:int" />
+    <part name="aNewDtVenc" type="xs:dateTime" />
+  </message>
+  <message name="AlteraVencimentoDiversoEmAberto85Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="IncluiLancamento86Request">
+    <part name="Lancamento" type="ns1:TLancamentos" />
+  </message>
+  <message name="IncluiLancamento86Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="IncluiAdiantamentoCliente87Request">
+    <part name="AdiantamentoCliente" type="ns1:TAdiantamentoCliente" />
+  </message>
+  <message name="IncluiAdiantamentoCliente87Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="IncluiPedidoDeVenda88Request">
+    <part name="PedidoDeVenda" type="ns1:TPedidoDeVenda" />
+  </message>
+  <message name="IncluiPedidoDeVenda88Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="AlteraPedidoDeVenda89Request">
+    <part name="PedidoDeVenda" type="ns1:TPedidoDeVenda" />
+    <part name="Codigo" type="xs:string" />
+  </message>
+  <message name="AlteraPedidoDeVenda89Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="ExcluiPedidoDeVenda90Request">
+    <part name="Codigo" type="xs:string" />
+  </message>
+  <message name="ExcluiPedidoDeVenda90Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="ReplicaPedidoDeVenda91Request">
+    <part name="Codigo" type="xs:string" />
+    <part name="QtdPeriodo" type="xs:int" />
+    <part name="Periodicidade" type="xs:int" />
+    <part name="TipoPeriodo" type="xs:string" />
+    <part name="BaseICMSSubst" type="xs:double" />
+    <part name="ValorICMSSubst" type="xs:double" />
+  </message>
+  <message name="ReplicaPedidoDeVenda91Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="IncluiSaidas92Request">
+    <part name="Saida" type="ns1:TSaidas" />
+  </message>
+  <message name="IncluiSaidas92Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="AlteraSaidas93Request">
+    <part name="Saida" type="ns1:TSaidas" />
+    <part name="Codigo" type="xs:string" />
+  </message>
+  <message name="AlteraSaidas93Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="ExcluiSaidas94Request">
+    <part name="Codigo" type="xs:string" />
+  </message>
+  <message name="ExcluiSaidas94Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="IncluiRequisicoes95Request">
+    <part name="Requisicao" type="ns1:TRequisicoes" />
+  </message>
+  <message name="IncluiRequisicoes95Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="AlteraRequisicoes96Request">
+    <part name="Requisicao" type="ns1:TRequisicoes" />
+    <part name="Codigo" type="xs:string" />
+  </message>
+  <message name="AlteraRequisicoes96Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="ExcluiRequisicoes97Request">
+    <part name="Codigo" type="xs:string" />
+  </message>
+  <message name="ExcluiRequisicoes97Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="IncluirRequisicaoPorParametros98Request">
+    <part name="CodigoEstabelecimento" type="xs:string" />
+    <part name="CodigoRequisitante" type="xs:string" />
+    <part name="CodigoCentroDeEstoque" type="xs:string" />
+    <part name="CodigoCentroDeResultados" type="xs:string" />
+    <part name="Documento" type="xs:string" />
+    <part name="Data" type="xs:string" />
+    <part name="Observacao" type="xs:string" />
+  </message>
+  <message name="IncluirRequisicaoPorParametros98Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="IncluirItensRequisicaoPorParametros99Request">
+    <part name="CodigoRequisicao" type="xs:string" />
+    <part name="ItemCodigo" type="xs:string" />
+    <part name="ItemObservacao" type="xs:string" />
+    <part name="ItemQuantidade" type="xs:double" />
+  </message>
+  <message name="IncluirItensRequisicaoPorParametros99Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="IncluiEntradas100Request">
+    <part name="Entrada" type="ns1:TEntradas" />
+  </message>
+  <message name="IncluiEntradas100Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="AlteraEntradas101Request">
+    <part name="Entrada" type="ns1:TEntradas" />
+    <part name="Codigo" type="xs:string" />
+  </message>
+  <message name="AlteraEntradas101Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="ExcluiEntradas102Request">
+    <part name="Codigo" type="xs:string" />
+  </message>
+  <message name="ExcluiEntradas102Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="IncluiDevolucoesSaida103Request">
+    <part name="DevolucoesSaida" type="ns1:TDevolucoesSaida" />
+  </message>
+  <message name="IncluiDevolucoesSaida103Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="AlteraDevolucoesSaida104Request">
+    <part name="DevolucoesSaida" type="ns1:TDevolucoesSaida" />
+    <part name="Codigo" type="xs:string" />
+  </message>
+  <message name="AlteraDevolucoesSaida104Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="ExcluiDevolucoesSaida105Request">
+    <part name="Codigo" type="xs:string" />
+  </message>
+  <message name="ExcluiDevolucoesSaida105Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="IncluiTransferenciasEstoque106Request">
+    <part name="s" type="ns1:TTransfEstoque" />
+  </message>
+  <message name="IncluiTransferenciasEstoque106Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetBoletoPDF107Request">
+    <part name="EMP" type="xs:string" />
+    <part name="DtInicialEmi" type="xs:dateTime" />
+    <part name="DtFinalEmi" type="xs:dateTime" />
+    <part name="Juros" type="xs:double" />
+    <part name="Multa" type="xs:double" />
+    <part name="ListaBOL" type="xs:string" />
+  </message>
+  <message name="GetBoletoPDF107Response">
+    <part name="return" type="xs:base64Binary" />
+  </message>
+  <message name="RenegociarCRE108Request">
+    <part name="DadosRenegociacao" type="ns1:TDadosRenegociacao" />
+  </message>
+  <message name="RenegociarCRE108Response">
+    <part name="return" type="xs:string" />
+  </message>
+  <message name="GetColetas109Request">
+    <part name="Emp_Codigo" type="xs:string" />
+    <part name="Est_Codigo" type="xs:string" />
+    <part name="DataInicial" type="xs:string" />
+    <part name="DataFinal" type="xs:string" />
+    <part name="Ces_Codigo" type="xs:string" />
+    <part name="Rit_Codigo" type="xs:string" />
+    <part name="Pro_Codigo" type="xs:string" />
+    <part name="Frn_Codigo" type="xs:string" />
+  </message>
+  <message name="GetColetas109Response">
+    <part name="return" type="ns1:TArrayDadosColetaRemotable" />
+  </message>
+  <message name="GetNFPDFStream110Request">
+    <part name="Emp_Codigo" type="xs:string" />
+    <part name="Nfs_Codigo" type="xs:string" />
+  </message>
+  <message name="GetNFPDFStream110Response">
+    <part name="return" type="ns1:TDadosPDFNotaFiscal" />
+  </message>
+  <message name="GetNFPDFStreamDeContasAReceber111Request">
+    <part name="Emp_Codigo" type="xs:string" />
+    <part name="Cre_Codigo" type="xs:string" />
+  </message>
+  <message name="GetNFPDFStreamDeContasAReceber111Response">
+    <part name="return" type="ns1:TDadosPDFNotaFiscal" />
+  </message>
+  <message name="GetObjetoFornecedorPorCodigo112Request">
+    <part name="Codigo" type="xs:string" />
+  </message>
+  <message name="GetObjetoFornecedorPorCodigo112Response">
+    <part name="return" type="ns1:TFornecedor" />
+  </message>
+  <message name="GetObjetoFornecedorPorCNPJCPF113Request">
+    <part name="CNPJCPF" type="xs:string" />
+  </message>
+  <message name="GetObjetoFornecedorPorCNPJCPF113Response">
+    <part name="return" type="ns1:TFornecedor" />
+  </message>
+  <message name="GetObjetoItemPorCodigo114Request">
+    <part name="Codigo" type="xs:string" />
+  </message>
+  <message name="GetObjetoItemPorCodigo114Response">
+    <part name="return" type="ns1:TItem" />
+  </message>
+  <portType name="IAG">
+    <operation name="ObtemCredencial">
+      <input message="tns:ObtemCredencial0Request" />
+      <output message="tns:ObtemCredencial0Response" />
+    </operation>
+    <operation name="LiberaCredencial">
+      <input message="tns:LiberaCredencial1Request" />
+      <output message="tns:LiberaCredencial1Response" />
+    </operation>
+    <operation name="Eco">
+      <input message="tns:Eco2Request" />
+      <output message="tns:Eco2Response" />
+    </operation>
+    <operation name="EcoContasAReceber">
+      <input message="tns:EcoContasAReceber3Request" />
+      <output message="tns:EcoContasAReceber3Response" />
+    </operation>
+    <operation name="EcoSaidas">
+      <input message="tns:EcoSaidas4Request" />
+      <output message="tns:EcoSaidas4Response" />
+    </operation>
+    <operation name="EcoRequisicoes">
+      <input message="tns:EcoRequisicoes5Request" />
+      <output message="tns:EcoRequisicoes5Response" />
+    </operation>
+    <operation name="EcoEntradas">
+      <input message="tns:EcoEntradas6Request" />
+      <output message="tns:EcoEntradas6Response" />
+    </operation>
+    <operation name="IncluiCliente">
+      <input message="tns:IncluiCliente7Request" />
+      <output message="tns:IncluiCliente7Response" />
+    </operation>
+    <operation name="AlteraCliente">
+      <input message="tns:AlteraCliente8Request" />
+      <output message="tns:AlteraCliente8Response" />
+    </operation>
+    <operation name="AlteraServicosCliente">
+      <input message="tns:AlteraServicosCliente9Request" />
+      <output message="tns:AlteraServicosCliente9Response" />
+    </operation>
+    <operation name="ExcluiCliente">
+      <input message="tns:ExcluiCliente10Request" />
+      <output message="tns:ExcluiCliente10Response" />
+    </operation>
+    <operation name="ExcluiClienteWithCNPJCPF">
+      <input message="tns:ExcluiClienteWithCNPJCPF11Request" />
+      <output message="tns:ExcluiClienteWithCNPJCPF11Response" />
+    </operation>
+    <operation name="GetSenhaPortalComCNPJCPF">
+      <input message="tns:GetSenhaPortalComCNPJCPF12Request" />
+      <output message="tns:GetSenhaPortalComCNPJCPF12Response" />
+    </operation>
+    <operation name="SetSenhaPortalComCNPJCPF">
+      <input message="tns:SetSenhaPortalComCNPJCPF13Request" />
+      <output message="tns:SetSenhaPortalComCNPJCPF13Response" />
+    </operation>
+    <operation name="IncluiServico">
+      <input message="tns:IncluiServico14Request" />
+      <output message="tns:IncluiServico14Response" />
+    </operation>
+    <operation name="AlteraServico">
+      <input message="tns:AlteraServico15Request" />
+      <output message="tns:AlteraServico15Response" />
+    </operation>
+    <operation name="ExcluiServico">
+      <input message="tns:ExcluiServico16Request" />
+      <output message="tns:ExcluiServico16Response" />
+    </operation>
+    <operation name="IncluiCentroDeResultado">
+      <input message="tns:IncluiCentroDeResultado17Request" />
+      <output message="tns:IncluiCentroDeResultado17Response" />
+    </operation>
+    <operation name="AlteraCentroDeResultado">
+      <input message="tns:AlteraCentroDeResultado18Request" />
+      <output message="tns:AlteraCentroDeResultado18Response" />
+    </operation>
+    <operation name="ExcluiCentroDeResultado">
+      <input message="tns:ExcluiCentroDeResultado19Request" />
+      <output message="tns:ExcluiCentroDeResultado19Response" />
+    </operation>
+    <operation name="IncluiFornecedor">
+      <input message="tns:IncluiFornecedor20Request" />
+      <output message="tns:IncluiFornecedor20Response" />
+    </operation>
+    <operation name="AlteraFornecedor">
+      <input message="tns:AlteraFornecedor21Request" />
+      <output message="tns:AlteraFornecedor21Response" />
+    </operation>
+    <operation name="ExcluiFornecedor">
+      <input message="tns:ExcluiFornecedor22Request" />
+      <output message="tns:ExcluiFornecedor22Response" />
+    </operation>
+    <operation name="IncluiItem">
+      <input message="tns:IncluiItem23Request" />
+      <output message="tns:IncluiItem23Response" />
+    </operation>
+    <operation name="AlteraItem">
+      <input message="tns:AlteraItem24Request" />
+      <output message="tns:AlteraItem24Response" />
+    </operation>
+    <operation name="ExcluiItem">
+      <input message="tns:ExcluiItem25Request" />
+      <output message="tns:ExcluiItem25Response" />
+    </operation>
+    <operation name="IncluiCentroEstoque">
+      <input message="tns:IncluiCentroEstoque26Request" />
+      <output message="tns:IncluiCentroEstoque26Response" />
+    </operation>
+    <operation name="GetListaReceitasDespesas">
+      <input message="tns:GetListaReceitasDespesas27Request" />
+      <output message="tns:GetListaReceitasDespesas27Response" />
+    </operation>
+    <operation name="getClienteWithCPFCNPJ">
+      <input message="tns:getClienteWithCPFCNPJ28Request" />
+      <output message="tns:getClienteWithCPFCNPJ28Response" />
+    </operation>
+    <operation name="getObjetoClienteWithCPFCNPJ">
+      <input message="tns:getObjetoClienteWithCPFCNPJ29Request" />
+      <output message="tns:getObjetoClienteWithCPFCNPJ29Response" />
+    </operation>
+    <operation name="GetObjetoClienteCodigo">
+      <input message="tns:GetObjetoClienteCodigo30Request" />
+      <output message="tns:GetObjetoClienteCodigo30Response" />
+    </operation>
+    <operation name="getClienteWithIdentificador">
+      <input message="tns:getClienteWithIdentificador31Request" />
+      <output message="tns:getClienteWithIdentificador31Response" />
+    </operation>
+    <operation name="GetObjetoClienteCPFCNPJ">
+      <input message="tns:GetObjetoClienteCPFCNPJ32Request" />
+      <output message="tns:GetObjetoClienteCPFCNPJ32Response" />
+    </operation>
+    <operation name="getListaClientes">
+      <input message="tns:getListaClientes33Request" />
+      <output message="tns:getListaClientes33Response" />
+    </operation>
+    <operation name="getListaClientesXML">
+      <input message="tns:getListaClientesXML34Request" />
+      <output message="tns:getListaClientesXML34Response" />
+    </operation>
+    <operation name="getListaFornecedores">
+      <input message="tns:getListaFornecedores35Request" />
+      <output message="tns:getListaFornecedores35Response" />
+    </operation>
+    <operation name="getListaFornecedoresXML">
+      <input message="tns:getListaFornecedoresXML36Request" />
+      <output message="tns:getListaFornecedoresXML36Response" />
+    </operation>
+    <operation name="getBoletosAbertosClienteWithIdentificador">
+      <input message="tns:getBoletosAbertosClienteWithIdentificador37Request" />
+      <output message="tns:getBoletosAbertosClienteWithIdentificador37Response" />
+    </operation>
+    <operation name="getDebitosWithCodigoCliente">
+      <input message="tns:getDebitosWithCodigoCliente38Request" />
+      <output message="tns:getDebitosWithCodigoCliente38Response" />
+    </operation>
+    <operation name="getTodosVencimentosComCodigoCliente">
+      <input message="tns:getTodosVencimentosComCodigoCliente39Request" />
+      <output message="tns:getTodosVencimentosComCodigoCliente39Response" />
+    </operation>
+    <operation name="getObjetoContasaReceber">
+      <input message="tns:getObjetoContasaReceber40Request" />
+      <output message="tns:getObjetoContasaReceber40Response" />
+    </operation>
+    <operation name="GetContasaReceberWithDocumento">
+      <input message="tns:GetContasaReceberWithDocumento41Request" />
+      <output message="tns:GetContasaReceberWithDocumento41Response" />
+    </operation>
+    <operation name="GetContasaReceberWithBoleto">
+      <input message="tns:GetContasaReceberWithBoleto42Request" />
+      <output message="tns:GetContasaReceberWithBoleto42Response" />
+    </operation>
+    <operation name="GetVencimentosEmAbertoCRE">
+      <input message="tns:GetVencimentosEmAbertoCRE43Request" />
+      <output message="tns:GetVencimentosEmAbertoCRE43Response" />
+    </operation>
+    <operation name="GetBoletosAbertosClienteCPFCNPJ">
+      <input message="tns:GetBoletosAbertosClienteCPFCNPJ44Request" />
+      <output message="tns:GetBoletosAbertosClienteCPFCNPJ44Response" />
+    </operation>
+    <operation name="GetListaEmpresas">
+      <input message="tns:GetListaEmpresas45Request" />
+      <output message="tns:GetListaEmpresas45Response" />
+    </operation>
+    <operation name="GetListaEstabelecimentos">
+      <input message="tns:GetListaEstabelecimentos46Request" />
+      <output message="tns:GetListaEstabelecimentos46Response" />
+    </operation>
+    <operation name="GetListaCentrosDeResultado">
+      <input message="tns:GetListaCentrosDeResultado47Request" />
+      <output message="tns:GetListaCentrosDeResultado47Response" />
+    </operation>
+    <operation name="GetListaModalidades">
+      <input message="tns:GetListaModalidades48Request" />
+      <output message="tns:GetListaModalidades48Response" />
+    </operation>
+    <operation name="GetListaServicos">
+      <input message="tns:GetListaServicos49Request" />
+      <output message="tns:GetListaServicos49Response" />
+    </operation>
+    <operation name="GetListaBancos">
+      <input message="tns:GetListaBancos50Request" />
+      <output message="tns:GetListaBancos50Response" />
+    </operation>
+    <operation name="GetListaMunicipiosArray">
+      <input message="tns:GetListaMunicipiosArray51Request" />
+      <output message="tns:GetListaMunicipiosArray51Response" />
+    </operation>
+    <operation name="GetListaAdministradorasDeCartoes">
+      <input message="tns:GetListaAdministradorasDeCartoes52Request" />
+      <output message="tns:GetListaAdministradorasDeCartoes52Response" />
+    </operation>
+    <operation name="GetListaAgentesCobradores">
+      <input message="tns:GetListaAgentesCobradores53Request" />
+      <output message="tns:GetListaAgentesCobradores53Response" />
+    </operation>
+    <operation name="GetListaGrupoClientes">
+      <input message="tns:GetListaGrupoClientes54Request" />
+      <output message="tns:GetListaGrupoClientes54Response" />
+    </operation>
+    <operation name="GetValorEmAbertoVencimentosDiversosCRE">
+      <input message="tns:GetValorEmAbertoVencimentosDiversosCRE55Request" />
+      <output message="tns:GetValorEmAbertoVencimentosDiversosCRE55Response" />
+    </operation>
+    <operation name="GetValorEmAbertoVencimentosCartaoCRE">
+      <input message="tns:GetValorEmAbertoVencimentosCartaoCRE56Request" />
+      <output message="tns:GetValorEmAbertoVencimentosCartaoCRE56Response" />
+    </operation>
+    <operation name="GetValorEmAbertoVencimentosChequeCRE">
+      <input message="tns:GetValorEmAbertoVencimentosChequeCRE57Request" />
+      <output message="tns:GetValorEmAbertoVencimentosChequeCRE57Response" />
+    </operation>
+    <operation name="getListaCFOP">
+      <input message="tns:getListaCFOP58Request" />
+      <output message="tns:getListaCFOP58Response" />
+    </operation>
+    <operation name="GetListaSTA">
+      <input message="tns:GetListaSTA59Request" />
+      <output message="tns:GetListaSTA59Response" />
+    </operation>
+    <operation name="GetListaSTB">
+      <input message="tns:GetListaSTB60Request" />
+      <output message="tns:GetListaSTB60Response" />
+    </operation>
+    <operation name="GetListaSTBSN">
+      <input message="tns:GetListaSTBSN61Request" />
+      <output message="tns:GetListaSTBSN61Response" />
+    </operation>
+    <operation name="GetListaCentroDeResultado">
+      <input message="tns:GetListaCentroDeResultado62Request" />
+      <output message="tns:GetListaCentroDeResultado62Response" />
+    </operation>
+    <operation name="GetListaMunicipiosJSON">
+      <input message="tns:GetListaMunicipiosJSON63Request" />
+      <output message="tns:GetListaMunicipiosJSON63Response" />
+    </operation>
+    <operation name="GetListaCentroEstoque">
+      <input message="tns:GetListaCentroEstoque64Request" />
+      <output message="tns:GetListaCentroEstoque64Response" />
+    </operation>
+    <operation name="GetSaldoEstoqueAlmoxarifado">
+      <input message="tns:GetSaldoEstoqueAlmoxarifado65Request" />
+      <output message="tns:GetSaldoEstoqueAlmoxarifado65Response" />
+    </operation>
+    <operation name="GetSaldoEstoqueAlmoxarifadoGeral">
+      <input message="tns:GetSaldoEstoqueAlmoxarifadoGeral66Request" />
+      <output message="tns:GetSaldoEstoqueAlmoxarifadoGeral66Response" />
+    </operation>
+    <operation name="GetSaldoEstoqueAtivoComLote">
+      <input message="tns:GetSaldoEstoqueAtivoComLote67Request" />
+      <output message="tns:GetSaldoEstoqueAtivoComLote67Response" />
+    </operation>
+    <operation name="GetSaldoEstoqueAtivoComLoteXML">
+      <input message="tns:GetSaldoEstoqueAtivoComLoteXML68Request" />
+      <output message="tns:GetSaldoEstoqueAtivoComLoteXML68Response" />
+    </operation>
+    <operation name="GetListaItens">
+      <input message="tns:GetListaItens69Request" />
+      <output message="tns:GetListaItens69Response" />
+    </operation>
+    <operation name="GetListaItensXML">
+      <input message="tns:GetListaItensXML70Request" />
+      <output message="tns:GetListaItensXML70Response" />
+    </operation>
+    <operation name="GetListaServicosFull">
+      <input message="tns:GetListaServicosFull71Request" />
+      <output message="tns:GetListaServicosFull71Response" />
+    </operation>
+    <operation name="GetListaServicosXML">
+      <input message="tns:GetListaServicosXML72Request" />
+      <output message="tns:GetListaServicosXML72Response" />
+    </operation>
+    <operation name="GetListaItensPorCentroEstoque">
+      <input message="tns:GetListaItensPorCentroEstoque73Request" />
+      <output message="tns:GetListaItensPorCentroEstoque73Response" />
+    </operation>
+    <operation name="GetListaItensPorCentroEstoqueXML">
+      <input message="tns:GetListaItensPorCentroEstoqueXML74Request" />
+      <output message="tns:GetListaItensPorCentroEstoqueXML74Response" />
+    </operation>
+    <operation name="GetListaRequisitantes">
+      <input message="tns:GetListaRequisitantes75Request" />
+      <output message="tns:GetListaRequisitantes75Response" />
+    </operation>
+    <operation name="GetListaRequisicoes">
+      <input message="tns:GetListaRequisicoes76Request" />
+      <output message="tns:GetListaRequisicoes76Response" />
+    </operation>
+    <operation name="IncluiContasaReceber">
+      <input message="tns:IncluiContasaReceber77Request" />
+      <output message="tns:IncluiContasaReceber77Response" />
+    </operation>
+    <operation name="AlteraContasaReceber">
+      <input message="tns:AlteraContasaReceber78Request" />
+      <output message="tns:AlteraContasaReceber78Response" />
+    </operation>
+    <operation name="ExcluiContasaReceber">
+      <input message="tns:ExcluiContasaReceber79Request" />
+      <output message="tns:ExcluiContasaReceber79Response" />
+    </operation>
+    <operation name="IncluiBaixaContasReceber">
+      <input message="tns:IncluiBaixaContasReceber80Request" />
+      <output message="tns:IncluiBaixaContasReceber80Response" />
+    </operation>
+    <operation name="IncluiBaixaContasReceberCartao">
+      <input message="tns:IncluiBaixaContasReceberCartao81Request" />
+      <output message="tns:IncluiBaixaContasReceberCartao81Response" />
+    </operation>
+    <operation name="CancelaBaixaContasReceber">
+      <input message="tns:CancelaBaixaContasReceber82Request" />
+      <output message="tns:CancelaBaixaContasReceber82Response" />
+    </operation>
+    <operation name="CancelaBaixaContasReceberCartao">
+      <input message="tns:CancelaBaixaContasReceberCartao83Request" />
+      <output message="tns:CancelaBaixaContasReceberCartao83Response" />
+    </operation>
+    <operation name="CancelaVencimentosDiversosEmAberto">
+      <input message="tns:CancelaVencimentosDiversosEmAberto84Request" />
+      <output message="tns:CancelaVencimentosDiversosEmAberto84Response" />
+    </operation>
+    <operation name="AlteraVencimentoDiversoEmAberto">
+      <input message="tns:AlteraVencimentoDiversoEmAberto85Request" />
+      <output message="tns:AlteraVencimentoDiversoEmAberto85Response" />
+    </operation>
+    <operation name="IncluiLancamento">
+      <input message="tns:IncluiLancamento86Request" />
+      <output message="tns:IncluiLancamento86Response" />
+    </operation>
+    <operation name="IncluiAdiantamentoCliente">
+      <input message="tns:IncluiAdiantamentoCliente87Request" />
+      <output message="tns:IncluiAdiantamentoCliente87Response" />
+    </operation>
+    <operation name="IncluiPedidoDeVenda">
+      <input message="tns:IncluiPedidoDeVenda88Request" />
+      <output message="tns:IncluiPedidoDeVenda88Response" />
+    </operation>
+    <operation name="AlteraPedidoDeVenda">
+      <input message="tns:AlteraPedidoDeVenda89Request" />
+      <output message="tns:AlteraPedidoDeVenda89Response" />
+    </operation>
+    <operation name="ExcluiPedidoDeVenda">
+      <input message="tns:ExcluiPedidoDeVenda90Request" />
+      <output message="tns:ExcluiPedidoDeVenda90Response" />
+    </operation>
+    <operation name="ReplicaPedidoDeVenda">
+      <input message="tns:ReplicaPedidoDeVenda91Request" />
+      <output message="tns:ReplicaPedidoDeVenda91Response" />
+    </operation>
+    <operation name="IncluiSaidas">
+      <input message="tns:IncluiSaidas92Request" />
+      <output message="tns:IncluiSaidas92Response" />
+    </operation>
+    <operation name="AlteraSaidas">
+      <input message="tns:AlteraSaidas93Request" />
+      <output message="tns:AlteraSaidas93Response" />
+    </operation>
+    <operation name="ExcluiSaidas">
+      <input message="tns:ExcluiSaidas94Request" />
+      <output message="tns:ExcluiSaidas94Response" />
+    </operation>
+    <operation name="IncluiRequisicoes">
+      <input message="tns:IncluiRequisicoes95Request" />
+      <output message="tns:IncluiRequisicoes95Response" />
+    </operation>
+    <operation name="AlteraRequisicoes">
+      <input message="tns:AlteraRequisicoes96Request" />
+      <output message="tns:AlteraRequisicoes96Response" />
+    </operation>
+    <operation name="ExcluiRequisicoes">
+      <input message="tns:ExcluiRequisicoes97Request" />
+      <output message="tns:ExcluiRequisicoes97Response" />
+    </operation>
+    <operation name="IncluirRequisicaoPorParametros">
+      <input message="tns:IncluirRequisicaoPorParametros98Request" />
+      <output message="tns:IncluirRequisicaoPorParametros98Response" />
+    </operation>
+    <operation name="IncluirItensRequisicaoPorParametros">
+      <input message="tns:IncluirItensRequisicaoPorParametros99Request" />
+      <output message="tns:IncluirItensRequisicaoPorParametros99Response" />
+    </operation>
+    <operation name="IncluiEntradas">
+      <input message="tns:IncluiEntradas100Request" />
+      <output message="tns:IncluiEntradas100Response" />
+    </operation>
+    <operation name="AlteraEntradas">
+      <input message="tns:AlteraEntradas101Request" />
+      <output message="tns:AlteraEntradas101Response" />
+    </operation>
+    <operation name="ExcluiEntradas">
+      <input message="tns:ExcluiEntradas102Request" />
+      <output message="tns:ExcluiEntradas102Response" />
+    </operation>
+    <operation name="IncluiDevolucoesSaida">
+      <input message="tns:IncluiDevolucoesSaida103Request" />
+      <output message="tns:IncluiDevolucoesSaida103Response" />
+    </operation>
+    <operation name="AlteraDevolucoesSaida">
+      <input message="tns:AlteraDevolucoesSaida104Request" />
+      <output message="tns:AlteraDevolucoesSaida104Response" />
+    </operation>
+    <operation name="ExcluiDevolucoesSaida">
+      <input message="tns:ExcluiDevolucoesSaida105Request" />
+      <output message="tns:ExcluiDevolucoesSaida105Response" />
+    </operation>
+    <operation name="IncluiTransferenciasEstoque">
+      <input message="tns:IncluiTransferenciasEstoque106Request" />
+      <output message="tns:IncluiTransferenciasEstoque106Response" />
+    </operation>
+    <operation name="GetBoletoPDF">
+      <input message="tns:GetBoletoPDF107Request" />
+      <output message="tns:GetBoletoPDF107Response" />
+    </operation>
+    <operation name="RenegociarCRE">
+      <input message="tns:RenegociarCRE108Request" />
+      <output message="tns:RenegociarCRE108Response" />
+    </operation>
+    <operation name="GetColetas">
+      <input message="tns:GetColetas109Request" />
+      <output message="tns:GetColetas109Response" />
+    </operation>
+    <operation name="GetNFPDFStream">
+      <input message="tns:GetNFPDFStream110Request" />
+      <output message="tns:GetNFPDFStream110Response" />
+    </operation>
+    <operation name="GetNFPDFStreamDeContasAReceber">
+      <input message="tns:GetNFPDFStreamDeContasAReceber111Request" />
+      <output message="tns:GetNFPDFStreamDeContasAReceber111Response" />
+    </operation>
+    <operation name="GetObjetoFornecedorPorCodigo">
+      <input message="tns:GetObjetoFornecedorPorCodigo112Request" />
+      <output message="tns:GetObjetoFornecedorPorCodigo112Response" />
+    </operation>
+    <operation name="GetObjetoFornecedorPorCNPJCPF">
+      <input message="tns:GetObjetoFornecedorPorCNPJCPF113Request" />
+      <output message="tns:GetObjetoFornecedorPorCNPJCPF113Response" />
+    </operation>
+    <operation name="GetObjetoItemPorCodigo">
+      <input message="tns:GetObjetoItemPorCodigo114Request" />
+      <output message="tns:GetObjetoItemPorCodigo114Response" />
+    </operation>
+  </portType>
+  <binding name="IAGbinding" type="tns:IAG">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <operation name="ObtemCredencial">
+      <soap:operation soapAction="urn:AGIntf-IAG#ObtemCredencial" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="LiberaCredencial">
+      <soap:operation soapAction="urn:AGIntf-IAG#LiberaCredencial" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="Eco">
+      <soap:operation soapAction="urn:AGIntf-IAG#Eco" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="EcoContasAReceber">
+      <soap:operation soapAction="urn:AGIntf-IAG#EcoContasAReceber" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="EcoSaidas">
+      <soap:operation soapAction="urn:AGIntf-IAG#EcoSaidas" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="EcoRequisicoes">
+      <soap:operation soapAction="urn:AGIntf-IAG#EcoRequisicoes" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="EcoEntradas">
+      <soap:operation soapAction="urn:AGIntf-IAG#EcoEntradas" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="IncluiCliente">
+      <soap:operation soapAction="urn:AGIntf-IAG#IncluiCliente" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="AlteraCliente">
+      <soap:operation soapAction="urn:AGIntf-IAG#AlteraCliente" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="AlteraServicosCliente">
+      <soap:operation soapAction="urn:AGIntf-IAG#AlteraServicosCliente" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ExcluiCliente">
+      <soap:operation soapAction="urn:AGIntf-IAG#ExcluiCliente" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ExcluiClienteWithCNPJCPF">
+      <soap:operation soapAction="urn:AGIntf-IAG#ExcluiClienteWithCNPJCPF" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetSenhaPortalComCNPJCPF">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetSenhaPortalComCNPJCPF" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="SetSenhaPortalComCNPJCPF">
+      <soap:operation soapAction="urn:AGIntf-IAG#SetSenhaPortalComCNPJCPF" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="IncluiServico">
+      <soap:operation soapAction="urn:AGIntf-IAG#IncluiServico" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="AlteraServico">
+      <soap:operation soapAction="urn:AGIntf-IAG#AlteraServico" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ExcluiServico">
+      <soap:operation soapAction="urn:AGIntf-IAG#ExcluiServico" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="IncluiCentroDeResultado">
+      <soap:operation soapAction="urn:AGIntf-IAG#IncluiCentroDeResultado" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="AlteraCentroDeResultado">
+      <soap:operation soapAction="urn:AGIntf-IAG#AlteraCentroDeResultado" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ExcluiCentroDeResultado">
+      <soap:operation soapAction="urn:AGIntf-IAG#ExcluiCentroDeResultado" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="IncluiFornecedor">
+      <soap:operation soapAction="urn:AGIntf-IAG#IncluiFornecedor" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="AlteraFornecedor">
+      <soap:operation soapAction="urn:AGIntf-IAG#AlteraFornecedor" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ExcluiFornecedor">
+      <soap:operation soapAction="urn:AGIntf-IAG#ExcluiFornecedor" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="IncluiItem">
+      <soap:operation soapAction="urn:AGIntf-IAG#IncluiItem" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="AlteraItem">
+      <soap:operation soapAction="urn:AGIntf-IAG#AlteraItem" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ExcluiItem">
+      <soap:operation soapAction="urn:AGIntf-IAG#ExcluiItem" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="IncluiCentroEstoque">
+      <soap:operation soapAction="urn:AGIntf-IAG#IncluiCentroEstoque" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaReceitasDespesas">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaReceitasDespesas" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getClienteWithCPFCNPJ">
+      <soap:operation soapAction="urn:AGIntf-IAG#getClienteWithCPFCNPJ" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getObjetoClienteWithCPFCNPJ">
+      <soap:operation soapAction="urn:AGIntf-IAG#getObjetoClienteWithCPFCNPJ" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetObjetoClienteCodigo">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetObjetoClienteCodigo" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getClienteWithIdentificador">
+      <soap:operation soapAction="urn:AGIntf-IAG#getClienteWithIdentificador" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetObjetoClienteCPFCNPJ">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetObjetoClienteCPFCNPJ" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getListaClientes">
+      <soap:operation soapAction="urn:AGIntf-IAG#getListaClientes" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getListaClientesXML">
+      <soap:operation soapAction="urn:AGIntf-IAG#getListaClientesXML" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getListaFornecedores">
+      <soap:operation soapAction="urn:AGIntf-IAG#getListaFornecedores" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getListaFornecedoresXML">
+      <soap:operation soapAction="urn:AGIntf-IAG#getListaFornecedoresXML" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getBoletosAbertosClienteWithIdentificador">
+      <soap:operation soapAction="urn:AGIntf-IAG#getBoletosAbertosClienteWithIdentificador" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getDebitosWithCodigoCliente">
+      <soap:operation soapAction="urn:AGIntf-IAG#getDebitosWithCodigoCliente" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getTodosVencimentosComCodigoCliente">
+      <soap:operation soapAction="urn:AGIntf-IAG#getTodosVencimentosComCodigoCliente" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getObjetoContasaReceber">
+      <soap:operation soapAction="urn:AGIntf-IAG#getObjetoContasaReceber" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetContasaReceberWithDocumento">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetContasaReceberWithDocumento" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetContasaReceberWithBoleto">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetContasaReceberWithBoleto" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetVencimentosEmAbertoCRE">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetVencimentosEmAbertoCRE" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetBoletosAbertosClienteCPFCNPJ">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetBoletosAbertosClienteCPFCNPJ" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaEmpresas">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaEmpresas" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaEstabelecimentos">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaEstabelecimentos" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaCentrosDeResultado">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaCentrosDeResultado" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaModalidades">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaModalidades" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaServicos">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaServicos" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaBancos">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaBancos" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaMunicipiosArray">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaMunicipiosArray" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaAdministradorasDeCartoes">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaAdministradorasDeCartoes" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaAgentesCobradores">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaAgentesCobradores" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaGrupoClientes">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaGrupoClientes" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetValorEmAbertoVencimentosDiversosCRE">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetValorEmAbertoVencimentosDiversosCRE" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetValorEmAbertoVencimentosCartaoCRE">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetValorEmAbertoVencimentosCartaoCRE" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetValorEmAbertoVencimentosChequeCRE">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetValorEmAbertoVencimentosChequeCRE" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="getListaCFOP">
+      <soap:operation soapAction="urn:AGIntf-IAG#getListaCFOP" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaSTA">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaSTA" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaSTB">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaSTB" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaSTBSN">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaSTBSN" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaCentroDeResultado">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaCentroDeResultado" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaMunicipiosJSON">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaMunicipiosJSON" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaCentroEstoque">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaCentroEstoque" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetSaldoEstoqueAlmoxarifado">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetSaldoEstoqueAlmoxarifado" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetSaldoEstoqueAlmoxarifadoGeral">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetSaldoEstoqueAlmoxarifadoGeral" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetSaldoEstoqueAtivoComLote">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetSaldoEstoqueAtivoComLote" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetSaldoEstoqueAtivoComLoteXML">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetSaldoEstoqueAtivoComLoteXML" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaItens">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaItens" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaItensXML">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaItensXML" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaServicosFull">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaServicosFull" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaServicosXML">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaServicosXML" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaItensPorCentroEstoque">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaItensPorCentroEstoque" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaItensPorCentroEstoqueXML">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaItensPorCentroEstoqueXML" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaRequisitantes">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaRequisitantes" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetListaRequisicoes">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetListaRequisicoes" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="IncluiContasaReceber">
+      <soap:operation soapAction="urn:AGIntf-IAG#IncluiContasaReceber" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="AlteraContasaReceber">
+      <soap:operation soapAction="urn:AGIntf-IAG#AlteraContasaReceber" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ExcluiContasaReceber">
+      <soap:operation soapAction="urn:AGIntf-IAG#ExcluiContasaReceber" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="IncluiBaixaContasReceber">
+      <soap:operation soapAction="urn:AGIntf-IAG#IncluiBaixaContasReceber" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="IncluiBaixaContasReceberCartao">
+      <soap:operation soapAction="urn:AGIntf-IAG#IncluiBaixaContasReceberCartao" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="CancelaBaixaContasReceber">
+      <soap:operation soapAction="urn:AGIntf-IAG#CancelaBaixaContasReceber" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="CancelaBaixaContasReceberCartao">
+      <soap:operation soapAction="urn:AGIntf-IAG#CancelaBaixaContasReceberCartao" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="CancelaVencimentosDiversosEmAberto">
+      <soap:operation soapAction="urn:AGIntf-IAG#CancelaVencimentosDiversosEmAberto" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="AlteraVencimentoDiversoEmAberto">
+      <soap:operation soapAction="urn:AGIntf-IAG#AlteraVencimentoDiversoEmAberto" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="IncluiLancamento">
+      <soap:operation soapAction="urn:AGIntf-IAG#IncluiLancamento" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="IncluiAdiantamentoCliente">
+      <soap:operation soapAction="urn:AGIntf-IAG#IncluiAdiantamentoCliente" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="IncluiPedidoDeVenda">
+      <soap:operation soapAction="urn:AGIntf-IAG#IncluiPedidoDeVenda" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="AlteraPedidoDeVenda">
+      <soap:operation soapAction="urn:AGIntf-IAG#AlteraPedidoDeVenda" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ExcluiPedidoDeVenda">
+      <soap:operation soapAction="urn:AGIntf-IAG#ExcluiPedidoDeVenda" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ReplicaPedidoDeVenda">
+      <soap:operation soapAction="urn:AGIntf-IAG#ReplicaPedidoDeVenda" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="IncluiSaidas">
+      <soap:operation soapAction="urn:AGIntf-IAG#IncluiSaidas" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="AlteraSaidas">
+      <soap:operation soapAction="urn:AGIntf-IAG#AlteraSaidas" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ExcluiSaidas">
+      <soap:operation soapAction="urn:AGIntf-IAG#ExcluiSaidas" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="IncluiRequisicoes">
+      <soap:operation soapAction="urn:AGIntf-IAG#IncluiRequisicoes" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="AlteraRequisicoes">
+      <soap:operation soapAction="urn:AGIntf-IAG#AlteraRequisicoes" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ExcluiRequisicoes">
+      <soap:operation soapAction="urn:AGIntf-IAG#ExcluiRequisicoes" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="IncluirRequisicaoPorParametros">
+      <soap:operation soapAction="urn:AGIntf-IAG#IncluirRequisicaoPorParametros" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="IncluirItensRequisicaoPorParametros">
+      <soap:operation soapAction="urn:AGIntf-IAG#IncluirItensRequisicaoPorParametros" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="IncluiEntradas">
+      <soap:operation soapAction="urn:AGIntf-IAG#IncluiEntradas" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="AlteraEntradas">
+      <soap:operation soapAction="urn:AGIntf-IAG#AlteraEntradas" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ExcluiEntradas">
+      <soap:operation soapAction="urn:AGIntf-IAG#ExcluiEntradas" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="IncluiDevolucoesSaida">
+      <soap:operation soapAction="urn:AGIntf-IAG#IncluiDevolucoesSaida" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="AlteraDevolucoesSaida">
+      <soap:operation soapAction="urn:AGIntf-IAG#AlteraDevolucoesSaida" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="ExcluiDevolucoesSaida">
+      <soap:operation soapAction="urn:AGIntf-IAG#ExcluiDevolucoesSaida" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="IncluiTransferenciasEstoque">
+      <soap:operation soapAction="urn:AGIntf-IAG#IncluiTransferenciasEstoque" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetBoletoPDF">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetBoletoPDF" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="RenegociarCRE">
+      <soap:operation soapAction="urn:AGIntf-IAG#RenegociarCRE" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetColetas">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetColetas" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetNFPDFStream">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetNFPDFStream" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetNFPDFStreamDeContasAReceber">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetNFPDFStreamDeContasAReceber" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetObjetoFornecedorPorCodigo">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetObjetoFornecedorPorCodigo" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetObjetoFornecedorPorCNPJCPF">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetObjetoFornecedorPorCNPJCPF" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+    <operation name="GetObjetoItemPorCodigo">
+      <soap:operation soapAction="urn:AGIntf-IAG#GetObjetoItemPorCodigo" style="rpc" />
+      <input>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </input>
+      <output>
+        <soap:body use="encoded" namespace="urn:AGIntf-IAG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="IAGservice">
+    <port name="IAGPort" binding="tns:IAGbinding">
+      <soap:address location="http://10.1.254.1:8081/cgi-bin/webserviceag/agws.exe/soap/IAG" />
+    </port>
+  </service>
+</definitions>
