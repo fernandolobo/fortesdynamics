@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace Mensageria.FortesAG {
+namespace Mensageria.AGWebReference {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
@@ -280,7 +280,7 @@ namespace Mensageria.FortesAG {
         
         /// <remarks/>
         public IAGservice() {
-            this.Url = global::Mensageria.Properties.Settings.Default.Mensageria_FortesAG_IAGservice;
+            this.Url = global::Mensageria.Properties.Settings.Default.Mensageria_AGWebReference_IAGservice;
             if ((this.IsLocalFileSystemWebService(this.Url) == true)) {
                 this.UseDefaultCredentials = true;
                 this.useDefaultCredentialsSetExplicitly = false;

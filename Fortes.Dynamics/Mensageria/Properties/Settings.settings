@@ -2,7 +2,7 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Mensageria.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="Mensageria_FortesAG_IAGservice" Type="(Web Service URL)" Scope="Application">
+    <Setting Name="Mensageria_AGWebReference_IAGservice" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://10.1.254.1:8081/cgi-bin/webserviceag/agws.exe/soap/IAG</Value>
     </Setting>
   </Settings>

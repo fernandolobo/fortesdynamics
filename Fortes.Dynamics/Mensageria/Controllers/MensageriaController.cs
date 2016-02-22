@@ -4,37 +4,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Mensageria.Controllers
 {
-    public class OpportunityController : ApiController
+    public class MensageriaController : ApiController
     {
-        // GET: api/Opportunity
+        // GET: api/Mensageria
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET: api/Opportunity/5
+        // GET: api/Mensageria/5
         public string Get(int id)
         {
             return "value";
         }
 
-        //POST: api/Opportunity
-        public string Post([FromBody]string value)
+        // POST: api/Mensageria
+        public async Task<Opportunity> Post([FromBody]Opportunity value)
         {
-            return value;
+            Opportunity teste;
+            return await Task.Run(() => teste = value);
+            
         }
 
-        // PUT: api/Opportunity/5
+        // PUT: api/Mensageria/5
         public void Put(int id, [FromBody]string value)
         {
         }
 
-        // DELETE: api/Opportunity/5
+        // DELETE: api/Mensageria/5
         public void Delete(int id)
         {
         }

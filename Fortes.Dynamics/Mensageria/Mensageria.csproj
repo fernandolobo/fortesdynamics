@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{EEFB45A4-90A8-4232-9E80-A2FFDD01A647}</ProjectGuid>
+    <ProjectGuid>{A9E951FB-24CC-4513-8D88-2233813FB256}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -152,7 +152,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Opportunity\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -188,7 +187,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\OpportunityController.cs" />
+    <Compile Include="Controllers\MensageriaController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -200,7 +199,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Web References\FortesAG\Reference.cs">
+    <Compile Include="Web References\AGWebReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -264,30 +263,30 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <None Include="Web References\FortesAG\IAGservice.wsdl" />
-    <Content Include="Web References\FortesAG\Reference.map">
+    <None Include="Web References\AGWebReference\IAGservice.wsdl" />
+    <Content Include="Web References\AGWebReference\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <Content Include="Web References\FortesAG\TCliente.datasource">
+    <Content Include="Web References\AGWebReference\TCliente.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <Content Include="Web References\FortesAG\TContasaReceber.datasource">
+    <Content Include="Web References\AGWebReference\TContasaReceber.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <Content Include="Web References\FortesAG\TDadosColetaRemotable.datasource">
+    <Content Include="Web References\AGWebReference\TDadosColetaRemotable.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <Content Include="Web References\FortesAG\TDadosPDFNotaFiscal.datasource">
+    <Content Include="Web References\AGWebReference\TDadosPDFNotaFiscal.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <Content Include="Web References\FortesAG\TFornecedor.datasource">
+    <Content Include="Web References\AGWebReference\TFornecedor.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <Content Include="Web References\FortesAG\TItem.datasource">
+    <Content Include="Web References\AGWebReference\TItem.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <Content Include="Web References\FortesAG\TRequisicoes.datasource">
+    <Content Include="Web References\AGWebReference\TRequisicoes.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
   </ItemGroup>
@@ -308,14 +307,14 @@
   <ItemGroup>
     <WebReferenceUrl Include="http://10.1.254.1:8081/cgi-bin/webserviceag/agws.exe/wsdl/IAG">
       <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\FortesAG\</RelPath>
+      <RelPath>Web References\AGWebReference\</RelPath>
       <UpdateFromURL>http://10.1.254.1:8081/cgi-bin/webserviceag/agws.exe/wsdl/IAG</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
-      <CachedSettingsPropName>Mensageria_FortesAG_IAGservice</CachedSettingsPropName>
+      <CachedSettingsPropName>Mensageria_AGWebReference_IAGservice</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <PropertyGroup>
@@ -334,7 +333,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50587</DevelopmentServerPort>
+          <DevelopmentServerPort>49806</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:50587/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

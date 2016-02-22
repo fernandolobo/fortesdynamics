@@ -7,9 +7,6 @@ using System.Runtime.Serialization.Json;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 using Microsoft.Xrm.Sdk.Client;
-using Microsoft.Xrm.Sdk.Messages;
-using Microsoft.Xrm.Sdk.Metadata;
-using System.Web;
 
 namespace Webhook
 {
@@ -29,7 +26,7 @@ namespace Webhook
                     IOrganizationServiceFactory serviceFactory = (IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory));
                     IOrganizationService service = serviceFactory.CreateOrganizationService(context.UserId);
                     var contexto = new OrganizationServiceContext(service);
-                    
+
                     string json = "";
                     if (context.InputParameters.Contains("OpportunityClose") &&
                         context.InputParameters["OpportunityClose"] is Entity)
@@ -57,11 +54,13 @@ namespace Webhook
 
                         using (WebClient wc = new WebClient())
                         {
+                            string responseJson = string.Empty;
                             wc.Headers[HttpRequestHeader.ContentType] = "application/json";
-                            string HtmlResult = wc.UploadString(URI, json);
-                            //throw new InvalidPluginExecutionException(HtmlResult);
-                        }
+                            wc.Headers[HttpRequestHeader.Accept] = "application/json";
 
+
+                            string HtmlResult = wc.UploadString(URI, json);
+                        }
                     }
                 }
 
