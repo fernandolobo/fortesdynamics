@@ -44,6 +44,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common.Logging, Version=3.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.0.0\lib\net40\Common.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.0.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.0.0\lib\net40\Common.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -77,11 +85,16 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Quartz, Version=2.3.3.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Quartz.2.3.3\lib\net40\Quartz.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Messaging" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -200,7 +213,14 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Queue\MSMQ.cs" />
+    <Compile Include="Queue\MicrosoftQueue.cs" />
+    <Compile Include="ScheduledTasks\JobScheduler.cs" />
+    <Compile Include="ScheduledTasks\QueueJob.cs" />
+    <Compile Include="Web References\AGWebReferenceLocal\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\AGWebReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -240,6 +260,9 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -265,36 +288,83 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <None Include="Web References\AGWebReference\IAGservice.wsdl" />
-    <None Include="Web References\AGWebReference\Reference.map">
+    <None Include="Web References\AGWebReferenceLocal\IAGservice.wsdl" />
+    <Content Include="Web References\AGWebReferenceLocal\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <Content Include="Web References\AGWebReference\TCliente.datasource">
+    </Content>
+    <Content Include="Web References\AGWebReferenceLocal\TAdiantamentoCliente.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <Content Include="Web References\AGWebReference\TContasaReceber.datasource">
+    <Content Include="Web References\AGWebReferenceLocal\TClasseBase.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <Content Include="Web References\AGWebReference\TDadosColetaRemotable.datasource">
+    <Content Include="Web References\AGWebReferenceLocal\TCliente.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <Content Include="Web References\AGWebReference\TDadosPDFNotaFiscal.datasource">
+    <Content Include="Web References\AGWebReferenceLocal\TConhecimentoTransporte.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <Content Include="Web References\AGWebReference\TFornecedor.datasource">
+    <Content Include="Web References\AGWebReferenceLocal\TContasaPagar.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <Content Include="Web References\AGWebReference\TItem.datasource">
+    <Content Include="Web References\AGWebReferenceLocal\TContasaReceber.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-    <Content Include="Web References\AGWebReference\TRequisicoes.datasource">
+    <Content Include="Web References\AGWebReferenceLocal\TCupomFiscal.datasource">
       <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReferenceLocal\TDadosColetaRemotable.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReferenceLocal\TDadosPDFNotaFiscal.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReferenceLocal\TDadosPedidoDeCompraRemotable.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReferenceLocal\TFornecedor.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReferenceLocal\TInventario.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReferenceLocal\TItem.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReferenceLocal\TLancamentos.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReferenceLocal\TMapaResumo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReferenceLocal\TNotaFiscalMercadoria.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReferenceLocal\TNotasFiscaisSaida.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReferenceLocal\TOrcamentoFisicoFinanceiro.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReferenceLocal\TRequisicoes.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReferenceLocal\TTransferenciaEntreContas.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web References\AGWebReference\IAGservice.wsdl" />
+    <Content Include="Web References\AGWebReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
     <Content Include="Web References\AGWebReference\TAdiantamentoCliente.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
     <Content Include="Web References\AGWebReference\TClasseBase.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReference\TCliente.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
     <Content Include="Web References\AGWebReference\TConhecimentoTransporte.datasource">
@@ -303,13 +373,28 @@
     <Content Include="Web References\AGWebReference\TContasaPagar.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
+    <Content Include="Web References\AGWebReference\TContasaReceber.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
     <Content Include="Web References\AGWebReference\TCupomFiscal.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReference\TDadosColetaRemotable.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReference\TDadosPDFNotaFiscal.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
     <Content Include="Web References\AGWebReference\TDadosPedidoDeCompraRemotable.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
+    <Content Include="Web References\AGWebReference\TFornecedor.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
     <Content Include="Web References\AGWebReference\TInventario.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReference\TItem.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
     <Content Include="Web References\AGWebReference\TLancamentos.datasource">
@@ -327,12 +412,12 @@
     <Content Include="Web References\AGWebReference\TOrcamentoFisicoFinanceiro.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
+    <Content Include="Web References\AGWebReference\TRequisicoes.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
     <Content Include="Web References\AGWebReference\TTransferenciaEntreContas.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -357,6 +442,20 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>Mensageria_AGWebReference_IAGservice</CachedSettingsPropName>
     </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:8081/cgi-bin/AGWS.exe/wsdl/IAG">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\AGWebReferenceLocal\</RelPath>
+      <UpdateFromURL>http://localhost:8081/cgi-bin/AGWS.exe/wsdl/IAG</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Mensageria_AGWebReferenceLocal_IAGservice</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

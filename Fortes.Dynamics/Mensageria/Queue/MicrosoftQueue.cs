@@ -2,10 +2,10 @@
 
 namespace Mensageria.Queue
 {
-    public class MSMQ
+    public class MicrosoftQueue
     {
-        
-        public static void SendPrivate(string json)
+
+        public void SendPrivate(string json)
         {
             const string queue_name = @".\private$\dynamics";
             MessageQueue queue;
@@ -17,5 +17,12 @@ namespace Mensageria.Queue
             queue.Send(json);
         }
 
+        public string MessageReceiver()
+        {
+            const string queue_name = @".\private$\dynamics";
+            var queue = new MessageQueue(queue_name);
+            queue.Formatter = new XmlMessageFormatter(new[] { typeof(string) });
+            return queue.Receive().Body.ToString();
+        }
     }
 }

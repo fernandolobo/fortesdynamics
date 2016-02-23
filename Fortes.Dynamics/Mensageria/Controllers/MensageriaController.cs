@@ -26,12 +26,10 @@ namespace Mensageria.Controllers
         }
 
         // POST: api/Mensageria
-        public string Post([FromBody]Opportunity value)
+        public async Task<string> Post([FromBody]Opportunity value)
         {
-            //return await Task.Run(() => teste = value);
-            MSMQ.SendPrivate(JsonConvert.SerializeObject(value));
-            return string.Empty;
-
+            await Task.Run(() => new MicrosoftQueue().SendPrivate(JsonConvert.SerializeObject(value)));
+            return "Ok";
         }
 
         // PUT: api/Mensageria/5

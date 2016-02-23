@@ -47,7 +47,7 @@ namespace Webhook
                         {
                             DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(OpportunityLocal));
                             serializer.WriteObject(memoryStream, opp);
-                            json = Encoding.Default.GetString(memoryStream.ToArray());
+                            json = Encoding.UTF8.GetString(memoryStream.ToArray());
                         }
 
                         string URI = "http://posttestserver.com/post.php?dir=xiaoxiao";
@@ -55,9 +55,8 @@ namespace Webhook
                         using (WebClient wc = new WebClient())
                         {
                             string responseJson = string.Empty;
-                            wc.Headers[HttpRequestHeader.ContentType] = "application/json";
-                            wc.Headers[HttpRequestHeader.Accept] = "application/json";
-
+                            wc.Headers[HttpRequestHeader.ContentType] = "application/json; charset=utf-8";
+                            wc.Headers[HttpRequestHeader.Accept] = "application/json; charset=utf-8";
 
                             string HtmlResult = wc.UploadString(URI, json);
                         }

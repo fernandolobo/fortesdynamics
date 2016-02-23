@@ -32,5 +32,15 @@ namespace Mensageria.Properties {
                 return ((string)(this["Mensageria_AGWebReference_IAGservice"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:8081/cgi-bin/AGWS.exe/soap/IAG")]
+        public string Mensageria_AGWebReferenceLocal_IAGservice {
+            get {
+                return ((string)(this["Mensageria_AGWebReferenceLocal_IAGservice"]));
+            }
+        }
     }
 }
