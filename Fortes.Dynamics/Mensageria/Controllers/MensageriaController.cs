@@ -6,6 +6,8 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using Mensageria.Queue;
+using Newtonsoft.Json;
 
 namespace Mensageria.Controllers
 {
@@ -24,11 +26,12 @@ namespace Mensageria.Controllers
         }
 
         // POST: api/Mensageria
-        public async Task<Opportunity> Post([FromBody]Opportunity value)
+        public string Post([FromBody]Opportunity value)
         {
-            Opportunity teste;
-            return await Task.Run(() => teste = value);
-            
+            //return await Task.Run(() => teste = value);
+            MSMQ.SendPrivate(JsonConvert.SerializeObject(value));
+            return string.Empty;
+
         }
 
         // PUT: api/Mensageria/5

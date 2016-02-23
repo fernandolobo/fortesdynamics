@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="Mensageria_AGWebReference_IAGservice" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://10.1.254.1:8081/cgi-bin/webserviceag/agws.exe/soap/IAG</Value>
+      <Value Profile="(Default)">http://177.53.178.140:8081/cgi-bin/Webserviceag/agws.exe/soap/IAG</Value>
     </Setting>
   </Settings>
 </SettingsFile>

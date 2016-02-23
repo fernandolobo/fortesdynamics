@@ -26,7 +26,7 @@ namespace Mensageria.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://10.1.254.1:8081/cgi-bin/webserviceag/agws.exe/soap/IAG")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://177.53.178.140:8081/cgi-bin/Webserviceag/agws.exe/soap/IAG")]
         public string Mensageria_AGWebReference_IAGservice {
             get {
                 return ((string)(this["Mensageria_AGWebReference_IAGservice"]));

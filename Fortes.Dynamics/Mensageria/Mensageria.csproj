@@ -81,6 +81,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -199,6 +200,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Queue\MSMQ.cs" />
     <Compile Include="Web References\AGWebReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -264,10 +266,10 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <None Include="Web References\AGWebReference\IAGservice.wsdl" />
-    <Content Include="Web References\AGWebReference\Reference.map">
+    <None Include="Web References\AGWebReference\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Web References\AGWebReference\TCliente.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
@@ -289,6 +291,45 @@
     <Content Include="Web References\AGWebReference\TRequisicoes.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </Content>
+    <Content Include="Web References\AGWebReference\TAdiantamentoCliente.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReference\TClasseBase.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReference\TConhecimentoTransporte.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReference\TContasaPagar.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReference\TCupomFiscal.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReference\TDadosPedidoDeCompraRemotable.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReference\TInventario.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReference\TLancamentos.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReference\TMapaResumo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReference\TNotaFiscalMercadoria.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReference\TNotasFiscaisSaida.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReference\TOrcamentoFisicoFinanceiro.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\AGWebReference\TTransferenciaEntreContas.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -305,10 +346,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://10.1.254.1:8081/cgi-bin/webserviceag/agws.exe/wsdl/IAG">
+    <WebReferenceUrl Include="http://177.53.178.140:8081/cgi-bin/Webserviceag/agws.exe/wsdl/IAG">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\AGWebReference\</RelPath>
-      <UpdateFromURL>http://10.1.254.1:8081/cgi-bin/webserviceag/agws.exe/wsdl/IAG</UpdateFromURL>
+      <UpdateFromURL>http://177.53.178.140:8081/cgi-bin/Webserviceag/agws.exe/wsdl/IAG</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>

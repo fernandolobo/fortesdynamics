@@ -27,26 +27,54 @@ namespace Mensageria.AGWebReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="IAGbinding", Namespace="http://tempuri.org/")]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TDadosPedidoCompraItemRemotable))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TDadosPedidoDeCompraRemotable))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(TDadosColetaFornecedorRemotable))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(TDadosColetaItemRemotable))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(TDadosColetaRemotable))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TComplementoDoInventario))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TVencimentosaPagar))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(TItensTES))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(TItensDevolucoesSaida))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TItensNotaFiscalSaida))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TDetalheTransporteNotaMercadoria))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TOutrosValoresNotaMercadoria))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TICMSDiferencialNotaMercadoria))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TICMSSubstNotaMercadoria))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TICMSAntecipadoNotaMercadoria))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TICMSIPINotaMercadoria))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TProdutoNotaMercadoria))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TDetalhamentoNotaMercadoria))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TApuracoesNotaMercadoria))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TTitulosNotaMercadoria))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TDetalhamentoConhecimento))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TApuracaoConhecimento))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TOutrosValoresConhecimento))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TNotasFiscaisConhecimento))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TOutrosValoresCupomFiscal))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TISSCupomFiscal))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TICMSCupomFiscal))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TProdutoCupom))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TDetalhamentoSNCupomFiscal))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TApuracaoCupomFiscal))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TContasDeOrcamento))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(TItensPedidoDeVenda))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(TServicosPedidoDeVenda))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(TRateioLancamentos))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(TItensEntrada))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(TItensRequisicao))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(TItensSaida))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TRateiosaReceber))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(TItensaReceber))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(TComissionadosServicosaReceber))]
-    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TServicosaReceber))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(TVencimentosCartaoaReceber))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(TVencimentosChequeaReceber))]
     [System.Xml.Serialization.SoapIncludeAttribute(typeof(TVencimentosaReceber))]
     public partial class IAGservice : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback ObtemCredencialOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetClasseBaseOperationCompleted;
         
         private System.Threading.SendOrPostCallback LiberaCredencialOperationCompleted;
         
@@ -64,6 +92,12 @@ namespace Mensageria.AGWebReference {
         
         private System.Threading.SendOrPostCallback AlteraClienteOperationCompleted;
         
+        private System.Threading.SendOrPostCallback IncluirClienteComJSONOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AlterarClienteComJSONOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExcluirClienteComJSONOperationCompleted;
+        
         private System.Threading.SendOrPostCallback AlteraServicosClienteOperationCompleted;
         
         private System.Threading.SendOrPostCallback ExcluiClienteOperationCompleted;
@@ -80,6 +114,12 @@ namespace Mensageria.AGWebReference {
         
         private System.Threading.SendOrPostCallback ExcluiServicoOperationCompleted;
         
+        private System.Threading.SendOrPostCallback IncluiReceitaDespesaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AlteraReceitaDespesaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExcluiReceitaDespesaOperationCompleted;
+        
         private System.Threading.SendOrPostCallback IncluiCentroDeResultadoOperationCompleted;
         
         private System.Threading.SendOrPostCallback AlteraCentroDeResultadoOperationCompleted;
@@ -92,11 +132,23 @@ namespace Mensageria.AGWebReference {
         
         private System.Threading.SendOrPostCallback ExcluiFornecedorOperationCompleted;
         
+        private System.Threading.SendOrPostCallback IncluirFornecedorComJSONOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AlterarFornecedorComJSONOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExcluirFornecedorComJSONOperationCompleted;
+        
         private System.Threading.SendOrPostCallback IncluiItemOperationCompleted;
         
         private System.Threading.SendOrPostCallback AlteraItemOperationCompleted;
         
         private System.Threading.SendOrPostCallback ExcluiItemOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback IncluirItemComJSONOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AlterarItemComJSONOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExcluirItemComJSONOperationCompleted;
         
         private System.Threading.SendOrPostCallback IncluiCentroEstoqueOperationCompleted;
         
@@ -127,6 +179,12 @@ namespace Mensageria.AGWebReference {
         private System.Threading.SendOrPostCallback getTodosVencimentosComCodigoClienteOperationCompleted;
         
         private System.Threading.SendOrPostCallback getObjetoContasaReceberOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getObjetoContasaPagarOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback IncluirBaixaContasaPagarOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback CancelarBaixaContasaPagarOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetContasaReceberWithDocumentoOperationCompleted;
         
@@ -200,11 +258,15 @@ namespace Mensageria.AGWebReference {
         
         private System.Threading.SendOrPostCallback GetListaRequisicoesOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GetRequisicaoOperationCompleted;
+        
         private System.Threading.SendOrPostCallback IncluiContasaReceberOperationCompleted;
         
         private System.Threading.SendOrPostCallback AlteraContasaReceberOperationCompleted;
         
         private System.Threading.SendOrPostCallback ExcluiContasaReceberOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback IncluirContasaReceberComJSONOperationCompleted;
         
         private System.Threading.SendOrPostCallback IncluiBaixaContasReceberOperationCompleted;
         
@@ -220,7 +282,25 @@ namespace Mensageria.AGWebReference {
         
         private System.Threading.SendOrPostCallback IncluiLancamentoOperationCompleted;
         
+        private System.Threading.SendOrPostCallback ExcluiLancamentoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback IncluirLancamentoComJSONOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExcluirLancamentoComJSONOperationCompleted;
+        
         private System.Threading.SendOrPostCallback IncluiAdiantamentoClienteOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExcluiAdiantamentoClienteOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetObjAdiantamentoClienteOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetObjAdiantamentoClienteIDWSOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback IncluiInventarioOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExcluiInventarioOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetObjInventarioOperationCompleted;
         
         private System.Threading.SendOrPostCallback IncluiPedidoDeVendaOperationCompleted;
         
@@ -229,6 +309,66 @@ namespace Mensageria.AGWebReference {
         private System.Threading.SendOrPostCallback ExcluiPedidoDeVendaOperationCompleted;
         
         private System.Threading.SendOrPostCallback ReplicaPedidoDeVendaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback IncluiOrcamentoFisicoFinanceiroOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExcluiOrcamentoFisicoFinanceiroOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AlteraOrcamentoFisicoFinanceiroOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetItemDoOrcamentoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback IncluiTransferenciaEntreContasOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AlteraTransferenciaEntreContasOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExcluiTransferenciaEntreContasOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetTransferenciaEntreContasOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback IncluirTransferenciaEntreContasComJSONOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback AlterarTransferenciaEntreContasComJSONOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExcluirTransferenciaEntreContasComJSONOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback IncluiContasaPagarOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExcluiContasaPagarOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback IncluirMapaResumoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExcluirMapaResumoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetMapaResumoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback IncluirCupomFiscalOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExcluirCupomFiscalOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetCupomFiscalOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback IncluirConhecimentoTransporteOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExcluirConhecimentoTransporteOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetConhecimentoTransporteOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback IncluirNotaFiscalMercadoriaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExcluirNotaFiscalMercadoriaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetNotaFiscalMercadoriaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetNotaFiscalMercadoriaIDWSOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback IncluirNotaFiscalSaidaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ExcluirNotaFiscalSaidaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetNotaFiscalSaidaOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetNotaFiscalSaidaIDWSOperationCompleted;
         
         private System.Threading.SendOrPostCallback IncluiSaidasOperationCompleted;
         
@@ -266,6 +406,8 @@ namespace Mensageria.AGWebReference {
         
         private System.Threading.SendOrPostCallback GetColetasOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GetPedidosDaColetaOperationCompleted;
+        
         private System.Threading.SendOrPostCallback GetNFPDFStreamOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetNFPDFStreamDeContasAReceberOperationCompleted;
@@ -275,6 +417,42 @@ namespace Mensageria.AGWebReference {
         private System.Threading.SendOrPostCallback GetObjetoFornecedorPorCNPJCPFOperationCompleted;
         
         private System.Threading.SendOrPostCallback GetObjetoItemPorCodigoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback BloqueiaClientesInadimplentesFortesOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetJsonItemPorCodigoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetJsonFornecedorPorCodigoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetJsonClientePorCodigoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetJsonContasAReceberPorCodigoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetJsonLancamentoPorCodigoOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetJsonTransferenciaEntreContasOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetListaTipoDocumentoJsonOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetListaPrazosPagamentoJsonOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetListaUnidadeMedidaJsonOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getObjetoContasaReceberIDWSOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetObjContasaPagarIDWSOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback getObjetoLancamentoIDWSOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetTransferenciaEntreContasIDWSOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetMapaResumoIDWSOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetCupomFiscalIDWSOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetConhecimentoTransporteIDWSOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GetObjInventarioIDWSOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -318,6 +496,9 @@ namespace Mensageria.AGWebReference {
         public event ObtemCredencialCompletedEventHandler ObtemCredencialCompleted;
         
         /// <remarks/>
+        public event GetClasseBaseCompletedEventHandler GetClasseBaseCompleted;
+        
+        /// <remarks/>
         public event LiberaCredencialCompletedEventHandler LiberaCredencialCompleted;
         
         /// <remarks/>
@@ -340,6 +521,15 @@ namespace Mensageria.AGWebReference {
         
         /// <remarks/>
         public event AlteraClienteCompletedEventHandler AlteraClienteCompleted;
+        
+        /// <remarks/>
+        public event IncluirClienteComJSONCompletedEventHandler IncluirClienteComJSONCompleted;
+        
+        /// <remarks/>
+        public event AlterarClienteComJSONCompletedEventHandler AlterarClienteComJSONCompleted;
+        
+        /// <remarks/>
+        public event ExcluirClienteComJSONCompletedEventHandler ExcluirClienteComJSONCompleted;
         
         /// <remarks/>
         public event AlteraServicosClienteCompletedEventHandler AlteraServicosClienteCompleted;
@@ -366,6 +556,15 @@ namespace Mensageria.AGWebReference {
         public event ExcluiServicoCompletedEventHandler ExcluiServicoCompleted;
         
         /// <remarks/>
+        public event IncluiReceitaDespesaCompletedEventHandler IncluiReceitaDespesaCompleted;
+        
+        /// <remarks/>
+        public event AlteraReceitaDespesaCompletedEventHandler AlteraReceitaDespesaCompleted;
+        
+        /// <remarks/>
+        public event ExcluiReceitaDespesaCompletedEventHandler ExcluiReceitaDespesaCompleted;
+        
+        /// <remarks/>
         public event IncluiCentroDeResultadoCompletedEventHandler IncluiCentroDeResultadoCompleted;
         
         /// <remarks/>
@@ -384,6 +583,15 @@ namespace Mensageria.AGWebReference {
         public event ExcluiFornecedorCompletedEventHandler ExcluiFornecedorCompleted;
         
         /// <remarks/>
+        public event IncluirFornecedorComJSONCompletedEventHandler IncluirFornecedorComJSONCompleted;
+        
+        /// <remarks/>
+        public event AlterarFornecedorComJSONCompletedEventHandler AlterarFornecedorComJSONCompleted;
+        
+        /// <remarks/>
+        public event ExcluirFornecedorComJSONCompletedEventHandler ExcluirFornecedorComJSONCompleted;
+        
+        /// <remarks/>
         public event IncluiItemCompletedEventHandler IncluiItemCompleted;
         
         /// <remarks/>
@@ -391,6 +599,15 @@ namespace Mensageria.AGWebReference {
         
         /// <remarks/>
         public event ExcluiItemCompletedEventHandler ExcluiItemCompleted;
+        
+        /// <remarks/>
+        public event IncluirItemComJSONCompletedEventHandler IncluirItemComJSONCompleted;
+        
+        /// <remarks/>
+        public event AlterarItemComJSONCompletedEventHandler AlterarItemComJSONCompleted;
+        
+        /// <remarks/>
+        public event ExcluirItemComJSONCompletedEventHandler ExcluirItemComJSONCompleted;
         
         /// <remarks/>
         public event IncluiCentroEstoqueCompletedEventHandler IncluiCentroEstoqueCompleted;
@@ -436,6 +653,15 @@ namespace Mensageria.AGWebReference {
         
         /// <remarks/>
         public event getObjetoContasaReceberCompletedEventHandler getObjetoContasaReceberCompleted;
+        
+        /// <remarks/>
+        public event getObjetoContasaPagarCompletedEventHandler getObjetoContasaPagarCompleted;
+        
+        /// <remarks/>
+        public event IncluirBaixaContasaPagarCompletedEventHandler IncluirBaixaContasaPagarCompleted;
+        
+        /// <remarks/>
+        public event CancelarBaixaContasaPagarCompletedEventHandler CancelarBaixaContasaPagarCompleted;
         
         /// <remarks/>
         public event GetContasaReceberWithDocumentoCompletedEventHandler GetContasaReceberWithDocumentoCompleted;
@@ -546,6 +772,9 @@ namespace Mensageria.AGWebReference {
         public event GetListaRequisicoesCompletedEventHandler GetListaRequisicoesCompleted;
         
         /// <remarks/>
+        public event GetRequisicaoCompletedEventHandler GetRequisicaoCompleted;
+        
+        /// <remarks/>
         public event IncluiContasaReceberCompletedEventHandler IncluiContasaReceberCompleted;
         
         /// <remarks/>
@@ -553,6 +782,9 @@ namespace Mensageria.AGWebReference {
         
         /// <remarks/>
         public event ExcluiContasaReceberCompletedEventHandler ExcluiContasaReceberCompleted;
+        
+        /// <remarks/>
+        public event IncluirContasaReceberComJSONCompletedEventHandler IncluirContasaReceberComJSONCompleted;
         
         /// <remarks/>
         public event IncluiBaixaContasReceberCompletedEventHandler IncluiBaixaContasReceberCompleted;
@@ -576,7 +808,34 @@ namespace Mensageria.AGWebReference {
         public event IncluiLancamentoCompletedEventHandler IncluiLancamentoCompleted;
         
         /// <remarks/>
+        public event ExcluiLancamentoCompletedEventHandler ExcluiLancamentoCompleted;
+        
+        /// <remarks/>
+        public event IncluirLancamentoComJSONCompletedEventHandler IncluirLancamentoComJSONCompleted;
+        
+        /// <remarks/>
+        public event ExcluirLancamentoComJSONCompletedEventHandler ExcluirLancamentoComJSONCompleted;
+        
+        /// <remarks/>
         public event IncluiAdiantamentoClienteCompletedEventHandler IncluiAdiantamentoClienteCompleted;
+        
+        /// <remarks/>
+        public event ExcluiAdiantamentoClienteCompletedEventHandler ExcluiAdiantamentoClienteCompleted;
+        
+        /// <remarks/>
+        public event GetObjAdiantamentoClienteCompletedEventHandler GetObjAdiantamentoClienteCompleted;
+        
+        /// <remarks/>
+        public event GetObjAdiantamentoClienteIDWSCompletedEventHandler GetObjAdiantamentoClienteIDWSCompleted;
+        
+        /// <remarks/>
+        public event IncluiInventarioCompletedEventHandler IncluiInventarioCompleted;
+        
+        /// <remarks/>
+        public event ExcluiInventarioCompletedEventHandler ExcluiInventarioCompleted;
+        
+        /// <remarks/>
+        public event GetObjInventarioCompletedEventHandler GetObjInventarioCompleted;
         
         /// <remarks/>
         public event IncluiPedidoDeVendaCompletedEventHandler IncluiPedidoDeVendaCompleted;
@@ -589,6 +848,96 @@ namespace Mensageria.AGWebReference {
         
         /// <remarks/>
         public event ReplicaPedidoDeVendaCompletedEventHandler ReplicaPedidoDeVendaCompleted;
+        
+        /// <remarks/>
+        public event IncluiOrcamentoFisicoFinanceiroCompletedEventHandler IncluiOrcamentoFisicoFinanceiroCompleted;
+        
+        /// <remarks/>
+        public event ExcluiOrcamentoFisicoFinanceiroCompletedEventHandler ExcluiOrcamentoFisicoFinanceiroCompleted;
+        
+        /// <remarks/>
+        public event AlteraOrcamentoFisicoFinanceiroCompletedEventHandler AlteraOrcamentoFisicoFinanceiroCompleted;
+        
+        /// <remarks/>
+        public event GetItemDoOrcamentoCompletedEventHandler GetItemDoOrcamentoCompleted;
+        
+        /// <remarks/>
+        public event IncluiTransferenciaEntreContasCompletedEventHandler IncluiTransferenciaEntreContasCompleted;
+        
+        /// <remarks/>
+        public event AlteraTransferenciaEntreContasCompletedEventHandler AlteraTransferenciaEntreContasCompleted;
+        
+        /// <remarks/>
+        public event ExcluiTransferenciaEntreContasCompletedEventHandler ExcluiTransferenciaEntreContasCompleted;
+        
+        /// <remarks/>
+        public event GetTransferenciaEntreContasCompletedEventHandler GetTransferenciaEntreContasCompleted;
+        
+        /// <remarks/>
+        public event IncluirTransferenciaEntreContasComJSONCompletedEventHandler IncluirTransferenciaEntreContasComJSONCompleted;
+        
+        /// <remarks/>
+        public event AlterarTransferenciaEntreContasComJSONCompletedEventHandler AlterarTransferenciaEntreContasComJSONCompleted;
+        
+        /// <remarks/>
+        public event ExcluirTransferenciaEntreContasComJSONCompletedEventHandler ExcluirTransferenciaEntreContasComJSONCompleted;
+        
+        /// <remarks/>
+        public event IncluiContasaPagarCompletedEventHandler IncluiContasaPagarCompleted;
+        
+        /// <remarks/>
+        public event ExcluiContasaPagarCompletedEventHandler ExcluiContasaPagarCompleted;
+        
+        /// <remarks/>
+        public event IncluirMapaResumoCompletedEventHandler IncluirMapaResumoCompleted;
+        
+        /// <remarks/>
+        public event ExcluirMapaResumoCompletedEventHandler ExcluirMapaResumoCompleted;
+        
+        /// <remarks/>
+        public event GetMapaResumoCompletedEventHandler GetMapaResumoCompleted;
+        
+        /// <remarks/>
+        public event IncluirCupomFiscalCompletedEventHandler IncluirCupomFiscalCompleted;
+        
+        /// <remarks/>
+        public event ExcluirCupomFiscalCompletedEventHandler ExcluirCupomFiscalCompleted;
+        
+        /// <remarks/>
+        public event GetCupomFiscalCompletedEventHandler GetCupomFiscalCompleted;
+        
+        /// <remarks/>
+        public event IncluirConhecimentoTransporteCompletedEventHandler IncluirConhecimentoTransporteCompleted;
+        
+        /// <remarks/>
+        public event ExcluirConhecimentoTransporteCompletedEventHandler ExcluirConhecimentoTransporteCompleted;
+        
+        /// <remarks/>
+        public event GetConhecimentoTransporteCompletedEventHandler GetConhecimentoTransporteCompleted;
+        
+        /// <remarks/>
+        public event IncluirNotaFiscalMercadoriaCompletedEventHandler IncluirNotaFiscalMercadoriaCompleted;
+        
+        /// <remarks/>
+        public event ExcluirNotaFiscalMercadoriaCompletedEventHandler ExcluirNotaFiscalMercadoriaCompleted;
+        
+        /// <remarks/>
+        public event GetNotaFiscalMercadoriaCompletedEventHandler GetNotaFiscalMercadoriaCompleted;
+        
+        /// <remarks/>
+        public event GetNotaFiscalMercadoriaIDWSCompletedEventHandler GetNotaFiscalMercadoriaIDWSCompleted;
+        
+        /// <remarks/>
+        public event IncluirNotaFiscalSaidaCompletedEventHandler IncluirNotaFiscalSaidaCompleted;
+        
+        /// <remarks/>
+        public event ExcluirNotaFiscalSaidaCompletedEventHandler ExcluirNotaFiscalSaidaCompleted;
+        
+        /// <remarks/>
+        public event GetNotaFiscalSaidaCompletedEventHandler GetNotaFiscalSaidaCompleted;
+        
+        /// <remarks/>
+        public event GetNotaFiscalSaidaIDWSCompletedEventHandler GetNotaFiscalSaidaIDWSCompleted;
         
         /// <remarks/>
         public event IncluiSaidasCompletedEventHandler IncluiSaidasCompleted;
@@ -645,6 +994,9 @@ namespace Mensageria.AGWebReference {
         public event GetColetasCompletedEventHandler GetColetasCompleted;
         
         /// <remarks/>
+        public event GetPedidosDaColetaCompletedEventHandler GetPedidosDaColetaCompleted;
+        
+        /// <remarks/>
         public event GetNFPDFStreamCompletedEventHandler GetNFPDFStreamCompleted;
         
         /// <remarks/>
@@ -658,6 +1010,60 @@ namespace Mensageria.AGWebReference {
         
         /// <remarks/>
         public event GetObjetoItemPorCodigoCompletedEventHandler GetObjetoItemPorCodigoCompleted;
+        
+        /// <remarks/>
+        public event BloqueiaClientesInadimplentesFortesCompletedEventHandler BloqueiaClientesInadimplentesFortesCompleted;
+        
+        /// <remarks/>
+        public event GetJsonItemPorCodigoCompletedEventHandler GetJsonItemPorCodigoCompleted;
+        
+        /// <remarks/>
+        public event GetJsonFornecedorPorCodigoCompletedEventHandler GetJsonFornecedorPorCodigoCompleted;
+        
+        /// <remarks/>
+        public event GetJsonClientePorCodigoCompletedEventHandler GetJsonClientePorCodigoCompleted;
+        
+        /// <remarks/>
+        public event GetJsonContasAReceberPorCodigoCompletedEventHandler GetJsonContasAReceberPorCodigoCompleted;
+        
+        /// <remarks/>
+        public event GetJsonLancamentoPorCodigoCompletedEventHandler GetJsonLancamentoPorCodigoCompleted;
+        
+        /// <remarks/>
+        public event GetJsonTransferenciaEntreContasCompletedEventHandler GetJsonTransferenciaEntreContasCompleted;
+        
+        /// <remarks/>
+        public event GetListaTipoDocumentoJsonCompletedEventHandler GetListaTipoDocumentoJsonCompleted;
+        
+        /// <remarks/>
+        public event GetListaPrazosPagamentoJsonCompletedEventHandler GetListaPrazosPagamentoJsonCompleted;
+        
+        /// <remarks/>
+        public event GetListaUnidadeMedidaJsonCompletedEventHandler GetListaUnidadeMedidaJsonCompleted;
+        
+        /// <remarks/>
+        public event getObjetoContasaReceberIDWSCompletedEventHandler getObjetoContasaReceberIDWSCompleted;
+        
+        /// <remarks/>
+        public event GetObjContasaPagarIDWSCompletedEventHandler GetObjContasaPagarIDWSCompleted;
+        
+        /// <remarks/>
+        public event getObjetoLancamentoIDWSCompletedEventHandler getObjetoLancamentoIDWSCompleted;
+        
+        /// <remarks/>
+        public event GetTransferenciaEntreContasIDWSCompletedEventHandler GetTransferenciaEntreContasIDWSCompleted;
+        
+        /// <remarks/>
+        public event GetMapaResumoIDWSCompletedEventHandler GetMapaResumoIDWSCompleted;
+        
+        /// <remarks/>
+        public event GetCupomFiscalIDWSCompletedEventHandler GetCupomFiscalIDWSCompleted;
+        
+        /// <remarks/>
+        public event GetConhecimentoTransporteIDWSCompletedEventHandler GetConhecimentoTransporteIDWSCompleted;
+        
+        /// <remarks/>
+        public event GetObjInventarioIDWSCompletedEventHandler GetObjInventarioIDWSCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#ObtemCredencial", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
@@ -692,6 +1098,34 @@ namespace Mensageria.AGWebReference {
             if ((this.ObtemCredencialCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.ObtemCredencialCompleted(this, new ObtemCredencialCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetClasseBase", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TClasseBase GetClasseBase() {
+            object[] results = this.Invoke("GetClasseBase", new object[0]);
+            return ((TClasseBase)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetClasseBaseAsync() {
+            this.GetClasseBaseAsync(null);
+        }
+        
+        /// <remarks/>
+        public void GetClasseBaseAsync(object userState) {
+            if ((this.GetClasseBaseOperationCompleted == null)) {
+                this.GetClasseBaseOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetClasseBaseOperationCompleted);
+            }
+            this.InvokeAsync("GetClasseBase", new object[0], this.GetClasseBaseOperationCompleted, userState);
+        }
+        
+        private void OnGetClasseBaseOperationCompleted(object arg) {
+            if ((this.GetClasseBaseCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetClasseBaseCompleted(this, new GetClasseBaseCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -930,6 +1364,96 @@ namespace Mensageria.AGWebReference {
             if ((this.AlteraClienteCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.AlteraClienteCompleted(this, new AlteraClienteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#IncluirClienteComJSON", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string IncluirClienteComJSON(string JSON) {
+            object[] results = this.Invoke("IncluirClienteComJSON", new object[] {
+                        JSON});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IncluirClienteComJSONAsync(string JSON) {
+            this.IncluirClienteComJSONAsync(JSON, null);
+        }
+        
+        /// <remarks/>
+        public void IncluirClienteComJSONAsync(string JSON, object userState) {
+            if ((this.IncluirClienteComJSONOperationCompleted == null)) {
+                this.IncluirClienteComJSONOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIncluirClienteComJSONOperationCompleted);
+            }
+            this.InvokeAsync("IncluirClienteComJSON", new object[] {
+                        JSON}, this.IncluirClienteComJSONOperationCompleted, userState);
+        }
+        
+        private void OnIncluirClienteComJSONOperationCompleted(object arg) {
+            if ((this.IncluirClienteComJSONCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IncluirClienteComJSONCompleted(this, new IncluirClienteComJSONCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#AlterarClienteComJSON", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string AlterarClienteComJSON(string JSON) {
+            object[] results = this.Invoke("AlterarClienteComJSON", new object[] {
+                        JSON});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void AlterarClienteComJSONAsync(string JSON) {
+            this.AlterarClienteComJSONAsync(JSON, null);
+        }
+        
+        /// <remarks/>
+        public void AlterarClienteComJSONAsync(string JSON, object userState) {
+            if ((this.AlterarClienteComJSONOperationCompleted == null)) {
+                this.AlterarClienteComJSONOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAlterarClienteComJSONOperationCompleted);
+            }
+            this.InvokeAsync("AlterarClienteComJSON", new object[] {
+                        JSON}, this.AlterarClienteComJSONOperationCompleted, userState);
+        }
+        
+        private void OnAlterarClienteComJSONOperationCompleted(object arg) {
+            if ((this.AlterarClienteComJSONCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AlterarClienteComJSONCompleted(this, new AlterarClienteComJSONCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#ExcluirClienteComJSON", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string ExcluirClienteComJSON(string JSON) {
+            object[] results = this.Invoke("ExcluirClienteComJSON", new object[] {
+                        JSON});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ExcluirClienteComJSONAsync(string JSON) {
+            this.ExcluirClienteComJSONAsync(JSON, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluirClienteComJSONAsync(string JSON, object userState) {
+            if ((this.ExcluirClienteComJSONOperationCompleted == null)) {
+                this.ExcluirClienteComJSONOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluirClienteComJSONOperationCompleted);
+            }
+            this.InvokeAsync("ExcluirClienteComJSON", new object[] {
+                        JSON}, this.ExcluirClienteComJSONOperationCompleted, userState);
+        }
+        
+        private void OnExcluirClienteComJSONOperationCompleted(object arg) {
+            if ((this.ExcluirClienteComJSONCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluirClienteComJSONCompleted(this, new ExcluirClienteComJSONCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1178,6 +1702,96 @@ namespace Mensageria.AGWebReference {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#IncluiReceitaDespesa", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string IncluiReceitaDespesa(TReceitasDespesas ReceitaDespesa) {
+            object[] results = this.Invoke("IncluiReceitaDespesa", new object[] {
+                        ReceitaDespesa});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IncluiReceitaDespesaAsync(TReceitasDespesas ReceitaDespesa) {
+            this.IncluiReceitaDespesaAsync(ReceitaDespesa, null);
+        }
+        
+        /// <remarks/>
+        public void IncluiReceitaDespesaAsync(TReceitasDespesas ReceitaDespesa, object userState) {
+            if ((this.IncluiReceitaDespesaOperationCompleted == null)) {
+                this.IncluiReceitaDespesaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIncluiReceitaDespesaOperationCompleted);
+            }
+            this.InvokeAsync("IncluiReceitaDespesa", new object[] {
+                        ReceitaDespesa}, this.IncluiReceitaDespesaOperationCompleted, userState);
+        }
+        
+        private void OnIncluiReceitaDespesaOperationCompleted(object arg) {
+            if ((this.IncluiReceitaDespesaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IncluiReceitaDespesaCompleted(this, new IncluiReceitaDespesaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#AlteraReceitaDespesa", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string AlteraReceitaDespesa(TReceitasDespesas ReceitaDespesa) {
+            object[] results = this.Invoke("AlteraReceitaDespesa", new object[] {
+                        ReceitaDespesa});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void AlteraReceitaDespesaAsync(TReceitasDespesas ReceitaDespesa) {
+            this.AlteraReceitaDespesaAsync(ReceitaDespesa, null);
+        }
+        
+        /// <remarks/>
+        public void AlteraReceitaDespesaAsync(TReceitasDespesas ReceitaDespesa, object userState) {
+            if ((this.AlteraReceitaDespesaOperationCompleted == null)) {
+                this.AlteraReceitaDespesaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAlteraReceitaDespesaOperationCompleted);
+            }
+            this.InvokeAsync("AlteraReceitaDespesa", new object[] {
+                        ReceitaDespesa}, this.AlteraReceitaDespesaOperationCompleted, userState);
+        }
+        
+        private void OnAlteraReceitaDespesaOperationCompleted(object arg) {
+            if ((this.AlteraReceitaDespesaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AlteraReceitaDespesaCompleted(this, new AlteraReceitaDespesaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#ExcluiReceitaDespesa", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string ExcluiReceitaDespesa(TReceitasDespesas ReceitaDespesa) {
+            object[] results = this.Invoke("ExcluiReceitaDespesa", new object[] {
+                        ReceitaDespesa});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ExcluiReceitaDespesaAsync(TReceitasDespesas ReceitaDespesa) {
+            this.ExcluiReceitaDespesaAsync(ReceitaDespesa, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluiReceitaDespesaAsync(TReceitasDespesas ReceitaDespesa, object userState) {
+            if ((this.ExcluiReceitaDespesaOperationCompleted == null)) {
+                this.ExcluiReceitaDespesaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluiReceitaDespesaOperationCompleted);
+            }
+            this.InvokeAsync("ExcluiReceitaDespesa", new object[] {
+                        ReceitaDespesa}, this.ExcluiReceitaDespesaOperationCompleted, userState);
+        }
+        
+        private void OnExcluiReceitaDespesaOperationCompleted(object arg) {
+            if ((this.ExcluiReceitaDespesaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluiReceitaDespesaCompleted(this, new ExcluiReceitaDespesaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#IncluiCentroDeResultado", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
         [return: System.Xml.Serialization.SoapElementAttribute("return")]
         public string IncluiCentroDeResultado(TCentroDeResultado CentroDeResultado) {
@@ -1358,6 +1972,96 @@ namespace Mensageria.AGWebReference {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#IncluirFornecedorComJSON", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string IncluirFornecedorComJSON(string JSON) {
+            object[] results = this.Invoke("IncluirFornecedorComJSON", new object[] {
+                        JSON});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IncluirFornecedorComJSONAsync(string JSON) {
+            this.IncluirFornecedorComJSONAsync(JSON, null);
+        }
+        
+        /// <remarks/>
+        public void IncluirFornecedorComJSONAsync(string JSON, object userState) {
+            if ((this.IncluirFornecedorComJSONOperationCompleted == null)) {
+                this.IncluirFornecedorComJSONOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIncluirFornecedorComJSONOperationCompleted);
+            }
+            this.InvokeAsync("IncluirFornecedorComJSON", new object[] {
+                        JSON}, this.IncluirFornecedorComJSONOperationCompleted, userState);
+        }
+        
+        private void OnIncluirFornecedorComJSONOperationCompleted(object arg) {
+            if ((this.IncluirFornecedorComJSONCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IncluirFornecedorComJSONCompleted(this, new IncluirFornecedorComJSONCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#AlterarFornecedorComJSON", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string AlterarFornecedorComJSON(string JSON) {
+            object[] results = this.Invoke("AlterarFornecedorComJSON", new object[] {
+                        JSON});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void AlterarFornecedorComJSONAsync(string JSON) {
+            this.AlterarFornecedorComJSONAsync(JSON, null);
+        }
+        
+        /// <remarks/>
+        public void AlterarFornecedorComJSONAsync(string JSON, object userState) {
+            if ((this.AlterarFornecedorComJSONOperationCompleted == null)) {
+                this.AlterarFornecedorComJSONOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAlterarFornecedorComJSONOperationCompleted);
+            }
+            this.InvokeAsync("AlterarFornecedorComJSON", new object[] {
+                        JSON}, this.AlterarFornecedorComJSONOperationCompleted, userState);
+        }
+        
+        private void OnAlterarFornecedorComJSONOperationCompleted(object arg) {
+            if ((this.AlterarFornecedorComJSONCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AlterarFornecedorComJSONCompleted(this, new AlterarFornecedorComJSONCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#ExcluirFornecedorComJSON", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string ExcluirFornecedorComJSON(string JSON) {
+            object[] results = this.Invoke("ExcluirFornecedorComJSON", new object[] {
+                        JSON});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ExcluirFornecedorComJSONAsync(string JSON) {
+            this.ExcluirFornecedorComJSONAsync(JSON, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluirFornecedorComJSONAsync(string JSON, object userState) {
+            if ((this.ExcluirFornecedorComJSONOperationCompleted == null)) {
+                this.ExcluirFornecedorComJSONOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluirFornecedorComJSONOperationCompleted);
+            }
+            this.InvokeAsync("ExcluirFornecedorComJSON", new object[] {
+                        JSON}, this.ExcluirFornecedorComJSONOperationCompleted, userState);
+        }
+        
+        private void OnExcluirFornecedorComJSONOperationCompleted(object arg) {
+            if ((this.ExcluirFornecedorComJSONCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluirFornecedorComJSONCompleted(this, new ExcluirFornecedorComJSONCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#IncluiItem", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
         [return: System.Xml.Serialization.SoapElementAttribute("return")]
         public string IncluiItem(TItem Item) {
@@ -1444,6 +2148,96 @@ namespace Mensageria.AGWebReference {
             if ((this.ExcluiItemCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.ExcluiItemCompleted(this, new ExcluiItemCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#IncluirItemComJSON", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string IncluirItemComJSON(string JSON) {
+            object[] results = this.Invoke("IncluirItemComJSON", new object[] {
+                        JSON});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IncluirItemComJSONAsync(string JSON) {
+            this.IncluirItemComJSONAsync(JSON, null);
+        }
+        
+        /// <remarks/>
+        public void IncluirItemComJSONAsync(string JSON, object userState) {
+            if ((this.IncluirItemComJSONOperationCompleted == null)) {
+                this.IncluirItemComJSONOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIncluirItemComJSONOperationCompleted);
+            }
+            this.InvokeAsync("IncluirItemComJSON", new object[] {
+                        JSON}, this.IncluirItemComJSONOperationCompleted, userState);
+        }
+        
+        private void OnIncluirItemComJSONOperationCompleted(object arg) {
+            if ((this.IncluirItemComJSONCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IncluirItemComJSONCompleted(this, new IncluirItemComJSONCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#AlterarItemComJSON", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string AlterarItemComJSON(string JSON) {
+            object[] results = this.Invoke("AlterarItemComJSON", new object[] {
+                        JSON});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void AlterarItemComJSONAsync(string JSON) {
+            this.AlterarItemComJSONAsync(JSON, null);
+        }
+        
+        /// <remarks/>
+        public void AlterarItemComJSONAsync(string JSON, object userState) {
+            if ((this.AlterarItemComJSONOperationCompleted == null)) {
+                this.AlterarItemComJSONOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAlterarItemComJSONOperationCompleted);
+            }
+            this.InvokeAsync("AlterarItemComJSON", new object[] {
+                        JSON}, this.AlterarItemComJSONOperationCompleted, userState);
+        }
+        
+        private void OnAlterarItemComJSONOperationCompleted(object arg) {
+            if ((this.AlterarItemComJSONCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AlterarItemComJSONCompleted(this, new AlterarItemComJSONCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#ExcluirItemComJSON", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string ExcluirItemComJSON(string JSON) {
+            object[] results = this.Invoke("ExcluirItemComJSON", new object[] {
+                        JSON});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ExcluirItemComJSONAsync(string JSON) {
+            this.ExcluirItemComJSONAsync(JSON, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluirItemComJSONAsync(string JSON, object userState) {
+            if ((this.ExcluirItemComJSONOperationCompleted == null)) {
+                this.ExcluirItemComJSONOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluirItemComJSONOperationCompleted);
+            }
+            this.InvokeAsync("ExcluirItemComJSON", new object[] {
+                        JSON}, this.ExcluirItemComJSONOperationCompleted, userState);
+        }
+        
+        private void OnExcluirItemComJSONOperationCompleted(object arg) {
+            if ((this.ExcluirItemComJSONCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluirItemComJSONCompleted(this, new ExcluirItemComJSONCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1906,6 +2700,106 @@ namespace Mensageria.AGWebReference {
             if ((this.getObjetoContasaReceberCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.getObjetoContasaReceberCompleted(this, new getObjetoContasaReceberCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#getObjetoContasaPagar", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TContasaPagar getObjetoContasaPagar(string CodContasaPagar) {
+            object[] results = this.Invoke("getObjetoContasaPagar", new object[] {
+                        CodContasaPagar});
+            return ((TContasaPagar)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getObjetoContasaPagarAsync(string CodContasaPagar) {
+            this.getObjetoContasaPagarAsync(CodContasaPagar, null);
+        }
+        
+        /// <remarks/>
+        public void getObjetoContasaPagarAsync(string CodContasaPagar, object userState) {
+            if ((this.getObjetoContasaPagarOperationCompleted == null)) {
+                this.getObjetoContasaPagarOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetObjetoContasaPagarOperationCompleted);
+            }
+            this.InvokeAsync("getObjetoContasaPagar", new object[] {
+                        CodContasaPagar}, this.getObjetoContasaPagarOperationCompleted, userState);
+        }
+        
+        private void OngetObjetoContasaPagarOperationCompleted(object arg) {
+            if ((this.getObjetoContasaPagarCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getObjetoContasaPagarCompleted(this, new getObjetoContasaPagarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#IncluirBaixaContasaPagar", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string IncluirBaixaContasaPagar(TBaixaVencimentoaPagar BaixaContasaPagar) {
+            object[] results = this.Invoke("IncluirBaixaContasaPagar", new object[] {
+                        BaixaContasaPagar});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IncluirBaixaContasaPagarAsync(TBaixaVencimentoaPagar BaixaContasaPagar) {
+            this.IncluirBaixaContasaPagarAsync(BaixaContasaPagar, null);
+        }
+        
+        /// <remarks/>
+        public void IncluirBaixaContasaPagarAsync(TBaixaVencimentoaPagar BaixaContasaPagar, object userState) {
+            if ((this.IncluirBaixaContasaPagarOperationCompleted == null)) {
+                this.IncluirBaixaContasaPagarOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIncluirBaixaContasaPagarOperationCompleted);
+            }
+            this.InvokeAsync("IncluirBaixaContasaPagar", new object[] {
+                        BaixaContasaPagar}, this.IncluirBaixaContasaPagarOperationCompleted, userState);
+        }
+        
+        private void OnIncluirBaixaContasaPagarOperationCompleted(object arg) {
+            if ((this.IncluirBaixaContasaPagarCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IncluirBaixaContasaPagarCompleted(this, new IncluirBaixaContasaPagarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#CancelarBaixaContasaPagar", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string CancelarBaixaContasaPagar(string CodigoCPG, int SequencialVencimento, int Sequencial, string DataVencimento, string DataCancelamento, string MotivoCancelamento) {
+            object[] results = this.Invoke("CancelarBaixaContasaPagar", new object[] {
+                        CodigoCPG,
+                        SequencialVencimento,
+                        Sequencial,
+                        DataVencimento,
+                        DataCancelamento,
+                        MotivoCancelamento});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void CancelarBaixaContasaPagarAsync(string CodigoCPG, int SequencialVencimento, int Sequencial, string DataVencimento, string DataCancelamento, string MotivoCancelamento) {
+            this.CancelarBaixaContasaPagarAsync(CodigoCPG, SequencialVencimento, Sequencial, DataVencimento, DataCancelamento, MotivoCancelamento, null);
+        }
+        
+        /// <remarks/>
+        public void CancelarBaixaContasaPagarAsync(string CodigoCPG, int SequencialVencimento, int Sequencial, string DataVencimento, string DataCancelamento, string MotivoCancelamento, object userState) {
+            if ((this.CancelarBaixaContasaPagarOperationCompleted == null)) {
+                this.CancelarBaixaContasaPagarOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCancelarBaixaContasaPagarOperationCompleted);
+            }
+            this.InvokeAsync("CancelarBaixaContasaPagar", new object[] {
+                        CodigoCPG,
+                        SequencialVencimento,
+                        Sequencial,
+                        DataVencimento,
+                        DataCancelamento,
+                        MotivoCancelamento}, this.CancelarBaixaContasaPagarOperationCompleted, userState);
+        }
+        
+        private void OnCancelarBaixaContasaPagarOperationCompleted(object arg) {
+            if ((this.CancelarBaixaContasaPagarCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CancelarBaixaContasaPagarCompleted(this, new CancelarBaixaContasaPagarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -2996,6 +3890,36 @@ namespace Mensageria.AGWebReference {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetRequisicao", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TRequisicoes GetRequisicao(string Codigo) {
+            object[] results = this.Invoke("GetRequisicao", new object[] {
+                        Codigo});
+            return ((TRequisicoes)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetRequisicaoAsync(string Codigo) {
+            this.GetRequisicaoAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void GetRequisicaoAsync(string Codigo, object userState) {
+            if ((this.GetRequisicaoOperationCompleted == null)) {
+                this.GetRequisicaoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetRequisicaoOperationCompleted);
+            }
+            this.InvokeAsync("GetRequisicao", new object[] {
+                        Codigo}, this.GetRequisicaoOperationCompleted, userState);
+        }
+        
+        private void OnGetRequisicaoOperationCompleted(object arg) {
+            if ((this.GetRequisicaoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetRequisicaoCompleted(this, new GetRequisicaoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#IncluiContasaReceber", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
         [return: System.Xml.Serialization.SoapElementAttribute("return")]
         public string IncluiContasaReceber(TContasaReceber ContasaReceber) {
@@ -3084,6 +4008,36 @@ namespace Mensageria.AGWebReference {
             if ((this.ExcluiContasaReceberCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.ExcluiContasaReceberCompleted(this, new ExcluiContasaReceberCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#IncluirContasaReceberComJSON", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string IncluirContasaReceberComJSON(string JSON) {
+            object[] results = this.Invoke("IncluirContasaReceberComJSON", new object[] {
+                        JSON});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IncluirContasaReceberComJSONAsync(string JSON) {
+            this.IncluirContasaReceberComJSONAsync(JSON, null);
+        }
+        
+        /// <remarks/>
+        public void IncluirContasaReceberComJSONAsync(string JSON, object userState) {
+            if ((this.IncluirContasaReceberComJSONOperationCompleted == null)) {
+                this.IncluirContasaReceberComJSONOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIncluirContasaReceberComJSONOperationCompleted);
+            }
+            this.InvokeAsync("IncluirContasaReceberComJSON", new object[] {
+                        JSON}, this.IncluirContasaReceberComJSONOperationCompleted, userState);
+        }
+        
+        private void OnIncluirContasaReceberComJSONOperationCompleted(object arg) {
+            if ((this.IncluirContasaReceberComJSONCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IncluirContasaReceberComJSONCompleted(this, new IncluirContasaReceberComJSONCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -3328,6 +4282,96 @@ namespace Mensageria.AGWebReference {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#ExcluiLancamento", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string ExcluiLancamento(string Codigo) {
+            object[] results = this.Invoke("ExcluiLancamento", new object[] {
+                        Codigo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ExcluiLancamentoAsync(string Codigo) {
+            this.ExcluiLancamentoAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluiLancamentoAsync(string Codigo, object userState) {
+            if ((this.ExcluiLancamentoOperationCompleted == null)) {
+                this.ExcluiLancamentoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluiLancamentoOperationCompleted);
+            }
+            this.InvokeAsync("ExcluiLancamento", new object[] {
+                        Codigo}, this.ExcluiLancamentoOperationCompleted, userState);
+        }
+        
+        private void OnExcluiLancamentoOperationCompleted(object arg) {
+            if ((this.ExcluiLancamentoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluiLancamentoCompleted(this, new ExcluiLancamentoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#IncluirLancamentoComJSON", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string IncluirLancamentoComJSON(string JSON) {
+            object[] results = this.Invoke("IncluirLancamentoComJSON", new object[] {
+                        JSON});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IncluirLancamentoComJSONAsync(string JSON) {
+            this.IncluirLancamentoComJSONAsync(JSON, null);
+        }
+        
+        /// <remarks/>
+        public void IncluirLancamentoComJSONAsync(string JSON, object userState) {
+            if ((this.IncluirLancamentoComJSONOperationCompleted == null)) {
+                this.IncluirLancamentoComJSONOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIncluirLancamentoComJSONOperationCompleted);
+            }
+            this.InvokeAsync("IncluirLancamentoComJSON", new object[] {
+                        JSON}, this.IncluirLancamentoComJSONOperationCompleted, userState);
+        }
+        
+        private void OnIncluirLancamentoComJSONOperationCompleted(object arg) {
+            if ((this.IncluirLancamentoComJSONCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IncluirLancamentoComJSONCompleted(this, new IncluirLancamentoComJSONCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#ExcluirLancamentoComJSON", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string ExcluirLancamentoComJSON(string JSON) {
+            object[] results = this.Invoke("ExcluirLancamentoComJSON", new object[] {
+                        JSON});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ExcluirLancamentoComJSONAsync(string JSON) {
+            this.ExcluirLancamentoComJSONAsync(JSON, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluirLancamentoComJSONAsync(string JSON, object userState) {
+            if ((this.ExcluirLancamentoComJSONOperationCompleted == null)) {
+                this.ExcluirLancamentoComJSONOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluirLancamentoComJSONOperationCompleted);
+            }
+            this.InvokeAsync("ExcluirLancamentoComJSON", new object[] {
+                        JSON}, this.ExcluirLancamentoComJSONOperationCompleted, userState);
+        }
+        
+        private void OnExcluirLancamentoComJSONOperationCompleted(object arg) {
+            if ((this.ExcluirLancamentoComJSONCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluirLancamentoComJSONCompleted(this, new ExcluirLancamentoComJSONCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#IncluiAdiantamentoCliente", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
         [return: System.Xml.Serialization.SoapElementAttribute("return")]
         public string IncluiAdiantamentoCliente(TAdiantamentoCliente AdiantamentoCliente) {
@@ -3354,6 +4398,186 @@ namespace Mensageria.AGWebReference {
             if ((this.IncluiAdiantamentoClienteCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.IncluiAdiantamentoClienteCompleted(this, new IncluiAdiantamentoClienteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#ExcluiAdiantamentoCliente", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string ExcluiAdiantamentoCliente(string Codigo) {
+            object[] results = this.Invoke("ExcluiAdiantamentoCliente", new object[] {
+                        Codigo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ExcluiAdiantamentoClienteAsync(string Codigo) {
+            this.ExcluiAdiantamentoClienteAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluiAdiantamentoClienteAsync(string Codigo, object userState) {
+            if ((this.ExcluiAdiantamentoClienteOperationCompleted == null)) {
+                this.ExcluiAdiantamentoClienteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluiAdiantamentoClienteOperationCompleted);
+            }
+            this.InvokeAsync("ExcluiAdiantamentoCliente", new object[] {
+                        Codigo}, this.ExcluiAdiantamentoClienteOperationCompleted, userState);
+        }
+        
+        private void OnExcluiAdiantamentoClienteOperationCompleted(object arg) {
+            if ((this.ExcluiAdiantamentoClienteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluiAdiantamentoClienteCompleted(this, new ExcluiAdiantamentoClienteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetObjAdiantamentoCliente", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TAdiantamentoCliente GetObjAdiantamentoCliente(string Codigo) {
+            object[] results = this.Invoke("GetObjAdiantamentoCliente", new object[] {
+                        Codigo});
+            return ((TAdiantamentoCliente)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetObjAdiantamentoClienteAsync(string Codigo) {
+            this.GetObjAdiantamentoClienteAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void GetObjAdiantamentoClienteAsync(string Codigo, object userState) {
+            if ((this.GetObjAdiantamentoClienteOperationCompleted == null)) {
+                this.GetObjAdiantamentoClienteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetObjAdiantamentoClienteOperationCompleted);
+            }
+            this.InvokeAsync("GetObjAdiantamentoCliente", new object[] {
+                        Codigo}, this.GetObjAdiantamentoClienteOperationCompleted, userState);
+        }
+        
+        private void OnGetObjAdiantamentoClienteOperationCompleted(object arg) {
+            if ((this.GetObjAdiantamentoClienteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetObjAdiantamentoClienteCompleted(this, new GetObjAdiantamentoClienteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetObjAdiantamentoClienteIDWS", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TAdiantamentoCliente GetObjAdiantamentoClienteIDWS(string IDWS) {
+            object[] results = this.Invoke("GetObjAdiantamentoClienteIDWS", new object[] {
+                        IDWS});
+            return ((TAdiantamentoCliente)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetObjAdiantamentoClienteIDWSAsync(string IDWS) {
+            this.GetObjAdiantamentoClienteIDWSAsync(IDWS, null);
+        }
+        
+        /// <remarks/>
+        public void GetObjAdiantamentoClienteIDWSAsync(string IDWS, object userState) {
+            if ((this.GetObjAdiantamentoClienteIDWSOperationCompleted == null)) {
+                this.GetObjAdiantamentoClienteIDWSOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetObjAdiantamentoClienteIDWSOperationCompleted);
+            }
+            this.InvokeAsync("GetObjAdiantamentoClienteIDWS", new object[] {
+                        IDWS}, this.GetObjAdiantamentoClienteIDWSOperationCompleted, userState);
+        }
+        
+        private void OnGetObjAdiantamentoClienteIDWSOperationCompleted(object arg) {
+            if ((this.GetObjAdiantamentoClienteIDWSCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetObjAdiantamentoClienteIDWSCompleted(this, new GetObjAdiantamentoClienteIDWSCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#IncluiInventario", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string IncluiInventario(TInventario Inventario) {
+            object[] results = this.Invoke("IncluiInventario", new object[] {
+                        Inventario});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IncluiInventarioAsync(TInventario Inventario) {
+            this.IncluiInventarioAsync(Inventario, null);
+        }
+        
+        /// <remarks/>
+        public void IncluiInventarioAsync(TInventario Inventario, object userState) {
+            if ((this.IncluiInventarioOperationCompleted == null)) {
+                this.IncluiInventarioOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIncluiInventarioOperationCompleted);
+            }
+            this.InvokeAsync("IncluiInventario", new object[] {
+                        Inventario}, this.IncluiInventarioOperationCompleted, userState);
+        }
+        
+        private void OnIncluiInventarioOperationCompleted(object arg) {
+            if ((this.IncluiInventarioCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IncluiInventarioCompleted(this, new IncluiInventarioCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#ExcluiInventario", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string ExcluiInventario(string Codigo) {
+            object[] results = this.Invoke("ExcluiInventario", new object[] {
+                        Codigo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ExcluiInventarioAsync(string Codigo) {
+            this.ExcluiInventarioAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluiInventarioAsync(string Codigo, object userState) {
+            if ((this.ExcluiInventarioOperationCompleted == null)) {
+                this.ExcluiInventarioOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluiInventarioOperationCompleted);
+            }
+            this.InvokeAsync("ExcluiInventario", new object[] {
+                        Codigo}, this.ExcluiInventarioOperationCompleted, userState);
+        }
+        
+        private void OnExcluiInventarioOperationCompleted(object arg) {
+            if ((this.ExcluiInventarioCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluiInventarioCompleted(this, new ExcluiInventarioCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetObjInventario", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TInventario GetObjInventario(string Codigo) {
+            object[] results = this.Invoke("GetObjInventario", new object[] {
+                        Codigo});
+            return ((TInventario)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetObjInventarioAsync(string Codigo) {
+            this.GetObjInventarioAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void GetObjInventarioAsync(string Codigo, object userState) {
+            if ((this.GetObjInventarioOperationCompleted == null)) {
+                this.GetObjInventarioOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetObjInventarioOperationCompleted);
+            }
+            this.InvokeAsync("GetObjInventario", new object[] {
+                        Codigo}, this.GetObjInventarioOperationCompleted, userState);
+        }
+        
+        private void OnGetObjInventarioOperationCompleted(object arg) {
+            if ((this.GetObjInventarioCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetObjInventarioCompleted(this, new GetObjInventarioCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -3486,6 +4710,914 @@ namespace Mensageria.AGWebReference {
             if ((this.ReplicaPedidoDeVendaCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.ReplicaPedidoDeVendaCompleted(this, new ReplicaPedidoDeVendaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#IncluiOrcamentoFisicoFinanceiro", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string IncluiOrcamentoFisicoFinanceiro(TOrcamentoFisicoFinanceiro OrcamentoFisicoFinanceiro) {
+            object[] results = this.Invoke("IncluiOrcamentoFisicoFinanceiro", new object[] {
+                        OrcamentoFisicoFinanceiro});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IncluiOrcamentoFisicoFinanceiroAsync(TOrcamentoFisicoFinanceiro OrcamentoFisicoFinanceiro) {
+            this.IncluiOrcamentoFisicoFinanceiroAsync(OrcamentoFisicoFinanceiro, null);
+        }
+        
+        /// <remarks/>
+        public void IncluiOrcamentoFisicoFinanceiroAsync(TOrcamentoFisicoFinanceiro OrcamentoFisicoFinanceiro, object userState) {
+            if ((this.IncluiOrcamentoFisicoFinanceiroOperationCompleted == null)) {
+                this.IncluiOrcamentoFisicoFinanceiroOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIncluiOrcamentoFisicoFinanceiroOperationCompleted);
+            }
+            this.InvokeAsync("IncluiOrcamentoFisicoFinanceiro", new object[] {
+                        OrcamentoFisicoFinanceiro}, this.IncluiOrcamentoFisicoFinanceiroOperationCompleted, userState);
+        }
+        
+        private void OnIncluiOrcamentoFisicoFinanceiroOperationCompleted(object arg) {
+            if ((this.IncluiOrcamentoFisicoFinanceiroCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IncluiOrcamentoFisicoFinanceiroCompleted(this, new IncluiOrcamentoFisicoFinanceiroCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#ExcluiOrcamentoFisicoFinanceiro", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string ExcluiOrcamentoFisicoFinanceiro(int Codigo) {
+            object[] results = this.Invoke("ExcluiOrcamentoFisicoFinanceiro", new object[] {
+                        Codigo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ExcluiOrcamentoFisicoFinanceiroAsync(int Codigo) {
+            this.ExcluiOrcamentoFisicoFinanceiroAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluiOrcamentoFisicoFinanceiroAsync(int Codigo, object userState) {
+            if ((this.ExcluiOrcamentoFisicoFinanceiroOperationCompleted == null)) {
+                this.ExcluiOrcamentoFisicoFinanceiroOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluiOrcamentoFisicoFinanceiroOperationCompleted);
+            }
+            this.InvokeAsync("ExcluiOrcamentoFisicoFinanceiro", new object[] {
+                        Codigo}, this.ExcluiOrcamentoFisicoFinanceiroOperationCompleted, userState);
+        }
+        
+        private void OnExcluiOrcamentoFisicoFinanceiroOperationCompleted(object arg) {
+            if ((this.ExcluiOrcamentoFisicoFinanceiroCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluiOrcamentoFisicoFinanceiroCompleted(this, new ExcluiOrcamentoFisicoFinanceiroCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#AlteraOrcamentoFisicoFinanceiro", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string AlteraOrcamentoFisicoFinanceiro(TOrcamentoFisicoFinanceiro OrcamentoFisicoFinanceiro, int Codigo) {
+            object[] results = this.Invoke("AlteraOrcamentoFisicoFinanceiro", new object[] {
+                        OrcamentoFisicoFinanceiro,
+                        Codigo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void AlteraOrcamentoFisicoFinanceiroAsync(TOrcamentoFisicoFinanceiro OrcamentoFisicoFinanceiro, int Codigo) {
+            this.AlteraOrcamentoFisicoFinanceiroAsync(OrcamentoFisicoFinanceiro, Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void AlteraOrcamentoFisicoFinanceiroAsync(TOrcamentoFisicoFinanceiro OrcamentoFisicoFinanceiro, int Codigo, object userState) {
+            if ((this.AlteraOrcamentoFisicoFinanceiroOperationCompleted == null)) {
+                this.AlteraOrcamentoFisicoFinanceiroOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAlteraOrcamentoFisicoFinanceiroOperationCompleted);
+            }
+            this.InvokeAsync("AlteraOrcamentoFisicoFinanceiro", new object[] {
+                        OrcamentoFisicoFinanceiro,
+                        Codigo}, this.AlteraOrcamentoFisicoFinanceiroOperationCompleted, userState);
+        }
+        
+        private void OnAlteraOrcamentoFisicoFinanceiroOperationCompleted(object arg) {
+            if ((this.AlteraOrcamentoFisicoFinanceiroCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AlteraOrcamentoFisicoFinanceiroCompleted(this, new AlteraOrcamentoFisicoFinanceiroCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetItemDoOrcamento", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TOrcamentoFisicoFinanceiro GetItemDoOrcamento(string DataInicial, string PRO_Codigo, string CRS_Codigo) {
+            object[] results = this.Invoke("GetItemDoOrcamento", new object[] {
+                        DataInicial,
+                        PRO_Codigo,
+                        CRS_Codigo});
+            return ((TOrcamentoFisicoFinanceiro)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetItemDoOrcamentoAsync(string DataInicial, string PRO_Codigo, string CRS_Codigo) {
+            this.GetItemDoOrcamentoAsync(DataInicial, PRO_Codigo, CRS_Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void GetItemDoOrcamentoAsync(string DataInicial, string PRO_Codigo, string CRS_Codigo, object userState) {
+            if ((this.GetItemDoOrcamentoOperationCompleted == null)) {
+                this.GetItemDoOrcamentoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetItemDoOrcamentoOperationCompleted);
+            }
+            this.InvokeAsync("GetItemDoOrcamento", new object[] {
+                        DataInicial,
+                        PRO_Codigo,
+                        CRS_Codigo}, this.GetItemDoOrcamentoOperationCompleted, userState);
+        }
+        
+        private void OnGetItemDoOrcamentoOperationCompleted(object arg) {
+            if ((this.GetItemDoOrcamentoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetItemDoOrcamentoCompleted(this, new GetItemDoOrcamentoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#IncluiTransferenciaEntreContas", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string IncluiTransferenciaEntreContas(TTransferenciaEntreContas TransferenciaEntreContas) {
+            object[] results = this.Invoke("IncluiTransferenciaEntreContas", new object[] {
+                        TransferenciaEntreContas});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IncluiTransferenciaEntreContasAsync(TTransferenciaEntreContas TransferenciaEntreContas) {
+            this.IncluiTransferenciaEntreContasAsync(TransferenciaEntreContas, null);
+        }
+        
+        /// <remarks/>
+        public void IncluiTransferenciaEntreContasAsync(TTransferenciaEntreContas TransferenciaEntreContas, object userState) {
+            if ((this.IncluiTransferenciaEntreContasOperationCompleted == null)) {
+                this.IncluiTransferenciaEntreContasOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIncluiTransferenciaEntreContasOperationCompleted);
+            }
+            this.InvokeAsync("IncluiTransferenciaEntreContas", new object[] {
+                        TransferenciaEntreContas}, this.IncluiTransferenciaEntreContasOperationCompleted, userState);
+        }
+        
+        private void OnIncluiTransferenciaEntreContasOperationCompleted(object arg) {
+            if ((this.IncluiTransferenciaEntreContasCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IncluiTransferenciaEntreContasCompleted(this, new IncluiTransferenciaEntreContasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#AlteraTransferenciaEntreContas", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string AlteraTransferenciaEntreContas(TTransferenciaEntreContas TransferenciaEntreContas) {
+            object[] results = this.Invoke("AlteraTransferenciaEntreContas", new object[] {
+                        TransferenciaEntreContas});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void AlteraTransferenciaEntreContasAsync(TTransferenciaEntreContas TransferenciaEntreContas) {
+            this.AlteraTransferenciaEntreContasAsync(TransferenciaEntreContas, null);
+        }
+        
+        /// <remarks/>
+        public void AlteraTransferenciaEntreContasAsync(TTransferenciaEntreContas TransferenciaEntreContas, object userState) {
+            if ((this.AlteraTransferenciaEntreContasOperationCompleted == null)) {
+                this.AlteraTransferenciaEntreContasOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAlteraTransferenciaEntreContasOperationCompleted);
+            }
+            this.InvokeAsync("AlteraTransferenciaEntreContas", new object[] {
+                        TransferenciaEntreContas}, this.AlteraTransferenciaEntreContasOperationCompleted, userState);
+        }
+        
+        private void OnAlteraTransferenciaEntreContasOperationCompleted(object arg) {
+            if ((this.AlteraTransferenciaEntreContasCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AlteraTransferenciaEntreContasCompleted(this, new AlteraTransferenciaEntreContasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#ExcluiTransferenciaEntreContas", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string ExcluiTransferenciaEntreContas(TTransferenciaEntreContas TransferenciaEntreContas) {
+            object[] results = this.Invoke("ExcluiTransferenciaEntreContas", new object[] {
+                        TransferenciaEntreContas});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ExcluiTransferenciaEntreContasAsync(TTransferenciaEntreContas TransferenciaEntreContas) {
+            this.ExcluiTransferenciaEntreContasAsync(TransferenciaEntreContas, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluiTransferenciaEntreContasAsync(TTransferenciaEntreContas TransferenciaEntreContas, object userState) {
+            if ((this.ExcluiTransferenciaEntreContasOperationCompleted == null)) {
+                this.ExcluiTransferenciaEntreContasOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluiTransferenciaEntreContasOperationCompleted);
+            }
+            this.InvokeAsync("ExcluiTransferenciaEntreContas", new object[] {
+                        TransferenciaEntreContas}, this.ExcluiTransferenciaEntreContasOperationCompleted, userState);
+        }
+        
+        private void OnExcluiTransferenciaEntreContasOperationCompleted(object arg) {
+            if ((this.ExcluiTransferenciaEntreContasCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluiTransferenciaEntreContasCompleted(this, new ExcluiTransferenciaEntreContasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetTransferenciaEntreContas", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TTransferenciaEntreContas GetTransferenciaEntreContas(string Data, int Sequencial) {
+            object[] results = this.Invoke("GetTransferenciaEntreContas", new object[] {
+                        Data,
+                        Sequencial});
+            return ((TTransferenciaEntreContas)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetTransferenciaEntreContasAsync(string Data, int Sequencial) {
+            this.GetTransferenciaEntreContasAsync(Data, Sequencial, null);
+        }
+        
+        /// <remarks/>
+        public void GetTransferenciaEntreContasAsync(string Data, int Sequencial, object userState) {
+            if ((this.GetTransferenciaEntreContasOperationCompleted == null)) {
+                this.GetTransferenciaEntreContasOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetTransferenciaEntreContasOperationCompleted);
+            }
+            this.InvokeAsync("GetTransferenciaEntreContas", new object[] {
+                        Data,
+                        Sequencial}, this.GetTransferenciaEntreContasOperationCompleted, userState);
+        }
+        
+        private void OnGetTransferenciaEntreContasOperationCompleted(object arg) {
+            if ((this.GetTransferenciaEntreContasCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetTransferenciaEntreContasCompleted(this, new GetTransferenciaEntreContasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#IncluirTransferenciaEntreContasComJSON", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string IncluirTransferenciaEntreContasComJSON(string JSON) {
+            object[] results = this.Invoke("IncluirTransferenciaEntreContasComJSON", new object[] {
+                        JSON});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IncluirTransferenciaEntreContasComJSONAsync(string JSON) {
+            this.IncluirTransferenciaEntreContasComJSONAsync(JSON, null);
+        }
+        
+        /// <remarks/>
+        public void IncluirTransferenciaEntreContasComJSONAsync(string JSON, object userState) {
+            if ((this.IncluirTransferenciaEntreContasComJSONOperationCompleted == null)) {
+                this.IncluirTransferenciaEntreContasComJSONOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIncluirTransferenciaEntreContasComJSONOperationCompleted);
+            }
+            this.InvokeAsync("IncluirTransferenciaEntreContasComJSON", new object[] {
+                        JSON}, this.IncluirTransferenciaEntreContasComJSONOperationCompleted, userState);
+        }
+        
+        private void OnIncluirTransferenciaEntreContasComJSONOperationCompleted(object arg) {
+            if ((this.IncluirTransferenciaEntreContasComJSONCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IncluirTransferenciaEntreContasComJSONCompleted(this, new IncluirTransferenciaEntreContasComJSONCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#AlterarTransferenciaEntreContasComJSON", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string AlterarTransferenciaEntreContasComJSON(string JSON) {
+            object[] results = this.Invoke("AlterarTransferenciaEntreContasComJSON", new object[] {
+                        JSON});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void AlterarTransferenciaEntreContasComJSONAsync(string JSON) {
+            this.AlterarTransferenciaEntreContasComJSONAsync(JSON, null);
+        }
+        
+        /// <remarks/>
+        public void AlterarTransferenciaEntreContasComJSONAsync(string JSON, object userState) {
+            if ((this.AlterarTransferenciaEntreContasComJSONOperationCompleted == null)) {
+                this.AlterarTransferenciaEntreContasComJSONOperationCompleted = new System.Threading.SendOrPostCallback(this.OnAlterarTransferenciaEntreContasComJSONOperationCompleted);
+            }
+            this.InvokeAsync("AlterarTransferenciaEntreContasComJSON", new object[] {
+                        JSON}, this.AlterarTransferenciaEntreContasComJSONOperationCompleted, userState);
+        }
+        
+        private void OnAlterarTransferenciaEntreContasComJSONOperationCompleted(object arg) {
+            if ((this.AlterarTransferenciaEntreContasComJSONCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.AlterarTransferenciaEntreContasComJSONCompleted(this, new AlterarTransferenciaEntreContasComJSONCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#ExcluirTransferenciaEntreContasComJSON", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string ExcluirTransferenciaEntreContasComJSON(string JSON) {
+            object[] results = this.Invoke("ExcluirTransferenciaEntreContasComJSON", new object[] {
+                        JSON});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ExcluirTransferenciaEntreContasComJSONAsync(string JSON) {
+            this.ExcluirTransferenciaEntreContasComJSONAsync(JSON, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluirTransferenciaEntreContasComJSONAsync(string JSON, object userState) {
+            if ((this.ExcluirTransferenciaEntreContasComJSONOperationCompleted == null)) {
+                this.ExcluirTransferenciaEntreContasComJSONOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluirTransferenciaEntreContasComJSONOperationCompleted);
+            }
+            this.InvokeAsync("ExcluirTransferenciaEntreContasComJSON", new object[] {
+                        JSON}, this.ExcluirTransferenciaEntreContasComJSONOperationCompleted, userState);
+        }
+        
+        private void OnExcluirTransferenciaEntreContasComJSONOperationCompleted(object arg) {
+            if ((this.ExcluirTransferenciaEntreContasComJSONCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluirTransferenciaEntreContasComJSONCompleted(this, new ExcluirTransferenciaEntreContasComJSONCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#IncluiContasaPagar", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string IncluiContasaPagar(TContasaPagar ContasaPagar) {
+            object[] results = this.Invoke("IncluiContasaPagar", new object[] {
+                        ContasaPagar});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IncluiContasaPagarAsync(TContasaPagar ContasaPagar) {
+            this.IncluiContasaPagarAsync(ContasaPagar, null);
+        }
+        
+        /// <remarks/>
+        public void IncluiContasaPagarAsync(TContasaPagar ContasaPagar, object userState) {
+            if ((this.IncluiContasaPagarOperationCompleted == null)) {
+                this.IncluiContasaPagarOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIncluiContasaPagarOperationCompleted);
+            }
+            this.InvokeAsync("IncluiContasaPagar", new object[] {
+                        ContasaPagar}, this.IncluiContasaPagarOperationCompleted, userState);
+        }
+        
+        private void OnIncluiContasaPagarOperationCompleted(object arg) {
+            if ((this.IncluiContasaPagarCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IncluiContasaPagarCompleted(this, new IncluiContasaPagarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#ExcluiContasaPagar", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string ExcluiContasaPagar(string Codigo) {
+            object[] results = this.Invoke("ExcluiContasaPagar", new object[] {
+                        Codigo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ExcluiContasaPagarAsync(string Codigo) {
+            this.ExcluiContasaPagarAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluiContasaPagarAsync(string Codigo, object userState) {
+            if ((this.ExcluiContasaPagarOperationCompleted == null)) {
+                this.ExcluiContasaPagarOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluiContasaPagarOperationCompleted);
+            }
+            this.InvokeAsync("ExcluiContasaPagar", new object[] {
+                        Codigo}, this.ExcluiContasaPagarOperationCompleted, userState);
+        }
+        
+        private void OnExcluiContasaPagarOperationCompleted(object arg) {
+            if ((this.ExcluiContasaPagarCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluiContasaPagarCompleted(this, new ExcluiContasaPagarCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#IncluirMapaResumo", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string IncluirMapaResumo(TMapaResumo MapaResumo) {
+            object[] results = this.Invoke("IncluirMapaResumo", new object[] {
+                        MapaResumo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IncluirMapaResumoAsync(TMapaResumo MapaResumo) {
+            this.IncluirMapaResumoAsync(MapaResumo, null);
+        }
+        
+        /// <remarks/>
+        public void IncluirMapaResumoAsync(TMapaResumo MapaResumo, object userState) {
+            if ((this.IncluirMapaResumoOperationCompleted == null)) {
+                this.IncluirMapaResumoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIncluirMapaResumoOperationCompleted);
+            }
+            this.InvokeAsync("IncluirMapaResumo", new object[] {
+                        MapaResumo}, this.IncluirMapaResumoOperationCompleted, userState);
+        }
+        
+        private void OnIncluirMapaResumoOperationCompleted(object arg) {
+            if ((this.IncluirMapaResumoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IncluirMapaResumoCompleted(this, new IncluirMapaResumoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#ExcluirMapaResumo", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string ExcluirMapaResumo(string Codigo) {
+            object[] results = this.Invoke("ExcluirMapaResumo", new object[] {
+                        Codigo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ExcluirMapaResumoAsync(string Codigo) {
+            this.ExcluirMapaResumoAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluirMapaResumoAsync(string Codigo, object userState) {
+            if ((this.ExcluirMapaResumoOperationCompleted == null)) {
+                this.ExcluirMapaResumoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluirMapaResumoOperationCompleted);
+            }
+            this.InvokeAsync("ExcluirMapaResumo", new object[] {
+                        Codigo}, this.ExcluirMapaResumoOperationCompleted, userState);
+        }
+        
+        private void OnExcluirMapaResumoOperationCompleted(object arg) {
+            if ((this.ExcluirMapaResumoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluirMapaResumoCompleted(this, new ExcluirMapaResumoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetMapaResumo", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TMapaResumo GetMapaResumo(string Codigo) {
+            object[] results = this.Invoke("GetMapaResumo", new object[] {
+                        Codigo});
+            return ((TMapaResumo)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetMapaResumoAsync(string Codigo) {
+            this.GetMapaResumoAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void GetMapaResumoAsync(string Codigo, object userState) {
+            if ((this.GetMapaResumoOperationCompleted == null)) {
+                this.GetMapaResumoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetMapaResumoOperationCompleted);
+            }
+            this.InvokeAsync("GetMapaResumo", new object[] {
+                        Codigo}, this.GetMapaResumoOperationCompleted, userState);
+        }
+        
+        private void OnGetMapaResumoOperationCompleted(object arg) {
+            if ((this.GetMapaResumoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetMapaResumoCompleted(this, new GetMapaResumoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#IncluirCupomFiscal", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string IncluirCupomFiscal(TCupomFiscal CupomFiscal) {
+            object[] results = this.Invoke("IncluirCupomFiscal", new object[] {
+                        CupomFiscal});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IncluirCupomFiscalAsync(TCupomFiscal CupomFiscal) {
+            this.IncluirCupomFiscalAsync(CupomFiscal, null);
+        }
+        
+        /// <remarks/>
+        public void IncluirCupomFiscalAsync(TCupomFiscal CupomFiscal, object userState) {
+            if ((this.IncluirCupomFiscalOperationCompleted == null)) {
+                this.IncluirCupomFiscalOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIncluirCupomFiscalOperationCompleted);
+            }
+            this.InvokeAsync("IncluirCupomFiscal", new object[] {
+                        CupomFiscal}, this.IncluirCupomFiscalOperationCompleted, userState);
+        }
+        
+        private void OnIncluirCupomFiscalOperationCompleted(object arg) {
+            if ((this.IncluirCupomFiscalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IncluirCupomFiscalCompleted(this, new IncluirCupomFiscalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#ExcluirCupomFiscal", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string ExcluirCupomFiscal(string Codigo) {
+            object[] results = this.Invoke("ExcluirCupomFiscal", new object[] {
+                        Codigo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ExcluirCupomFiscalAsync(string Codigo) {
+            this.ExcluirCupomFiscalAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluirCupomFiscalAsync(string Codigo, object userState) {
+            if ((this.ExcluirCupomFiscalOperationCompleted == null)) {
+                this.ExcluirCupomFiscalOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluirCupomFiscalOperationCompleted);
+            }
+            this.InvokeAsync("ExcluirCupomFiscal", new object[] {
+                        Codigo}, this.ExcluirCupomFiscalOperationCompleted, userState);
+        }
+        
+        private void OnExcluirCupomFiscalOperationCompleted(object arg) {
+            if ((this.ExcluirCupomFiscalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluirCupomFiscalCompleted(this, new ExcluirCupomFiscalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetCupomFiscal", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TCupomFiscal GetCupomFiscal(string Codigo) {
+            object[] results = this.Invoke("GetCupomFiscal", new object[] {
+                        Codigo});
+            return ((TCupomFiscal)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetCupomFiscalAsync(string Codigo) {
+            this.GetCupomFiscalAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void GetCupomFiscalAsync(string Codigo, object userState) {
+            if ((this.GetCupomFiscalOperationCompleted == null)) {
+                this.GetCupomFiscalOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCupomFiscalOperationCompleted);
+            }
+            this.InvokeAsync("GetCupomFiscal", new object[] {
+                        Codigo}, this.GetCupomFiscalOperationCompleted, userState);
+        }
+        
+        private void OnGetCupomFiscalOperationCompleted(object arg) {
+            if ((this.GetCupomFiscalCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetCupomFiscalCompleted(this, new GetCupomFiscalCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#IncluirConhecimentoTransporte", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string IncluirConhecimentoTransporte(TConhecimentoTransporte ConhecimentoTransporte) {
+            object[] results = this.Invoke("IncluirConhecimentoTransporte", new object[] {
+                        ConhecimentoTransporte});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IncluirConhecimentoTransporteAsync(TConhecimentoTransporte ConhecimentoTransporte) {
+            this.IncluirConhecimentoTransporteAsync(ConhecimentoTransporte, null);
+        }
+        
+        /// <remarks/>
+        public void IncluirConhecimentoTransporteAsync(TConhecimentoTransporte ConhecimentoTransporte, object userState) {
+            if ((this.IncluirConhecimentoTransporteOperationCompleted == null)) {
+                this.IncluirConhecimentoTransporteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIncluirConhecimentoTransporteOperationCompleted);
+            }
+            this.InvokeAsync("IncluirConhecimentoTransporte", new object[] {
+                        ConhecimentoTransporte}, this.IncluirConhecimentoTransporteOperationCompleted, userState);
+        }
+        
+        private void OnIncluirConhecimentoTransporteOperationCompleted(object arg) {
+            if ((this.IncluirConhecimentoTransporteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IncluirConhecimentoTransporteCompleted(this, new IncluirConhecimentoTransporteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#ExcluirConhecimentoTransporte", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string ExcluirConhecimentoTransporte(string Codigo) {
+            object[] results = this.Invoke("ExcluirConhecimentoTransporte", new object[] {
+                        Codigo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ExcluirConhecimentoTransporteAsync(string Codigo) {
+            this.ExcluirConhecimentoTransporteAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluirConhecimentoTransporteAsync(string Codigo, object userState) {
+            if ((this.ExcluirConhecimentoTransporteOperationCompleted == null)) {
+                this.ExcluirConhecimentoTransporteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluirConhecimentoTransporteOperationCompleted);
+            }
+            this.InvokeAsync("ExcluirConhecimentoTransporte", new object[] {
+                        Codigo}, this.ExcluirConhecimentoTransporteOperationCompleted, userState);
+        }
+        
+        private void OnExcluirConhecimentoTransporteOperationCompleted(object arg) {
+            if ((this.ExcluirConhecimentoTransporteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluirConhecimentoTransporteCompleted(this, new ExcluirConhecimentoTransporteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetConhecimentoTransporte", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TConhecimentoTransporte GetConhecimentoTransporte(string Codigo) {
+            object[] results = this.Invoke("GetConhecimentoTransporte", new object[] {
+                        Codigo});
+            return ((TConhecimentoTransporte)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetConhecimentoTransporteAsync(string Codigo) {
+            this.GetConhecimentoTransporteAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void GetConhecimentoTransporteAsync(string Codigo, object userState) {
+            if ((this.GetConhecimentoTransporteOperationCompleted == null)) {
+                this.GetConhecimentoTransporteOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetConhecimentoTransporteOperationCompleted);
+            }
+            this.InvokeAsync("GetConhecimentoTransporte", new object[] {
+                        Codigo}, this.GetConhecimentoTransporteOperationCompleted, userState);
+        }
+        
+        private void OnGetConhecimentoTransporteOperationCompleted(object arg) {
+            if ((this.GetConhecimentoTransporteCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetConhecimentoTransporteCompleted(this, new GetConhecimentoTransporteCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#IncluirNotaFiscalMercadoria", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string IncluirNotaFiscalMercadoria(TNotaFiscalMercadoria NotaFiscal) {
+            object[] results = this.Invoke("IncluirNotaFiscalMercadoria", new object[] {
+                        NotaFiscal});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IncluirNotaFiscalMercadoriaAsync(TNotaFiscalMercadoria NotaFiscal) {
+            this.IncluirNotaFiscalMercadoriaAsync(NotaFiscal, null);
+        }
+        
+        /// <remarks/>
+        public void IncluirNotaFiscalMercadoriaAsync(TNotaFiscalMercadoria NotaFiscal, object userState) {
+            if ((this.IncluirNotaFiscalMercadoriaOperationCompleted == null)) {
+                this.IncluirNotaFiscalMercadoriaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIncluirNotaFiscalMercadoriaOperationCompleted);
+            }
+            this.InvokeAsync("IncluirNotaFiscalMercadoria", new object[] {
+                        NotaFiscal}, this.IncluirNotaFiscalMercadoriaOperationCompleted, userState);
+        }
+        
+        private void OnIncluirNotaFiscalMercadoriaOperationCompleted(object arg) {
+            if ((this.IncluirNotaFiscalMercadoriaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IncluirNotaFiscalMercadoriaCompleted(this, new IncluirNotaFiscalMercadoriaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#ExcluirNotaFiscalMercadoria", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string ExcluirNotaFiscalMercadoria(string Codigo) {
+            object[] results = this.Invoke("ExcluirNotaFiscalMercadoria", new object[] {
+                        Codigo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ExcluirNotaFiscalMercadoriaAsync(string Codigo) {
+            this.ExcluirNotaFiscalMercadoriaAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluirNotaFiscalMercadoriaAsync(string Codigo, object userState) {
+            if ((this.ExcluirNotaFiscalMercadoriaOperationCompleted == null)) {
+                this.ExcluirNotaFiscalMercadoriaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluirNotaFiscalMercadoriaOperationCompleted);
+            }
+            this.InvokeAsync("ExcluirNotaFiscalMercadoria", new object[] {
+                        Codigo}, this.ExcluirNotaFiscalMercadoriaOperationCompleted, userState);
+        }
+        
+        private void OnExcluirNotaFiscalMercadoriaOperationCompleted(object arg) {
+            if ((this.ExcluirNotaFiscalMercadoriaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluirNotaFiscalMercadoriaCompleted(this, new ExcluirNotaFiscalMercadoriaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetNotaFiscalMercadoria", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TNotaFiscalMercadoria GetNotaFiscalMercadoria(string Codigo) {
+            object[] results = this.Invoke("GetNotaFiscalMercadoria", new object[] {
+                        Codigo});
+            return ((TNotaFiscalMercadoria)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetNotaFiscalMercadoriaAsync(string Codigo) {
+            this.GetNotaFiscalMercadoriaAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void GetNotaFiscalMercadoriaAsync(string Codigo, object userState) {
+            if ((this.GetNotaFiscalMercadoriaOperationCompleted == null)) {
+                this.GetNotaFiscalMercadoriaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetNotaFiscalMercadoriaOperationCompleted);
+            }
+            this.InvokeAsync("GetNotaFiscalMercadoria", new object[] {
+                        Codigo}, this.GetNotaFiscalMercadoriaOperationCompleted, userState);
+        }
+        
+        private void OnGetNotaFiscalMercadoriaOperationCompleted(object arg) {
+            if ((this.GetNotaFiscalMercadoriaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetNotaFiscalMercadoriaCompleted(this, new GetNotaFiscalMercadoriaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetNotaFiscalMercadoriaIDWS", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TNotaFiscalMercadoria GetNotaFiscalMercadoriaIDWS(string IDWS) {
+            object[] results = this.Invoke("GetNotaFiscalMercadoriaIDWS", new object[] {
+                        IDWS});
+            return ((TNotaFiscalMercadoria)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetNotaFiscalMercadoriaIDWSAsync(string IDWS) {
+            this.GetNotaFiscalMercadoriaIDWSAsync(IDWS, null);
+        }
+        
+        /// <remarks/>
+        public void GetNotaFiscalMercadoriaIDWSAsync(string IDWS, object userState) {
+            if ((this.GetNotaFiscalMercadoriaIDWSOperationCompleted == null)) {
+                this.GetNotaFiscalMercadoriaIDWSOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetNotaFiscalMercadoriaIDWSOperationCompleted);
+            }
+            this.InvokeAsync("GetNotaFiscalMercadoriaIDWS", new object[] {
+                        IDWS}, this.GetNotaFiscalMercadoriaIDWSOperationCompleted, userState);
+        }
+        
+        private void OnGetNotaFiscalMercadoriaIDWSOperationCompleted(object arg) {
+            if ((this.GetNotaFiscalMercadoriaIDWSCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetNotaFiscalMercadoriaIDWSCompleted(this, new GetNotaFiscalMercadoriaIDWSCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#IncluirNotaFiscalSaida", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string IncluirNotaFiscalSaida(TNotasFiscaisSaida NotaFiscal) {
+            object[] results = this.Invoke("IncluirNotaFiscalSaida", new object[] {
+                        NotaFiscal});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void IncluirNotaFiscalSaidaAsync(TNotasFiscaisSaida NotaFiscal) {
+            this.IncluirNotaFiscalSaidaAsync(NotaFiscal, null);
+        }
+        
+        /// <remarks/>
+        public void IncluirNotaFiscalSaidaAsync(TNotasFiscaisSaida NotaFiscal, object userState) {
+            if ((this.IncluirNotaFiscalSaidaOperationCompleted == null)) {
+                this.IncluirNotaFiscalSaidaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnIncluirNotaFiscalSaidaOperationCompleted);
+            }
+            this.InvokeAsync("IncluirNotaFiscalSaida", new object[] {
+                        NotaFiscal}, this.IncluirNotaFiscalSaidaOperationCompleted, userState);
+        }
+        
+        private void OnIncluirNotaFiscalSaidaOperationCompleted(object arg) {
+            if ((this.IncluirNotaFiscalSaidaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.IncluirNotaFiscalSaidaCompleted(this, new IncluirNotaFiscalSaidaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#ExcluirNotaFiscalSaida", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string ExcluirNotaFiscalSaida(string Codigo) {
+            object[] results = this.Invoke("ExcluirNotaFiscalSaida", new object[] {
+                        Codigo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ExcluirNotaFiscalSaidaAsync(string Codigo) {
+            this.ExcluirNotaFiscalSaidaAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void ExcluirNotaFiscalSaidaAsync(string Codigo, object userState) {
+            if ((this.ExcluirNotaFiscalSaidaOperationCompleted == null)) {
+                this.ExcluirNotaFiscalSaidaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnExcluirNotaFiscalSaidaOperationCompleted);
+            }
+            this.InvokeAsync("ExcluirNotaFiscalSaida", new object[] {
+                        Codigo}, this.ExcluirNotaFiscalSaidaOperationCompleted, userState);
+        }
+        
+        private void OnExcluirNotaFiscalSaidaOperationCompleted(object arg) {
+            if ((this.ExcluirNotaFiscalSaidaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ExcluirNotaFiscalSaidaCompleted(this, new ExcluirNotaFiscalSaidaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetNotaFiscalSaida", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TNotasFiscaisSaida GetNotaFiscalSaida(string Codigo) {
+            object[] results = this.Invoke("GetNotaFiscalSaida", new object[] {
+                        Codigo});
+            return ((TNotasFiscaisSaida)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetNotaFiscalSaidaAsync(string Codigo) {
+            this.GetNotaFiscalSaidaAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void GetNotaFiscalSaidaAsync(string Codigo, object userState) {
+            if ((this.GetNotaFiscalSaidaOperationCompleted == null)) {
+                this.GetNotaFiscalSaidaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetNotaFiscalSaidaOperationCompleted);
+            }
+            this.InvokeAsync("GetNotaFiscalSaida", new object[] {
+                        Codigo}, this.GetNotaFiscalSaidaOperationCompleted, userState);
+        }
+        
+        private void OnGetNotaFiscalSaidaOperationCompleted(object arg) {
+            if ((this.GetNotaFiscalSaidaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetNotaFiscalSaidaCompleted(this, new GetNotaFiscalSaidaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetNotaFiscalSaidaIDWS", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TNotasFiscaisSaida GetNotaFiscalSaidaIDWS(string IDWS) {
+            object[] results = this.Invoke("GetNotaFiscalSaidaIDWS", new object[] {
+                        IDWS});
+            return ((TNotasFiscaisSaida)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetNotaFiscalSaidaIDWSAsync(string IDWS) {
+            this.GetNotaFiscalSaidaIDWSAsync(IDWS, null);
+        }
+        
+        /// <remarks/>
+        public void GetNotaFiscalSaidaIDWSAsync(string IDWS, object userState) {
+            if ((this.GetNotaFiscalSaidaIDWSOperationCompleted == null)) {
+                this.GetNotaFiscalSaidaIDWSOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetNotaFiscalSaidaIDWSOperationCompleted);
+            }
+            this.InvokeAsync("GetNotaFiscalSaidaIDWS", new object[] {
+                        IDWS}, this.GetNotaFiscalSaidaIDWSOperationCompleted, userState);
+        }
+        
+        private void OnGetNotaFiscalSaidaIDWSOperationCompleted(object arg) {
+            if ((this.GetNotaFiscalSaidaIDWSCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetNotaFiscalSaidaIDWSCompleted(this, new GetNotaFiscalSaidaIDWSCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -4080,6 +6212,40 @@ namespace Mensageria.AGWebReference {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetPedidosDaColeta", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TDadosPedidoDeCompraRemotable[] GetPedidosDaColeta(string EMP_Codigo, string CLT_Codigo, string Pro_Codigo) {
+            object[] results = this.Invoke("GetPedidosDaColeta", new object[] {
+                        EMP_Codigo,
+                        CLT_Codigo,
+                        Pro_Codigo});
+            return ((TDadosPedidoDeCompraRemotable[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetPedidosDaColetaAsync(string EMP_Codigo, string CLT_Codigo, string Pro_Codigo) {
+            this.GetPedidosDaColetaAsync(EMP_Codigo, CLT_Codigo, Pro_Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void GetPedidosDaColetaAsync(string EMP_Codigo, string CLT_Codigo, string Pro_Codigo, object userState) {
+            if ((this.GetPedidosDaColetaOperationCompleted == null)) {
+                this.GetPedidosDaColetaOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetPedidosDaColetaOperationCompleted);
+            }
+            this.InvokeAsync("GetPedidosDaColeta", new object[] {
+                        EMP_Codigo,
+                        CLT_Codigo,
+                        Pro_Codigo}, this.GetPedidosDaColetaOperationCompleted, userState);
+        }
+        
+        private void OnGetPedidosDaColetaOperationCompleted(object arg) {
+            if ((this.GetPedidosDaColetaCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetPedidosDaColetaCompleted(this, new GetPedidosDaColetaCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetNFPDFStream", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
         [return: System.Xml.Serialization.SoapElementAttribute("return")]
         public TDadosPDFNotaFiscal GetNFPDFStream(string Emp_Codigo, string Nfs_Codigo) {
@@ -4234,6 +6400,546 @@ namespace Mensageria.AGWebReference {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#BloqueiaClientesInadimplentesFortes", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string BloqueiaClientesInadimplentesFortes() {
+            object[] results = this.Invoke("BloqueiaClientesInadimplentesFortes", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void BloqueiaClientesInadimplentesFortesAsync() {
+            this.BloqueiaClientesInadimplentesFortesAsync(null);
+        }
+        
+        /// <remarks/>
+        public void BloqueiaClientesInadimplentesFortesAsync(object userState) {
+            if ((this.BloqueiaClientesInadimplentesFortesOperationCompleted == null)) {
+                this.BloqueiaClientesInadimplentesFortesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnBloqueiaClientesInadimplentesFortesOperationCompleted);
+            }
+            this.InvokeAsync("BloqueiaClientesInadimplentesFortes", new object[0], this.BloqueiaClientesInadimplentesFortesOperationCompleted, userState);
+        }
+        
+        private void OnBloqueiaClientesInadimplentesFortesOperationCompleted(object arg) {
+            if ((this.BloqueiaClientesInadimplentesFortesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.BloqueiaClientesInadimplentesFortesCompleted(this, new BloqueiaClientesInadimplentesFortesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetJsonItemPorCodigo", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string GetJsonItemPorCodigo(string Codigo) {
+            object[] results = this.Invoke("GetJsonItemPorCodigo", new object[] {
+                        Codigo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetJsonItemPorCodigoAsync(string Codigo) {
+            this.GetJsonItemPorCodigoAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void GetJsonItemPorCodigoAsync(string Codigo, object userState) {
+            if ((this.GetJsonItemPorCodigoOperationCompleted == null)) {
+                this.GetJsonItemPorCodigoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetJsonItemPorCodigoOperationCompleted);
+            }
+            this.InvokeAsync("GetJsonItemPorCodigo", new object[] {
+                        Codigo}, this.GetJsonItemPorCodigoOperationCompleted, userState);
+        }
+        
+        private void OnGetJsonItemPorCodigoOperationCompleted(object arg) {
+            if ((this.GetJsonItemPorCodigoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetJsonItemPorCodigoCompleted(this, new GetJsonItemPorCodigoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetJsonFornecedorPorCodigo", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string GetJsonFornecedorPorCodigo(string Codigo) {
+            object[] results = this.Invoke("GetJsonFornecedorPorCodigo", new object[] {
+                        Codigo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetJsonFornecedorPorCodigoAsync(string Codigo) {
+            this.GetJsonFornecedorPorCodigoAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void GetJsonFornecedorPorCodigoAsync(string Codigo, object userState) {
+            if ((this.GetJsonFornecedorPorCodigoOperationCompleted == null)) {
+                this.GetJsonFornecedorPorCodigoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetJsonFornecedorPorCodigoOperationCompleted);
+            }
+            this.InvokeAsync("GetJsonFornecedorPorCodigo", new object[] {
+                        Codigo}, this.GetJsonFornecedorPorCodigoOperationCompleted, userState);
+        }
+        
+        private void OnGetJsonFornecedorPorCodigoOperationCompleted(object arg) {
+            if ((this.GetJsonFornecedorPorCodigoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetJsonFornecedorPorCodigoCompleted(this, new GetJsonFornecedorPorCodigoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetJsonClientePorCodigo", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string GetJsonClientePorCodigo(string Codigo) {
+            object[] results = this.Invoke("GetJsonClientePorCodigo", new object[] {
+                        Codigo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetJsonClientePorCodigoAsync(string Codigo) {
+            this.GetJsonClientePorCodigoAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void GetJsonClientePorCodigoAsync(string Codigo, object userState) {
+            if ((this.GetJsonClientePorCodigoOperationCompleted == null)) {
+                this.GetJsonClientePorCodigoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetJsonClientePorCodigoOperationCompleted);
+            }
+            this.InvokeAsync("GetJsonClientePorCodigo", new object[] {
+                        Codigo}, this.GetJsonClientePorCodigoOperationCompleted, userState);
+        }
+        
+        private void OnGetJsonClientePorCodigoOperationCompleted(object arg) {
+            if ((this.GetJsonClientePorCodigoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetJsonClientePorCodigoCompleted(this, new GetJsonClientePorCodigoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetJsonContasAReceberPorCodigo", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string GetJsonContasAReceberPorCodigo(string Codigo) {
+            object[] results = this.Invoke("GetJsonContasAReceberPorCodigo", new object[] {
+                        Codigo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetJsonContasAReceberPorCodigoAsync(string Codigo) {
+            this.GetJsonContasAReceberPorCodigoAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void GetJsonContasAReceberPorCodigoAsync(string Codigo, object userState) {
+            if ((this.GetJsonContasAReceberPorCodigoOperationCompleted == null)) {
+                this.GetJsonContasAReceberPorCodigoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetJsonContasAReceberPorCodigoOperationCompleted);
+            }
+            this.InvokeAsync("GetJsonContasAReceberPorCodigo", new object[] {
+                        Codigo}, this.GetJsonContasAReceberPorCodigoOperationCompleted, userState);
+        }
+        
+        private void OnGetJsonContasAReceberPorCodigoOperationCompleted(object arg) {
+            if ((this.GetJsonContasAReceberPorCodigoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetJsonContasAReceberPorCodigoCompleted(this, new GetJsonContasAReceberPorCodigoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetJsonLancamentoPorCodigo", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string GetJsonLancamentoPorCodigo(string Codigo) {
+            object[] results = this.Invoke("GetJsonLancamentoPorCodigo", new object[] {
+                        Codigo});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetJsonLancamentoPorCodigoAsync(string Codigo) {
+            this.GetJsonLancamentoPorCodigoAsync(Codigo, null);
+        }
+        
+        /// <remarks/>
+        public void GetJsonLancamentoPorCodigoAsync(string Codigo, object userState) {
+            if ((this.GetJsonLancamentoPorCodigoOperationCompleted == null)) {
+                this.GetJsonLancamentoPorCodigoOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetJsonLancamentoPorCodigoOperationCompleted);
+            }
+            this.InvokeAsync("GetJsonLancamentoPorCodigo", new object[] {
+                        Codigo}, this.GetJsonLancamentoPorCodigoOperationCompleted, userState);
+        }
+        
+        private void OnGetJsonLancamentoPorCodigoOperationCompleted(object arg) {
+            if ((this.GetJsonLancamentoPorCodigoCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetJsonLancamentoPorCodigoCompleted(this, new GetJsonLancamentoPorCodigoCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetJsonTransferenciaEntreContas", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string GetJsonTransferenciaEntreContas(string Data, int Sequencial) {
+            object[] results = this.Invoke("GetJsonTransferenciaEntreContas", new object[] {
+                        Data,
+                        Sequencial});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetJsonTransferenciaEntreContasAsync(string Data, int Sequencial) {
+            this.GetJsonTransferenciaEntreContasAsync(Data, Sequencial, null);
+        }
+        
+        /// <remarks/>
+        public void GetJsonTransferenciaEntreContasAsync(string Data, int Sequencial, object userState) {
+            if ((this.GetJsonTransferenciaEntreContasOperationCompleted == null)) {
+                this.GetJsonTransferenciaEntreContasOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetJsonTransferenciaEntreContasOperationCompleted);
+            }
+            this.InvokeAsync("GetJsonTransferenciaEntreContas", new object[] {
+                        Data,
+                        Sequencial}, this.GetJsonTransferenciaEntreContasOperationCompleted, userState);
+        }
+        
+        private void OnGetJsonTransferenciaEntreContasOperationCompleted(object arg) {
+            if ((this.GetJsonTransferenciaEntreContasCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetJsonTransferenciaEntreContasCompleted(this, new GetJsonTransferenciaEntreContasCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetListaTipoDocumentoJson", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string GetListaTipoDocumentoJson(string EMP_CODIGO) {
+            object[] results = this.Invoke("GetListaTipoDocumentoJson", new object[] {
+                        EMP_CODIGO});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetListaTipoDocumentoJsonAsync(string EMP_CODIGO) {
+            this.GetListaTipoDocumentoJsonAsync(EMP_CODIGO, null);
+        }
+        
+        /// <remarks/>
+        public void GetListaTipoDocumentoJsonAsync(string EMP_CODIGO, object userState) {
+            if ((this.GetListaTipoDocumentoJsonOperationCompleted == null)) {
+                this.GetListaTipoDocumentoJsonOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetListaTipoDocumentoJsonOperationCompleted);
+            }
+            this.InvokeAsync("GetListaTipoDocumentoJson", new object[] {
+                        EMP_CODIGO}, this.GetListaTipoDocumentoJsonOperationCompleted, userState);
+        }
+        
+        private void OnGetListaTipoDocumentoJsonOperationCompleted(object arg) {
+            if ((this.GetListaTipoDocumentoJsonCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetListaTipoDocumentoJsonCompleted(this, new GetListaTipoDocumentoJsonCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetListaPrazosPagamentoJson", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string GetListaPrazosPagamentoJson(string EMP_CODIGO) {
+            object[] results = this.Invoke("GetListaPrazosPagamentoJson", new object[] {
+                        EMP_CODIGO});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetListaPrazosPagamentoJsonAsync(string EMP_CODIGO) {
+            this.GetListaPrazosPagamentoJsonAsync(EMP_CODIGO, null);
+        }
+        
+        /// <remarks/>
+        public void GetListaPrazosPagamentoJsonAsync(string EMP_CODIGO, object userState) {
+            if ((this.GetListaPrazosPagamentoJsonOperationCompleted == null)) {
+                this.GetListaPrazosPagamentoJsonOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetListaPrazosPagamentoJsonOperationCompleted);
+            }
+            this.InvokeAsync("GetListaPrazosPagamentoJson", new object[] {
+                        EMP_CODIGO}, this.GetListaPrazosPagamentoJsonOperationCompleted, userState);
+        }
+        
+        private void OnGetListaPrazosPagamentoJsonOperationCompleted(object arg) {
+            if ((this.GetListaPrazosPagamentoJsonCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetListaPrazosPagamentoJsonCompleted(this, new GetListaPrazosPagamentoJsonCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetListaUnidadeMedidaJson", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public string GetListaUnidadeMedidaJson(string EMP_CODIGO) {
+            object[] results = this.Invoke("GetListaUnidadeMedidaJson", new object[] {
+                        EMP_CODIGO});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetListaUnidadeMedidaJsonAsync(string EMP_CODIGO) {
+            this.GetListaUnidadeMedidaJsonAsync(EMP_CODIGO, null);
+        }
+        
+        /// <remarks/>
+        public void GetListaUnidadeMedidaJsonAsync(string EMP_CODIGO, object userState) {
+            if ((this.GetListaUnidadeMedidaJsonOperationCompleted == null)) {
+                this.GetListaUnidadeMedidaJsonOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetListaUnidadeMedidaJsonOperationCompleted);
+            }
+            this.InvokeAsync("GetListaUnidadeMedidaJson", new object[] {
+                        EMP_CODIGO}, this.GetListaUnidadeMedidaJsonOperationCompleted, userState);
+        }
+        
+        private void OnGetListaUnidadeMedidaJsonOperationCompleted(object arg) {
+            if ((this.GetListaUnidadeMedidaJsonCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetListaUnidadeMedidaJsonCompleted(this, new GetListaUnidadeMedidaJsonCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#getObjetoContasaReceberIDWS", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TContasaReceber getObjetoContasaReceberIDWS(string IDWS) {
+            object[] results = this.Invoke("getObjetoContasaReceberIDWS", new object[] {
+                        IDWS});
+            return ((TContasaReceber)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getObjetoContasaReceberIDWSAsync(string IDWS) {
+            this.getObjetoContasaReceberIDWSAsync(IDWS, null);
+        }
+        
+        /// <remarks/>
+        public void getObjetoContasaReceberIDWSAsync(string IDWS, object userState) {
+            if ((this.getObjetoContasaReceberIDWSOperationCompleted == null)) {
+                this.getObjetoContasaReceberIDWSOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetObjetoContasaReceberIDWSOperationCompleted);
+            }
+            this.InvokeAsync("getObjetoContasaReceberIDWS", new object[] {
+                        IDWS}, this.getObjetoContasaReceberIDWSOperationCompleted, userState);
+        }
+        
+        private void OngetObjetoContasaReceberIDWSOperationCompleted(object arg) {
+            if ((this.getObjetoContasaReceberIDWSCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getObjetoContasaReceberIDWSCompleted(this, new getObjetoContasaReceberIDWSCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetObjContasaPagarIDWS", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TContasaPagar GetObjContasaPagarIDWS(string IDWS) {
+            object[] results = this.Invoke("GetObjContasaPagarIDWS", new object[] {
+                        IDWS});
+            return ((TContasaPagar)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetObjContasaPagarIDWSAsync(string IDWS) {
+            this.GetObjContasaPagarIDWSAsync(IDWS, null);
+        }
+        
+        /// <remarks/>
+        public void GetObjContasaPagarIDWSAsync(string IDWS, object userState) {
+            if ((this.GetObjContasaPagarIDWSOperationCompleted == null)) {
+                this.GetObjContasaPagarIDWSOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetObjContasaPagarIDWSOperationCompleted);
+            }
+            this.InvokeAsync("GetObjContasaPagarIDWS", new object[] {
+                        IDWS}, this.GetObjContasaPagarIDWSOperationCompleted, userState);
+        }
+        
+        private void OnGetObjContasaPagarIDWSOperationCompleted(object arg) {
+            if ((this.GetObjContasaPagarIDWSCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetObjContasaPagarIDWSCompleted(this, new GetObjContasaPagarIDWSCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#getObjetoLancamentoIDWS", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TLancamentos getObjetoLancamentoIDWS(string IDWS) {
+            object[] results = this.Invoke("getObjetoLancamentoIDWS", new object[] {
+                        IDWS});
+            return ((TLancamentos)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void getObjetoLancamentoIDWSAsync(string IDWS) {
+            this.getObjetoLancamentoIDWSAsync(IDWS, null);
+        }
+        
+        /// <remarks/>
+        public void getObjetoLancamentoIDWSAsync(string IDWS, object userState) {
+            if ((this.getObjetoLancamentoIDWSOperationCompleted == null)) {
+                this.getObjetoLancamentoIDWSOperationCompleted = new System.Threading.SendOrPostCallback(this.OngetObjetoLancamentoIDWSOperationCompleted);
+            }
+            this.InvokeAsync("getObjetoLancamentoIDWS", new object[] {
+                        IDWS}, this.getObjetoLancamentoIDWSOperationCompleted, userState);
+        }
+        
+        private void OngetObjetoLancamentoIDWSOperationCompleted(object arg) {
+            if ((this.getObjetoLancamentoIDWSCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.getObjetoLancamentoIDWSCompleted(this, new getObjetoLancamentoIDWSCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetTransferenciaEntreContasIDWS", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TTransferenciaEntreContas GetTransferenciaEntreContasIDWS(string IDWS) {
+            object[] results = this.Invoke("GetTransferenciaEntreContasIDWS", new object[] {
+                        IDWS});
+            return ((TTransferenciaEntreContas)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetTransferenciaEntreContasIDWSAsync(string IDWS) {
+            this.GetTransferenciaEntreContasIDWSAsync(IDWS, null);
+        }
+        
+        /// <remarks/>
+        public void GetTransferenciaEntreContasIDWSAsync(string IDWS, object userState) {
+            if ((this.GetTransferenciaEntreContasIDWSOperationCompleted == null)) {
+                this.GetTransferenciaEntreContasIDWSOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetTransferenciaEntreContasIDWSOperationCompleted);
+            }
+            this.InvokeAsync("GetTransferenciaEntreContasIDWS", new object[] {
+                        IDWS}, this.GetTransferenciaEntreContasIDWSOperationCompleted, userState);
+        }
+        
+        private void OnGetTransferenciaEntreContasIDWSOperationCompleted(object arg) {
+            if ((this.GetTransferenciaEntreContasIDWSCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetTransferenciaEntreContasIDWSCompleted(this, new GetTransferenciaEntreContasIDWSCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetMapaResumoIDWS", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TMapaResumo GetMapaResumoIDWS(string IDWS) {
+            object[] results = this.Invoke("GetMapaResumoIDWS", new object[] {
+                        IDWS});
+            return ((TMapaResumo)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetMapaResumoIDWSAsync(string IDWS) {
+            this.GetMapaResumoIDWSAsync(IDWS, null);
+        }
+        
+        /// <remarks/>
+        public void GetMapaResumoIDWSAsync(string IDWS, object userState) {
+            if ((this.GetMapaResumoIDWSOperationCompleted == null)) {
+                this.GetMapaResumoIDWSOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetMapaResumoIDWSOperationCompleted);
+            }
+            this.InvokeAsync("GetMapaResumoIDWS", new object[] {
+                        IDWS}, this.GetMapaResumoIDWSOperationCompleted, userState);
+        }
+        
+        private void OnGetMapaResumoIDWSOperationCompleted(object arg) {
+            if ((this.GetMapaResumoIDWSCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetMapaResumoIDWSCompleted(this, new GetMapaResumoIDWSCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetCupomFiscalIDWS", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TCupomFiscal GetCupomFiscalIDWS(string IDWS) {
+            object[] results = this.Invoke("GetCupomFiscalIDWS", new object[] {
+                        IDWS});
+            return ((TCupomFiscal)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetCupomFiscalIDWSAsync(string IDWS) {
+            this.GetCupomFiscalIDWSAsync(IDWS, null);
+        }
+        
+        /// <remarks/>
+        public void GetCupomFiscalIDWSAsync(string IDWS, object userState) {
+            if ((this.GetCupomFiscalIDWSOperationCompleted == null)) {
+                this.GetCupomFiscalIDWSOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetCupomFiscalIDWSOperationCompleted);
+            }
+            this.InvokeAsync("GetCupomFiscalIDWS", new object[] {
+                        IDWS}, this.GetCupomFiscalIDWSOperationCompleted, userState);
+        }
+        
+        private void OnGetCupomFiscalIDWSOperationCompleted(object arg) {
+            if ((this.GetCupomFiscalIDWSCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetCupomFiscalIDWSCompleted(this, new GetCupomFiscalIDWSCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetConhecimentoTransporteIDWS", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TConhecimentoTransporte GetConhecimentoTransporteIDWS(string IDWS) {
+            object[] results = this.Invoke("GetConhecimentoTransporteIDWS", new object[] {
+                        IDWS});
+            return ((TConhecimentoTransporte)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetConhecimentoTransporteIDWSAsync(string IDWS) {
+            this.GetConhecimentoTransporteIDWSAsync(IDWS, null);
+        }
+        
+        /// <remarks/>
+        public void GetConhecimentoTransporteIDWSAsync(string IDWS, object userState) {
+            if ((this.GetConhecimentoTransporteIDWSOperationCompleted == null)) {
+                this.GetConhecimentoTransporteIDWSOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetConhecimentoTransporteIDWSOperationCompleted);
+            }
+            this.InvokeAsync("GetConhecimentoTransporteIDWS", new object[] {
+                        IDWS}, this.GetConhecimentoTransporteIDWSOperationCompleted, userState);
+        }
+        
+        private void OnGetConhecimentoTransporteIDWSOperationCompleted(object arg) {
+            if ((this.GetConhecimentoTransporteIDWSCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetConhecimentoTransporteIDWSCompleted(this, new GetConhecimentoTransporteIDWSCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("urn:AGIntf-IAG#GetObjInventarioIDWS", RequestNamespace="urn:AGIntf-IAG", ResponseNamespace="urn:AGIntf-IAG")]
+        [return: System.Xml.Serialization.SoapElementAttribute("return")]
+        public TInventario GetObjInventarioIDWS(string IDWS) {
+            object[] results = this.Invoke("GetObjInventarioIDWS", new object[] {
+                        IDWS});
+            return ((TInventario)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetObjInventarioIDWSAsync(string IDWS) {
+            this.GetObjInventarioIDWSAsync(IDWS, null);
+        }
+        
+        /// <remarks/>
+        public void GetObjInventarioIDWSAsync(string IDWS, object userState) {
+            if ((this.GetObjInventarioIDWSOperationCompleted == null)) {
+                this.GetObjInventarioIDWSOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetObjInventarioIDWSOperationCompleted);
+            }
+            this.InvokeAsync("GetObjInventarioIDWS", new object[] {
+                        IDWS}, this.GetObjInventarioIDWSOperationCompleted, userState);
+        }
+        
+        private void OnGetObjInventarioIDWSOperationCompleted(object arg) {
+            if ((this.GetObjInventarioIDWSCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetObjInventarioIDWSCompleted(this, new GetObjInventarioIDWSCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -4253,429 +6959,35 @@ namespace Mensageria.AGWebReference {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TTransfEstoque))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TDevolucoesSaida))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TNotasFiscaisSaida))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TBaixasNotaMercadoria))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TFaturaNotaMercadoria))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TNotaFiscalMercadoria))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TBaixasConhecimento))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TTitulosConhecimento))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TFaturaConhecimento))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TConhecimentoTransporte))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TCupomDoCupom))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TBaixasCupomFiscal))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TTitulosCupomFiscal))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TFaturasCupomFiscal))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TCupomFiscal))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TOrcamentoFisicoFinanceiro))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TPedidoDeVenda))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TLancamentos))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TEntradas))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TRequisicoes))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TSaidas))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TServicosaReceber))]
+    [System.Xml.Serialization.SoapIncludeAttribute(typeof(TContasaReceber))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
-    public partial class TContasaReceber {
-        
-        private string estabelecimentoField;
-        
-        private string centroResultadosField;
-        
-        private string clienteField;
-        
-        private string receitaField;
-        
-        private string documentoField;
-        
-        private string tipoGeracaoField;
-        
-        private System.DateTime emissaoField;
-        
-        private int exportaACField;
-        
-        private double iSSField;
-        
-        private double iRRFField;
-        
-        private double iNSSField;
-        
-        private double pISField;
-        
-        private double descontoIncondicionalField;
-        
-        private double cOFINSField;
-        
-        private double cSLLField;
-        
-        private string obsField;
-        
-        private string mesAnoField;
-        
-        private TVencimentosaReceber[] vencimentosaReceberField;
-        
-        private TVencimentosChequeaReceber[] vencimentosChequeaReceberField;
-        
-        private TVencimentosCartaoaReceber[] vencimentosCartaoaReceberField;
-        
-        private TServicosaReceber[] servicosaReceberField;
-        
-        private TItensaReceber[] itensaReceberField;
-        
-        /// <remarks/>
-        public string estabelecimento {
-            get {
-                return this.estabelecimentoField;
-            }
-            set {
-                this.estabelecimentoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string centroResultados {
-            get {
-                return this.centroResultadosField;
-            }
-            set {
-                this.centroResultadosField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string cliente {
-            get {
-                return this.clienteField;
-            }
-            set {
-                this.clienteField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string receita {
-            get {
-                return this.receitaField;
-            }
-            set {
-                this.receitaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string documento {
-            get {
-                return this.documentoField;
-            }
-            set {
-                this.documentoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string tipoGeracao {
-            get {
-                return this.tipoGeracaoField;
-            }
-            set {
-                this.tipoGeracaoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime emissao {
-            get {
-                return this.emissaoField;
-            }
-            set {
-                this.emissaoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int exportaAC {
-            get {
-                return this.exportaACField;
-            }
-            set {
-                this.exportaACField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double ISS {
-            get {
-                return this.iSSField;
-            }
-            set {
-                this.iSSField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double IRRF {
-            get {
-                return this.iRRFField;
-            }
-            set {
-                this.iRRFField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double INSS {
-            get {
-                return this.iNSSField;
-            }
-            set {
-                this.iNSSField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double PIS {
-            get {
-                return this.pISField;
-            }
-            set {
-                this.pISField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double DescontoIncondicional {
-            get {
-                return this.descontoIncondicionalField;
-            }
-            set {
-                this.descontoIncondicionalField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double COFINS {
-            get {
-                return this.cOFINSField;
-            }
-            set {
-                this.cOFINSField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double CSLL {
-            get {
-                return this.cSLLField;
-            }
-            set {
-                this.cSLLField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string obs {
-            get {
-                return this.obsField;
-            }
-            set {
-                this.obsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string mesAno {
-            get {
-                return this.mesAnoField;
-            }
-            set {
-                this.mesAnoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public TVencimentosaReceber[] vencimentosaReceber {
-            get {
-                return this.vencimentosaReceberField;
-            }
-            set {
-                this.vencimentosaReceberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public TVencimentosChequeaReceber[] vencimentosChequeaReceber {
-            get {
-                return this.vencimentosChequeaReceberField;
-            }
-            set {
-                this.vencimentosChequeaReceberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public TVencimentosCartaoaReceber[] vencimentosCartaoaReceber {
-            get {
-                return this.vencimentosCartaoaReceberField;
-            }
-            set {
-                this.vencimentosCartaoaReceberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public TServicosaReceber[] servicosaReceber {
-            get {
-                return this.servicosaReceberField;
-            }
-            set {
-                this.servicosaReceberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public TItensaReceber[] itensaReceber {
-            get {
-                return this.itensaReceberField;
-            }
-            set {
-                this.itensaReceberField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
-    public partial class TVencimentosaReceber {
-        
-        private string codigoField;
-        
-        private int sequencialField;
-        
-        private System.DateTime vencimentoField;
-        
-        private double valorField;
-        
-        private string tipoDocumentoField;
-        
-        private string tituloField;
-        
-        private string agenteCobradorField;
-        
-        private string nrBoletoField;
-        
-        private int idBloqueteField;
-        
-        private double descontoPrevistoField;
-        
-        private System.DateTime dtCancelamentoField;
-        
-        private int quitadoField;
-        
-        /// <remarks/>
-        public string codigo {
-            get {
-                return this.codigoField;
-            }
-            set {
-                this.codigoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int sequencial {
-            get {
-                return this.sequencialField;
-            }
-            set {
-                this.sequencialField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime vencimento {
-            get {
-                return this.vencimentoField;
-            }
-            set {
-                this.vencimentoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double valor {
-            get {
-                return this.valorField;
-            }
-            set {
-                this.valorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string tipoDocumento {
-            get {
-                return this.tipoDocumentoField;
-            }
-            set {
-                this.tipoDocumentoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string titulo {
-            get {
-                return this.tituloField;
-            }
-            set {
-                this.tituloField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string agenteCobrador {
-            get {
-                return this.agenteCobradorField;
-            }
-            set {
-                this.agenteCobradorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string nrBoleto {
-            get {
-                return this.nrBoletoField;
-            }
-            set {
-                this.nrBoletoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int idBloquete {
-            get {
-                return this.idBloqueteField;
-            }
-            set {
-                this.idBloqueteField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double descontoPrevisto {
-            get {
-                return this.descontoPrevistoField;
-            }
-            set {
-                this.descontoPrevistoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime dtCancelamento {
-            get {
-                return this.dtCancelamentoField;
-            }
-            set {
-                this.dtCancelamentoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int Quitado {
-            get {
-                return this.quitadoField;
-            }
-            set {
-                this.quitadoField = value;
-            }
-        }
+    public partial class TClasseBase {
     }
     
     /// <remarks/>
@@ -4732,6 +7044,906 @@ namespace Mensageria.AGWebReference {
             }
             set {
                 this.pDFStreamField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TDadosPedidoCompraItemRemotable {
+        
+        private string eMP_CodigoField;
+        
+        private string pED_COdigoField;
+        
+        private string pRO_CodigoField;
+        
+        private string pRO_NomeField;
+        
+        private int sequencialField;
+        
+        private double qtdeField;
+        
+        private double valorField;
+        
+        private string obsField;
+        
+        private double fatorConversaoField;
+        
+        /// <remarks/>
+        public string EMP_Codigo {
+            get {
+                return this.eMP_CodigoField;
+            }
+            set {
+                this.eMP_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PED_COdigo {
+            get {
+                return this.pED_COdigoField;
+            }
+            set {
+                this.pED_COdigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PRO_Codigo {
+            get {
+                return this.pRO_CodigoField;
+            }
+            set {
+                this.pRO_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PRO_Nome {
+            get {
+                return this.pRO_NomeField;
+            }
+            set {
+                this.pRO_NomeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Sequencial {
+            get {
+                return this.sequencialField;
+            }
+            set {
+                this.sequencialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Qtde {
+            get {
+                return this.qtdeField;
+            }
+            set {
+                this.qtdeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Obs {
+            get {
+                return this.obsField;
+            }
+            set {
+                this.obsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double FatorConversao {
+            get {
+                return this.fatorConversaoField;
+            }
+            set {
+                this.fatorConversaoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TDadosPedidoDeCompraRemotable {
+        
+        private string emp_CodigoField;
+        
+        private string codigoField;
+        
+        private string est_CodigoField;
+        
+        private string est_NomeField;
+        
+        private string descricaoField;
+        
+        private string previsaoField;
+        
+        private string dataField;
+        
+        private int statusField;
+        
+        private int tipoPedidoField;
+        
+        private double valorFreteField;
+        
+        private string condicaoPagamentoField;
+        
+        private string uSU_CodigoField;
+        
+        private string cPG_CodigoField;
+        
+        private string eNDCEPField;
+        
+        private string endLogradouroField;
+        
+        private string endNumeroField;
+        
+        private string endComplementoField;
+        
+        private string eNDBairroField;
+        
+        private string mUN_UFD_SiglaField;
+        
+        private string mUN_CodigoField;
+        
+        private string rEFERENCIAField;
+        
+        private string cES_CODIGOField;
+        
+        private string cES_NomeField;
+        
+        private string cRS_CODIGOField;
+        
+        private string cRS_NomeField;
+        
+        private string tipoFreteField;
+        
+        private string documentoField;
+        
+        private TDadosPedidoCompraItemRemotable[] arrayDadosPedidoCompraItemRemotableField;
+        
+        private TContasaPagar contasaPagarField;
+        
+        /// <remarks/>
+        public string Emp_Codigo {
+            get {
+                return this.emp_CodigoField;
+            }
+            set {
+                this.emp_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Est_Codigo {
+            get {
+                return this.est_CodigoField;
+            }
+            set {
+                this.est_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Est_Nome {
+            get {
+                return this.est_NomeField;
+            }
+            set {
+                this.est_NomeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Descricao {
+            get {
+                return this.descricaoField;
+            }
+            set {
+                this.descricaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Previsao {
+            get {
+                return this.previsaoField;
+            }
+            set {
+                this.previsaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int TipoPedido {
+            get {
+                return this.tipoPedidoField;
+            }
+            set {
+                this.tipoPedidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorFrete {
+            get {
+                return this.valorFreteField;
+            }
+            set {
+                this.valorFreteField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CondicaoPagamento {
+            get {
+                return this.condicaoPagamentoField;
+            }
+            set {
+                this.condicaoPagamentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string USU_Codigo {
+            get {
+                return this.uSU_CodigoField;
+            }
+            set {
+                this.uSU_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CPG_Codigo {
+            get {
+                return this.cPG_CodigoField;
+            }
+            set {
+                this.cPG_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ENDCEP {
+            get {
+                return this.eNDCEPField;
+            }
+            set {
+                this.eNDCEPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string EndLogradouro {
+            get {
+                return this.endLogradouroField;
+            }
+            set {
+                this.endLogradouroField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string EndNumero {
+            get {
+                return this.endNumeroField;
+            }
+            set {
+                this.endNumeroField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string EndComplemento {
+            get {
+                return this.endComplementoField;
+            }
+            set {
+                this.endComplementoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ENDBairro {
+            get {
+                return this.eNDBairroField;
+            }
+            set {
+                this.eNDBairroField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string MUN_UFD_Sigla {
+            get {
+                return this.mUN_UFD_SiglaField;
+            }
+            set {
+                this.mUN_UFD_SiglaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string MUN_Codigo {
+            get {
+                return this.mUN_CodigoField;
+            }
+            set {
+                this.mUN_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string REFERENCIA {
+            get {
+                return this.rEFERENCIAField;
+            }
+            set {
+                this.rEFERENCIAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CES_CODIGO {
+            get {
+                return this.cES_CODIGOField;
+            }
+            set {
+                this.cES_CODIGOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CES_Nome {
+            get {
+                return this.cES_NomeField;
+            }
+            set {
+                this.cES_NomeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CRS_CODIGO {
+            get {
+                return this.cRS_CODIGOField;
+            }
+            set {
+                this.cRS_CODIGOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CRS_Nome {
+            get {
+                return this.cRS_NomeField;
+            }
+            set {
+                this.cRS_NomeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TipoFrete {
+            get {
+                return this.tipoFreteField;
+            }
+            set {
+                this.tipoFreteField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Documento {
+            get {
+                return this.documentoField;
+            }
+            set {
+                this.documentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TDadosPedidoCompraItemRemotable[] ArrayDadosPedidoCompraItemRemotable {
+            get {
+                return this.arrayDadosPedidoCompraItemRemotableField;
+            }
+            set {
+                this.arrayDadosPedidoCompraItemRemotableField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TContasaPagar ContasaPagar {
+            get {
+                return this.contasaPagarField;
+            }
+            set {
+                this.contasaPagarField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TContasaPagar {
+        
+        private string codigoField;
+        
+        private string estabelecimentoField;
+        
+        private string centroResultadosField;
+        
+        private string fornecedorField;
+        
+        private string codigoFornecedorField;
+        
+        private string despesaField;
+        
+        private string documentoField;
+        
+        private string tipoDocumentoField;
+        
+        private string emissaoField;
+        
+        private string mesAnoCompField;
+        
+        private string dtEntradaField;
+        
+        private double valorField;
+        
+        private string contaFinanceiraField;
+        
+        private int exportaACField;
+        
+        private string oBSField;
+        
+        private double iSSValorField;
+        
+        private double iSSBaseField;
+        
+        private double iRRFBaseField;
+        
+        private double iRRFValorCPFField;
+        
+        private double iRRFValorCNPJField;
+        
+        private double iNSSValorCPFField;
+        
+        private double iNSSValorCNPJField;
+        
+        private double iNSSBaseField;
+        
+        private double pISCOFINSCSLLValorField;
+        
+        private double pISCOFINSCSLLBaseField;
+        
+        private string origemField;
+        
+        private TVencimentosaPagar[] vencimentosaPagarField;
+        
+        private string iDWSField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Estabelecimento {
+            get {
+                return this.estabelecimentoField;
+            }
+            set {
+                this.estabelecimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CentroResultados {
+            get {
+                return this.centroResultadosField;
+            }
+            set {
+                this.centroResultadosField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Fornecedor {
+            get {
+                return this.fornecedorField;
+            }
+            set {
+                this.fornecedorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CodigoFornecedor {
+            get {
+                return this.codigoFornecedorField;
+            }
+            set {
+                this.codigoFornecedorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Despesa {
+            get {
+                return this.despesaField;
+            }
+            set {
+                this.despesaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Documento {
+            get {
+                return this.documentoField;
+            }
+            set {
+                this.documentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TipoDocumento {
+            get {
+                return this.tipoDocumentoField;
+            }
+            set {
+                this.tipoDocumentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Emissao {
+            get {
+                return this.emissaoField;
+            }
+            set {
+                this.emissaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string MesAnoComp {
+            get {
+                return this.mesAnoCompField;
+            }
+            set {
+                this.mesAnoCompField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DtEntrada {
+            get {
+                return this.dtEntradaField;
+            }
+            set {
+                this.dtEntradaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ContaFinanceira {
+            get {
+                return this.contaFinanceiraField;
+            }
+            set {
+                this.contaFinanceiraField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int ExportaAC {
+            get {
+                return this.exportaACField;
+            }
+            set {
+                this.exportaACField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string OBS {
+            get {
+                return this.oBSField;
+            }
+            set {
+                this.oBSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ISSValor {
+            get {
+                return this.iSSValorField;
+            }
+            set {
+                this.iSSValorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ISSBase {
+            get {
+                return this.iSSBaseField;
+            }
+            set {
+                this.iSSBaseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double IRRFBase {
+            get {
+                return this.iRRFBaseField;
+            }
+            set {
+                this.iRRFBaseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double IRRFValorCPF {
+            get {
+                return this.iRRFValorCPFField;
+            }
+            set {
+                this.iRRFValorCPFField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double IRRFValorCNPJ {
+            get {
+                return this.iRRFValorCNPJField;
+            }
+            set {
+                this.iRRFValorCNPJField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double INSSValorCPF {
+            get {
+                return this.iNSSValorCPFField;
+            }
+            set {
+                this.iNSSValorCPFField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double INSSValorCNPJ {
+            get {
+                return this.iNSSValorCNPJField;
+            }
+            set {
+                this.iNSSValorCNPJField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double INSSBase {
+            get {
+                return this.iNSSBaseField;
+            }
+            set {
+                this.iNSSBaseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double PISCOFINSCSLLValor {
+            get {
+                return this.pISCOFINSCSLLValorField;
+            }
+            set {
+                this.pISCOFINSCSLLValorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double PISCOFINSCSLLBase {
+            get {
+                return this.pISCOFINSCSLLBaseField;
+            }
+            set {
+                this.pISCOFINSCSLLBaseField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Origem {
+            get {
+                return this.origemField;
+            }
+            set {
+                this.origemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TVencimentosaPagar[] VencimentosaPagar {
+            get {
+                return this.vencimentosaPagarField;
+            }
+            set {
+                this.vencimentosaPagarField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string IDWS {
+            get {
+                return this.iDWSField;
+            }
+            set {
+                this.iDWSField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TVencimentosaPagar {
+        
+        private string codigoField;
+        
+        private int sequencialField;
+        
+        private string vencimentoField;
+        
+        private double valorField;
+        
+        private string tituloField;
+        
+        private string dtCancelField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Sequencial {
+            get {
+                return this.sequencialField;
+            }
+            set {
+                this.sequencialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Vencimento {
+            get {
+                return this.vencimentoField;
+            }
+            set {
+                this.vencimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Titulo {
+            get {
+                return this.tituloField;
+            }
+            set {
+                this.tituloField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DtCancel {
+            get {
+                return this.dtCancelField;
+            }
+            set {
+                this.dtCancelField = value;
             }
         }
     }
@@ -5266,6 +8478,8 @@ namespace Mensageria.AGWebReference {
         
         private string requisicoesField;
         
+        private TDadosPedidoDeCompraRemotable[] arrayDadosPedidoDeCompraField;
+        
         /// <remarks/>
         public string Emp_Codigo {
             get {
@@ -5385,6 +8599,16 @@ namespace Mensageria.AGWebReference {
                 this.requisicoesField = value;
             }
         }
+        
+        /// <remarks/>
+        public TDadosPedidoDeCompraRemotable[] ArrayDadosPedidoDeCompra {
+            get {
+                return this.arrayDadosPedidoDeCompraField;
+            }
+            set {
+                this.arrayDadosPedidoDeCompraField = value;
+            }
+        }
     }
     
     /// <remarks/>
@@ -5486,680 +8710,107 @@ namespace Mensageria.AGWebReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
-    public partial class TItensTES {
-        
-        private string codigoField;
-        
-        private string itemField;
-        
-        private int sequencialField;
-        
-        private double quantidadeField;
-        
-        private int lOT_SequencialField;
-        
-        /// <remarks/>
-        public string Codigo {
-            get {
-                return this.codigoField;
-            }
-            set {
-                this.codigoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Item {
-            get {
-                return this.itemField;
-            }
-            set {
-                this.itemField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int Sequencial {
-            get {
-                return this.sequencialField;
-            }
-            set {
-                this.sequencialField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double Quantidade {
-            get {
-                return this.quantidadeField;
-            }
-            set {
-                this.quantidadeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int LOT_Sequencial {
-            get {
-                return this.lOT_SequencialField;
-            }
-            set {
-                this.lOT_SequencialField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
-    public partial class TTransfEstoque {
+    public partial class TMapaResumo {
         
         private string estabelecimentoField;
         
-        private System.DateTime dataField;
+        private string aIDFField;
         
-        private string centroDeEstoqueOrigemField;
+        private string serieField;
         
-        private string centroDeEstoqueDestinoField;
+        private string subserieField;
         
-        private string descricaoField;
+        private int numeroField;
         
-        private System.DateTime horaField;
+        private int formularioField;
         
-        private TItensTES[] itensTransfEstoqueField;
+        private string dataEmissaoField;
         
-        /// <remarks/>
-        public string Estabelecimento {
-            get {
-                return this.estabelecimentoField;
-            }
-            set {
-                this.estabelecimentoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime Data {
-            get {
-                return this.dataField;
-            }
-            set {
-                this.dataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string CentroDeEstoqueOrigem {
-            get {
-                return this.centroDeEstoqueOrigemField;
-            }
-            set {
-                this.centroDeEstoqueOrigemField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string CentroDeEstoqueDestino {
-            get {
-                return this.centroDeEstoqueDestinoField;
-            }
-            set {
-                this.centroDeEstoqueDestinoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Descricao {
-            get {
-                return this.descricaoField;
-            }
-            set {
-                this.descricaoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime Hora {
-            get {
-                return this.horaField;
-            }
-            set {
-                this.horaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public TItensTES[] ItensTransfEstoque {
-            get {
-                return this.itensTransfEstoqueField;
-            }
-            set {
-                this.itensTransfEstoqueField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
-    public partial class TItensDevolucoesSaida {
-        
-        private int sequencialField;
-        
-        private string itemField;
-        
-        private double quantidadeField;
-        
-        private int lOT_SequencialField;
-        
-        /// <remarks/>
-        public int Sequencial {
-            get {
-                return this.sequencialField;
-            }
-            set {
-                this.sequencialField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Item {
-            get {
-                return this.itemField;
-            }
-            set {
-                this.itemField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double Quantidade {
-            get {
-                return this.quantidadeField;
-            }
-            set {
-                this.quantidadeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int LOT_Sequencial {
-            get {
-                return this.lOT_SequencialField;
-            }
-            set {
-                this.lOT_SequencialField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
-    public partial class TDevolucoesSaida {
-        
-        private string estabelecimentoField;
-        
-        private string centroDeEstoqueField;
-        
-        private string centroDeResultadosField;
-        
-        private string centroDeResultadosDestinoField;
-        
-        private string numeroNotaFiscalField;
-        
-        private string especieField;
-        
-        private System.DateTime dataField;
-        
-        private System.DateTime horaField;
-        
-        private string oBSField;
-        
-        private TItensDevolucoesSaida[] itensDevolucoesSaidaField;
-        
-        /// <remarks/>
-        public string Estabelecimento {
-            get {
-                return this.estabelecimentoField;
-            }
-            set {
-                this.estabelecimentoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string CentroDeEstoque {
-            get {
-                return this.centroDeEstoqueField;
-            }
-            set {
-                this.centroDeEstoqueField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string CentroDeResultados {
-            get {
-                return this.centroDeResultadosField;
-            }
-            set {
-                this.centroDeResultadosField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string CentroDeResultadosDestino {
-            get {
-                return this.centroDeResultadosDestinoField;
-            }
-            set {
-                this.centroDeResultadosDestinoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string NumeroNotaFiscal {
-            get {
-                return this.numeroNotaFiscalField;
-            }
-            set {
-                this.numeroNotaFiscalField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Especie {
-            get {
-                return this.especieField;
-            }
-            set {
-                this.especieField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime Data {
-            get {
-                return this.dataField;
-            }
-            set {
-                this.dataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime Hora {
-            get {
-                return this.horaField;
-            }
-            set {
-                this.horaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string OBS {
-            get {
-                return this.oBSField;
-            }
-            set {
-                this.oBSField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public TItensDevolucoesSaida[] ItensDevolucoesSaida {
-            get {
-                return this.itensDevolucoesSaidaField;
-            }
-            set {
-                this.itensDevolucoesSaidaField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
-    public partial class TItensPedidoDeVenda {
-        
-        private string pEV_CODIGOField;
-        
-        private string pRO_CODIGOField;
-        
-        private int sEQUENCIALField;
-        
-        private double qTDEField;
-        
-        private double vALORField;
-        
-        private double aliquotaICMSField;
-        
-        private double aliquotaIPIField;
-        
-        private string cFOP_CodigoField;
-        
-        private string sTA_CodigoField;
-        
-        private string sTB_CodigoField;
-        
-        private string unidadeField;
-        
-        private double freteField;
-        
-        private string cOMPDESCRICAOField;
-        
-        private double comprimentoField;
-        
-        private double alturaField;
-        
-        private double larguraField;
-        
-        private double descontoField;
-        
-        private string sTBSN_CodigoField;
-        
-        private double aliqICMSSubstField;
-        
-        private double baseICMSSubstField;
-        
-        private double valorICMSSubstField;
-        
-        /// <remarks/>
-        public string PEV_CODIGO {
-            get {
-                return this.pEV_CODIGOField;
-            }
-            set {
-                this.pEV_CODIGOField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string PRO_CODIGO {
-            get {
-                return this.pRO_CODIGOField;
-            }
-            set {
-                this.pRO_CODIGOField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int SEQUENCIAL {
-            get {
-                return this.sEQUENCIALField;
-            }
-            set {
-                this.sEQUENCIALField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double QTDE {
-            get {
-                return this.qTDEField;
-            }
-            set {
-                this.qTDEField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double VALOR {
-            get {
-                return this.vALORField;
-            }
-            set {
-                this.vALORField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double AliquotaICMS {
-            get {
-                return this.aliquotaICMSField;
-            }
-            set {
-                this.aliquotaICMSField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double AliquotaIPI {
-            get {
-                return this.aliquotaIPIField;
-            }
-            set {
-                this.aliquotaIPIField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string CFOP_Codigo {
-            get {
-                return this.cFOP_CodigoField;
-            }
-            set {
-                this.cFOP_CodigoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string STA_Codigo {
-            get {
-                return this.sTA_CodigoField;
-            }
-            set {
-                this.sTA_CodigoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string STB_Codigo {
-            get {
-                return this.sTB_CodigoField;
-            }
-            set {
-                this.sTB_CodigoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Unidade {
-            get {
-                return this.unidadeField;
-            }
-            set {
-                this.unidadeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double Frete {
-            get {
-                return this.freteField;
-            }
-            set {
-                this.freteField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string COMPDESCRICAO {
-            get {
-                return this.cOMPDESCRICAOField;
-            }
-            set {
-                this.cOMPDESCRICAOField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double Comprimento {
-            get {
-                return this.comprimentoField;
-            }
-            set {
-                this.comprimentoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double Altura {
-            get {
-                return this.alturaField;
-            }
-            set {
-                this.alturaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double Largura {
-            get {
-                return this.larguraField;
-            }
-            set {
-                this.larguraField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double Desconto {
-            get {
-                return this.descontoField;
-            }
-            set {
-                this.descontoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string STBSN_Codigo {
-            get {
-                return this.sTBSN_CodigoField;
-            }
-            set {
-                this.sTBSN_CodigoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double AliqICMSSubst {
-            get {
-                return this.aliqICMSSubstField;
-            }
-            set {
-                this.aliqICMSSubstField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double BaseICMSSubst {
-            get {
-                return this.baseICMSSubstField;
-            }
-            set {
-                this.baseICMSSubstField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double ValorICMSSubst {
-            get {
-                return this.valorICMSSubstField;
-            }
-            set {
-                this.valorICMSSubstField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
-    public partial class TServicosPedidoDeVenda {
-        
-        private string pEV_CodigoField;
-        
-        private int sequencialField;
-        
-        private string sER_CodigoField;
-        
-        private string mDS_CodigoField;
-        
-        private double valorField;
+        private int canceladoField;
         
         private string observacaoField;
         
-        private double qTDSERVICOSField;
+        private string codigoField;
         
-        private double dESCONTOField;
+        private string iDWSField;
         
         /// <remarks/>
-        public string PEV_Codigo {
+        public string Estabelecimento {
             get {
-                return this.pEV_CodigoField;
+                return this.estabelecimentoField;
             }
             set {
-                this.pEV_CodigoField = value;
+                this.estabelecimentoField = value;
             }
         }
         
         /// <remarks/>
-        public int Sequencial {
+        public string AIDF {
             get {
-                return this.sequencialField;
+                return this.aIDFField;
             }
             set {
-                this.sequencialField = value;
+                this.aIDFField = value;
             }
         }
         
         /// <remarks/>
-        public string SER_Codigo {
+        public string Serie {
             get {
-                return this.sER_CodigoField;
+                return this.serieField;
             }
             set {
-                this.sER_CodigoField = value;
+                this.serieField = value;
             }
         }
         
         /// <remarks/>
-        public string MDS_Codigo {
+        public string Subserie {
             get {
-                return this.mDS_CodigoField;
+                return this.subserieField;
             }
             set {
-                this.mDS_CodigoField = value;
+                this.subserieField = value;
             }
         }
         
         /// <remarks/>
-        public double Valor {
+        public int Numero {
             get {
-                return this.valorField;
+                return this.numeroField;
             }
             set {
-                this.valorField = value;
+                this.numeroField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Formulario {
+            get {
+                return this.formularioField;
+            }
+            set {
+                this.formularioField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DataEmissao {
+            get {
+                return this.dataEmissaoField;
+            }
+            set {
+                this.dataEmissaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Cancelado {
+            get {
+                return this.canceladoField;
+            }
+            set {
+                this.canceladoField = value;
             }
         }
         
@@ -6174,22 +8825,22 @@ namespace Mensageria.AGWebReference {
         }
         
         /// <remarks/>
-        public double QTDSERVICOS {
+        public string Codigo {
             get {
-                return this.qTDSERVICOSField;
+                return this.codigoField;
             }
             set {
-                this.qTDSERVICOSField = value;
+                this.codigoField = value;
             }
         }
         
         /// <remarks/>
-        public double DESCONTO {
+        public string IDWS {
             get {
-                return this.dESCONTOField;
+                return this.iDWSField;
             }
             set {
-                this.dESCONTOField = value;
+                this.iDWSField = value;
             }
         }
     }
@@ -6200,78 +8851,34 @@ namespace Mensageria.AGWebReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
-    public partial class TPedidoDeVenda {
+    public partial class TTransferenciaEntreContas {
         
-        private string pEV_CodigoField;
+        private string dataField;
         
-        private string eST_CODIGOField;
+        private int sequencialField;
         
-        private string cLI_CodigoField;
+        private string estOrigemField;
         
-        private System.DateTime dataField;
+        private string estDestinoField;
         
-        private System.DateTime dATAPREVENTREGAField;
+        private string conOrigemField;
         
-        private string cONDICAOPAGAMENTOField;
+        private string conDestinoField;
         
-        private string oBSERVACAOField;
+        private double valorField;
         
-        private int rejeitadoField;
+        private string historicoField;
         
-        private string tPP_CodigoField;
+        private bool exportaACField;
         
-        private string tDC_CodigoField;
+        private string hisCodigoField;
         
-        private string cOB_CodigoField;
+        private string usuCodigoField;
         
-        private string documentoField;
-        
-        private double baseICMSSubstField;
-        
-        private double valorICMSSubstField;
-        
-        private string uSU_CODIGOField;
-        
-        private int iAG_CODIGOField;
-        
-        private string hIS_CODIGOField;
-        
-        private TServicosPedidoDeVenda[] servicosPedidoDeVendaField;
-        
-        private TItensPedidoDeVenda[] itensPedidoDeVendaField;
+        private string iDWSField;
         
         /// <remarks/>
-        public string PEV_Codigo {
-            get {
-                return this.pEV_CodigoField;
-            }
-            set {
-                this.pEV_CodigoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string EST_CODIGO {
-            get {
-                return this.eST_CODIGOField;
-            }
-            set {
-                this.eST_CODIGOField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string CLI_Codigo {
-            get {
-                return this.cLI_CodigoField;
-            }
-            set {
-                this.cLI_CodigoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime Data {
+        public string Data {
             get {
                 return this.dataField;
             }
@@ -6281,152 +8888,502 @@ namespace Mensageria.AGWebReference {
         }
         
         /// <remarks/>
-        public System.DateTime DATAPREVENTREGA {
+        public int Sequencial {
             get {
-                return this.dATAPREVENTREGAField;
+                return this.sequencialField;
             }
             set {
-                this.dATAPREVENTREGAField = value;
+                this.sequencialField = value;
             }
         }
         
         /// <remarks/>
-        public string CONDICAOPAGAMENTO {
+        public string EstOrigem {
             get {
-                return this.cONDICAOPAGAMENTOField;
+                return this.estOrigemField;
             }
             set {
-                this.cONDICAOPAGAMENTOField = value;
+                this.estOrigemField = value;
             }
         }
         
         /// <remarks/>
-        public string OBSERVACAO {
+        public string EstDestino {
             get {
-                return this.oBSERVACAOField;
+                return this.estDestinoField;
             }
             set {
-                this.oBSERVACAOField = value;
+                this.estDestinoField = value;
             }
         }
         
         /// <remarks/>
-        public int Rejeitado {
+        public string ConOrigem {
             get {
-                return this.rejeitadoField;
+                return this.conOrigemField;
             }
             set {
-                this.rejeitadoField = value;
+                this.conOrigemField = value;
             }
         }
         
         /// <remarks/>
-        public string TPP_Codigo {
+        public string ConDestino {
             get {
-                return this.tPP_CodigoField;
+                return this.conDestinoField;
             }
             set {
-                this.tPP_CodigoField = value;
+                this.conDestinoField = value;
             }
         }
         
         /// <remarks/>
-        public string TDC_Codigo {
+        public double Valor {
             get {
-                return this.tDC_CodigoField;
+                return this.valorField;
             }
             set {
-                this.tDC_CodigoField = value;
+                this.valorField = value;
             }
         }
         
         /// <remarks/>
-        public string COB_Codigo {
+        public string Historico {
             get {
-                return this.cOB_CodigoField;
+                return this.historicoField;
             }
             set {
-                this.cOB_CodigoField = value;
+                this.historicoField = value;
             }
         }
         
         /// <remarks/>
-        public string Documento {
+        public bool ExportaAC {
             get {
-                return this.documentoField;
+                return this.exportaACField;
             }
             set {
-                this.documentoField = value;
+                this.exportaACField = value;
             }
         }
         
         /// <remarks/>
-        public double BaseICMSSubst {
+        public string HisCodigo {
             get {
-                return this.baseICMSSubstField;
+                return this.hisCodigoField;
             }
             set {
-                this.baseICMSSubstField = value;
+                this.hisCodigoField = value;
             }
         }
         
         /// <remarks/>
-        public double ValorICMSSubst {
+        public string UsuCodigo {
             get {
-                return this.valorICMSSubstField;
+                return this.usuCodigoField;
             }
             set {
-                this.valorICMSSubstField = value;
+                this.usuCodigoField = value;
             }
         }
         
         /// <remarks/>
-        public string USU_CODIGO {
+        public string IDWS {
             get {
-                return this.uSU_CODIGOField;
+                return this.iDWSField;
             }
             set {
-                this.uSU_CODIGOField = value;
+                this.iDWSField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TComplementoDoInventario {
+        
+        private string empresaField;
+        
+        private string iIV_CodigoField;
+        
+        private string codigoField;
+        
+        private int indicadorPropriedadeField;
+        
+        private double quantidadeField;
+        
+        private string unidadeField;
+        
+        private double valorUnitarioField;
+        
+        private string participanteField;
+        
+        private string cSTAField;
+        
+        private string cSTBField;
+        
+        private double baseCalculoIcmsField;
+        
+        private double aliquotaIcmsField;
+        
+        private double valorIcmsField;
+        
+        private double valorImpostoDeRendaField;
+        
+        /// <remarks/>
+        public string Empresa {
+            get {
+                return this.empresaField;
+            }
+            set {
+                this.empresaField = value;
             }
         }
         
         /// <remarks/>
-        public int IAG_CODIGO {
+        public string IIV_Codigo {
             get {
-                return this.iAG_CODIGOField;
+                return this.iIV_CodigoField;
             }
             set {
-                this.iAG_CODIGOField = value;
+                this.iIV_CodigoField = value;
             }
         }
         
         /// <remarks/>
-        public string HIS_CODIGO {
+        public string Codigo {
             get {
-                return this.hIS_CODIGOField;
+                return this.codigoField;
             }
             set {
-                this.hIS_CODIGOField = value;
+                this.codigoField = value;
             }
         }
         
         /// <remarks/>
-        public TServicosPedidoDeVenda[] ServicosPedidoDeVenda {
+        public int IndicadorPropriedade {
             get {
-                return this.servicosPedidoDeVendaField;
+                return this.indicadorPropriedadeField;
             }
             set {
-                this.servicosPedidoDeVendaField = value;
+                this.indicadorPropriedadeField = value;
             }
         }
         
         /// <remarks/>
-        public TItensPedidoDeVenda[] ItensPedidoDeVenda {
+        public double Quantidade {
             get {
-                return this.itensPedidoDeVendaField;
+                return this.quantidadeField;
             }
             set {
-                this.itensPedidoDeVendaField = value;
+                this.quantidadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Unidade {
+            get {
+                return this.unidadeField;
+            }
+            set {
+                this.unidadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorUnitario {
+            get {
+                return this.valorUnitarioField;
+            }
+            set {
+                this.valorUnitarioField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Participante {
+            get {
+                return this.participanteField;
+            }
+            set {
+                this.participanteField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CSTA {
+            get {
+                return this.cSTAField;
+            }
+            set {
+                this.cSTAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CSTB {
+            get {
+                return this.cSTBField;
+            }
+            set {
+                this.cSTBField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalculoIcms {
+            get {
+                return this.baseCalculoIcmsField;
+            }
+            set {
+                this.baseCalculoIcmsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaIcms {
+            get {
+                return this.aliquotaIcmsField;
+            }
+            set {
+                this.aliquotaIcmsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorIcms {
+            get {
+                return this.valorIcmsField;
+            }
+            set {
+                this.valorIcmsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorImpostoDeRenda {
+            get {
+                return this.valorImpostoDeRendaField;
+            }
+            set {
+                this.valorImpostoDeRendaField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TInventario {
+        
+        private string empresaField;
+        
+        private string codigoField;
+        
+        private string estabelecimentoField;
+        
+        private string dataField;
+        
+        private string produtoField;
+        
+        private string unidadeField;
+        
+        private double quantidadeField;
+        
+        private double valorUnitarioField;
+        
+        private string motivoField;
+        
+        private string cSTAField;
+        
+        private string cSTBField;
+        
+        private double baseCalculoIcmsField;
+        
+        private double aliquotaIcmsField;
+        
+        private double valorICMSField;
+        
+        private double valorImpostoDeRendaField;
+        
+        private TComplementoDoInventario[] complementoDoInventarioField;
+        
+        private string iDWSField;
+        
+        /// <remarks/>
+        public string Empresa {
+            get {
+                return this.empresaField;
+            }
+            set {
+                this.empresaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Estabelecimento {
+            get {
+                return this.estabelecimentoField;
+            }
+            set {
+                this.estabelecimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Produto {
+            get {
+                return this.produtoField;
+            }
+            set {
+                this.produtoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Unidade {
+            get {
+                return this.unidadeField;
+            }
+            set {
+                this.unidadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Quantidade {
+            get {
+                return this.quantidadeField;
+            }
+            set {
+                this.quantidadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorUnitario {
+            get {
+                return this.valorUnitarioField;
+            }
+            set {
+                this.valorUnitarioField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Motivo {
+            get {
+                return this.motivoField;
+            }
+            set {
+                this.motivoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CSTA {
+            get {
+                return this.cSTAField;
+            }
+            set {
+                this.cSTAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CSTB {
+            get {
+                return this.cSTBField;
+            }
+            set {
+                this.cSTBField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalculoIcms {
+            get {
+                return this.baseCalculoIcmsField;
+            }
+            set {
+                this.baseCalculoIcmsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaIcms {
+            get {
+                return this.aliquotaIcmsField;
+            }
+            set {
+                this.aliquotaIcmsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorICMS {
+            get {
+                return this.valorICMSField;
+            }
+            set {
+                this.valorICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorImpostoDeRenda {
+            get {
+                return this.valorImpostoDeRendaField;
+            }
+            set {
+                this.valorImpostoDeRendaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TComplementoDoInventario[] ComplementoDoInventario {
+            get {
+                return this.complementoDoInventarioField;
+            }
+            set {
+                this.complementoDoInventarioField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string IDWS {
+            get {
+                return this.iDWSField;
+            }
+            set {
+                this.iDWSField = value;
             }
         }
     }
@@ -6438,6 +9395,8 @@ namespace Mensageria.AGWebReference {
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
     public partial class TAdiantamentoCliente {
+        
+        private string codigoField;
         
         private string estabelecimentoField;
         
@@ -6456,6 +9415,18 @@ namespace Mensageria.AGWebReference {
         private string observacaoField;
         
         private int exportaACField;
+        
+        private string iDWSField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
         
         /// <remarks/>
         public string Estabelecimento {
@@ -6546,262 +9517,14 @@ namespace Mensageria.AGWebReference {
                 this.exportaACField = value;
             }
         }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
-    public partial class TRateioLancamentos {
-        
-        private string codigoField;
-        
-        private int sequencialField;
-        
-        private string estabelecimentoField;
-        
-        private string centroResultadosField;
-        
-        private string receitaDespesaField;
-        
-        private string naturezaField;
-        
-        private double valorField;
-        
-        private string historicoField;
         
         /// <remarks/>
-        public string Codigo {
+        public string IDWS {
             get {
-                return this.codigoField;
+                return this.iDWSField;
             }
             set {
-                this.codigoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int Sequencial {
-            get {
-                return this.sequencialField;
-            }
-            set {
-                this.sequencialField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Estabelecimento {
-            get {
-                return this.estabelecimentoField;
-            }
-            set {
-                this.estabelecimentoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string CentroResultados {
-            get {
-                return this.centroResultadosField;
-            }
-            set {
-                this.centroResultadosField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string ReceitaDespesa {
-            get {
-                return this.receitaDespesaField;
-            }
-            set {
-                this.receitaDespesaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Natureza {
-            get {
-                return this.naturezaField;
-            }
-            set {
-                this.naturezaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double Valor {
-            get {
-                return this.valorField;
-            }
-            set {
-                this.valorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Historico {
-            get {
-                return this.historicoField;
-            }
-            set {
-                this.historicoField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
-    public partial class TLancamentos {
-        
-        private string codigoField;
-        
-        private string estabelecimentoField;
-        
-        private string contaField;
-        
-        private System.DateTime dataField;
-        
-        private int sequencialField;
-        
-        private string centroResultadosField;
-        
-        private string receitaDespesaField;
-        
-        private double valorField;
-        
-        private string naturezaField;
-        
-        private int exportaACField;
-        
-        private string historicoField;
-        
-        private TRateioLancamentos[] rateioLancamentoField;
-        
-        /// <remarks/>
-        public string Codigo {
-            get {
-                return this.codigoField;
-            }
-            set {
-                this.codigoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Estabelecimento {
-            get {
-                return this.estabelecimentoField;
-            }
-            set {
-                this.estabelecimentoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Conta {
-            get {
-                return this.contaField;
-            }
-            set {
-                this.contaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime Data {
-            get {
-                return this.dataField;
-            }
-            set {
-                this.dataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int Sequencial {
-            get {
-                return this.sequencialField;
-            }
-            set {
-                this.sequencialField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string CentroResultados {
-            get {
-                return this.centroResultadosField;
-            }
-            set {
-                this.centroResultadosField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string ReceitaDespesa {
-            get {
-                return this.receitaDespesaField;
-            }
-            set {
-                this.receitaDespesaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double Valor {
-            get {
-                return this.valorField;
-            }
-            set {
-                this.valorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Natureza {
-            get {
-                return this.naturezaField;
-            }
-            set {
-                this.naturezaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int ExportaAC {
-            get {
-                return this.exportaACField;
-            }
-            set {
-                this.exportaACField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Historico {
-            get {
-                return this.historicoField;
-            }
-            set {
-                this.historicoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public TRateioLancamentos[] RateioLancamento {
-            get {
-                return this.rateioLancamentoField;
-            }
-            set {
-                this.rateioLancamentoField = value;
+                this.iDWSField = value;
             }
         }
     }
@@ -7120,6 +9843,195 @@ namespace Mensageria.AGWebReference {
             }
             set {
                 this.lAN_CRD_MultaField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TBaixaVencimentoaPagar {
+        
+        private string cPG_CodigoField;
+        
+        private string dataVencimentoField;
+        
+        private int sequencialVencimentoField;
+        
+        private int sequencialField;
+        
+        private string dataField;
+        
+        private double valorField;
+        
+        private double descontoField;
+        
+        private double jurosField;
+        
+        private string dtCancelField;
+        
+        private string motivoCancelField;
+        
+        private string historicoField;
+        
+        private string lAN_ContaFinanceiraField;
+        
+        private string lAN_HistoricoField;
+        
+        private string lAN_CRD_DescontoField;
+        
+        private string lAN_CRD_JurosField;
+        
+        /// <remarks/>
+        public string CPG_Codigo {
+            get {
+                return this.cPG_CodigoField;
+            }
+            set {
+                this.cPG_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DataVencimento {
+            get {
+                return this.dataVencimentoField;
+            }
+            set {
+                this.dataVencimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SequencialVencimento {
+            get {
+                return this.sequencialVencimentoField;
+            }
+            set {
+                this.sequencialVencimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Sequencial {
+            get {
+                return this.sequencialField;
+            }
+            set {
+                this.sequencialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Desconto {
+            get {
+                return this.descontoField;
+            }
+            set {
+                this.descontoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Juros {
+            get {
+                return this.jurosField;
+            }
+            set {
+                this.jurosField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DtCancel {
+            get {
+                return this.dtCancelField;
+            }
+            set {
+                this.dtCancelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string MotivoCancel {
+            get {
+                return this.motivoCancelField;
+            }
+            set {
+                this.motivoCancelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Historico {
+            get {
+                return this.historicoField;
+            }
+            set {
+                this.historicoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string LAN_ContaFinanceira {
+            get {
+                return this.lAN_ContaFinanceiraField;
+            }
+            set {
+                this.lAN_ContaFinanceiraField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string LAN_Historico {
+            get {
+                return this.lAN_HistoricoField;
+            }
+            set {
+                this.lAN_HistoricoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string LAN_CRD_Desconto {
+            get {
+                return this.lAN_CRD_DescontoField;
+            }
+            set {
+                this.lAN_CRD_DescontoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string LAN_CRD_Juros {
+            get {
+                return this.lAN_CRD_JurosField;
+            }
+            set {
+                this.lAN_CRD_JurosField = value;
             }
         }
     }
@@ -8117,6 +11029,231 @@ namespace Mensageria.AGWebReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TReceitasDespesas {
+        
+        private string codigoField;
+        
+        private string nomeField;
+        
+        private string tipoField;
+        
+        private string naturezaField;
+        
+        private int inativoField;
+        
+        private string codigoMaeField;
+        
+        private string contaContabilField;
+        
+        private string grupoField;
+        
+        private int investimentoField;
+        
+        private int retemISSField;
+        
+        private int retemINSSField;
+        
+        private int retemIRRFField;
+        
+        private int retemPISCOFINSCSLField;
+        
+        private string contaFinanceiraField;
+        
+        private string contaContabilEstoqueField;
+        
+        private int geraSPRField;
+        
+        private int retemICMSField;
+        
+        private string obsField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Nome {
+            get {
+                return this.nomeField;
+            }
+            set {
+                this.nomeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Tipo {
+            get {
+                return this.tipoField;
+            }
+            set {
+                this.tipoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Natureza {
+            get {
+                return this.naturezaField;
+            }
+            set {
+                this.naturezaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Inativo {
+            get {
+                return this.inativoField;
+            }
+            set {
+                this.inativoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CodigoMae {
+            get {
+                return this.codigoMaeField;
+            }
+            set {
+                this.codigoMaeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ContaContabil {
+            get {
+                return this.contaContabilField;
+            }
+            set {
+                this.contaContabilField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Grupo {
+            get {
+                return this.grupoField;
+            }
+            set {
+                this.grupoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Investimento {
+            get {
+                return this.investimentoField;
+            }
+            set {
+                this.investimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int RetemISS {
+            get {
+                return this.retemISSField;
+            }
+            set {
+                this.retemISSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int RetemINSS {
+            get {
+                return this.retemINSSField;
+            }
+            set {
+                this.retemINSSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int RetemIRRF {
+            get {
+                return this.retemIRRFField;
+            }
+            set {
+                this.retemIRRFField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int RetemPISCOFINSCSL {
+            get {
+                return this.retemPISCOFINSCSLField;
+            }
+            set {
+                this.retemPISCOFINSCSLField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ContaFinanceira {
+            get {
+                return this.contaFinanceiraField;
+            }
+            set {
+                this.contaFinanceiraField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ContaContabilEstoque {
+            get {
+                return this.contaContabilEstoqueField;
+            }
+            set {
+                this.contaContabilEstoqueField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int GeraSPR {
+            get {
+                return this.geraSPRField;
+            }
+            set {
+                this.geraSPRField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int RetemICMS {
+            get {
+                return this.retemICMSField;
+            }
+            set {
+                this.retemICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Obs {
+            get {
+                return this.obsField;
+            }
+            set {
+                this.obsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
     public partial class TServico {
         
         private string codigoField;
@@ -9044,6 +12181,5226 @@ namespace Mensageria.AGWebReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TItensTES {
+        
+        private string codigoField;
+        
+        private string itemField;
+        
+        private int sequencialField;
+        
+        private double quantidadeField;
+        
+        private int lOT_SequencialField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Item {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Sequencial {
+            get {
+                return this.sequencialField;
+            }
+            set {
+                this.sequencialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Quantidade {
+            get {
+                return this.quantidadeField;
+            }
+            set {
+                this.quantidadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int LOT_Sequencial {
+            get {
+                return this.lOT_SequencialField;
+            }
+            set {
+                this.lOT_SequencialField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TItensDevolucoesSaida {
+        
+        private int sequencialField;
+        
+        private string itemField;
+        
+        private double quantidadeField;
+        
+        private int lOT_SequencialField;
+        
+        /// <remarks/>
+        public int Sequencial {
+            get {
+                return this.sequencialField;
+            }
+            set {
+                this.sequencialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Item {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Quantidade {
+            get {
+                return this.quantidadeField;
+            }
+            set {
+                this.quantidadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int LOT_Sequencial {
+            get {
+                return this.lOT_SequencialField;
+            }
+            set {
+                this.lOT_SequencialField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TItensNotaFiscalSaida {
+        
+        private string nFS_CodigoField;
+        
+        private int sequencialField;
+        
+        private string itemField;
+        
+        private string cFOP_CodigoField;
+        
+        private string sTA_CodigoField;
+        
+        private string sTB_CodigoField;
+        
+        private double aliquotaICMSField;
+        
+        private double aliquotaIPIField;
+        
+        private string unidadeField;
+        
+        private double quantidadeField;
+        
+        private double valorField;
+        
+        /// <remarks/>
+        public string NFS_Codigo {
+            get {
+                return this.nFS_CodigoField;
+            }
+            set {
+                this.nFS_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Sequencial {
+            get {
+                return this.sequencialField;
+            }
+            set {
+                this.sequencialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Item {
+            get {
+                return this.itemField;
+            }
+            set {
+                this.itemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CFOP_Codigo {
+            get {
+                return this.cFOP_CodigoField;
+            }
+            set {
+                this.cFOP_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string STA_Codigo {
+            get {
+                return this.sTA_CodigoField;
+            }
+            set {
+                this.sTA_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string STB_Codigo {
+            get {
+                return this.sTB_CodigoField;
+            }
+            set {
+                this.sTB_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaICMS {
+            get {
+                return this.aliquotaICMSField;
+            }
+            set {
+                this.aliquotaICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaIPI {
+            get {
+                return this.aliquotaIPIField;
+            }
+            set {
+                this.aliquotaIPIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Unidade {
+            get {
+                return this.unidadeField;
+            }
+            set {
+                this.unidadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Quantidade {
+            get {
+                return this.quantidadeField;
+            }
+            set {
+                this.quantidadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TDetalheTransporteNotaMercadoria {
+        
+        private string codigoField;
+        
+        private string codigoParticipanteField;
+        
+        private string codigoRNTCField;
+        
+        private string placaVeiculoField;
+        
+        private string uFPlacaVeiculoField;
+        
+        private double quantidadeField;
+        
+        private string especieField;
+        
+        private string marcaField;
+        
+        private string numeracaoField;
+        
+        private double pesoBrutoField;
+        
+        private double pesoLiquidoField;
+        
+        private string codigoAutorizacaoField;
+        
+        private string numeroPasseFiscalField;
+        
+        private double temperaturaField;
+        
+        private string nomeMotoristaField;
+        
+        private string cPFMotoristaField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CodigoParticipante {
+            get {
+                return this.codigoParticipanteField;
+            }
+            set {
+                this.codigoParticipanteField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CodigoRNTC {
+            get {
+                return this.codigoRNTCField;
+            }
+            set {
+                this.codigoRNTCField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PlacaVeiculo {
+            get {
+                return this.placaVeiculoField;
+            }
+            set {
+                this.placaVeiculoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string UFPlacaVeiculo {
+            get {
+                return this.uFPlacaVeiculoField;
+            }
+            set {
+                this.uFPlacaVeiculoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Quantidade {
+            get {
+                return this.quantidadeField;
+            }
+            set {
+                this.quantidadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Especie {
+            get {
+                return this.especieField;
+            }
+            set {
+                this.especieField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Marca {
+            get {
+                return this.marcaField;
+            }
+            set {
+                this.marcaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Numeracao {
+            get {
+                return this.numeracaoField;
+            }
+            set {
+                this.numeracaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double PesoBruto {
+            get {
+                return this.pesoBrutoField;
+            }
+            set {
+                this.pesoBrutoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double PesoLiquido {
+            get {
+                return this.pesoLiquidoField;
+            }
+            set {
+                this.pesoLiquidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CodigoAutorizacao {
+            get {
+                return this.codigoAutorizacaoField;
+            }
+            set {
+                this.codigoAutorizacaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NumeroPasseFiscal {
+            get {
+                return this.numeroPasseFiscalField;
+            }
+            set {
+                this.numeroPasseFiscalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Temperatura {
+            get {
+                return this.temperaturaField;
+            }
+            set {
+                this.temperaturaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NomeMotorista {
+            get {
+                return this.nomeMotoristaField;
+            }
+            set {
+                this.nomeMotoristaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CPFMotorista {
+            get {
+                return this.cPFMotoristaField;
+            }
+            set {
+                this.cPFMotoristaField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TOutrosValoresNotaMercadoria {
+        
+        private string codigoField;
+        
+        private string codigo_FiscalField;
+        
+        private double valorField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Codigo_Fiscal {
+            get {
+                return this.codigo_FiscalField;
+            }
+            set {
+                this.codigo_FiscalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TICMSDiferencialNotaMercadoria {
+        
+        private string codigoField;
+        
+        private double baseCalculoField;
+        
+        private double aliquotaOrigemField;
+        
+        private double aliquotaInternaField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalculo {
+            get {
+                return this.baseCalculoField;
+            }
+            set {
+                this.baseCalculoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaOrigem {
+            get {
+                return this.aliquotaOrigemField;
+            }
+            set {
+                this.aliquotaOrigemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaInterna {
+            get {
+                return this.aliquotaInternaField;
+            }
+            set {
+                this.aliquotaInternaField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TICMSSubstNotaMercadoria {
+        
+        private string codigoField;
+        
+        private string tipoField;
+        
+        private double custoAquisicaoField;
+        
+        private double percAgregacaoField;
+        
+        private double baseCalculoField;
+        
+        private double aliquotaField;
+        
+        private double valorCreditoOrigemField;
+        
+        private double valorJaRecolhidoField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Tipo {
+            get {
+                return this.tipoField;
+            }
+            set {
+                this.tipoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double CustoAquisicao {
+            get {
+                return this.custoAquisicaoField;
+            }
+            set {
+                this.custoAquisicaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double PercAgregacao {
+            get {
+                return this.percAgregacaoField;
+            }
+            set {
+                this.percAgregacaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalculo {
+            get {
+                return this.baseCalculoField;
+            }
+            set {
+                this.baseCalculoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Aliquota {
+            get {
+                return this.aliquotaField;
+            }
+            set {
+                this.aliquotaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCreditoOrigem {
+            get {
+                return this.valorCreditoOrigemField;
+            }
+            set {
+                this.valorCreditoOrigemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorJaRecolhido {
+            get {
+                return this.valorJaRecolhidoField;
+            }
+            set {
+                this.valorJaRecolhidoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TICMSAntecipadoNotaMercadoria {
+        
+        private string codigoField;
+        
+        private double custoAquisicaoField;
+        
+        private double percAgregacaoField;
+        
+        private double baseCalculoField;
+        
+        private double aliquotaField;
+        
+        private double valorCreditoOrigemField;
+        
+        private double valorJaRecolhidoField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double CustoAquisicao {
+            get {
+                return this.custoAquisicaoField;
+            }
+            set {
+                this.custoAquisicaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double PercAgregacao {
+            get {
+                return this.percAgregacaoField;
+            }
+            set {
+                this.percAgregacaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalculo {
+            get {
+                return this.baseCalculoField;
+            }
+            set {
+                this.baseCalculoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Aliquota {
+            get {
+                return this.aliquotaField;
+            }
+            set {
+                this.aliquotaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCreditoOrigem {
+            get {
+                return this.valorCreditoOrigemField;
+            }
+            set {
+                this.valorCreditoOrigemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorJaRecolhido {
+            get {
+                return this.valorJaRecolhidoField;
+            }
+            set {
+                this.valorJaRecolhidoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TICMSIPINotaMercadoria {
+        
+        private string codigoField;
+        
+        private double valorField;
+        
+        private string ufField;
+        
+        private string cFOPField;
+        
+        private string cFOPTransfField;
+        
+        private double baseCalcICMSField;
+        
+        private double aliquotaICMSField;
+        
+        private double valorICMSField;
+        
+        private double valorIsentasICMSField;
+        
+        private double valorOutrasICMSField;
+        
+        private double baseCalcIPIField;
+        
+        private double valorIPIField;
+        
+        private double valorIsentasIPIField;
+        
+        private double valorOutrasIPIField;
+        
+        private int substICMSField;
+        
+        private int substIPIField;
+        
+        private int substCOFINSField;
+        
+        private int substPIS_PASEPField;
+        
+        private string cSTAField;
+        
+        private string cSTBField;
+        
+        private string codSitTribCSOSNField;
+        
+        private string cSOSNField;
+        
+        private string cST_IPIField;
+        
+        private int cOFINSMonofasicoField;
+        
+        private int pISMonofasicoField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string UF {
+            get {
+                return this.ufField;
+            }
+            set {
+                this.ufField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CFOP {
+            get {
+                return this.cFOPField;
+            }
+            set {
+                this.cFOPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CFOPTransf {
+            get {
+                return this.cFOPTransfField;
+            }
+            set {
+                this.cFOPTransfField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalcICMS {
+            get {
+                return this.baseCalcICMSField;
+            }
+            set {
+                this.baseCalcICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaICMS {
+            get {
+                return this.aliquotaICMSField;
+            }
+            set {
+                this.aliquotaICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorICMS {
+            get {
+                return this.valorICMSField;
+            }
+            set {
+                this.valorICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorIsentasICMS {
+            get {
+                return this.valorIsentasICMSField;
+            }
+            set {
+                this.valorIsentasICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorOutrasICMS {
+            get {
+                return this.valorOutrasICMSField;
+            }
+            set {
+                this.valorOutrasICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalcIPI {
+            get {
+                return this.baseCalcIPIField;
+            }
+            set {
+                this.baseCalcIPIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorIPI {
+            get {
+                return this.valorIPIField;
+            }
+            set {
+                this.valorIPIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorIsentasIPI {
+            get {
+                return this.valorIsentasIPIField;
+            }
+            set {
+                this.valorIsentasIPIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorOutrasIPI {
+            get {
+                return this.valorOutrasIPIField;
+            }
+            set {
+                this.valorOutrasIPIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SubstICMS {
+            get {
+                return this.substICMSField;
+            }
+            set {
+                this.substICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SubstIPI {
+            get {
+                return this.substIPIField;
+            }
+            set {
+                this.substIPIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SubstCOFINS {
+            get {
+                return this.substCOFINSField;
+            }
+            set {
+                this.substCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SubstPIS_PASEP {
+            get {
+                return this.substPIS_PASEPField;
+            }
+            set {
+                this.substPIS_PASEPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CSTA {
+            get {
+                return this.cSTAField;
+            }
+            set {
+                this.cSTAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CSTB {
+            get {
+                return this.cSTBField;
+            }
+            set {
+                this.cSTBField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CodSitTribCSOSN {
+            get {
+                return this.codSitTribCSOSNField;
+            }
+            set {
+                this.codSitTribCSOSNField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CSOSN {
+            get {
+                return this.cSOSNField;
+            }
+            set {
+                this.cSOSNField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CST_IPI {
+            get {
+                return this.cST_IPIField;
+            }
+            set {
+                this.cST_IPIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int COFINSMonofasico {
+            get {
+                return this.cOFINSMonofasicoField;
+            }
+            set {
+                this.cOFINSMonofasicoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int PISMonofasico {
+            get {
+                return this.pISMonofasicoField;
+            }
+            set {
+                this.pISMonofasicoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TProdutoNotaMercadoria {
+        
+        private string codigoField;
+        
+        private string produtoField;
+        
+        private string cFOPField;
+        
+        private string cFOPTransfField;
+        
+        private string cSTAField;
+        
+        private string cSTBField;
+        
+        private string unidadeMedidaField;
+        
+        private double quantidadeField;
+        
+        private double valorBrutoField;
+        
+        private double valorIPINaoContribField;
+        
+        private string tipoTributICMSField;
+        
+        private double baseCalculoICMSField;
+        
+        private double aliquotaICMSField;
+        
+        private double valorICMSSubstField;
+        
+        private string tipoRecolhimentoField;
+        
+        private string tipoSubstituicaoField;
+        
+        private double valorCustoAquisicaoField;
+        
+        private double percAgregSubstField;
+        
+        private double baseCalcSubstTribField;
+        
+        private double aliqSubstTributField;
+        
+        private double creditoOrigemSubstField;
+        
+        private double valorSubstJaRecolhidoField;
+        
+        private double custodeAquisicaoAntecipField;
+        
+        private double percAgregacaoAntecipField;
+        
+        private double aliquotaInternaAntecipField;
+        
+        private double creditoOrigemAntecipField;
+        
+        private double antecipJaRecolhidoField;
+        
+        private double baseCalcDifAliquotaField;
+        
+        private double aliquotaOrigemField;
+        
+        private double aliquotaInternaDifField;
+        
+        private string tipoTributIPIField;
+        
+        private double baseCalcIPIField;
+        
+        private double aliquotaIPIField;
+        
+        private double valoripicontribField;
+        
+        private string cST_IPIField;
+        
+        private string cST_COFINSField;
+        
+        private string cST_PISField;
+        
+        private double baseCalculoCOFINSField;
+        
+        private double baseCalculoPISField;
+        
+        private double valorFreteField;
+        
+        private double valorSeguroField;
+        
+        private double valorDescontoField;
+        
+        private double valorTotalField;
+        
+        private string naturezaReceitaCOFINSField;
+        
+        private string naturezaReceitaPISField;
+        
+        private string indespProdepeField;
+        
+        private string codApuracaoProdepeField;
+        
+        private string sitTribCSOSNField;
+        
+        private string cSOSNField;
+        
+        private string tipoCalculoCofinsField;
+        
+        private double aliquotaCofinsPercField;
+        
+        private double aliquotaCOFINSReaisField;
+        
+        private double valorCofinsField;
+        
+        private string tipoCalculoPISField;
+        
+        private double aliquotaPISPercField;
+        
+        private double aliquotaPISReaisField;
+        
+        private double valorPISField;
+        
+        private string codAjusteFiscalField;
+        
+        private string pedidoCompraField;
+        
+        private string itemPedidoCompraField;
+        
+        private double outrasDespesasField;
+        
+        private string codigoContabilField;
+        
+        private int naoCompoeValorTotalField;
+        
+        private string natContribEstornoCOFINSField;
+        
+        private string natContribEstornoPISField;
+        
+        private string natCredEstornoCOFINSField;
+        
+        private string natCredEstornoPISField;
+        
+        private string fCIField;
+        
+        private int itemDerivadoPetroleoField;
+        
+        private string recopiField;
+        
+        private double percIPIDevolvidoField;
+        
+        private string motivdevolipiField;
+        
+        private string indEspIncentivoField;
+        
+        private double valorICMSDesonField;
+        
+        private string motivoDesonICMSField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Produto {
+            get {
+                return this.produtoField;
+            }
+            set {
+                this.produtoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CFOP {
+            get {
+                return this.cFOPField;
+            }
+            set {
+                this.cFOPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CFOPTransf {
+            get {
+                return this.cFOPTransfField;
+            }
+            set {
+                this.cFOPTransfField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CSTA {
+            get {
+                return this.cSTAField;
+            }
+            set {
+                this.cSTAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CSTB {
+            get {
+                return this.cSTBField;
+            }
+            set {
+                this.cSTBField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string UnidadeMedida {
+            get {
+                return this.unidadeMedidaField;
+            }
+            set {
+                this.unidadeMedidaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Quantidade {
+            get {
+                return this.quantidadeField;
+            }
+            set {
+                this.quantidadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorBruto {
+            get {
+                return this.valorBrutoField;
+            }
+            set {
+                this.valorBrutoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorIPINaoContrib {
+            get {
+                return this.valorIPINaoContribField;
+            }
+            set {
+                this.valorIPINaoContribField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TipoTributICMS {
+            get {
+                return this.tipoTributICMSField;
+            }
+            set {
+                this.tipoTributICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalculoICMS {
+            get {
+                return this.baseCalculoICMSField;
+            }
+            set {
+                this.baseCalculoICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaICMS {
+            get {
+                return this.aliquotaICMSField;
+            }
+            set {
+                this.aliquotaICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorICMSSubst {
+            get {
+                return this.valorICMSSubstField;
+            }
+            set {
+                this.valorICMSSubstField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TipoRecolhimento {
+            get {
+                return this.tipoRecolhimentoField;
+            }
+            set {
+                this.tipoRecolhimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TipoSubstituicao {
+            get {
+                return this.tipoSubstituicaoField;
+            }
+            set {
+                this.tipoSubstituicaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCustoAquisicao {
+            get {
+                return this.valorCustoAquisicaoField;
+            }
+            set {
+                this.valorCustoAquisicaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double PercAgregSubst {
+            get {
+                return this.percAgregSubstField;
+            }
+            set {
+                this.percAgregSubstField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalcSubstTrib {
+            get {
+                return this.baseCalcSubstTribField;
+            }
+            set {
+                this.baseCalcSubstTribField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliqSubstTribut {
+            get {
+                return this.aliqSubstTributField;
+            }
+            set {
+                this.aliqSubstTributField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double CreditoOrigemSubst {
+            get {
+                return this.creditoOrigemSubstField;
+            }
+            set {
+                this.creditoOrigemSubstField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorSubstJaRecolhido {
+            get {
+                return this.valorSubstJaRecolhidoField;
+            }
+            set {
+                this.valorSubstJaRecolhidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double CustodeAquisicaoAntecip {
+            get {
+                return this.custodeAquisicaoAntecipField;
+            }
+            set {
+                this.custodeAquisicaoAntecipField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double PercAgregacaoAntecip {
+            get {
+                return this.percAgregacaoAntecipField;
+            }
+            set {
+                this.percAgregacaoAntecipField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaInternaAntecip {
+            get {
+                return this.aliquotaInternaAntecipField;
+            }
+            set {
+                this.aliquotaInternaAntecipField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double CreditoOrigemAntecip {
+            get {
+                return this.creditoOrigemAntecipField;
+            }
+            set {
+                this.creditoOrigemAntecipField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AntecipJaRecolhido {
+            get {
+                return this.antecipJaRecolhidoField;
+            }
+            set {
+                this.antecipJaRecolhidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalcDifAliquota {
+            get {
+                return this.baseCalcDifAliquotaField;
+            }
+            set {
+                this.baseCalcDifAliquotaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaOrigem {
+            get {
+                return this.aliquotaOrigemField;
+            }
+            set {
+                this.aliquotaOrigemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaInternaDif {
+            get {
+                return this.aliquotaInternaDifField;
+            }
+            set {
+                this.aliquotaInternaDifField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TipoTributIPI {
+            get {
+                return this.tipoTributIPIField;
+            }
+            set {
+                this.tipoTributIPIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalcIPI {
+            get {
+                return this.baseCalcIPIField;
+            }
+            set {
+                this.baseCalcIPIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaIPI {
+            get {
+                return this.aliquotaIPIField;
+            }
+            set {
+                this.aliquotaIPIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Valoripicontrib {
+            get {
+                return this.valoripicontribField;
+            }
+            set {
+                this.valoripicontribField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CST_IPI {
+            get {
+                return this.cST_IPIField;
+            }
+            set {
+                this.cST_IPIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CST_COFINS {
+            get {
+                return this.cST_COFINSField;
+            }
+            set {
+                this.cST_COFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CST_PIS {
+            get {
+                return this.cST_PISField;
+            }
+            set {
+                this.cST_PISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalculoCOFINS {
+            get {
+                return this.baseCalculoCOFINSField;
+            }
+            set {
+                this.baseCalculoCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalculoPIS {
+            get {
+                return this.baseCalculoPISField;
+            }
+            set {
+                this.baseCalculoPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorFrete {
+            get {
+                return this.valorFreteField;
+            }
+            set {
+                this.valorFreteField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorSeguro {
+            get {
+                return this.valorSeguroField;
+            }
+            set {
+                this.valorSeguroField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorDesconto {
+            get {
+                return this.valorDescontoField;
+            }
+            set {
+                this.valorDescontoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorTotal {
+            get {
+                return this.valorTotalField;
+            }
+            set {
+                this.valorTotalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NaturezaReceitaCOFINS {
+            get {
+                return this.naturezaReceitaCOFINSField;
+            }
+            set {
+                this.naturezaReceitaCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NaturezaReceitaPIS {
+            get {
+                return this.naturezaReceitaPISField;
+            }
+            set {
+                this.naturezaReceitaPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string IndespProdepe {
+            get {
+                return this.indespProdepeField;
+            }
+            set {
+                this.indespProdepeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CodApuracaoProdepe {
+            get {
+                return this.codApuracaoProdepeField;
+            }
+            set {
+                this.codApuracaoProdepeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SitTribCSOSN {
+            get {
+                return this.sitTribCSOSNField;
+            }
+            set {
+                this.sitTribCSOSNField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CSOSN {
+            get {
+                return this.cSOSNField;
+            }
+            set {
+                this.cSOSNField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TipoCalculoCofins {
+            get {
+                return this.tipoCalculoCofinsField;
+            }
+            set {
+                this.tipoCalculoCofinsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaCofinsPerc {
+            get {
+                return this.aliquotaCofinsPercField;
+            }
+            set {
+                this.aliquotaCofinsPercField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaCOFINSReais {
+            get {
+                return this.aliquotaCOFINSReaisField;
+            }
+            set {
+                this.aliquotaCOFINSReaisField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCofins {
+            get {
+                return this.valorCofinsField;
+            }
+            set {
+                this.valorCofinsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TipoCalculoPIS {
+            get {
+                return this.tipoCalculoPISField;
+            }
+            set {
+                this.tipoCalculoPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaPISPerc {
+            get {
+                return this.aliquotaPISPercField;
+            }
+            set {
+                this.aliquotaPISPercField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaPISReais {
+            get {
+                return this.aliquotaPISReaisField;
+            }
+            set {
+                this.aliquotaPISReaisField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorPIS {
+            get {
+                return this.valorPISField;
+            }
+            set {
+                this.valorPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CodAjusteFiscal {
+            get {
+                return this.codAjusteFiscalField;
+            }
+            set {
+                this.codAjusteFiscalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PedidoCompra {
+            get {
+                return this.pedidoCompraField;
+            }
+            set {
+                this.pedidoCompraField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ItemPedidoCompra {
+            get {
+                return this.itemPedidoCompraField;
+            }
+            set {
+                this.itemPedidoCompraField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double OutrasDespesas {
+            get {
+                return this.outrasDespesasField;
+            }
+            set {
+                this.outrasDespesasField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CodigoContabil {
+            get {
+                return this.codigoContabilField;
+            }
+            set {
+                this.codigoContabilField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int NaoCompoeValorTotal {
+            get {
+                return this.naoCompoeValorTotalField;
+            }
+            set {
+                this.naoCompoeValorTotalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NatContribEstornoCOFINS {
+            get {
+                return this.natContribEstornoCOFINSField;
+            }
+            set {
+                this.natContribEstornoCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NatContribEstornoPIS {
+            get {
+                return this.natContribEstornoPISField;
+            }
+            set {
+                this.natContribEstornoPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NatCredEstornoCOFINS {
+            get {
+                return this.natCredEstornoCOFINSField;
+            }
+            set {
+                this.natCredEstornoCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NatCredEstornoPIS {
+            get {
+                return this.natCredEstornoPISField;
+            }
+            set {
+                this.natCredEstornoPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string FCI {
+            get {
+                return this.fCIField;
+            }
+            set {
+                this.fCIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int ItemDerivadoPetroleo {
+            get {
+                return this.itemDerivadoPetroleoField;
+            }
+            set {
+                this.itemDerivadoPetroleoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Recopi {
+            get {
+                return this.recopiField;
+            }
+            set {
+                this.recopiField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double PercIPIDevolvido {
+            get {
+                return this.percIPIDevolvidoField;
+            }
+            set {
+                this.percIPIDevolvidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Motivdevolipi {
+            get {
+                return this.motivdevolipiField;
+            }
+            set {
+                this.motivdevolipiField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string IndEspIncentivo {
+            get {
+                return this.indEspIncentivoField;
+            }
+            set {
+                this.indEspIncentivoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorICMSDeson {
+            get {
+                return this.valorICMSDesonField;
+            }
+            set {
+                this.valorICMSDesonField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string MotivoDesonICMS {
+            get {
+                return this.motivoDesonICMSField;
+            }
+            set {
+                this.motivoDesonICMSField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TDetalhamentoNotaMercadoria {
+        
+        private string codigoField;
+        
+        private int tipoInformacaoField;
+        
+        private string estabelecimentoField;
+        
+        private string cFOPField;
+        
+        private int substICMSField;
+        
+        private int substIPIField;
+        
+        private int substCOFINSField;
+        
+        private int substPIS_PASEPField;
+        
+        private int cofinsMonofasicoField;
+        
+        private int pisMonofasicoField;
+        
+        private double valorIsentasField;
+        
+        private int exteriorField;
+        
+        private int iSSRetidoField;
+        
+        private string atividadeField;
+        
+        private string uFFavorecidaField;
+        
+        private string codigoMunFavorecidoField;
+        
+        private double valorReceitaField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int TipoInformacao {
+            get {
+                return this.tipoInformacaoField;
+            }
+            set {
+                this.tipoInformacaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Estabelecimento {
+            get {
+                return this.estabelecimentoField;
+            }
+            set {
+                this.estabelecimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CFOP {
+            get {
+                return this.cFOPField;
+            }
+            set {
+                this.cFOPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SubstICMS {
+            get {
+                return this.substICMSField;
+            }
+            set {
+                this.substICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SubstIPI {
+            get {
+                return this.substIPIField;
+            }
+            set {
+                this.substIPIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SubstCOFINS {
+            get {
+                return this.substCOFINSField;
+            }
+            set {
+                this.substCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SubstPIS_PASEP {
+            get {
+                return this.substPIS_PASEPField;
+            }
+            set {
+                this.substPIS_PASEPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int CofinsMonofasico {
+            get {
+                return this.cofinsMonofasicoField;
+            }
+            set {
+                this.cofinsMonofasicoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int PisMonofasico {
+            get {
+                return this.pisMonofasicoField;
+            }
+            set {
+                this.pisMonofasicoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorIsentas {
+            get {
+                return this.valorIsentasField;
+            }
+            set {
+                this.valorIsentasField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Exterior {
+            get {
+                return this.exteriorField;
+            }
+            set {
+                this.exteriorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int ISSRetido {
+            get {
+                return this.iSSRetidoField;
+            }
+            set {
+                this.iSSRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Atividade {
+            get {
+                return this.atividadeField;
+            }
+            set {
+                this.atividadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string UFFavorecida {
+            get {
+                return this.uFFavorecidaField;
+            }
+            set {
+                this.uFFavorecidaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CodigoMunFavorecido {
+            get {
+                return this.codigoMunFavorecidoField;
+            }
+            set {
+                this.codigoMunFavorecidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceita {
+            get {
+                return this.valorReceitaField;
+            }
+            set {
+                this.valorReceitaField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TApuracoesNotaMercadoria {
+        
+        private string codigoField;
+        
+        private string cFOPField;
+        
+        private double quantidadeEmReaisField;
+        
+        private string cST_COFINSField;
+        
+        private double valorReceitaCOFINSField;
+        
+        private string tipoCalculoCOFINSField;
+        
+        private double baseCalculoCOFINSField;
+        
+        private double aliqCOFINSPercField;
+        
+        private double aliqCOFINSReaisField;
+        
+        private double valorCOFINSField;
+        
+        private string cST_PISField;
+        
+        private double valorReceitaPISField;
+        
+        private string tipoCalculopisField;
+        
+        private double baseCalculopisField;
+        
+        private double aliqPISPercField;
+        
+        private double aliqPISReaisField;
+        
+        private double valorPISField;
+        
+        private string descricaoCOFINSField;
+        
+        private string descricaoPISField;
+        
+        private string naturezaCOFINSField;
+        
+        private string naturezaPISField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CFOP {
+            get {
+                return this.cFOPField;
+            }
+            set {
+                this.cFOPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double QuantidadeEmReais {
+            get {
+                return this.quantidadeEmReaisField;
+            }
+            set {
+                this.quantidadeEmReaisField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CST_COFINS {
+            get {
+                return this.cST_COFINSField;
+            }
+            set {
+                this.cST_COFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceitaCOFINS {
+            get {
+                return this.valorReceitaCOFINSField;
+            }
+            set {
+                this.valorReceitaCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TipoCalculoCOFINS {
+            get {
+                return this.tipoCalculoCOFINSField;
+            }
+            set {
+                this.tipoCalculoCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalculoCOFINS {
+            get {
+                return this.baseCalculoCOFINSField;
+            }
+            set {
+                this.baseCalculoCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliqCOFINSPerc {
+            get {
+                return this.aliqCOFINSPercField;
+            }
+            set {
+                this.aliqCOFINSPercField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliqCOFINSReais {
+            get {
+                return this.aliqCOFINSReaisField;
+            }
+            set {
+                this.aliqCOFINSReaisField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCOFINS {
+            get {
+                return this.valorCOFINSField;
+            }
+            set {
+                this.valorCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CST_PIS {
+            get {
+                return this.cST_PISField;
+            }
+            set {
+                this.cST_PISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceitaPIS {
+            get {
+                return this.valorReceitaPISField;
+            }
+            set {
+                this.valorReceitaPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TipoCalculopis {
+            get {
+                return this.tipoCalculopisField;
+            }
+            set {
+                this.tipoCalculopisField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalculopis {
+            get {
+                return this.baseCalculopisField;
+            }
+            set {
+                this.baseCalculopisField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliqPISPerc {
+            get {
+                return this.aliqPISPercField;
+            }
+            set {
+                this.aliqPISPercField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliqPISReais {
+            get {
+                return this.aliqPISReaisField;
+            }
+            set {
+                this.aliqPISReaisField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorPIS {
+            get {
+                return this.valorPISField;
+            }
+            set {
+                this.valorPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DescricaoCOFINS {
+            get {
+                return this.descricaoCOFINSField;
+            }
+            set {
+                this.descricaoCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DescricaoPIS {
+            get {
+                return this.descricaoPISField;
+            }
+            set {
+                this.descricaoPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NaturezaCOFINS {
+            get {
+                return this.naturezaCOFINSField;
+            }
+            set {
+                this.naturezaCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NaturezaPIS {
+            get {
+                return this.naturezaPISField;
+            }
+            set {
+                this.naturezaPISField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TTitulosNotaMercadoria {
+        
+        private string codigoField;
+        
+        private string tituloField;
+        
+        private string dataVencimentoField;
+        
+        private double valorTituloField;
+        
+        private double valorCOFINSREtidoField;
+        
+        private double valorPISRetidoField;
+        
+        private double valorCSLREtidoField;
+        
+        private double valorIRPJRetidoField;
+        
+        private TBaixasNotaMercadoria[] arrayBaixasNotaField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Titulo {
+            get {
+                return this.tituloField;
+            }
+            set {
+                this.tituloField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DataVencimento {
+            get {
+                return this.dataVencimentoField;
+            }
+            set {
+                this.dataVencimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorTitulo {
+            get {
+                return this.valorTituloField;
+            }
+            set {
+                this.valorTituloField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCOFINSREtido {
+            get {
+                return this.valorCOFINSREtidoField;
+            }
+            set {
+                this.valorCOFINSREtidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorPISRetido {
+            get {
+                return this.valorPISRetidoField;
+            }
+            set {
+                this.valorPISRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCSLREtido {
+            get {
+                return this.valorCSLREtidoField;
+            }
+            set {
+                this.valorCSLREtidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorIRPJRetido {
+            get {
+                return this.valorIRPJRetidoField;
+            }
+            set {
+                this.valorIRPJRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TBaixasNotaMercadoria[] ArrayBaixasNota {
+            get {
+                return this.arrayBaixasNotaField;
+            }
+            set {
+                this.arrayBaixasNotaField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TBaixasNotaMercadoria : TClasseBase {
+        
+        private string codigoField;
+        
+        private string dataField;
+        
+        private double valorField;
+        
+        private double valorMultaField;
+        
+        private double valorJurosField;
+        
+        private double valorCOFINSRetidoField;
+        
+        private double valorPISRetidoField;
+        
+        private double valorCSLRetidoField;
+        
+        private double valorTotalField;
+        
+        private double valorDescontoField;
+        
+        private double valorIRPJRetidoField;
+        
+        private double valorReceitaTributCSL1Field;
+        
+        private double valorReceitaTributCSL2Field;
+        
+        private double valorReceitaTributIRPJ1Field;
+        
+        private double valorReceitaTributIRPJ2Field;
+        
+        private double valorReceitaTributIRPJ3Field;
+        
+        private double valorReceitaTributIRPJ4Field;
+        
+        private TApuracoesNotaMercadoria[] arrayApuracoesNotaField;
+        
+        private TDetalhamentoNotaMercadoria[] arrayDetalhamentoNotaField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorMulta {
+            get {
+                return this.valorMultaField;
+            }
+            set {
+                this.valorMultaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorJuros {
+            get {
+                return this.valorJurosField;
+            }
+            set {
+                this.valorJurosField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCOFINSRetido {
+            get {
+                return this.valorCOFINSRetidoField;
+            }
+            set {
+                this.valorCOFINSRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorPISRetido {
+            get {
+                return this.valorPISRetidoField;
+            }
+            set {
+                this.valorPISRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCSLRetido {
+            get {
+                return this.valorCSLRetidoField;
+            }
+            set {
+                this.valorCSLRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorTotal {
+            get {
+                return this.valorTotalField;
+            }
+            set {
+                this.valorTotalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorDesconto {
+            get {
+                return this.valorDescontoField;
+            }
+            set {
+                this.valorDescontoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorIRPJRetido {
+            get {
+                return this.valorIRPJRetidoField;
+            }
+            set {
+                this.valorIRPJRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceitaTributCSL1 {
+            get {
+                return this.valorReceitaTributCSL1Field;
+            }
+            set {
+                this.valorReceitaTributCSL1Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceitaTributCSL2 {
+            get {
+                return this.valorReceitaTributCSL2Field;
+            }
+            set {
+                this.valorReceitaTributCSL2Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceitaTributIRPJ1 {
+            get {
+                return this.valorReceitaTributIRPJ1Field;
+            }
+            set {
+                this.valorReceitaTributIRPJ1Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceitaTributIRPJ2 {
+            get {
+                return this.valorReceitaTributIRPJ2Field;
+            }
+            set {
+                this.valorReceitaTributIRPJ2Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceitaTributIRPJ3 {
+            get {
+                return this.valorReceitaTributIRPJ3Field;
+            }
+            set {
+                this.valorReceitaTributIRPJ3Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceitaTributIRPJ4 {
+            get {
+                return this.valorReceitaTributIRPJ4Field;
+            }
+            set {
+                this.valorReceitaTributIRPJ4Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TApuracoesNotaMercadoria[] ArrayApuracoesNota {
+            get {
+                return this.arrayApuracoesNotaField;
+            }
+            set {
+                this.arrayApuracoesNotaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TDetalhamentoNotaMercadoria[] ArrayDetalhamentoNota {
+            get {
+                return this.arrayDetalhamentoNotaField;
+            }
+            set {
+                this.arrayDetalhamentoNotaField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TDetalhamentoConhecimento {
+        
+        private string codigoField;
+        
+        private int tipoInformacaoField;
+        
+        private string estabelecimentoField;
+        
+        private string cFOPField;
+        
+        private int substituicaoICMSField;
+        
+        private int substituicaoIPIField;
+        
+        private int substituicaoCOFINSField;
+        
+        private int substituicaoPISPASEPField;
+        
+        private int cOFINSMonofasicoField;
+        
+        private int pISMonofasicoField;
+        
+        private double valorIsentasICMSField;
+        
+        private int exteriorField;
+        
+        private int iSSRetidoField;
+        
+        private string atividadeField;
+        
+        private string uFFavorecidaField;
+        
+        private string codigoMunFavorecidoField;
+        
+        private double valorReceitaField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int TipoInformacao {
+            get {
+                return this.tipoInformacaoField;
+            }
+            set {
+                this.tipoInformacaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Estabelecimento {
+            get {
+                return this.estabelecimentoField;
+            }
+            set {
+                this.estabelecimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CFOP {
+            get {
+                return this.cFOPField;
+            }
+            set {
+                this.cFOPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SubstituicaoICMS {
+            get {
+                return this.substituicaoICMSField;
+            }
+            set {
+                this.substituicaoICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SubstituicaoIPI {
+            get {
+                return this.substituicaoIPIField;
+            }
+            set {
+                this.substituicaoIPIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SubstituicaoCOFINS {
+            get {
+                return this.substituicaoCOFINSField;
+            }
+            set {
+                this.substituicaoCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SubstituicaoPISPASEP {
+            get {
+                return this.substituicaoPISPASEPField;
+            }
+            set {
+                this.substituicaoPISPASEPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int COFINSMonofasico {
+            get {
+                return this.cOFINSMonofasicoField;
+            }
+            set {
+                this.cOFINSMonofasicoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int PISMonofasico {
+            get {
+                return this.pISMonofasicoField;
+            }
+            set {
+                this.pISMonofasicoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorIsentasICMS {
+            get {
+                return this.valorIsentasICMSField;
+            }
+            set {
+                this.valorIsentasICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Exterior {
+            get {
+                return this.exteriorField;
+            }
+            set {
+                this.exteriorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int ISSRetido {
+            get {
+                return this.iSSRetidoField;
+            }
+            set {
+                this.iSSRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Atividade {
+            get {
+                return this.atividadeField;
+            }
+            set {
+                this.atividadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string UFFavorecida {
+            get {
+                return this.uFFavorecidaField;
+            }
+            set {
+                this.uFFavorecidaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CodigoMunFavorecido {
+            get {
+                return this.codigoMunFavorecidoField;
+            }
+            set {
+                this.codigoMunFavorecidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceita {
+            get {
+                return this.valorReceitaField;
+            }
+            set {
+                this.valorReceitaField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TApuracaoConhecimento {
+        
+        private string codigoField;
+        
+        private string cFOPField;
+        
+        private double quantidadeEmReaisField;
+        
+        private string cST_COFINSField;
+        
+        private double valorReceitaCOFINSField;
+        
+        private string tipoCalculoCOFINSField;
+        
+        private double baseCalculoCOFINSField;
+        
+        private double aliquotaCOFINSPercField;
+        
+        private double aliquotaCOFINSReaisField;
+        
+        private double valorCOFINSField;
+        
+        private string cST_PISField;
+        
+        private double valorReceitaPISField;
+        
+        private string tipoCalculoPISField;
+        
+        private double baseCalculoPISField;
+        
+        private double aliquotaPISPercField;
+        
+        private double aliquotaPISReaisField;
+        
+        private double valorPISField;
+        
+        private string descricaoCOFINSField;
+        
+        private string descricaoPISField;
+        
+        private string naturezaCOFINSField;
+        
+        private string naturezaPISField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CFOP {
+            get {
+                return this.cFOPField;
+            }
+            set {
+                this.cFOPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double QuantidadeEmReais {
+            get {
+                return this.quantidadeEmReaisField;
+            }
+            set {
+                this.quantidadeEmReaisField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CST_COFINS {
+            get {
+                return this.cST_COFINSField;
+            }
+            set {
+                this.cST_COFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceitaCOFINS {
+            get {
+                return this.valorReceitaCOFINSField;
+            }
+            set {
+                this.valorReceitaCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TipoCalculoCOFINS {
+            get {
+                return this.tipoCalculoCOFINSField;
+            }
+            set {
+                this.tipoCalculoCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalculoCOFINS {
+            get {
+                return this.baseCalculoCOFINSField;
+            }
+            set {
+                this.baseCalculoCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaCOFINSPerc {
+            get {
+                return this.aliquotaCOFINSPercField;
+            }
+            set {
+                this.aliquotaCOFINSPercField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaCOFINSReais {
+            get {
+                return this.aliquotaCOFINSReaisField;
+            }
+            set {
+                this.aliquotaCOFINSReaisField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCOFINS {
+            get {
+                return this.valorCOFINSField;
+            }
+            set {
+                this.valorCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CST_PIS {
+            get {
+                return this.cST_PISField;
+            }
+            set {
+                this.cST_PISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceitaPIS {
+            get {
+                return this.valorReceitaPISField;
+            }
+            set {
+                this.valorReceitaPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TipoCalculoPIS {
+            get {
+                return this.tipoCalculoPISField;
+            }
+            set {
+                this.tipoCalculoPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalculoPIS {
+            get {
+                return this.baseCalculoPISField;
+            }
+            set {
+                this.baseCalculoPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaPISPerc {
+            get {
+                return this.aliquotaPISPercField;
+            }
+            set {
+                this.aliquotaPISPercField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaPISReais {
+            get {
+                return this.aliquotaPISReaisField;
+            }
+            set {
+                this.aliquotaPISReaisField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorPIS {
+            get {
+                return this.valorPISField;
+            }
+            set {
+                this.valorPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DescricaoCOFINS {
+            get {
+                return this.descricaoCOFINSField;
+            }
+            set {
+                this.descricaoCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DescricaoPIS {
+            get {
+                return this.descricaoPISField;
+            }
+            set {
+                this.descricaoPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NaturezaCOFINS {
+            get {
+                return this.naturezaCOFINSField;
+            }
+            set {
+                this.naturezaCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NaturezaPIS {
+            get {
+                return this.naturezaPISField;
+            }
+            set {
+                this.naturezaPISField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TOutrosValoresConhecimento {
+        
+        private string codigoField;
+        
+        private string codigoFiscalField;
+        
+        private double valorField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CodigoFiscal {
+            get {
+                return this.codigoFiscalField;
+            }
+            set {
+                this.codigoFiscalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TNotasFiscaisConhecimento {
+        
+        private string codigoField;
+        
+        private string especieField;
+        
+        private string serieField;
+        
+        private string subSerieField;
+        
+        private string numeroField;
+        
+        private string dataEmissaoField;
+        
+        private double valorTotalField;
+        
+        private string chaveEletronicaField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Especie {
+            get {
+                return this.especieField;
+            }
+            set {
+                this.especieField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Serie {
+            get {
+                return this.serieField;
+            }
+            set {
+                this.serieField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SubSerie {
+            get {
+                return this.subSerieField;
+            }
+            set {
+                this.subSerieField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Numero {
+            get {
+                return this.numeroField;
+            }
+            set {
+                this.numeroField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DataEmissao {
+            get {
+                return this.dataEmissaoField;
+            }
+            set {
+                this.dataEmissaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorTotal {
+            get {
+                return this.valorTotalField;
+            }
+            set {
+                this.valorTotalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ChaveEletronica {
+            get {
+                return this.chaveEletronicaField;
+            }
+            set {
+                this.chaveEletronicaField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TOutrosValoresCupomFiscal {
+        
+        private string codigoField;
+        
+        private double valorField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TISSCupomFiscal {
+        
+        private double subtotalField;
+        
+        private string atividadeField;
+        
+        private string tributacaoField;
+        
+        private double servicosField;
+        
+        private double aliquotaField;
+        
+        private string ufField;
+        
+        private string municipioField;
+        
+        private string naturezaServicosField;
+        
+        private string cST_COFINSField;
+        
+        private double baseCalculoCOFINSField;
+        
+        private string cST_PISField;
+        
+        private double baseCalculoPISField;
+        
+        private string naturezaReceitaCOFINSField;
+        
+        private string naturezaReceitaPISField;
+        
+        /// <remarks/>
+        public double Subtotal {
+            get {
+                return this.subtotalField;
+            }
+            set {
+                this.subtotalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Atividade {
+            get {
+                return this.atividadeField;
+            }
+            set {
+                this.atividadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Tributacao {
+            get {
+                return this.tributacaoField;
+            }
+            set {
+                this.tributacaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Servicos {
+            get {
+                return this.servicosField;
+            }
+            set {
+                this.servicosField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Aliquota {
+            get {
+                return this.aliquotaField;
+            }
+            set {
+                this.aliquotaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string UF {
+            get {
+                return this.ufField;
+            }
+            set {
+                this.ufField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Municipio {
+            get {
+                return this.municipioField;
+            }
+            set {
+                this.municipioField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NaturezaServicos {
+            get {
+                return this.naturezaServicosField;
+            }
+            set {
+                this.naturezaServicosField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CST_COFINS {
+            get {
+                return this.cST_COFINSField;
+            }
+            set {
+                this.cST_COFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalculoCOFINS {
+            get {
+                return this.baseCalculoCOFINSField;
+            }
+            set {
+                this.baseCalculoCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CST_PIS {
+            get {
+                return this.cST_PISField;
+            }
+            set {
+                this.cST_PISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalculoPIS {
+            get {
+                return this.baseCalculoPISField;
+            }
+            set {
+                this.baseCalculoPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NaturezaReceitaCOFINS {
+            get {
+                return this.naturezaReceitaCOFINSField;
+            }
+            set {
+                this.naturezaReceitaCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NaturezaReceitaPIS {
+            get {
+                return this.naturezaReceitaPISField;
+            }
+            set {
+                this.naturezaReceitaPISField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TICMSCupomFiscal {
+        
+        private double valorField;
+        
+        private string ufField;
+        
+        private string cFOPField;
+        
+        private double baseCalculoICMSField;
+        
+        private double aliquotaICMSField;
+        
+        private double valorICMSDebitadoField;
+        
+        private double valorIsentasICMSField;
+        
+        private double valorOutrasICMSField;
+        
+        private int substituicaoICMSField;
+        
+        private int substituicaoCOFINSField;
+        
+        private int substituicaoPISPASEPField;
+        
+        private string cSTAField;
+        
+        private string cSTBField;
+        
+        private string sitTribCSOSNField;
+        
+        private string cSOSNField;
+        
+        private int cOFINSMonofasicoField;
+        
+        private int pISMonofasicoField;
+        
+        /// <remarks/>
+        public double Valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string UF {
+            get {
+                return this.ufField;
+            }
+            set {
+                this.ufField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CFOP {
+            get {
+                return this.cFOPField;
+            }
+            set {
+                this.cFOPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalculoICMS {
+            get {
+                return this.baseCalculoICMSField;
+            }
+            set {
+                this.baseCalculoICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaICMS {
+            get {
+                return this.aliquotaICMSField;
+            }
+            set {
+                this.aliquotaICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorICMSDebitado {
+            get {
+                return this.valorICMSDebitadoField;
+            }
+            set {
+                this.valorICMSDebitadoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorIsentasICMS {
+            get {
+                return this.valorIsentasICMSField;
+            }
+            set {
+                this.valorIsentasICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorOutrasICMS {
+            get {
+                return this.valorOutrasICMSField;
+            }
+            set {
+                this.valorOutrasICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SubstituicaoICMS {
+            get {
+                return this.substituicaoICMSField;
+            }
+            set {
+                this.substituicaoICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SubstituicaoCOFINS {
+            get {
+                return this.substituicaoCOFINSField;
+            }
+            set {
+                this.substituicaoCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SubstituicaoPISPASEP {
+            get {
+                return this.substituicaoPISPASEPField;
+            }
+            set {
+                this.substituicaoPISPASEPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CSTA {
+            get {
+                return this.cSTAField;
+            }
+            set {
+                this.cSTAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CSTB {
+            get {
+                return this.cSTBField;
+            }
+            set {
+                this.cSTBField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SitTribCSOSN {
+            get {
+                return this.sitTribCSOSNField;
+            }
+            set {
+                this.sitTribCSOSNField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CSOSN {
+            get {
+                return this.cSOSNField;
+            }
+            set {
+                this.cSOSNField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int COFINSMonofasico {
+            get {
+                return this.cOFINSMonofasicoField;
+            }
+            set {
+                this.cOFINSMonofasicoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int PISMonofasico {
+            get {
+                return this.pISMonofasicoField;
+            }
+            set {
+                this.pISMonofasicoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TProdutoCupom {
+        
+        private double acrescimoField;
+        
+        private double aliquotaCOFINSPercField;
+        
+        private double aliquotaCOFINSReaisField;
+        
+        private double aliquotaICMSField;
+        
+        private double aliquotaPISPercField;
+        
+        private double aliquotaPISReaisField;
+        
+        private double baseCalculoCOFINSField;
+        
+        private double baseCalculoICMSField;
+        
+        private double baseCalculoPISField;
+        
+        private string cFOPField;
+        
+        private string cSOSNField;
+        
+        private string cST_COFINSField;
+        
+        private string cST_PISField;
+        
+        private string cSTAField;
+        
+        private string cSTBField;
+        
+        private string naturezaReceitaCOFINSField;
+        
+        private string naturezaReceitaPISField;
+        
+        private string produtoField;
+        
+        private double quantidadeField;
+        
+        private string situacaoTributCSOSNField;
+        
+        private string tipoCalculoCOFINSField;
+        
+        private string tipoCalculoPISField;
+        
+        private string tributacaoICMSField;
+        
+        private string unidadeMedidaField;
+        
+        private double valorBrutoField;
+        
+        private double valorCancelamentoField;
+        
+        private double valorCOFINSField;
+        
+        private double valorDescontoField;
+        
+        private double valorPISField;
+        
+        private double valorTotalField;
+        
+        /// <remarks/>
+        public double Acrescimo {
+            get {
+                return this.acrescimoField;
+            }
+            set {
+                this.acrescimoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaCOFINSPerc {
+            get {
+                return this.aliquotaCOFINSPercField;
+            }
+            set {
+                this.aliquotaCOFINSPercField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaCOFINSReais {
+            get {
+                return this.aliquotaCOFINSReaisField;
+            }
+            set {
+                this.aliquotaCOFINSReaisField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaICMS {
+            get {
+                return this.aliquotaICMSField;
+            }
+            set {
+                this.aliquotaICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaPISPerc {
+            get {
+                return this.aliquotaPISPercField;
+            }
+            set {
+                this.aliquotaPISPercField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaPISReais {
+            get {
+                return this.aliquotaPISReaisField;
+            }
+            set {
+                this.aliquotaPISReaisField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalculoCOFINS {
+            get {
+                return this.baseCalculoCOFINSField;
+            }
+            set {
+                this.baseCalculoCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalculoICMS {
+            get {
+                return this.baseCalculoICMSField;
+            }
+            set {
+                this.baseCalculoICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalculoPIS {
+            get {
+                return this.baseCalculoPISField;
+            }
+            set {
+                this.baseCalculoPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CFOP {
+            get {
+                return this.cFOPField;
+            }
+            set {
+                this.cFOPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CSOSN {
+            get {
+                return this.cSOSNField;
+            }
+            set {
+                this.cSOSNField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CST_COFINS {
+            get {
+                return this.cST_COFINSField;
+            }
+            set {
+                this.cST_COFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CST_PIS {
+            get {
+                return this.cST_PISField;
+            }
+            set {
+                this.cST_PISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CSTA {
+            get {
+                return this.cSTAField;
+            }
+            set {
+                this.cSTAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CSTB {
+            get {
+                return this.cSTBField;
+            }
+            set {
+                this.cSTBField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NaturezaReceitaCOFINS {
+            get {
+                return this.naturezaReceitaCOFINSField;
+            }
+            set {
+                this.naturezaReceitaCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NaturezaReceitaPIS {
+            get {
+                return this.naturezaReceitaPISField;
+            }
+            set {
+                this.naturezaReceitaPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Produto {
+            get {
+                return this.produtoField;
+            }
+            set {
+                this.produtoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Quantidade {
+            get {
+                return this.quantidadeField;
+            }
+            set {
+                this.quantidadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SituacaoTributCSOSN {
+            get {
+                return this.situacaoTributCSOSNField;
+            }
+            set {
+                this.situacaoTributCSOSNField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TipoCalculoCOFINS {
+            get {
+                return this.tipoCalculoCOFINSField;
+            }
+            set {
+                this.tipoCalculoCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TipoCalculoPIS {
+            get {
+                return this.tipoCalculoPISField;
+            }
+            set {
+                this.tipoCalculoPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TributacaoICMS {
+            get {
+                return this.tributacaoICMSField;
+            }
+            set {
+                this.tributacaoICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string UnidadeMedida {
+            get {
+                return this.unidadeMedidaField;
+            }
+            set {
+                this.unidadeMedidaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorBruto {
+            get {
+                return this.valorBrutoField;
+            }
+            set {
+                this.valorBrutoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCancelamento {
+            get {
+                return this.valorCancelamentoField;
+            }
+            set {
+                this.valorCancelamentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCOFINS {
+            get {
+                return this.valorCOFINSField;
+            }
+            set {
+                this.valorCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorDesconto {
+            get {
+                return this.valorDescontoField;
+            }
+            set {
+                this.valorDescontoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorPIS {
+            get {
+                return this.valorPISField;
+            }
+            set {
+                this.valorPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorTotal {
+            get {
+                return this.valorTotalField;
+            }
+            set {
+                this.valorTotalField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TDetalhamentoSNCupomFiscal {
+        
+        private string tipoInformacaoField;
+        
+        private string estabelecimentoField;
+        
+        private string cFOPField;
+        
+        private int substituicaoICMSField;
+        
+        private int substituicaoIPIField;
+        
+        private int substituicaoCOFINSField;
+        
+        private int substituicaoPIS_PASEPField;
+        
+        private int cOFINSMonofasicoField;
+        
+        private int pISMonofasicoField;
+        
+        private double valorIsentasICMSField;
+        
+        private int exteriorField;
+        
+        private int iSSRetidoField;
+        
+        private string atividadeField;
+        
+        private string uFFavorecidaField;
+        
+        private string munFavorecidoField;
+        
+        private double valorReceitaField;
+        
+        /// <remarks/>
+        public string TipoInformacao {
+            get {
+                return this.tipoInformacaoField;
+            }
+            set {
+                this.tipoInformacaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Estabelecimento {
+            get {
+                return this.estabelecimentoField;
+            }
+            set {
+                this.estabelecimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CFOP {
+            get {
+                return this.cFOPField;
+            }
+            set {
+                this.cFOPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SubstituicaoICMS {
+            get {
+                return this.substituicaoICMSField;
+            }
+            set {
+                this.substituicaoICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SubstituicaoIPI {
+            get {
+                return this.substituicaoIPIField;
+            }
+            set {
+                this.substituicaoIPIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SubstituicaoCOFINS {
+            get {
+                return this.substituicaoCOFINSField;
+            }
+            set {
+                this.substituicaoCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SubstituicaoPIS_PASEP {
+            get {
+                return this.substituicaoPIS_PASEPField;
+            }
+            set {
+                this.substituicaoPIS_PASEPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int COFINSMonofasico {
+            get {
+                return this.cOFINSMonofasicoField;
+            }
+            set {
+                this.cOFINSMonofasicoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int PISMonofasico {
+            get {
+                return this.pISMonofasicoField;
+            }
+            set {
+                this.pISMonofasicoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorIsentasICMS {
+            get {
+                return this.valorIsentasICMSField;
+            }
+            set {
+                this.valorIsentasICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Exterior {
+            get {
+                return this.exteriorField;
+            }
+            set {
+                this.exteriorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int ISSRetido {
+            get {
+                return this.iSSRetidoField;
+            }
+            set {
+                this.iSSRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Atividade {
+            get {
+                return this.atividadeField;
+            }
+            set {
+                this.atividadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string UFFavorecida {
+            get {
+                return this.uFFavorecidaField;
+            }
+            set {
+                this.uFFavorecidaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string MunFavorecido {
+            get {
+                return this.munFavorecidoField;
+            }
+            set {
+                this.munFavorecidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceita {
+            get {
+                return this.valorReceitaField;
+            }
+            set {
+                this.valorReceitaField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TApuracaoCupomFiscal {
+        
+        private string cFOPField;
+        
+        private double quantidadeEmReaisField;
+        
+        private string cST_COFINSField;
+        
+        private double valorReceitaCOFINSField;
+        
+        private string tipoCalculoCOFINSField;
+        
+        private double baseCalculoCOFINSField;
+        
+        private double aliquotaCOFINSPercField;
+        
+        private double aliquotaCOFINSReaisField;
+        
+        private double valorCOFINSField;
+        
+        private string cST_PISField;
+        
+        private double valorReceitaPISField;
+        
+        private string tipoCalculoPISField;
+        
+        private double baseCalculoPISField;
+        
+        private double aliquotaPISPercField;
+        
+        private double aliquotaPISReaisField;
+        
+        private double valorPISField;
+        
+        private string descricaoCOFINSField;
+        
+        private string descricaoPISField;
+        
+        private string naturezaCOFINSField;
+        
+        private string naturezaPISField;
+        
+        /// <remarks/>
+        public string CFOP {
+            get {
+                return this.cFOPField;
+            }
+            set {
+                this.cFOPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double QuantidadeEmReais {
+            get {
+                return this.quantidadeEmReaisField;
+            }
+            set {
+                this.quantidadeEmReaisField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CST_COFINS {
+            get {
+                return this.cST_COFINSField;
+            }
+            set {
+                this.cST_COFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceitaCOFINS {
+            get {
+                return this.valorReceitaCOFINSField;
+            }
+            set {
+                this.valorReceitaCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TipoCalculoCOFINS {
+            get {
+                return this.tipoCalculoCOFINSField;
+            }
+            set {
+                this.tipoCalculoCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalculoCOFINS {
+            get {
+                return this.baseCalculoCOFINSField;
+            }
+            set {
+                this.baseCalculoCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaCOFINSPerc {
+            get {
+                return this.aliquotaCOFINSPercField;
+            }
+            set {
+                this.aliquotaCOFINSPercField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaCOFINSReais {
+            get {
+                return this.aliquotaCOFINSReaisField;
+            }
+            set {
+                this.aliquotaCOFINSReaisField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCOFINS {
+            get {
+                return this.valorCOFINSField;
+            }
+            set {
+                this.valorCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CST_PIS {
+            get {
+                return this.cST_PISField;
+            }
+            set {
+                this.cST_PISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceitaPIS {
+            get {
+                return this.valorReceitaPISField;
+            }
+            set {
+                this.valorReceitaPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TipoCalculoPIS {
+            get {
+                return this.tipoCalculoPISField;
+            }
+            set {
+                this.tipoCalculoPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalculoPIS {
+            get {
+                return this.baseCalculoPISField;
+            }
+            set {
+                this.baseCalculoPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaPISPerc {
+            get {
+                return this.aliquotaPISPercField;
+            }
+            set {
+                this.aliquotaPISPercField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaPISReais {
+            get {
+                return this.aliquotaPISReaisField;
+            }
+            set {
+                this.aliquotaPISReaisField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorPIS {
+            get {
+                return this.valorPISField;
+            }
+            set {
+                this.valorPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DescricaoCOFINS {
+            get {
+                return this.descricaoCOFINSField;
+            }
+            set {
+                this.descricaoCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DescricaoPIS {
+            get {
+                return this.descricaoPISField;
+            }
+            set {
+                this.descricaoPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NaturezaCOFINS {
+            get {
+                return this.naturezaCOFINSField;
+            }
+            set {
+                this.naturezaCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NaturezaPIS {
+            get {
+                return this.naturezaPISField;
+            }
+            set {
+                this.naturezaPISField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TContasDeOrcamento {
+        
+        private string eMP_CodigoField;
+        
+        private int oRF_CodigoField;
+        
+        private string codigoField;
+        
+        private string nomeField;
+        
+        private double qtdOrcadoField;
+        
+        /// <remarks/>
+        public string EMP_Codigo {
+            get {
+                return this.eMP_CodigoField;
+            }
+            set {
+                this.eMP_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int ORF_Codigo {
+            get {
+                return this.oRF_CodigoField;
+            }
+            set {
+                this.oRF_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Nome {
+            get {
+                return this.nomeField;
+            }
+            set {
+                this.nomeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double QtdOrcado {
+            get {
+                return this.qtdOrcadoField;
+            }
+            set {
+                this.qtdOrcadoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TItensPedidoDeVenda {
+        
+        private string pEV_CODIGOField;
+        
+        private string pRO_CODIGOField;
+        
+        private int sEQUENCIALField;
+        
+        private double qTDEField;
+        
+        private double vALORField;
+        
+        private double aliquotaICMSField;
+        
+        private double aliquotaIPIField;
+        
+        private string cFOP_CodigoField;
+        
+        private string sTA_CodigoField;
+        
+        private string sTB_CodigoField;
+        
+        private string unidadeField;
+        
+        private double freteField;
+        
+        private string cOMPDESCRICAOField;
+        
+        private double comprimentoField;
+        
+        private double alturaField;
+        
+        private double larguraField;
+        
+        private double descontoField;
+        
+        private string sTBSN_CodigoField;
+        
+        private double aliqICMSSubstField;
+        
+        private double baseICMSSubstField;
+        
+        private double valorICMSSubstField;
+        
+        /// <remarks/>
+        public string PEV_CODIGO {
+            get {
+                return this.pEV_CODIGOField;
+            }
+            set {
+                this.pEV_CODIGOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PRO_CODIGO {
+            get {
+                return this.pRO_CODIGOField;
+            }
+            set {
+                this.pRO_CODIGOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SEQUENCIAL {
+            get {
+                return this.sEQUENCIALField;
+            }
+            set {
+                this.sEQUENCIALField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double QTDE {
+            get {
+                return this.qTDEField;
+            }
+            set {
+                this.qTDEField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double VALOR {
+            get {
+                return this.vALORField;
+            }
+            set {
+                this.vALORField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaICMS {
+            get {
+                return this.aliquotaICMSField;
+            }
+            set {
+                this.aliquotaICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaIPI {
+            get {
+                return this.aliquotaIPIField;
+            }
+            set {
+                this.aliquotaIPIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CFOP_Codigo {
+            get {
+                return this.cFOP_CodigoField;
+            }
+            set {
+                this.cFOP_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string STA_Codigo {
+            get {
+                return this.sTA_CodigoField;
+            }
+            set {
+                this.sTA_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string STB_Codigo {
+            get {
+                return this.sTB_CodigoField;
+            }
+            set {
+                this.sTB_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Unidade {
+            get {
+                return this.unidadeField;
+            }
+            set {
+                this.unidadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Frete {
+            get {
+                return this.freteField;
+            }
+            set {
+                this.freteField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string COMPDESCRICAO {
+            get {
+                return this.cOMPDESCRICAOField;
+            }
+            set {
+                this.cOMPDESCRICAOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Comprimento {
+            get {
+                return this.comprimentoField;
+            }
+            set {
+                this.comprimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Altura {
+            get {
+                return this.alturaField;
+            }
+            set {
+                this.alturaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Largura {
+            get {
+                return this.larguraField;
+            }
+            set {
+                this.larguraField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Desconto {
+            get {
+                return this.descontoField;
+            }
+            set {
+                this.descontoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string STBSN_Codigo {
+            get {
+                return this.sTBSN_CodigoField;
+            }
+            set {
+                this.sTBSN_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliqICMSSubst {
+            get {
+                return this.aliqICMSSubstField;
+            }
+            set {
+                this.aliqICMSSubstField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseICMSSubst {
+            get {
+                return this.baseICMSSubstField;
+            }
+            set {
+                this.baseICMSSubstField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorICMSSubst {
+            get {
+                return this.valorICMSSubstField;
+            }
+            set {
+                this.valorICMSSubstField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TServicosPedidoDeVenda {
+        
+        private string pEV_CodigoField;
+        
+        private int sequencialField;
+        
+        private string sER_CodigoField;
+        
+        private string mDS_CodigoField;
+        
+        private double valorField;
+        
+        private string observacaoField;
+        
+        private double qTDSERVICOSField;
+        
+        private double dESCONTOField;
+        
+        /// <remarks/>
+        public string PEV_Codigo {
+            get {
+                return this.pEV_CodigoField;
+            }
+            set {
+                this.pEV_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Sequencial {
+            get {
+                return this.sequencialField;
+            }
+            set {
+                this.sequencialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SER_Codigo {
+            get {
+                return this.sER_CodigoField;
+            }
+            set {
+                this.sER_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string MDS_Codigo {
+            get {
+                return this.mDS_CodigoField;
+            }
+            set {
+                this.mDS_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Observacao {
+            get {
+                return this.observacaoField;
+            }
+            set {
+                this.observacaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double QTDSERVICOS {
+            get {
+                return this.qTDSERVICOSField;
+            }
+            set {
+                this.qTDSERVICOSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double DESCONTO {
+            get {
+                return this.dESCONTOField;
+            }
+            set {
+                this.dESCONTOField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TRateioLancamentos {
+        
+        private string codigoField;
+        
+        private int sequencialField;
+        
+        private string estabelecimentoField;
+        
+        private string centroResultadosField;
+        
+        private string receitaDespesaField;
+        
+        private string naturezaField;
+        
+        private double valorField;
+        
+        private string historicoField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Sequencial {
+            get {
+                return this.sequencialField;
+            }
+            set {
+                this.sequencialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Estabelecimento {
+            get {
+                return this.estabelecimentoField;
+            }
+            set {
+                this.estabelecimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CentroResultados {
+            get {
+                return this.centroResultadosField;
+            }
+            set {
+                this.centroResultadosField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ReceitaDespesa {
+            get {
+                return this.receitaDespesaField;
+            }
+            set {
+                this.receitaDespesaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Natureza {
+            get {
+                return this.naturezaField;
+            }
+            set {
+                this.naturezaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Historico {
+            get {
+                return this.historicoField;
+            }
+            set {
+                this.historicoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
     public partial class TItensEntrada {
         
         private string codigoField;
@@ -9281,171 +17638,6 @@ namespace Mensageria.AGWebReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
-    public partial class TEntradas {
-        
-        private string estabelecimentoField;
-        
-        private string centroDeEstoqueField;
-        
-        private string centroDeResultadosField;
-        
-        private string fornecedorField;
-        
-        private string pedidoField;
-        
-        private string transportadoraField;
-        
-        private System.DateTime dataField;
-        
-        private System.DateTime horaField;
-        
-        private string oBSField;
-        
-        private string documentoField;
-        
-        private double valorField;
-        
-        private double freteField;
-        
-        private TItensEntrada[] itensEntradaField;
-        
-        /// <remarks/>
-        public string Estabelecimento {
-            get {
-                return this.estabelecimentoField;
-            }
-            set {
-                this.estabelecimentoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string CentroDeEstoque {
-            get {
-                return this.centroDeEstoqueField;
-            }
-            set {
-                this.centroDeEstoqueField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string CentroDeResultados {
-            get {
-                return this.centroDeResultadosField;
-            }
-            set {
-                this.centroDeResultadosField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Fornecedor {
-            get {
-                return this.fornecedorField;
-            }
-            set {
-                this.fornecedorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Pedido {
-            get {
-                return this.pedidoField;
-            }
-            set {
-                this.pedidoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Transportadora {
-            get {
-                return this.transportadoraField;
-            }
-            set {
-                this.transportadoraField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime Data {
-            get {
-                return this.dataField;
-            }
-            set {
-                this.dataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime Hora {
-            get {
-                return this.horaField;
-            }
-            set {
-                this.horaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string OBS {
-            get {
-                return this.oBSField;
-            }
-            set {
-                this.oBSField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Documento {
-            get {
-                return this.documentoField;
-            }
-            set {
-                this.documentoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double Valor {
-            get {
-                return this.valorField;
-            }
-            set {
-                this.valorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double Frete {
-            get {
-                return this.freteField;
-            }
-            set {
-                this.freteField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public TItensEntrada[] ItensEntrada {
-            get {
-                return this.itensEntradaField;
-            }
-            set {
-                this.itensEntradaField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
     public partial class TItensRequisicao {
         
         private string codigoField;
@@ -9454,7 +17646,17 @@ namespace Mensageria.AGWebReference {
         
         private double quantidadeField;
         
+        private double totalProdutoCompradoField;
+        
         private string obsField;
+        
+        private double quantidadeColetaField;
+        
+        private double quantidadePedidaField;
+        
+        private double quantidadeEntradaField;
+        
+        private double valorUltimaCompraField;
         
         /// <remarks/>
         public string Codigo {
@@ -9487,121 +17689,12 @@ namespace Mensageria.AGWebReference {
         }
         
         /// <remarks/>
-        public string Obs {
+        public double TotalProdutoComprado {
             get {
-                return this.obsField;
+                return this.totalProdutoCompradoField;
             }
             set {
-                this.obsField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
-    public partial class TRequisicoes {
-        
-        private string estabelecimentoField;
-        
-        private string requisitanteField;
-        
-        private string usuarioResponsavelField;
-        
-        private string centroDeEstoqueField;
-        
-        private string centroDeResultadosField;
-        
-        private string documentoField;
-        
-        private System.DateTime dataField;
-        
-        private System.DateTime horaField;
-        
-        private string obsField;
-        
-        private TItensRequisicao[] itensRequisicaoField;
-        
-        /// <remarks/>
-        public string Estabelecimento {
-            get {
-                return this.estabelecimentoField;
-            }
-            set {
-                this.estabelecimentoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Requisitante {
-            get {
-                return this.requisitanteField;
-            }
-            set {
-                this.requisitanteField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string UsuarioResponsavel {
-            get {
-                return this.usuarioResponsavelField;
-            }
-            set {
-                this.usuarioResponsavelField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string CentroDeEstoque {
-            get {
-                return this.centroDeEstoqueField;
-            }
-            set {
-                this.centroDeEstoqueField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string CentroDeResultados {
-            get {
-                return this.centroDeResultadosField;
-            }
-            set {
-                this.centroDeResultadosField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Documento {
-            get {
-                return this.documentoField;
-            }
-            set {
-                this.documentoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime Data {
-            get {
-                return this.dataField;
-            }
-            set {
-                this.dataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime Hora {
-            get {
-                return this.horaField;
-            }
-            set {
-                this.horaField = value;
+                this.totalProdutoCompradoField = value;
             }
         }
         
@@ -9616,12 +17709,42 @@ namespace Mensageria.AGWebReference {
         }
         
         /// <remarks/>
-        public TItensRequisicao[] ItensRequisicao {
+        public double QuantidadeColeta {
             get {
-                return this.itensRequisicaoField;
+                return this.quantidadeColetaField;
             }
             set {
-                this.itensRequisicaoField = value;
+                this.quantidadeColetaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double QuantidadePedida {
+            get {
+                return this.quantidadePedidaField;
+            }
+            set {
+                this.quantidadePedidaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double QuantidadeEntrada {
+            get {
+                return this.quantidadeEntradaField;
+            }
+            set {
+                this.quantidadeEntradaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorUltimaCompra {
+            get {
+                return this.valorUltimaCompraField;
+            }
+            set {
+                this.valorUltimaCompraField = value;
             }
         }
     }
@@ -9701,27 +17824,29 @@ namespace Mensageria.AGWebReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
-    public partial class TSaidas {
+    public partial class TRateiosaReceber {
+        
+        private string codigo_CREField;
         
         private string estabelecimentoField;
         
-        private string requisitanteField;
-        
-        private string centroDeEstoqueField;
-        
         private string centroDeResultadosField;
         
-        private string centroDeResultadosOrigemField;
+        private string receitaField;
         
-        private string documentoField;
+        private string observacaoField;
         
-        private System.DateTime dataField;
+        private double valorField;
         
-        private System.DateTime horaField;
-        
-        private string obsField;
-        
-        private TItensSaida[] itensSaidaField;
+        /// <remarks/>
+        public string Codigo_CRE {
+            get {
+                return this.codigo_CREField;
+            }
+            set {
+                this.codigo_CREField = value;
+            }
+        }
         
         /// <remarks/>
         public string Estabelecimento {
@@ -9730,26 +17855,6 @@ namespace Mensageria.AGWebReference {
             }
             set {
                 this.estabelecimentoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Requisitante {
-            get {
-                return this.requisitanteField;
-            }
-            set {
-                this.requisitanteField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string CentroDeEstoque {
-            get {
-                return this.centroDeEstoqueField;
-            }
-            set {
-                this.centroDeEstoqueField = value;
             }
         }
         
@@ -9764,62 +17869,32 @@ namespace Mensageria.AGWebReference {
         }
         
         /// <remarks/>
-        public string CentroDeResultadosOrigem {
+        public string Receita {
             get {
-                return this.centroDeResultadosOrigemField;
+                return this.receitaField;
             }
             set {
-                this.centroDeResultadosOrigemField = value;
+                this.receitaField = value;
             }
         }
         
         /// <remarks/>
-        public string Documento {
+        public string Observacao {
             get {
-                return this.documentoField;
+                return this.observacaoField;
             }
             set {
-                this.documentoField = value;
+                this.observacaoField = value;
             }
         }
         
         /// <remarks/>
-        public System.DateTime Data {
+        public double Valor {
             get {
-                return this.dataField;
+                return this.valorField;
             }
             set {
-                this.dataField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public System.DateTime Hora {
-            get {
-                return this.horaField;
-            }
-            set {
-                this.horaField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string Obs {
-            get {
-                return this.obsField;
-            }
-            set {
-                this.obsField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public TItensSaida[] ItensSaida {
-            get {
-                return this.itensSaidaField;
-            }
-            set {
-                this.itensSaidaField = value;
+                this.valorField = value;
             }
         }
     }
@@ -10100,111 +18175,6 @@ namespace Mensageria.AGWebReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
-    public partial class TServicosaReceber {
-        
-        private string codigoField;
-        
-        private int sequencialField;
-        
-        private string servicoField;
-        
-        private string modalidadeField;
-        
-        private double valorField;
-        
-        private TComissionadosServicosaReceber[] comissionadosservicosareceberField;
-        
-        private double descontoIncondicionalField;
-        
-        private double valorBrutoField;
-        
-        /// <remarks/>
-        public string codigo {
-            get {
-                return this.codigoField;
-            }
-            set {
-                this.codigoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int sequencial {
-            get {
-                return this.sequencialField;
-            }
-            set {
-                this.sequencialField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string servico {
-            get {
-                return this.servicoField;
-            }
-            set {
-                this.servicoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public string modalidade {
-            get {
-                return this.modalidadeField;
-            }
-            set {
-                this.modalidadeField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double valor {
-            get {
-                return this.valorField;
-            }
-            set {
-                this.valorField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public TComissionadosServicosaReceber[] comissionadosservicosareceber {
-            get {
-                return this.comissionadosservicosareceberField;
-            }
-            set {
-                this.comissionadosservicosareceberField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double DescontoIncondicional {
-            get {
-                return this.descontoIncondicionalField;
-            }
-            set {
-                this.descontoIncondicionalField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public double ValorBruto {
-            get {
-                return this.valorBrutoField;
-            }
-            set {
-                this.valorBrutoField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
     public partial class TVencimentosCartaoaReceber {
         
         private string codigoField;
@@ -10434,6 +18404,5601 @@ namespace Mensageria.AGWebReference {
     }
     
     /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TVencimentosaReceber {
+        
+        private string codigoField;
+        
+        private int sequencialField;
+        
+        private System.DateTime vencimentoField;
+        
+        private double valorField;
+        
+        private string tipoDocumentoField;
+        
+        private string tituloField;
+        
+        private string agenteCobradorField;
+        
+        private string nrBoletoField;
+        
+        private int idBloqueteField;
+        
+        private double descontoPrevistoField;
+        
+        private System.DateTime dtCancelamentoField;
+        
+        private int quitadoField;
+        
+        /// <remarks/>
+        public string codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int sequencial {
+            get {
+                return this.sequencialField;
+            }
+            set {
+                this.sequencialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime vencimento {
+            get {
+                return this.vencimentoField;
+            }
+            set {
+                this.vencimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string tipoDocumento {
+            get {
+                return this.tipoDocumentoField;
+            }
+            set {
+                this.tipoDocumentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string titulo {
+            get {
+                return this.tituloField;
+            }
+            set {
+                this.tituloField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string agenteCobrador {
+            get {
+                return this.agenteCobradorField;
+            }
+            set {
+                this.agenteCobradorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string nrBoleto {
+            get {
+                return this.nrBoletoField;
+            }
+            set {
+                this.nrBoletoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int idBloquete {
+            get {
+                return this.idBloqueteField;
+            }
+            set {
+                this.idBloqueteField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double descontoPrevisto {
+            get {
+                return this.descontoPrevistoField;
+            }
+            set {
+                this.descontoPrevistoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime dtCancelamento {
+            get {
+                return this.dtCancelamentoField;
+            }
+            set {
+                this.dtCancelamentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Quitado {
+            get {
+                return this.quitadoField;
+            }
+            set {
+                this.quitadoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TTransfEstoque : TClasseBase {
+        
+        private string estabelecimentoField;
+        
+        private System.DateTime dataField;
+        
+        private string centroDeEstoqueOrigemField;
+        
+        private string centroDeEstoqueDestinoField;
+        
+        private string descricaoField;
+        
+        private System.DateTime horaField;
+        
+        private TItensTES[] itensTransfEstoqueField;
+        
+        /// <remarks/>
+        public string Estabelecimento {
+            get {
+                return this.estabelecimentoField;
+            }
+            set {
+                this.estabelecimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CentroDeEstoqueOrigem {
+            get {
+                return this.centroDeEstoqueOrigemField;
+            }
+            set {
+                this.centroDeEstoqueOrigemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CentroDeEstoqueDestino {
+            get {
+                return this.centroDeEstoqueDestinoField;
+            }
+            set {
+                this.centroDeEstoqueDestinoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Descricao {
+            get {
+                return this.descricaoField;
+            }
+            set {
+                this.descricaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Hora {
+            get {
+                return this.horaField;
+            }
+            set {
+                this.horaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TItensTES[] ItensTransfEstoque {
+            get {
+                return this.itensTransfEstoqueField;
+            }
+            set {
+                this.itensTransfEstoqueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TDevolucoesSaida : TClasseBase {
+        
+        private string estabelecimentoField;
+        
+        private string centroDeEstoqueField;
+        
+        private string centroDeResultadosField;
+        
+        private string centroDeResultadosDestinoField;
+        
+        private string numeroNotaFiscalField;
+        
+        private string especieField;
+        
+        private System.DateTime dataField;
+        
+        private System.DateTime horaField;
+        
+        private string oBSField;
+        
+        private TItensDevolucoesSaida[] itensDevolucoesSaidaField;
+        
+        /// <remarks/>
+        public string Estabelecimento {
+            get {
+                return this.estabelecimentoField;
+            }
+            set {
+                this.estabelecimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CentroDeEstoque {
+            get {
+                return this.centroDeEstoqueField;
+            }
+            set {
+                this.centroDeEstoqueField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CentroDeResultados {
+            get {
+                return this.centroDeResultadosField;
+            }
+            set {
+                this.centroDeResultadosField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CentroDeResultadosDestino {
+            get {
+                return this.centroDeResultadosDestinoField;
+            }
+            set {
+                this.centroDeResultadosDestinoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NumeroNotaFiscal {
+            get {
+                return this.numeroNotaFiscalField;
+            }
+            set {
+                this.numeroNotaFiscalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Especie {
+            get {
+                return this.especieField;
+            }
+            set {
+                this.especieField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Hora {
+            get {
+                return this.horaField;
+            }
+            set {
+                this.horaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string OBS {
+            get {
+                return this.oBSField;
+            }
+            set {
+                this.oBSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TItensDevolucoesSaida[] ItensDevolucoesSaida {
+            get {
+                return this.itensDevolucoesSaidaField;
+            }
+            set {
+                this.itensDevolucoesSaidaField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TNotasFiscaisSaida : TClasseBase {
+        
+        private string codigoField;
+        
+        private string eST_CodigoField;
+        
+        private string cLI_CodigoField;
+        
+        private string formularioField;
+        
+        private string numeroField;
+        
+        private string serieField;
+        
+        private string subserieField;
+        
+        private string aidfField;
+        
+        private string amidfField;
+        
+        private string dtEmissaoField;
+        
+        private string dtSaidaField;
+        
+        private string cfop_CodigoField;
+        
+        private int canceladaField;
+        
+        private double valorFreteField;
+        
+        private double valorSeguroField;
+        
+        private double valorOutrasDespesasField;
+        
+        private double valorIPIField;
+        
+        private double baseICMSField;
+        
+        private double valorIcmsField;
+        
+        private double valorProdutosField;
+        
+        private double valorTotalField;
+        
+        private string observacaoField;
+        
+        private string obsCorpoNFField;
+        
+        private int icmsSobreIPIField;
+        
+        private string seloNumeroField;
+        
+        private string seloSerieField;
+        
+        private string especieField;
+        
+        private double baseIcmsSubstField;
+        
+        private double valorIcmsSubstField;
+        
+        private string iDWSField;
+        
+        private TItensNotaFiscalSaida[] itensNotaFiscalSaidaField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string EST_Codigo {
+            get {
+                return this.eST_CodigoField;
+            }
+            set {
+                this.eST_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CLI_Codigo {
+            get {
+                return this.cLI_CodigoField;
+            }
+            set {
+                this.cLI_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Formulario {
+            get {
+                return this.formularioField;
+            }
+            set {
+                this.formularioField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Numero {
+            get {
+                return this.numeroField;
+            }
+            set {
+                this.numeroField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Serie {
+            get {
+                return this.serieField;
+            }
+            set {
+                this.serieField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Subserie {
+            get {
+                return this.subserieField;
+            }
+            set {
+                this.subserieField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Aidf {
+            get {
+                return this.aidfField;
+            }
+            set {
+                this.aidfField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Amidf {
+            get {
+                return this.amidfField;
+            }
+            set {
+                this.amidfField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DtEmissao {
+            get {
+                return this.dtEmissaoField;
+            }
+            set {
+                this.dtEmissaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DtSaida {
+            get {
+                return this.dtSaidaField;
+            }
+            set {
+                this.dtSaidaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Cfop_Codigo {
+            get {
+                return this.cfop_CodigoField;
+            }
+            set {
+                this.cfop_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Cancelada {
+            get {
+                return this.canceladaField;
+            }
+            set {
+                this.canceladaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorFrete {
+            get {
+                return this.valorFreteField;
+            }
+            set {
+                this.valorFreteField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorSeguro {
+            get {
+                return this.valorSeguroField;
+            }
+            set {
+                this.valorSeguroField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorOutrasDespesas {
+            get {
+                return this.valorOutrasDespesasField;
+            }
+            set {
+                this.valorOutrasDespesasField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorIPI {
+            get {
+                return this.valorIPIField;
+            }
+            set {
+                this.valorIPIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseICMS {
+            get {
+                return this.baseICMSField;
+            }
+            set {
+                this.baseICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorIcms {
+            get {
+                return this.valorIcmsField;
+            }
+            set {
+                this.valorIcmsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorProdutos {
+            get {
+                return this.valorProdutosField;
+            }
+            set {
+                this.valorProdutosField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorTotal {
+            get {
+                return this.valorTotalField;
+            }
+            set {
+                this.valorTotalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Observacao {
+            get {
+                return this.observacaoField;
+            }
+            set {
+                this.observacaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ObsCorpoNF {
+            get {
+                return this.obsCorpoNFField;
+            }
+            set {
+                this.obsCorpoNFField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int IcmsSobreIPI {
+            get {
+                return this.icmsSobreIPIField;
+            }
+            set {
+                this.icmsSobreIPIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SeloNumero {
+            get {
+                return this.seloNumeroField;
+            }
+            set {
+                this.seloNumeroField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SeloSerie {
+            get {
+                return this.seloSerieField;
+            }
+            set {
+                this.seloSerieField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Especie {
+            get {
+                return this.especieField;
+            }
+            set {
+                this.especieField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseIcmsSubst {
+            get {
+                return this.baseIcmsSubstField;
+            }
+            set {
+                this.baseIcmsSubstField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorIcmsSubst {
+            get {
+                return this.valorIcmsSubstField;
+            }
+            set {
+                this.valorIcmsSubstField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string IDWS {
+            get {
+                return this.iDWSField;
+            }
+            set {
+                this.iDWSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TItensNotaFiscalSaida[] ItensNotaFiscalSaida {
+            get {
+                return this.itensNotaFiscalSaidaField;
+            }
+            set {
+                this.itensNotaFiscalSaidaField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TFaturaNotaMercadoria : TClasseBase {
+        
+        private string codigoField;
+        
+        private string numeroField;
+        
+        private int tipoOperacaoField;
+        
+        private string tipoDocumentoField;
+        
+        private double valorTotalField;
+        
+        private double valorDescontoField;
+        
+        private TTitulosNotaMercadoria[] arrayTitulosNotaField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Numero {
+            get {
+                return this.numeroField;
+            }
+            set {
+                this.numeroField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int TipoOperacao {
+            get {
+                return this.tipoOperacaoField;
+            }
+            set {
+                this.tipoOperacaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TipoDocumento {
+            get {
+                return this.tipoDocumentoField;
+            }
+            set {
+                this.tipoDocumentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorTotal {
+            get {
+                return this.valorTotalField;
+            }
+            set {
+                this.valorTotalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorDesconto {
+            get {
+                return this.valorDescontoField;
+            }
+            set {
+                this.valorDescontoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TTitulosNotaMercadoria[] ArrayTitulosNota {
+            get {
+                return this.arrayTitulosNotaField;
+            }
+            set {
+                this.arrayTitulosNotaField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TNotaFiscalMercadoria : TClasseBase {
+        
+        private string codigoField;
+        
+        private string estabelecimentoField;
+        
+        private string operacaoField;
+        
+        private string especieField;
+        
+        private int documentoProprioField;
+        
+        private string aIDFField;
+        
+        private string serieField;
+        
+        private string subserieField;
+        
+        private string numeroField;
+        
+        private string formularioInicialField;
+        
+        private string formularioFinalField;
+        
+        private string dataEmissaoField;
+        
+        private string situacaoDocumentoField;
+        
+        private string dataMovimentoField;
+        
+        private string remetenteDestinatarioField;
+        
+        private int gNREVinculadaField;
+        
+        private int gNREICMSField;
+        
+        private string gNREMesAnoField;
+        
+        private string gNREConvenioField;
+        
+        private string gNREDataVencimentoField;
+        
+        private string gNREDataRecolhimentoField;
+        
+        private string gNREBancoField;
+        
+        private string gNREAgenciaField;
+        
+        private string gNREDVAgenciaField;
+        
+        private string gNREAutenticadoField;
+        
+        private double valorProdutosField;
+        
+        private double valorFreteField;
+        
+        private double valorSeguroField;
+        
+        private double valoroutrasDespesasField;
+        
+        private double valorICMSImportacaoField;
+        
+        private int iCMSimportacaoDiferidoField;
+        
+        private double valorIPIField;
+        
+        private double valorICMSSubstRetidoField;
+        
+        private double valorServicosField;
+        
+        private double valorDesconTototalField;
+        
+        private double valorTotalField;
+        
+        private double quantidadeProdutosField;
+        
+        private int iCMSSubstRecolherField;
+        
+        private int iCMSAntecipadoRecolherField;
+        
+        private int iCMSDiferencialAliquotaField;
+        
+        private double valorContabilSubstTributField;
+        
+        private double baseCalculoSubstTributField;
+        
+        private double valorcontabilantecipadoField;
+        
+        private int issRetidoField;
+        
+        private string dataRetencaoField;
+        
+        private string codigoServicoField;
+        
+        private string dataEntradaEstadoField;
+        
+        private string fretePorContaField;
+        
+        private string faturaField;
+        
+        private string numeroECFField;
+        
+        private string numeroCupomField;
+        
+        private double valorReceitaTributCOFINSField;
+        
+        private double valorReceitaTributPISField;
+        
+        private double valorReceitaTributCSL1Field;
+        
+        private double valorReceitaTributCSL2Field;
+        
+        private double valorReceitaTributIRPJ1Field;
+        
+        private double valorReceitaTributIRPJ2Field;
+        
+        private double valorReceitaTributIRPJ3Field;
+        
+        private double valorReceitaTributIRPJ4Field;
+        
+        private double valorCOFINSRetidoField;
+        
+        private double valorPISRetidoField;
+        
+        private double valorCSLRetidoField;
+        
+        private double valorIRPJRetidoField;
+        
+        private int geraTransferenciaField;
+        
+        private string observacaoField;
+        
+        private double aliquotaSubstTribField;
+        
+        private string chaveEletronicaField;
+        
+        private double valorINSSRetidoField;
+        
+        private double baseCalcPISCOFINSncField;
+        
+        private string motivoCancelField;
+        
+        private string naturezaOperacaoField;
+        
+        private string codigoInformacaoCompField;
+        
+        private string complementoInformacaoCompField;
+        
+        private string horasaidaField;
+        
+        private string ufembarqueField;
+        
+        private string localEmbarqueField;
+        
+        private string codigoContabilField;
+        
+        private string chavenfeReferenciaField;
+        
+        private string infAdicFiscoField;
+        
+        private int operacaoConsumidorFinalField;
+        
+        private int indPresencaCompradorField;
+        
+        private string dataContingenciaField;
+        
+        private string horaContingenciaField;
+        
+        private string reconheceNFeField;
+        
+        private int nfeInformadaContribuinteField;
+        
+        private double valorTotalIcmsDesonField;
+        
+        private TFaturaNotaMercadoria faturaNotaField;
+        
+        private TProdutoNotaMercadoria[] arrayProdutosNotaField;
+        
+        private TICMSIPINotaMercadoria[] arrayICMSIPINotaField;
+        
+        private TICMSAntecipadoNotaMercadoria[] arrayICMSAntecipadoNotaField;
+        
+        private TICMSSubstNotaMercadoria[] arrayICMSSubstNotaField;
+        
+        private TICMSDiferencialNotaMercadoria[] arrayICMSDiferencialNotaField;
+        
+        private TOutrosValoresNotaMercadoria[] arrayOutrosValoresField;
+        
+        private TDetalheTransporteNotaMercadoria[] arrayDetalheTransporteField;
+        
+        private string iDWSField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Estabelecimento {
+            get {
+                return this.estabelecimentoField;
+            }
+            set {
+                this.estabelecimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Operacao {
+            get {
+                return this.operacaoField;
+            }
+            set {
+                this.operacaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Especie {
+            get {
+                return this.especieField;
+            }
+            set {
+                this.especieField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int DocumentoProprio {
+            get {
+                return this.documentoProprioField;
+            }
+            set {
+                this.documentoProprioField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string AIDF {
+            get {
+                return this.aIDFField;
+            }
+            set {
+                this.aIDFField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Serie {
+            get {
+                return this.serieField;
+            }
+            set {
+                this.serieField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Subserie {
+            get {
+                return this.subserieField;
+            }
+            set {
+                this.subserieField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Numero {
+            get {
+                return this.numeroField;
+            }
+            set {
+                this.numeroField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string FormularioInicial {
+            get {
+                return this.formularioInicialField;
+            }
+            set {
+                this.formularioInicialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string FormularioFinal {
+            get {
+                return this.formularioFinalField;
+            }
+            set {
+                this.formularioFinalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DataEmissao {
+            get {
+                return this.dataEmissaoField;
+            }
+            set {
+                this.dataEmissaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SituacaoDocumento {
+            get {
+                return this.situacaoDocumentoField;
+            }
+            set {
+                this.situacaoDocumentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DataMovimento {
+            get {
+                return this.dataMovimentoField;
+            }
+            set {
+                this.dataMovimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string RemetenteDestinatario {
+            get {
+                return this.remetenteDestinatarioField;
+            }
+            set {
+                this.remetenteDestinatarioField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int GNREVinculada {
+            get {
+                return this.gNREVinculadaField;
+            }
+            set {
+                this.gNREVinculadaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int GNREICMS {
+            get {
+                return this.gNREICMSField;
+            }
+            set {
+                this.gNREICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string GNREMesAno {
+            get {
+                return this.gNREMesAnoField;
+            }
+            set {
+                this.gNREMesAnoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string GNREConvenio {
+            get {
+                return this.gNREConvenioField;
+            }
+            set {
+                this.gNREConvenioField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string GNREDataVencimento {
+            get {
+                return this.gNREDataVencimentoField;
+            }
+            set {
+                this.gNREDataVencimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string GNREDataRecolhimento {
+            get {
+                return this.gNREDataRecolhimentoField;
+            }
+            set {
+                this.gNREDataRecolhimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string GNREBanco {
+            get {
+                return this.gNREBancoField;
+            }
+            set {
+                this.gNREBancoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string GNREAgencia {
+            get {
+                return this.gNREAgenciaField;
+            }
+            set {
+                this.gNREAgenciaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string GNREDVAgencia {
+            get {
+                return this.gNREDVAgenciaField;
+            }
+            set {
+                this.gNREDVAgenciaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string GNREAutenticado {
+            get {
+                return this.gNREAutenticadoField;
+            }
+            set {
+                this.gNREAutenticadoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorProdutos {
+            get {
+                return this.valorProdutosField;
+            }
+            set {
+                this.valorProdutosField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorFrete {
+            get {
+                return this.valorFreteField;
+            }
+            set {
+                this.valorFreteField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorSeguro {
+            get {
+                return this.valorSeguroField;
+            }
+            set {
+                this.valorSeguroField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValoroutrasDespesas {
+            get {
+                return this.valoroutrasDespesasField;
+            }
+            set {
+                this.valoroutrasDespesasField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorICMSImportacao {
+            get {
+                return this.valorICMSImportacaoField;
+            }
+            set {
+                this.valorICMSImportacaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int ICMSimportacaoDiferido {
+            get {
+                return this.iCMSimportacaoDiferidoField;
+            }
+            set {
+                this.iCMSimportacaoDiferidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorIPI {
+            get {
+                return this.valorIPIField;
+            }
+            set {
+                this.valorIPIField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorICMSSubstRetido {
+            get {
+                return this.valorICMSSubstRetidoField;
+            }
+            set {
+                this.valorICMSSubstRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorServicos {
+            get {
+                return this.valorServicosField;
+            }
+            set {
+                this.valorServicosField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorDesconTototal {
+            get {
+                return this.valorDesconTototalField;
+            }
+            set {
+                this.valorDesconTototalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorTotal {
+            get {
+                return this.valorTotalField;
+            }
+            set {
+                this.valorTotalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double QuantidadeProdutos {
+            get {
+                return this.quantidadeProdutosField;
+            }
+            set {
+                this.quantidadeProdutosField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int ICMSSubstRecolher {
+            get {
+                return this.iCMSSubstRecolherField;
+            }
+            set {
+                this.iCMSSubstRecolherField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int ICMSAntecipadoRecolher {
+            get {
+                return this.iCMSAntecipadoRecolherField;
+            }
+            set {
+                this.iCMSAntecipadoRecolherField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int ICMSDiferencialAliquota {
+            get {
+                return this.iCMSDiferencialAliquotaField;
+            }
+            set {
+                this.iCMSDiferencialAliquotaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorContabilSubstTribut {
+            get {
+                return this.valorContabilSubstTributField;
+            }
+            set {
+                this.valorContabilSubstTributField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalculoSubstTribut {
+            get {
+                return this.baseCalculoSubstTributField;
+            }
+            set {
+                this.baseCalculoSubstTributField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Valorcontabilantecipado {
+            get {
+                return this.valorcontabilantecipadoField;
+            }
+            set {
+                this.valorcontabilantecipadoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int IssRetido {
+            get {
+                return this.issRetidoField;
+            }
+            set {
+                this.issRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DataRetencao {
+            get {
+                return this.dataRetencaoField;
+            }
+            set {
+                this.dataRetencaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CodigoServico {
+            get {
+                return this.codigoServicoField;
+            }
+            set {
+                this.codigoServicoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DataEntradaEstado {
+            get {
+                return this.dataEntradaEstadoField;
+            }
+            set {
+                this.dataEntradaEstadoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string FretePorConta {
+            get {
+                return this.fretePorContaField;
+            }
+            set {
+                this.fretePorContaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Fatura {
+            get {
+                return this.faturaField;
+            }
+            set {
+                this.faturaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NumeroECF {
+            get {
+                return this.numeroECFField;
+            }
+            set {
+                this.numeroECFField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NumeroCupom {
+            get {
+                return this.numeroCupomField;
+            }
+            set {
+                this.numeroCupomField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceitaTributCOFINS {
+            get {
+                return this.valorReceitaTributCOFINSField;
+            }
+            set {
+                this.valorReceitaTributCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceitaTributPIS {
+            get {
+                return this.valorReceitaTributPISField;
+            }
+            set {
+                this.valorReceitaTributPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceitaTributCSL1 {
+            get {
+                return this.valorReceitaTributCSL1Field;
+            }
+            set {
+                this.valorReceitaTributCSL1Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceitaTributCSL2 {
+            get {
+                return this.valorReceitaTributCSL2Field;
+            }
+            set {
+                this.valorReceitaTributCSL2Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceitaTributIRPJ1 {
+            get {
+                return this.valorReceitaTributIRPJ1Field;
+            }
+            set {
+                this.valorReceitaTributIRPJ1Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceitaTributIRPJ2 {
+            get {
+                return this.valorReceitaTributIRPJ2Field;
+            }
+            set {
+                this.valorReceitaTributIRPJ2Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceitaTributIRPJ3 {
+            get {
+                return this.valorReceitaTributIRPJ3Field;
+            }
+            set {
+                this.valorReceitaTributIRPJ3Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorReceitaTributIRPJ4 {
+            get {
+                return this.valorReceitaTributIRPJ4Field;
+            }
+            set {
+                this.valorReceitaTributIRPJ4Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCOFINSRetido {
+            get {
+                return this.valorCOFINSRetidoField;
+            }
+            set {
+                this.valorCOFINSRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorPISRetido {
+            get {
+                return this.valorPISRetidoField;
+            }
+            set {
+                this.valorPISRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCSLRetido {
+            get {
+                return this.valorCSLRetidoField;
+            }
+            set {
+                this.valorCSLRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorIRPJRetido {
+            get {
+                return this.valorIRPJRetidoField;
+            }
+            set {
+                this.valorIRPJRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int GeraTransferencia {
+            get {
+                return this.geraTransferenciaField;
+            }
+            set {
+                this.geraTransferenciaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Observacao {
+            get {
+                return this.observacaoField;
+            }
+            set {
+                this.observacaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double AliquotaSubstTrib {
+            get {
+                return this.aliquotaSubstTribField;
+            }
+            set {
+                this.aliquotaSubstTribField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ChaveEletronica {
+            get {
+                return this.chaveEletronicaField;
+            }
+            set {
+                this.chaveEletronicaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorINSSRetido {
+            get {
+                return this.valorINSSRetidoField;
+            }
+            set {
+                this.valorINSSRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseCalcPISCOFINSnc {
+            get {
+                return this.baseCalcPISCOFINSncField;
+            }
+            set {
+                this.baseCalcPISCOFINSncField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string MotivoCancel {
+            get {
+                return this.motivoCancelField;
+            }
+            set {
+                this.motivoCancelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NaturezaOperacao {
+            get {
+                return this.naturezaOperacaoField;
+            }
+            set {
+                this.naturezaOperacaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CodigoInformacaoComp {
+            get {
+                return this.codigoInformacaoCompField;
+            }
+            set {
+                this.codigoInformacaoCompField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ComplementoInformacaoComp {
+            get {
+                return this.complementoInformacaoCompField;
+            }
+            set {
+                this.complementoInformacaoCompField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Horasaida {
+            get {
+                return this.horasaidaField;
+            }
+            set {
+                this.horasaidaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Ufembarque {
+            get {
+                return this.ufembarqueField;
+            }
+            set {
+                this.ufembarqueField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string LocalEmbarque {
+            get {
+                return this.localEmbarqueField;
+            }
+            set {
+                this.localEmbarqueField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CodigoContabil {
+            get {
+                return this.codigoContabilField;
+            }
+            set {
+                this.codigoContabilField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ChavenfeReferencia {
+            get {
+                return this.chavenfeReferenciaField;
+            }
+            set {
+                this.chavenfeReferenciaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string InfAdicFisco {
+            get {
+                return this.infAdicFiscoField;
+            }
+            set {
+                this.infAdicFiscoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int OperacaoConsumidorFinal {
+            get {
+                return this.operacaoConsumidorFinalField;
+            }
+            set {
+                this.operacaoConsumidorFinalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int IndPresencaComprador {
+            get {
+                return this.indPresencaCompradorField;
+            }
+            set {
+                this.indPresencaCompradorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DataContingencia {
+            get {
+                return this.dataContingenciaField;
+            }
+            set {
+                this.dataContingenciaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string HoraContingencia {
+            get {
+                return this.horaContingenciaField;
+            }
+            set {
+                this.horaContingenciaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ReconheceNFe {
+            get {
+                return this.reconheceNFeField;
+            }
+            set {
+                this.reconheceNFeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int NfeInformadaContribuinte {
+            get {
+                return this.nfeInformadaContribuinteField;
+            }
+            set {
+                this.nfeInformadaContribuinteField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorTotalIcmsDeson {
+            get {
+                return this.valorTotalIcmsDesonField;
+            }
+            set {
+                this.valorTotalIcmsDesonField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TFaturaNotaMercadoria FaturaNota {
+            get {
+                return this.faturaNotaField;
+            }
+            set {
+                this.faturaNotaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TProdutoNotaMercadoria[] ArrayProdutosNota {
+            get {
+                return this.arrayProdutosNotaField;
+            }
+            set {
+                this.arrayProdutosNotaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TICMSIPINotaMercadoria[] ArrayICMSIPINota {
+            get {
+                return this.arrayICMSIPINotaField;
+            }
+            set {
+                this.arrayICMSIPINotaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TICMSAntecipadoNotaMercadoria[] ArrayICMSAntecipadoNota {
+            get {
+                return this.arrayICMSAntecipadoNotaField;
+            }
+            set {
+                this.arrayICMSAntecipadoNotaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TICMSSubstNotaMercadoria[] ArrayICMSSubstNota {
+            get {
+                return this.arrayICMSSubstNotaField;
+            }
+            set {
+                this.arrayICMSSubstNotaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TICMSDiferencialNotaMercadoria[] ArrayICMSDiferencialNota {
+            get {
+                return this.arrayICMSDiferencialNotaField;
+            }
+            set {
+                this.arrayICMSDiferencialNotaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TOutrosValoresNotaMercadoria[] ArrayOutrosValores {
+            get {
+                return this.arrayOutrosValoresField;
+            }
+            set {
+                this.arrayOutrosValoresField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TDetalheTransporteNotaMercadoria[] ArrayDetalheTransporte {
+            get {
+                return this.arrayDetalheTransporteField;
+            }
+            set {
+                this.arrayDetalheTransporteField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string IDWS {
+            get {
+                return this.iDWSField;
+            }
+            set {
+                this.iDWSField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TBaixasConhecimento : TClasseBase {
+        
+        private string codigoField;
+        
+        private string dataField;
+        
+        private double valorField;
+        
+        private double valorMultaField;
+        
+        private double valorJurosField;
+        
+        private double valorCOFINSRetidoField;
+        
+        private double valorPISRetidoField;
+        
+        private double valorCSLRetidoField;
+        
+        private double valorTotalNotaField;
+        
+        private double valorDescontoField;
+        
+        private TApuracaoConhecimento[] arrayApuracoesField;
+        
+        private TDetalhamentoConhecimento[] arrayDetalhamentosField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorMulta {
+            get {
+                return this.valorMultaField;
+            }
+            set {
+                this.valorMultaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorJuros {
+            get {
+                return this.valorJurosField;
+            }
+            set {
+                this.valorJurosField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCOFINSRetido {
+            get {
+                return this.valorCOFINSRetidoField;
+            }
+            set {
+                this.valorCOFINSRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorPISRetido {
+            get {
+                return this.valorPISRetidoField;
+            }
+            set {
+                this.valorPISRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCSLRetido {
+            get {
+                return this.valorCSLRetidoField;
+            }
+            set {
+                this.valorCSLRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorTotalNota {
+            get {
+                return this.valorTotalNotaField;
+            }
+            set {
+                this.valorTotalNotaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorDesconto {
+            get {
+                return this.valorDescontoField;
+            }
+            set {
+                this.valorDescontoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TApuracaoConhecimento[] ArrayApuracoes {
+            get {
+                return this.arrayApuracoesField;
+            }
+            set {
+                this.arrayApuracoesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TDetalhamentoConhecimento[] ArrayDetalhamentos {
+            get {
+                return this.arrayDetalhamentosField;
+            }
+            set {
+                this.arrayDetalhamentosField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TTitulosConhecimento : TClasseBase {
+        
+        private string codigoField;
+        
+        private string tituloField;
+        
+        private string dataVencimentoField;
+        
+        private double valorField;
+        
+        private double valorCOFINSRetidoField;
+        
+        private double valorPISRetidoField;
+        
+        private double valorCSLRetidoField;
+        
+        private double valorIRPJRetidoField;
+        
+        private TBaixasConhecimento[] arrayBaixasField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Titulo {
+            get {
+                return this.tituloField;
+            }
+            set {
+                this.tituloField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DataVencimento {
+            get {
+                return this.dataVencimentoField;
+            }
+            set {
+                this.dataVencimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCOFINSRetido {
+            get {
+                return this.valorCOFINSRetidoField;
+            }
+            set {
+                this.valorCOFINSRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorPISRetido {
+            get {
+                return this.valorPISRetidoField;
+            }
+            set {
+                this.valorPISRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCSLRetido {
+            get {
+                return this.valorCSLRetidoField;
+            }
+            set {
+                this.valorCSLRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorIRPJRetido {
+            get {
+                return this.valorIRPJRetidoField;
+            }
+            set {
+                this.valorIRPJRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TBaixasConhecimento[] ArrayBaixas {
+            get {
+                return this.arrayBaixasField;
+            }
+            set {
+                this.arrayBaixasField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TFaturaConhecimento : TClasseBase {
+        
+        private string codigoField;
+        
+        private string numeroField;
+        
+        private string tipoOperacaoField;
+        
+        private string tipoDocumentoField;
+        
+        private double valorTotalField;
+        
+        private double valorDescontoField;
+        
+        private TTitulosConhecimento[] arrayTitulosField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Numero {
+            get {
+                return this.numeroField;
+            }
+            set {
+                this.numeroField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TipoOperacao {
+            get {
+                return this.tipoOperacaoField;
+            }
+            set {
+                this.tipoOperacaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TipoDocumento {
+            get {
+                return this.tipoDocumentoField;
+            }
+            set {
+                this.tipoDocumentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorTotal {
+            get {
+                return this.valorTotalField;
+            }
+            set {
+                this.valorTotalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorDesconto {
+            get {
+                return this.valorDescontoField;
+            }
+            set {
+                this.valorDescontoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TTitulosConhecimento[] ArrayTitulos {
+            get {
+                return this.arrayTitulosField;
+            }
+            set {
+                this.arrayTitulosField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TConhecimentoTransporte : TClasseBase {
+        
+        private string cODIGOField;
+        
+        private string eSTABELECIMENTOField;
+        
+        private string oPERACAOField;
+        
+        private string eSPECIEField;
+        
+        private string aIDFField;
+        
+        private string sERIEField;
+        
+        private string sUBSERIEField;
+        
+        private string nUMEROField;
+        
+        private string fORMULARIOField;
+        
+        private string dATAEMISSAOField;
+        
+        private string sITUACAODOCUMENTOField;
+        
+        private string dATAENTRADAField;
+        
+        private string tIPOFRETEField;
+        
+        private string rEMETENTEPRESTADORField;
+        
+        private string dESTINATARIOField;
+        
+        private string cFOPField;
+        
+        private double vALORTOTALField;
+        
+        private double bASECALCULOICMSField;
+        
+        private double aLIQUOTAICMSField;
+        
+        private double vALORICMSField;
+        
+        private double vALORISENTASICMSField;
+        
+        private double vALOROUTRASICMSField;
+        
+        private string uFCOLETAField;
+        
+        private string mUNCOLETAField;
+        
+        private string uFENTREGAField;
+        
+        private string mUNENTREGAField;
+        
+        private string dISTANCIAField;
+        
+        private double qUANTIDADEMERCADORIASField;
+        
+        private string uNIDADEMEDIDAField;
+        
+        private string fRETECALCULADOField;
+        
+        private string pLACAVEICULOField;
+        
+        private string uFVEICULOField;
+        
+        private string aIDF_RMDField;
+        
+        private string sERIERMDField;
+        
+        private string sUBSERIERMDField;
+        
+        private string nUMERORMDField;
+        
+        private int dIFERENCIALALIQUOTASField;
+        
+        private double bASECALCDIFERENCIALALIQField;
+        
+        private double aLIQUOTAORIGEMField;
+        
+        private double aLIQUOTAINTERNAField;
+        
+        private double rECEITATRIBUTCOFINSField;
+        
+        private double rECEITATRIBUTPISField;
+        
+        private double rECEITATRIBUTCSL1Field;
+        
+        private double rECEITATRIBUTCSL2Field;
+        
+        private double rECEITATRIBUTIRPJ1Field;
+        
+        private double rECEITATRIBUTIRPJ2Field;
+        
+        private double rECEITATRIBUTIRPJ3Field;
+        
+        private double rECEITATRIBUTIRPJ4Field;
+        
+        private double vALORCOFINSRETIDOField;
+        
+        private double vALORPISRETIDOField;
+        
+        private double vALORCSLRETIDOField;
+        
+        private double vALORIRPJRETIDOField;
+        
+        private string oBSERVACAOField;
+        
+        private string fATURAField;
+        
+        private string cSTBField;
+        
+        private string cHAVEELETRONICAField;
+        
+        private string cODIGOINFORMACAOCOMPLEMENTARField;
+        
+        private string cST_PISField;
+        
+        private string cST_COFINSField;
+        
+        private string cSTCREDCOFINS_PISField;
+        
+        private string nATUREZAFRETEField;
+        
+        private string nATUREZACREDITOField;
+        
+        private double bASECALCULOCOFINS_PISNAOCUMULAField;
+        
+        private string cODIGOCONTACONTABILField;
+        
+        private string nATUREZARECEITACOFINSField;
+        
+        private string nATUREZARECEITAPISField;
+        
+        private string cONSIGNATARIOField;
+        
+        private string rEDESPACHANTEField;
+        
+        private string tIPOFRETEOPERACAOREDESPACHOField;
+        
+        private string iNDICADORCONTRIBUICAOPREVIDENCField;
+        
+        private string cSOSNField;
+        
+        private string iDWSField;
+        
+        private TNotasFiscaisConhecimento[] arrayNotasFiscaisField;
+        
+        private TOutrosValoresConhecimento[] arrayOutrosValoresField;
+        
+        private TFaturaConhecimento faturaConhecimentoField;
+        
+        /// <remarks/>
+        public string CODIGO {
+            get {
+                return this.cODIGOField;
+            }
+            set {
+                this.cODIGOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ESTABELECIMENTO {
+            get {
+                return this.eSTABELECIMENTOField;
+            }
+            set {
+                this.eSTABELECIMENTOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string OPERACAO {
+            get {
+                return this.oPERACAOField;
+            }
+            set {
+                this.oPERACAOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ESPECIE {
+            get {
+                return this.eSPECIEField;
+            }
+            set {
+                this.eSPECIEField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string AIDF {
+            get {
+                return this.aIDFField;
+            }
+            set {
+                this.aIDFField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SERIE {
+            get {
+                return this.sERIEField;
+            }
+            set {
+                this.sERIEField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SUBSERIE {
+            get {
+                return this.sUBSERIEField;
+            }
+            set {
+                this.sUBSERIEField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NUMERO {
+            get {
+                return this.nUMEROField;
+            }
+            set {
+                this.nUMEROField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string FORMULARIO {
+            get {
+                return this.fORMULARIOField;
+            }
+            set {
+                this.fORMULARIOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DATAEMISSAO {
+            get {
+                return this.dATAEMISSAOField;
+            }
+            set {
+                this.dATAEMISSAOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SITUACAODOCUMENTO {
+            get {
+                return this.sITUACAODOCUMENTOField;
+            }
+            set {
+                this.sITUACAODOCUMENTOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DATAENTRADA {
+            get {
+                return this.dATAENTRADAField;
+            }
+            set {
+                this.dATAENTRADAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TIPOFRETE {
+            get {
+                return this.tIPOFRETEField;
+            }
+            set {
+                this.tIPOFRETEField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string REMETENTEPRESTADOR {
+            get {
+                return this.rEMETENTEPRESTADORField;
+            }
+            set {
+                this.rEMETENTEPRESTADORField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DESTINATARIO {
+            get {
+                return this.dESTINATARIOField;
+            }
+            set {
+                this.dESTINATARIOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CFOP {
+            get {
+                return this.cFOPField;
+            }
+            set {
+                this.cFOPField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double VALORTOTAL {
+            get {
+                return this.vALORTOTALField;
+            }
+            set {
+                this.vALORTOTALField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BASECALCULOICMS {
+            get {
+                return this.bASECALCULOICMSField;
+            }
+            set {
+                this.bASECALCULOICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ALIQUOTAICMS {
+            get {
+                return this.aLIQUOTAICMSField;
+            }
+            set {
+                this.aLIQUOTAICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double VALORICMS {
+            get {
+                return this.vALORICMSField;
+            }
+            set {
+                this.vALORICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double VALORISENTASICMS {
+            get {
+                return this.vALORISENTASICMSField;
+            }
+            set {
+                this.vALORISENTASICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double VALOROUTRASICMS {
+            get {
+                return this.vALOROUTRASICMSField;
+            }
+            set {
+                this.vALOROUTRASICMSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string UFCOLETA {
+            get {
+                return this.uFCOLETAField;
+            }
+            set {
+                this.uFCOLETAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string MUNCOLETA {
+            get {
+                return this.mUNCOLETAField;
+            }
+            set {
+                this.mUNCOLETAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string UFENTREGA {
+            get {
+                return this.uFENTREGAField;
+            }
+            set {
+                this.uFENTREGAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string MUNENTREGA {
+            get {
+                return this.mUNENTREGAField;
+            }
+            set {
+                this.mUNENTREGAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DISTANCIA {
+            get {
+                return this.dISTANCIAField;
+            }
+            set {
+                this.dISTANCIAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double QUANTIDADEMERCADORIAS {
+            get {
+                return this.qUANTIDADEMERCADORIASField;
+            }
+            set {
+                this.qUANTIDADEMERCADORIASField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string UNIDADEMEDIDA {
+            get {
+                return this.uNIDADEMEDIDAField;
+            }
+            set {
+                this.uNIDADEMEDIDAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string FRETECALCULADO {
+            get {
+                return this.fRETECALCULADOField;
+            }
+            set {
+                this.fRETECALCULADOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string PLACAVEICULO {
+            get {
+                return this.pLACAVEICULOField;
+            }
+            set {
+                this.pLACAVEICULOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string UFVEICULO {
+            get {
+                return this.uFVEICULOField;
+            }
+            set {
+                this.uFVEICULOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string AIDF_RMD {
+            get {
+                return this.aIDF_RMDField;
+            }
+            set {
+                this.aIDF_RMDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SERIERMD {
+            get {
+                return this.sERIERMDField;
+            }
+            set {
+                this.sERIERMDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SUBSERIERMD {
+            get {
+                return this.sUBSERIERMDField;
+            }
+            set {
+                this.sUBSERIERMDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NUMERORMD {
+            get {
+                return this.nUMERORMDField;
+            }
+            set {
+                this.nUMERORMDField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int DIFERENCIALALIQUOTAS {
+            get {
+                return this.dIFERENCIALALIQUOTASField;
+            }
+            set {
+                this.dIFERENCIALALIQUOTASField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BASECALCDIFERENCIALALIQ {
+            get {
+                return this.bASECALCDIFERENCIALALIQField;
+            }
+            set {
+                this.bASECALCDIFERENCIALALIQField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ALIQUOTAORIGEM {
+            get {
+                return this.aLIQUOTAORIGEMField;
+            }
+            set {
+                this.aLIQUOTAORIGEMField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ALIQUOTAINTERNA {
+            get {
+                return this.aLIQUOTAINTERNAField;
+            }
+            set {
+                this.aLIQUOTAINTERNAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double RECEITATRIBUTCOFINS {
+            get {
+                return this.rECEITATRIBUTCOFINSField;
+            }
+            set {
+                this.rECEITATRIBUTCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double RECEITATRIBUTPIS {
+            get {
+                return this.rECEITATRIBUTPISField;
+            }
+            set {
+                this.rECEITATRIBUTPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double RECEITATRIBUTCSL1 {
+            get {
+                return this.rECEITATRIBUTCSL1Field;
+            }
+            set {
+                this.rECEITATRIBUTCSL1Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double RECEITATRIBUTCSL2 {
+            get {
+                return this.rECEITATRIBUTCSL2Field;
+            }
+            set {
+                this.rECEITATRIBUTCSL2Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double RECEITATRIBUTIRPJ1 {
+            get {
+                return this.rECEITATRIBUTIRPJ1Field;
+            }
+            set {
+                this.rECEITATRIBUTIRPJ1Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double RECEITATRIBUTIRPJ2 {
+            get {
+                return this.rECEITATRIBUTIRPJ2Field;
+            }
+            set {
+                this.rECEITATRIBUTIRPJ2Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double RECEITATRIBUTIRPJ3 {
+            get {
+                return this.rECEITATRIBUTIRPJ3Field;
+            }
+            set {
+                this.rECEITATRIBUTIRPJ3Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double RECEITATRIBUTIRPJ4 {
+            get {
+                return this.rECEITATRIBUTIRPJ4Field;
+            }
+            set {
+                this.rECEITATRIBUTIRPJ4Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double VALORCOFINSRETIDO {
+            get {
+                return this.vALORCOFINSRETIDOField;
+            }
+            set {
+                this.vALORCOFINSRETIDOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double VALORPISRETIDO {
+            get {
+                return this.vALORPISRETIDOField;
+            }
+            set {
+                this.vALORPISRETIDOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double VALORCSLRETIDO {
+            get {
+                return this.vALORCSLRETIDOField;
+            }
+            set {
+                this.vALORCSLRETIDOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double VALORIRPJRETIDO {
+            get {
+                return this.vALORIRPJRETIDOField;
+            }
+            set {
+                this.vALORIRPJRETIDOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string OBSERVACAO {
+            get {
+                return this.oBSERVACAOField;
+            }
+            set {
+                this.oBSERVACAOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string FATURA {
+            get {
+                return this.fATURAField;
+            }
+            set {
+                this.fATURAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CSTB {
+            get {
+                return this.cSTBField;
+            }
+            set {
+                this.cSTBField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CHAVEELETRONICA {
+            get {
+                return this.cHAVEELETRONICAField;
+            }
+            set {
+                this.cHAVEELETRONICAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CODIGOINFORMACAOCOMPLEMENTAR {
+            get {
+                return this.cODIGOINFORMACAOCOMPLEMENTARField;
+            }
+            set {
+                this.cODIGOINFORMACAOCOMPLEMENTARField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CST_PIS {
+            get {
+                return this.cST_PISField;
+            }
+            set {
+                this.cST_PISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CST_COFINS {
+            get {
+                return this.cST_COFINSField;
+            }
+            set {
+                this.cST_COFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CSTCREDCOFINS_PIS {
+            get {
+                return this.cSTCREDCOFINS_PISField;
+            }
+            set {
+                this.cSTCREDCOFINS_PISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NATUREZAFRETE {
+            get {
+                return this.nATUREZAFRETEField;
+            }
+            set {
+                this.nATUREZAFRETEField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NATUREZACREDITO {
+            get {
+                return this.nATUREZACREDITOField;
+            }
+            set {
+                this.nATUREZACREDITOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BASECALCULOCOFINS_PISNAOCUMULA {
+            get {
+                return this.bASECALCULOCOFINS_PISNAOCUMULAField;
+            }
+            set {
+                this.bASECALCULOCOFINS_PISNAOCUMULAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CODIGOCONTACONTABIL {
+            get {
+                return this.cODIGOCONTACONTABILField;
+            }
+            set {
+                this.cODIGOCONTACONTABILField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NATUREZARECEITACOFINS {
+            get {
+                return this.nATUREZARECEITACOFINSField;
+            }
+            set {
+                this.nATUREZARECEITACOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string NATUREZARECEITAPIS {
+            get {
+                return this.nATUREZARECEITAPISField;
+            }
+            set {
+                this.nATUREZARECEITAPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CONSIGNATARIO {
+            get {
+                return this.cONSIGNATARIOField;
+            }
+            set {
+                this.cONSIGNATARIOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string REDESPACHANTE {
+            get {
+                return this.rEDESPACHANTEField;
+            }
+            set {
+                this.rEDESPACHANTEField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TIPOFRETEOPERACAOREDESPACHO {
+            get {
+                return this.tIPOFRETEOPERACAOREDESPACHOField;
+            }
+            set {
+                this.tIPOFRETEOPERACAOREDESPACHOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string INDICADORCONTRIBUICAOPREVIDENC {
+            get {
+                return this.iNDICADORCONTRIBUICAOPREVIDENCField;
+            }
+            set {
+                this.iNDICADORCONTRIBUICAOPREVIDENCField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CSOSN {
+            get {
+                return this.cSOSNField;
+            }
+            set {
+                this.cSOSNField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string IDWS {
+            get {
+                return this.iDWSField;
+            }
+            set {
+                this.iDWSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TNotasFiscaisConhecimento[] ArrayNotasFiscais {
+            get {
+                return this.arrayNotasFiscaisField;
+            }
+            set {
+                this.arrayNotasFiscaisField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TOutrosValoresConhecimento[] ArrayOutrosValores {
+            get {
+                return this.arrayOutrosValoresField;
+            }
+            set {
+                this.arrayOutrosValoresField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TFaturaConhecimento FaturaConhecimento {
+            get {
+                return this.faturaConhecimentoField;
+            }
+            set {
+                this.faturaConhecimentoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TCupomDoCupom : TClasseBase {
+        
+        private string codigoField;
+        
+        private double acrescimoField;
+        
+        private int codParticipanteField;
+        
+        private int cOOField;
+        
+        private double descontoGlobalField;
+        
+        private TProdutoCupom[] arrayProdutosCupomField;
+        
+        private int situacaoCOOField;
+        
+        private double valorServicosField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Acrescimo {
+            get {
+                return this.acrescimoField;
+            }
+            set {
+                this.acrescimoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int CodParticipante {
+            get {
+                return this.codParticipanteField;
+            }
+            set {
+                this.codParticipanteField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int COO {
+            get {
+                return this.cOOField;
+            }
+            set {
+                this.cOOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double DescontoGlobal {
+            get {
+                return this.descontoGlobalField;
+            }
+            set {
+                this.descontoGlobalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TProdutoCupom[] ArrayProdutosCupom {
+            get {
+                return this.arrayProdutosCupomField;
+            }
+            set {
+                this.arrayProdutosCupomField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int SituacaoCOO {
+            get {
+                return this.situacaoCOOField;
+            }
+            set {
+                this.situacaoCOOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorServicos {
+            get {
+                return this.valorServicosField;
+            }
+            set {
+                this.valorServicosField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TBaixasCupomFiscal : TClasseBase {
+        
+        private string codigoField;
+        
+        private string dataField;
+        
+        private double valorField;
+        
+        private double valorMultaField;
+        
+        private double valorJurosField;
+        
+        private double valorCOFINSRetidoField;
+        
+        private double valorPISRetidoField;
+        
+        private double valorCSLRetidoField;
+        
+        private double valorTotalField;
+        
+        private double valorDescontoField;
+        
+        private TApuracaoCupomFiscal[] arrayApuracaosCupomField;
+        
+        private TDetalhamentoSNCupomFiscal[] arrayDetalhamentoCupomField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorMulta {
+            get {
+                return this.valorMultaField;
+            }
+            set {
+                this.valorMultaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorJuros {
+            get {
+                return this.valorJurosField;
+            }
+            set {
+                this.valorJurosField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCOFINSRetido {
+            get {
+                return this.valorCOFINSRetidoField;
+            }
+            set {
+                this.valorCOFINSRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorPISRetido {
+            get {
+                return this.valorPISRetidoField;
+            }
+            set {
+                this.valorPISRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCSLRetido {
+            get {
+                return this.valorCSLRetidoField;
+            }
+            set {
+                this.valorCSLRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorTotal {
+            get {
+                return this.valorTotalField;
+            }
+            set {
+                this.valorTotalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorDesconto {
+            get {
+                return this.valorDescontoField;
+            }
+            set {
+                this.valorDescontoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TApuracaoCupomFiscal[] ArrayApuracaosCupom {
+            get {
+                return this.arrayApuracaosCupomField;
+            }
+            set {
+                this.arrayApuracaosCupomField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TDetalhamentoSNCupomFiscal[] ArrayDetalhamentoCupom {
+            get {
+                return this.arrayDetalhamentoCupomField;
+            }
+            set {
+                this.arrayDetalhamentoCupomField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TTitulosCupomFiscal : TClasseBase {
+        
+        private string codigoField;
+        
+        private string tituloField;
+        
+        private string dataVencimentoField;
+        
+        private double valorTituloField;
+        
+        private double valorCOFINSRetidoField;
+        
+        private double valorPISRetidoField;
+        
+        private double valorCSLRetidoField;
+        
+        private TBaixasCupomFiscal[] arrayBaixasCupomField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Titulo {
+            get {
+                return this.tituloField;
+            }
+            set {
+                this.tituloField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DataVencimento {
+            get {
+                return this.dataVencimentoField;
+            }
+            set {
+                this.dataVencimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorTitulo {
+            get {
+                return this.valorTituloField;
+            }
+            set {
+                this.valorTituloField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCOFINSRetido {
+            get {
+                return this.valorCOFINSRetidoField;
+            }
+            set {
+                this.valorCOFINSRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorPISRetido {
+            get {
+                return this.valorPISRetidoField;
+            }
+            set {
+                this.valorPISRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorCSLRetido {
+            get {
+                return this.valorCSLRetidoField;
+            }
+            set {
+                this.valorCSLRetidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TBaixasCupomFiscal[] ArrayBaixasCupom {
+            get {
+                return this.arrayBaixasCupomField;
+            }
+            set {
+                this.arrayBaixasCupomField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TFaturasCupomFiscal : TClasseBase {
+        
+        private string codigoField;
+        
+        private string numeroField;
+        
+        private int tipoOperacaoField;
+        
+        private string tipoDocumentoField;
+        
+        private double valorTotalField;
+        
+        private double valorDescontoField;
+        
+        private TTitulosCupomFiscal[] arrayTitulosCupomField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Numero {
+            get {
+                return this.numeroField;
+            }
+            set {
+                this.numeroField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int TipoOperacao {
+            get {
+                return this.tipoOperacaoField;
+            }
+            set {
+                this.tipoOperacaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TipoDocumento {
+            get {
+                return this.tipoDocumentoField;
+            }
+            set {
+                this.tipoDocumentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorTotal {
+            get {
+                return this.valorTotalField;
+            }
+            set {
+                this.valorTotalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorDesconto {
+            get {
+                return this.valorDescontoField;
+            }
+            set {
+                this.valorDescontoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TTitulosCupomFiscal[] ArrayTitulosCupom {
+            get {
+                return this.arrayTitulosCupomField;
+            }
+            set {
+                this.arrayTitulosCupomField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TCupomFiscal : TClasseBase {
+        
+        private string codigoField;
+        
+        private double acrescimoField;
+        
+        private double cancelamentosField;
+        
+        private int contadorReducaoField;
+        
+        private int cOOFinalField;
+        
+        private int cOOInicialField;
+        
+        private int cOOReducaoField;
+        
+        private string dataField;
+        
+        private double descontosField;
+        
+        private string estabelecimentoField;
+        
+        private string estabEquipamentoField;
+        
+        private string faturaField;
+        
+        private TFaturasCupomFiscal faturaCupomField;
+        
+        private double isentasField;
+        
+        private int mapaResumoECFField;
+        
+        private string mRE_AIDFField;
+        
+        private double naoIncidenciaField;
+        
+        private int numeroField;
+        
+        private int numeroCROField;
+        
+        private string observacaoField;
+        
+        private double receitaTributCOFINSField;
+        
+        private double receitaTributCSL1Field;
+        
+        private double receitaTributCSL2Field;
+        
+        private double receitaTributIRPJ1Field;
+        
+        private double receitaTributIRPJ2Field;
+        
+        private double receitaTributIRPJ3Field;
+        
+        private double receitaTributIRPJ4Field;
+        
+        private double receitaTributPISField;
+        
+        private int servicoField;
+        
+        private double servicosISSField;
+        
+        private double substituicaoField;
+        
+        private double totalizacaoGeralField;
+        
+        private double vendaBrutaField;
+        
+        private TCupomDoCupom[] arrayCuponsDoCupomField;
+        
+        private TICMSCupomFiscal[] arrayICMSCupomField;
+        
+        private TISSCupomFiscal[] arrayISSCupomField;
+        
+        private TOutrosValoresCupomFiscal[] arrayOutrosValoresField;
+        
+        private string iDWSField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Acrescimo {
+            get {
+                return this.acrescimoField;
+            }
+            set {
+                this.acrescimoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Cancelamentos {
+            get {
+                return this.cancelamentosField;
+            }
+            set {
+                this.cancelamentosField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int ContadorReducao {
+            get {
+                return this.contadorReducaoField;
+            }
+            set {
+                this.contadorReducaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int COOFinal {
+            get {
+                return this.cOOFinalField;
+            }
+            set {
+                this.cOOFinalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int COOInicial {
+            get {
+                return this.cOOInicialField;
+            }
+            set {
+                this.cOOInicialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int COOReducao {
+            get {
+                return this.cOOReducaoField;
+            }
+            set {
+                this.cOOReducaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Descontos {
+            get {
+                return this.descontosField;
+            }
+            set {
+                this.descontosField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Estabelecimento {
+            get {
+                return this.estabelecimentoField;
+            }
+            set {
+                this.estabelecimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string EstabEquipamento {
+            get {
+                return this.estabEquipamentoField;
+            }
+            set {
+                this.estabEquipamentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Fatura {
+            get {
+                return this.faturaField;
+            }
+            set {
+                this.faturaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TFaturasCupomFiscal FaturaCupom {
+            get {
+                return this.faturaCupomField;
+            }
+            set {
+                this.faturaCupomField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Isentas {
+            get {
+                return this.isentasField;
+            }
+            set {
+                this.isentasField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int MapaResumoECF {
+            get {
+                return this.mapaResumoECFField;
+            }
+            set {
+                this.mapaResumoECFField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string MRE_AIDF {
+            get {
+                return this.mRE_AIDFField;
+            }
+            set {
+                this.mRE_AIDFField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double NaoIncidencia {
+            get {
+                return this.naoIncidenciaField;
+            }
+            set {
+                this.naoIncidenciaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Numero {
+            get {
+                return this.numeroField;
+            }
+            set {
+                this.numeroField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int NumeroCRO {
+            get {
+                return this.numeroCROField;
+            }
+            set {
+                this.numeroCROField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Observacao {
+            get {
+                return this.observacaoField;
+            }
+            set {
+                this.observacaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ReceitaTributCOFINS {
+            get {
+                return this.receitaTributCOFINSField;
+            }
+            set {
+                this.receitaTributCOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ReceitaTributCSL1 {
+            get {
+                return this.receitaTributCSL1Field;
+            }
+            set {
+                this.receitaTributCSL1Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ReceitaTributCSL2 {
+            get {
+                return this.receitaTributCSL2Field;
+            }
+            set {
+                this.receitaTributCSL2Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ReceitaTributIRPJ1 {
+            get {
+                return this.receitaTributIRPJ1Field;
+            }
+            set {
+                this.receitaTributIRPJ1Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ReceitaTributIRPJ2 {
+            get {
+                return this.receitaTributIRPJ2Field;
+            }
+            set {
+                this.receitaTributIRPJ2Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ReceitaTributIRPJ3 {
+            get {
+                return this.receitaTributIRPJ3Field;
+            }
+            set {
+                this.receitaTributIRPJ3Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ReceitaTributIRPJ4 {
+            get {
+                return this.receitaTributIRPJ4Field;
+            }
+            set {
+                this.receitaTributIRPJ4Field = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ReceitaTributPIS {
+            get {
+                return this.receitaTributPISField;
+            }
+            set {
+                this.receitaTributPISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Servico {
+            get {
+                return this.servicoField;
+            }
+            set {
+                this.servicoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ServicosISS {
+            get {
+                return this.servicosISSField;
+            }
+            set {
+                this.servicosISSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Substituicao {
+            get {
+                return this.substituicaoField;
+            }
+            set {
+                this.substituicaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double TotalizacaoGeral {
+            get {
+                return this.totalizacaoGeralField;
+            }
+            set {
+                this.totalizacaoGeralField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double VendaBruta {
+            get {
+                return this.vendaBrutaField;
+            }
+            set {
+                this.vendaBrutaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TCupomDoCupom[] ArrayCuponsDoCupom {
+            get {
+                return this.arrayCuponsDoCupomField;
+            }
+            set {
+                this.arrayCuponsDoCupomField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TICMSCupomFiscal[] ArrayICMSCupom {
+            get {
+                return this.arrayICMSCupomField;
+            }
+            set {
+                this.arrayICMSCupomField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TISSCupomFiscal[] ArrayISSCupom {
+            get {
+                return this.arrayISSCupomField;
+            }
+            set {
+                this.arrayISSCupomField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TOutrosValoresCupomFiscal[] ArrayOutrosValores {
+            get {
+                return this.arrayOutrosValoresField;
+            }
+            set {
+                this.arrayOutrosValoresField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string IDWS {
+            get {
+                return this.iDWSField;
+            }
+            set {
+                this.iDWSField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TOrcamentoFisicoFinanceiro : TClasseBase {
+        
+        private string eMP_CodigoField;
+        
+        private int codigoField;
+        
+        private string dataInicialField;
+        
+        private string dataFinalField;
+        
+        private string eST_CodigoField;
+        
+        private int fechadoField;
+        
+        private string cRS_CodigoField;
+        
+        private int dinamicoField;
+        
+        private string dataCalculoField;
+        
+        private string obsField;
+        
+        private TContasDeOrcamento[] contasDeOrcamentoField;
+        
+        /// <remarks/>
+        public string EMP_Codigo {
+            get {
+                return this.eMP_CodigoField;
+            }
+            set {
+                this.eMP_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DataInicial {
+            get {
+                return this.dataInicialField;
+            }
+            set {
+                this.dataInicialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DataFinal {
+            get {
+                return this.dataFinalField;
+            }
+            set {
+                this.dataFinalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string EST_Codigo {
+            get {
+                return this.eST_CodigoField;
+            }
+            set {
+                this.eST_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Fechado {
+            get {
+                return this.fechadoField;
+            }
+            set {
+                this.fechadoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CRS_Codigo {
+            get {
+                return this.cRS_CodigoField;
+            }
+            set {
+                this.cRS_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Dinamico {
+            get {
+                return this.dinamicoField;
+            }
+            set {
+                this.dinamicoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DataCalculo {
+            get {
+                return this.dataCalculoField;
+            }
+            set {
+                this.dataCalculoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Obs {
+            get {
+                return this.obsField;
+            }
+            set {
+                this.obsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TContasDeOrcamento[] ContasDeOrcamento {
+            get {
+                return this.contasDeOrcamentoField;
+            }
+            set {
+                this.contasDeOrcamentoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TPedidoDeVenda : TClasseBase {
+        
+        private string pEV_CodigoField;
+        
+        private string eST_CODIGOField;
+        
+        private string cLI_CodigoField;
+        
+        private System.DateTime dataField;
+        
+        private System.DateTime dATAPREVENTREGAField;
+        
+        private string cONDICAOPAGAMENTOField;
+        
+        private string oBSERVACAOField;
+        
+        private int rejeitadoField;
+        
+        private string tPP_CodigoField;
+        
+        private string tDC_CodigoField;
+        
+        private string cOB_CodigoField;
+        
+        private string documentoField;
+        
+        private double baseICMSSubstField;
+        
+        private double valorICMSSubstField;
+        
+        private string uSU_CODIGOField;
+        
+        private int iAG_CODIGOField;
+        
+        private string hIS_CODIGOField;
+        
+        private TServicosPedidoDeVenda[] servicosPedidoDeVendaField;
+        
+        private TItensPedidoDeVenda[] itensPedidoDeVendaField;
+        
+        /// <remarks/>
+        public string PEV_Codigo {
+            get {
+                return this.pEV_CodigoField;
+            }
+            set {
+                this.pEV_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string EST_CODIGO {
+            get {
+                return this.eST_CODIGOField;
+            }
+            set {
+                this.eST_CODIGOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CLI_Codigo {
+            get {
+                return this.cLI_CodigoField;
+            }
+            set {
+                this.cLI_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime DATAPREVENTREGA {
+            get {
+                return this.dATAPREVENTREGAField;
+            }
+            set {
+                this.dATAPREVENTREGAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CONDICAOPAGAMENTO {
+            get {
+                return this.cONDICAOPAGAMENTOField;
+            }
+            set {
+                this.cONDICAOPAGAMENTOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string OBSERVACAO {
+            get {
+                return this.oBSERVACAOField;
+            }
+            set {
+                this.oBSERVACAOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Rejeitado {
+            get {
+                return this.rejeitadoField;
+            }
+            set {
+                this.rejeitadoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TPP_Codigo {
+            get {
+                return this.tPP_CodigoField;
+            }
+            set {
+                this.tPP_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string TDC_Codigo {
+            get {
+                return this.tDC_CodigoField;
+            }
+            set {
+                this.tDC_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string COB_Codigo {
+            get {
+                return this.cOB_CodigoField;
+            }
+            set {
+                this.cOB_CodigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Documento {
+            get {
+                return this.documentoField;
+            }
+            set {
+                this.documentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double BaseICMSSubst {
+            get {
+                return this.baseICMSSubstField;
+            }
+            set {
+                this.baseICMSSubstField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorICMSSubst {
+            get {
+                return this.valorICMSSubstField;
+            }
+            set {
+                this.valorICMSSubstField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string USU_CODIGO {
+            get {
+                return this.uSU_CODIGOField;
+            }
+            set {
+                this.uSU_CODIGOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int IAG_CODIGO {
+            get {
+                return this.iAG_CODIGOField;
+            }
+            set {
+                this.iAG_CODIGOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string HIS_CODIGO {
+            get {
+                return this.hIS_CODIGOField;
+            }
+            set {
+                this.hIS_CODIGOField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TServicosPedidoDeVenda[] ServicosPedidoDeVenda {
+            get {
+                return this.servicosPedidoDeVendaField;
+            }
+            set {
+                this.servicosPedidoDeVendaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TItensPedidoDeVenda[] ItensPedidoDeVenda {
+            get {
+                return this.itensPedidoDeVendaField;
+            }
+            set {
+                this.itensPedidoDeVendaField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TLancamentos : TClasseBase {
+        
+        private string codigoField;
+        
+        private string estabelecimentoField;
+        
+        private string contaField;
+        
+        private System.DateTime dataField;
+        
+        private int sequencialField;
+        
+        private string centroResultadosField;
+        
+        private string receitaDespesaField;
+        
+        private double valorField;
+        
+        private string naturezaField;
+        
+        private int exportaACField;
+        
+        private string historicoField;
+        
+        private TRateioLancamentos[] rateioLancamentoField;
+        
+        private string iDWSField;
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Estabelecimento {
+            get {
+                return this.estabelecimentoField;
+            }
+            set {
+                this.estabelecimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Conta {
+            get {
+                return this.contaField;
+            }
+            set {
+                this.contaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Sequencial {
+            get {
+                return this.sequencialField;
+            }
+            set {
+                this.sequencialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CentroResultados {
+            get {
+                return this.centroResultadosField;
+            }
+            set {
+                this.centroResultadosField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ReceitaDespesa {
+            get {
+                return this.receitaDespesaField;
+            }
+            set {
+                this.receitaDespesaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Natureza {
+            get {
+                return this.naturezaField;
+            }
+            set {
+                this.naturezaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int ExportaAC {
+            get {
+                return this.exportaACField;
+            }
+            set {
+                this.exportaACField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Historico {
+            get {
+                return this.historicoField;
+            }
+            set {
+                this.historicoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TRateioLancamentos[] RateioLancamento {
+            get {
+                return this.rateioLancamentoField;
+            }
+            set {
+                this.rateioLancamentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string IDWS {
+            get {
+                return this.iDWSField;
+            }
+            set {
+                this.iDWSField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TEntradas : TClasseBase {
+        
+        private string estabelecimentoField;
+        
+        private string centroDeEstoqueField;
+        
+        private string centroDeResultadosField;
+        
+        private string fornecedorField;
+        
+        private string pedidoField;
+        
+        private string transportadoraField;
+        
+        private System.DateTime dataField;
+        
+        private System.DateTime horaField;
+        
+        private string oBSField;
+        
+        private string documentoField;
+        
+        private double valorField;
+        
+        private double freteField;
+        
+        private TItensEntrada[] itensEntradaField;
+        
+        /// <remarks/>
+        public string Estabelecimento {
+            get {
+                return this.estabelecimentoField;
+            }
+            set {
+                this.estabelecimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CentroDeEstoque {
+            get {
+                return this.centroDeEstoqueField;
+            }
+            set {
+                this.centroDeEstoqueField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CentroDeResultados {
+            get {
+                return this.centroDeResultadosField;
+            }
+            set {
+                this.centroDeResultadosField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Fornecedor {
+            get {
+                return this.fornecedorField;
+            }
+            set {
+                this.fornecedorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Pedido {
+            get {
+                return this.pedidoField;
+            }
+            set {
+                this.pedidoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Transportadora {
+            get {
+                return this.transportadoraField;
+            }
+            set {
+                this.transportadoraField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Hora {
+            get {
+                return this.horaField;
+            }
+            set {
+                this.horaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string OBS {
+            get {
+                return this.oBSField;
+            }
+            set {
+                this.oBSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Documento {
+            get {
+                return this.documentoField;
+            }
+            set {
+                this.documentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double Frete {
+            get {
+                return this.freteField;
+            }
+            set {
+                this.freteField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TItensEntrada[] ItensEntrada {
+            get {
+                return this.itensEntradaField;
+            }
+            set {
+                this.itensEntradaField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TRequisicoes : TClasseBase {
+        
+        private string empresaField;
+        
+        private string codigoField;
+        
+        private string estabelecimentoField;
+        
+        private string requisitanteField;
+        
+        private string usuarioResponsavelField;
+        
+        private string centroDeEstoqueField;
+        
+        private string centroDeResultadosField;
+        
+        private string documentoField;
+        
+        private System.DateTime dataField;
+        
+        private System.DateTime horaField;
+        
+        private string obsField;
+        
+        private TItensRequisicao[] itensRequisicaoField;
+        
+        /// <remarks/>
+        public string Empresa {
+            get {
+                return this.empresaField;
+            }
+            set {
+                this.empresaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Estabelecimento {
+            get {
+                return this.estabelecimentoField;
+            }
+            set {
+                this.estabelecimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Requisitante {
+            get {
+                return this.requisitanteField;
+            }
+            set {
+                this.requisitanteField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string UsuarioResponsavel {
+            get {
+                return this.usuarioResponsavelField;
+            }
+            set {
+                this.usuarioResponsavelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CentroDeEstoque {
+            get {
+                return this.centroDeEstoqueField;
+            }
+            set {
+                this.centroDeEstoqueField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CentroDeResultados {
+            get {
+                return this.centroDeResultadosField;
+            }
+            set {
+                this.centroDeResultadosField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Documento {
+            get {
+                return this.documentoField;
+            }
+            set {
+                this.documentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Hora {
+            get {
+                return this.horaField;
+            }
+            set {
+                this.horaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Obs {
+            get {
+                return this.obsField;
+            }
+            set {
+                this.obsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TItensRequisicao[] ItensRequisicao {
+            get {
+                return this.itensRequisicaoField;
+            }
+            set {
+                this.itensRequisicaoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TSaidas : TClasseBase {
+        
+        private string estabelecimentoField;
+        
+        private string requisitanteField;
+        
+        private string centroDeEstoqueField;
+        
+        private string centroDeResultadosField;
+        
+        private string centroDeResultadosOrigemField;
+        
+        private string documentoField;
+        
+        private System.DateTime dataField;
+        
+        private System.DateTime horaField;
+        
+        private string obsField;
+        
+        private TItensSaida[] itensSaidaField;
+        
+        /// <remarks/>
+        public string Estabelecimento {
+            get {
+                return this.estabelecimentoField;
+            }
+            set {
+                this.estabelecimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Requisitante {
+            get {
+                return this.requisitanteField;
+            }
+            set {
+                this.requisitanteField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CentroDeEstoque {
+            get {
+                return this.centroDeEstoqueField;
+            }
+            set {
+                this.centroDeEstoqueField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CentroDeResultados {
+            get {
+                return this.centroDeResultadosField;
+            }
+            set {
+                this.centroDeResultadosField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string CentroDeResultadosOrigem {
+            get {
+                return this.centroDeResultadosOrigemField;
+            }
+            set {
+                this.centroDeResultadosOrigemField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Documento {
+            get {
+                return this.documentoField;
+            }
+            set {
+                this.documentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Data {
+            get {
+                return this.dataField;
+            }
+            set {
+                this.dataField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Hora {
+            get {
+                return this.horaField;
+            }
+            set {
+                this.horaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Obs {
+            get {
+                return this.obsField;
+            }
+            set {
+                this.obsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TItensSaida[] ItensSaida {
+            get {
+                return this.itensSaidaField;
+            }
+            set {
+                this.itensSaidaField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TServicosaReceber : TClasseBase {
+        
+        private string codigoField;
+        
+        private int sequencialField;
+        
+        private string servicoField;
+        
+        private string modalidadeField;
+        
+        private double valorField;
+        
+        private TComissionadosServicosaReceber[] comissionadosservicosareceberField;
+        
+        private double descontoIncondicionalField;
+        
+        private double valorBrutoField;
+        
+        /// <remarks/>
+        public string codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int sequencial {
+            get {
+                return this.sequencialField;
+            }
+            set {
+                this.sequencialField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string servico {
+            get {
+                return this.servicoField;
+            }
+            set {
+                this.servicoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string modalidade {
+            get {
+                return this.modalidadeField;
+            }
+            set {
+                this.modalidadeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double valor {
+            get {
+                return this.valorField;
+            }
+            set {
+                this.valorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TComissionadosServicosaReceber[] comissionadosservicosareceber {
+            get {
+                return this.comissionadosservicosareceberField;
+            }
+            set {
+                this.comissionadosservicosareceberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double DescontoIncondicional {
+            get {
+                return this.descontoIncondicionalField;
+            }
+            set {
+                this.descontoIncondicionalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ValorBruto {
+            get {
+                return this.valorBrutoField;
+            }
+            set {
+                this.valorBrutoField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1055.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.SoapTypeAttribute(Namespace="urn:AGIntf")]
+    public partial class TContasaReceber : TClasseBase {
+        
+        private string codigoField;
+        
+        private string estabelecimentoField;
+        
+        private string centroResultadosField;
+        
+        private string clienteField;
+        
+        private string receitaField;
+        
+        private string documentoField;
+        
+        private string tipoGeracaoField;
+        
+        private System.DateTime emissaoField;
+        
+        private int exportaACField;
+        
+        private double iSSField;
+        
+        private double iRRFField;
+        
+        private double iNSSField;
+        
+        private double pISField;
+        
+        private double descontoIncondicionalField;
+        
+        private double cOFINSField;
+        
+        private double cSLLField;
+        
+        private string obsField;
+        
+        private string mesAnoField;
+        
+        private TVencimentosaReceber[] vencimentosaReceberField;
+        
+        private TVencimentosChequeaReceber[] vencimentosChequeaReceberField;
+        
+        private TVencimentosCartaoaReceber[] vencimentosCartaoaReceberField;
+        
+        private TServicosaReceber[] servicosaReceberField;
+        
+        private TItensaReceber[] itensaReceberField;
+        
+        private TRateiosaReceber[] rateiosaReceberField;
+        
+        private string iDWSField;
+        
+        /// <remarks/>
+        public string codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string estabelecimento {
+            get {
+                return this.estabelecimentoField;
+            }
+            set {
+                this.estabelecimentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string centroResultados {
+            get {
+                return this.centroResultadosField;
+            }
+            set {
+                this.centroResultadosField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string cliente {
+            get {
+                return this.clienteField;
+            }
+            set {
+                this.clienteField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string receita {
+            get {
+                return this.receitaField;
+            }
+            set {
+                this.receitaField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string documento {
+            get {
+                return this.documentoField;
+            }
+            set {
+                this.documentoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string tipoGeracao {
+            get {
+                return this.tipoGeracaoField;
+            }
+            set {
+                this.tipoGeracaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime emissao {
+            get {
+                return this.emissaoField;
+            }
+            set {
+                this.emissaoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int exportaAC {
+            get {
+                return this.exportaACField;
+            }
+            set {
+                this.exportaACField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double ISS {
+            get {
+                return this.iSSField;
+            }
+            set {
+                this.iSSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double IRRF {
+            get {
+                return this.iRRFField;
+            }
+            set {
+                this.iRRFField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double INSS {
+            get {
+                return this.iNSSField;
+            }
+            set {
+                this.iNSSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double PIS {
+            get {
+                return this.pISField;
+            }
+            set {
+                this.pISField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double DescontoIncondicional {
+            get {
+                return this.descontoIncondicionalField;
+            }
+            set {
+                this.descontoIncondicionalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double COFINS {
+            get {
+                return this.cOFINSField;
+            }
+            set {
+                this.cOFINSField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public double CSLL {
+            get {
+                return this.cSLLField;
+            }
+            set {
+                this.cSLLField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string obs {
+            get {
+                return this.obsField;
+            }
+            set {
+                this.obsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string mesAno {
+            get {
+                return this.mesAnoField;
+            }
+            set {
+                this.mesAnoField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TVencimentosaReceber[] vencimentosaReceber {
+            get {
+                return this.vencimentosaReceberField;
+            }
+            set {
+                this.vencimentosaReceberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TVencimentosChequeaReceber[] vencimentosChequeaReceber {
+            get {
+                return this.vencimentosChequeaReceberField;
+            }
+            set {
+                this.vencimentosChequeaReceberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TVencimentosCartaoaReceber[] vencimentosCartaoaReceber {
+            get {
+                return this.vencimentosCartaoaReceberField;
+            }
+            set {
+                this.vencimentosCartaoaReceberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TServicosaReceber[] servicosaReceber {
+            get {
+                return this.servicosaReceberField;
+            }
+            set {
+                this.servicosaReceberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TItensaReceber[] itensaReceber {
+            get {
+                return this.itensaReceberField;
+            }
+            set {
+                this.itensaReceberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public TRateiosaReceber[] rateiosaReceber {
+            get {
+                return this.rateiosaReceberField;
+            }
+            set {
+                this.rateiosaReceberField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string IDWS {
+            get {
+                return this.iDWSField;
+            }
+            set {
+                this.iDWSField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void ObtemCredencialCompletedEventHandler(object sender, ObtemCredencialCompletedEventArgs e);
     
@@ -10455,6 +24020,32 @@ namespace Mensageria.AGWebReference {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetClasseBaseCompletedEventHandler(object sender, GetClasseBaseCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetClasseBaseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetClasseBaseCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TClasseBase Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TClasseBase)(this.results[0]));
             }
         }
     }
@@ -10632,6 +24223,84 @@ namespace Mensageria.AGWebReference {
         private object[] results;
         
         internal AlteraClienteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void IncluirClienteComJSONCompletedEventHandler(object sender, IncluirClienteComJSONCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IncluirClienteComJSONCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IncluirClienteComJSONCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void AlterarClienteComJSONCompletedEventHandler(object sender, AlterarClienteComJSONCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AlterarClienteComJSONCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal AlterarClienteComJSONCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void ExcluirClienteComJSONCompletedEventHandler(object sender, ExcluirClienteComJSONCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ExcluirClienteComJSONCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ExcluirClienteComJSONCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -10855,6 +24524,84 @@ namespace Mensageria.AGWebReference {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void IncluiReceitaDespesaCompletedEventHandler(object sender, IncluiReceitaDespesaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IncluiReceitaDespesaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IncluiReceitaDespesaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void AlteraReceitaDespesaCompletedEventHandler(object sender, AlteraReceitaDespesaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AlteraReceitaDespesaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal AlteraReceitaDespesaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void ExcluiReceitaDespesaCompletedEventHandler(object sender, ExcluiReceitaDespesaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ExcluiReceitaDespesaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ExcluiReceitaDespesaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void IncluiCentroDeResultadoCompletedEventHandler(object sender, IncluiCentroDeResultadoCompletedEventArgs e);
     
     /// <remarks/>
@@ -11011,6 +24758,84 @@ namespace Mensageria.AGWebReference {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void IncluirFornecedorComJSONCompletedEventHandler(object sender, IncluirFornecedorComJSONCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IncluirFornecedorComJSONCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IncluirFornecedorComJSONCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void AlterarFornecedorComJSONCompletedEventHandler(object sender, AlterarFornecedorComJSONCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AlterarFornecedorComJSONCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal AlterarFornecedorComJSONCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void ExcluirFornecedorComJSONCompletedEventHandler(object sender, ExcluirFornecedorComJSONCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ExcluirFornecedorComJSONCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ExcluirFornecedorComJSONCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void IncluiItemCompletedEventHandler(object sender, IncluiItemCompletedEventArgs e);
     
     /// <remarks/>
@@ -11074,6 +24899,84 @@ namespace Mensageria.AGWebReference {
         private object[] results;
         
         internal ExcluiItemCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void IncluirItemComJSONCompletedEventHandler(object sender, IncluirItemComJSONCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IncluirItemComJSONCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IncluirItemComJSONCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void AlterarItemComJSONCompletedEventHandler(object sender, AlterarItemComJSONCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AlterarItemComJSONCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal AlterarItemComJSONCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void ExcluirItemComJSONCompletedEventHandler(object sender, ExcluirItemComJSONCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ExcluirItemComJSONCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ExcluirItemComJSONCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -11473,6 +25376,84 @@ namespace Mensageria.AGWebReference {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((TContasaReceber)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void getObjetoContasaPagarCompletedEventHandler(object sender, getObjetoContasaPagarCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getObjetoContasaPagarCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getObjetoContasaPagarCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TContasaPagar Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TContasaPagar)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void IncluirBaixaContasaPagarCompletedEventHandler(object sender, IncluirBaixaContasaPagarCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IncluirBaixaContasaPagarCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IncluirBaixaContasaPagarCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void CancelarBaixaContasaPagarCompletedEventHandler(object sender, CancelarBaixaContasaPagarCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CancelarBaixaContasaPagarCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CancelarBaixaContasaPagarCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
             }
         }
     }
@@ -12415,6 +26396,32 @@ namespace Mensageria.AGWebReference {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetRequisicaoCompletedEventHandler(object sender, GetRequisicaoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetRequisicaoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetRequisicaoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TRequisicoes Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TRequisicoes)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void IncluiContasaReceberCompletedEventHandler(object sender, IncluiContasaReceberCompletedEventArgs e);
     
     /// <remarks/>
@@ -12478,6 +26485,32 @@ namespace Mensageria.AGWebReference {
         private object[] results;
         
         internal ExcluiContasaReceberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void IncluirContasaReceberComJSONCompletedEventHandler(object sender, IncluirContasaReceberComJSONCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IncluirContasaReceberComJSONCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IncluirContasaReceberComJSONCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -12675,6 +26708,84 @@ namespace Mensageria.AGWebReference {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void ExcluiLancamentoCompletedEventHandler(object sender, ExcluiLancamentoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ExcluiLancamentoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ExcluiLancamentoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void IncluirLancamentoComJSONCompletedEventHandler(object sender, IncluirLancamentoComJSONCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IncluirLancamentoComJSONCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IncluirLancamentoComJSONCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void ExcluirLancamentoComJSONCompletedEventHandler(object sender, ExcluirLancamentoComJSONCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ExcluirLancamentoComJSONCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ExcluirLancamentoComJSONCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void IncluiAdiantamentoClienteCompletedEventHandler(object sender, IncluiAdiantamentoClienteCompletedEventArgs e);
     
     /// <remarks/>
@@ -12695,6 +26806,162 @@ namespace Mensageria.AGWebReference {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void ExcluiAdiantamentoClienteCompletedEventHandler(object sender, ExcluiAdiantamentoClienteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ExcluiAdiantamentoClienteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ExcluiAdiantamentoClienteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetObjAdiantamentoClienteCompletedEventHandler(object sender, GetObjAdiantamentoClienteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetObjAdiantamentoClienteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetObjAdiantamentoClienteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TAdiantamentoCliente Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TAdiantamentoCliente)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetObjAdiantamentoClienteIDWSCompletedEventHandler(object sender, GetObjAdiantamentoClienteIDWSCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetObjAdiantamentoClienteIDWSCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetObjAdiantamentoClienteIDWSCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TAdiantamentoCliente Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TAdiantamentoCliente)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void IncluiInventarioCompletedEventHandler(object sender, IncluiInventarioCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IncluiInventarioCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IncluiInventarioCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void ExcluiInventarioCompletedEventHandler(object sender, ExcluiInventarioCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ExcluiInventarioCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ExcluiInventarioCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetObjInventarioCompletedEventHandler(object sender, GetObjInventarioCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetObjInventarioCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetObjInventarioCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TInventario Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TInventario)(this.results[0]));
             }
         }
     }
@@ -12799,6 +27066,786 @@ namespace Mensageria.AGWebReference {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void IncluiOrcamentoFisicoFinanceiroCompletedEventHandler(object sender, IncluiOrcamentoFisicoFinanceiroCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IncluiOrcamentoFisicoFinanceiroCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IncluiOrcamentoFisicoFinanceiroCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void ExcluiOrcamentoFisicoFinanceiroCompletedEventHandler(object sender, ExcluiOrcamentoFisicoFinanceiroCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ExcluiOrcamentoFisicoFinanceiroCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ExcluiOrcamentoFisicoFinanceiroCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void AlteraOrcamentoFisicoFinanceiroCompletedEventHandler(object sender, AlteraOrcamentoFisicoFinanceiroCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AlteraOrcamentoFisicoFinanceiroCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal AlteraOrcamentoFisicoFinanceiroCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetItemDoOrcamentoCompletedEventHandler(object sender, GetItemDoOrcamentoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetItemDoOrcamentoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetItemDoOrcamentoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TOrcamentoFisicoFinanceiro Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TOrcamentoFisicoFinanceiro)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void IncluiTransferenciaEntreContasCompletedEventHandler(object sender, IncluiTransferenciaEntreContasCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IncluiTransferenciaEntreContasCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IncluiTransferenciaEntreContasCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void AlteraTransferenciaEntreContasCompletedEventHandler(object sender, AlteraTransferenciaEntreContasCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AlteraTransferenciaEntreContasCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal AlteraTransferenciaEntreContasCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void ExcluiTransferenciaEntreContasCompletedEventHandler(object sender, ExcluiTransferenciaEntreContasCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ExcluiTransferenciaEntreContasCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ExcluiTransferenciaEntreContasCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetTransferenciaEntreContasCompletedEventHandler(object sender, GetTransferenciaEntreContasCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetTransferenciaEntreContasCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetTransferenciaEntreContasCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TTransferenciaEntreContas Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TTransferenciaEntreContas)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void IncluirTransferenciaEntreContasComJSONCompletedEventHandler(object sender, IncluirTransferenciaEntreContasComJSONCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IncluirTransferenciaEntreContasComJSONCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IncluirTransferenciaEntreContasComJSONCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void AlterarTransferenciaEntreContasComJSONCompletedEventHandler(object sender, AlterarTransferenciaEntreContasComJSONCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class AlterarTransferenciaEntreContasComJSONCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal AlterarTransferenciaEntreContasComJSONCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void ExcluirTransferenciaEntreContasComJSONCompletedEventHandler(object sender, ExcluirTransferenciaEntreContasComJSONCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ExcluirTransferenciaEntreContasComJSONCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ExcluirTransferenciaEntreContasComJSONCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void IncluiContasaPagarCompletedEventHandler(object sender, IncluiContasaPagarCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IncluiContasaPagarCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IncluiContasaPagarCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void ExcluiContasaPagarCompletedEventHandler(object sender, ExcluiContasaPagarCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ExcluiContasaPagarCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ExcluiContasaPagarCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void IncluirMapaResumoCompletedEventHandler(object sender, IncluirMapaResumoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IncluirMapaResumoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IncluirMapaResumoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void ExcluirMapaResumoCompletedEventHandler(object sender, ExcluirMapaResumoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ExcluirMapaResumoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ExcluirMapaResumoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetMapaResumoCompletedEventHandler(object sender, GetMapaResumoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetMapaResumoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetMapaResumoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TMapaResumo Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TMapaResumo)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void IncluirCupomFiscalCompletedEventHandler(object sender, IncluirCupomFiscalCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IncluirCupomFiscalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IncluirCupomFiscalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void ExcluirCupomFiscalCompletedEventHandler(object sender, ExcluirCupomFiscalCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ExcluirCupomFiscalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ExcluirCupomFiscalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetCupomFiscalCompletedEventHandler(object sender, GetCupomFiscalCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetCupomFiscalCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetCupomFiscalCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TCupomFiscal Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TCupomFiscal)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void IncluirConhecimentoTransporteCompletedEventHandler(object sender, IncluirConhecimentoTransporteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IncluirConhecimentoTransporteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IncluirConhecimentoTransporteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void ExcluirConhecimentoTransporteCompletedEventHandler(object sender, ExcluirConhecimentoTransporteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ExcluirConhecimentoTransporteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ExcluirConhecimentoTransporteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetConhecimentoTransporteCompletedEventHandler(object sender, GetConhecimentoTransporteCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetConhecimentoTransporteCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetConhecimentoTransporteCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TConhecimentoTransporte Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TConhecimentoTransporte)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void IncluirNotaFiscalMercadoriaCompletedEventHandler(object sender, IncluirNotaFiscalMercadoriaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IncluirNotaFiscalMercadoriaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IncluirNotaFiscalMercadoriaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void ExcluirNotaFiscalMercadoriaCompletedEventHandler(object sender, ExcluirNotaFiscalMercadoriaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ExcluirNotaFiscalMercadoriaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ExcluirNotaFiscalMercadoriaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetNotaFiscalMercadoriaCompletedEventHandler(object sender, GetNotaFiscalMercadoriaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetNotaFiscalMercadoriaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetNotaFiscalMercadoriaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TNotaFiscalMercadoria Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TNotaFiscalMercadoria)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetNotaFiscalMercadoriaIDWSCompletedEventHandler(object sender, GetNotaFiscalMercadoriaIDWSCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetNotaFiscalMercadoriaIDWSCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetNotaFiscalMercadoriaIDWSCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TNotaFiscalMercadoria Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TNotaFiscalMercadoria)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void IncluirNotaFiscalSaidaCompletedEventHandler(object sender, IncluirNotaFiscalSaidaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class IncluirNotaFiscalSaidaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal IncluirNotaFiscalSaidaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void ExcluirNotaFiscalSaidaCompletedEventHandler(object sender, ExcluirNotaFiscalSaidaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ExcluirNotaFiscalSaidaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ExcluirNotaFiscalSaidaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetNotaFiscalSaidaCompletedEventHandler(object sender, GetNotaFiscalSaidaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetNotaFiscalSaidaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetNotaFiscalSaidaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TNotasFiscaisSaida Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TNotasFiscaisSaida)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetNotaFiscalSaidaIDWSCompletedEventHandler(object sender, GetNotaFiscalSaidaIDWSCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetNotaFiscalSaidaIDWSCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetNotaFiscalSaidaIDWSCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TNotasFiscaisSaida Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TNotasFiscaisSaida)(this.results[0]));
             }
         }
     }
@@ -13273,6 +28320,32 @@ namespace Mensageria.AGWebReference {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetPedidosDaColetaCompletedEventHandler(object sender, GetPedidosDaColetaCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetPedidosDaColetaCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetPedidosDaColetaCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TDadosPedidoDeCompraRemotable[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TDadosPedidoDeCompraRemotable[])(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
     public delegate void GetNFPDFStreamCompletedEventHandler(object sender, GetNFPDFStreamCompletedEventArgs e);
     
     /// <remarks/>
@@ -13397,6 +28470,474 @@ namespace Mensageria.AGWebReference {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((TItem)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void BloqueiaClientesInadimplentesFortesCompletedEventHandler(object sender, BloqueiaClientesInadimplentesFortesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class BloqueiaClientesInadimplentesFortesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal BloqueiaClientesInadimplentesFortesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetJsonItemPorCodigoCompletedEventHandler(object sender, GetJsonItemPorCodigoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetJsonItemPorCodigoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetJsonItemPorCodigoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetJsonFornecedorPorCodigoCompletedEventHandler(object sender, GetJsonFornecedorPorCodigoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetJsonFornecedorPorCodigoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetJsonFornecedorPorCodigoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetJsonClientePorCodigoCompletedEventHandler(object sender, GetJsonClientePorCodigoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetJsonClientePorCodigoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetJsonClientePorCodigoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetJsonContasAReceberPorCodigoCompletedEventHandler(object sender, GetJsonContasAReceberPorCodigoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetJsonContasAReceberPorCodigoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetJsonContasAReceberPorCodigoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetJsonLancamentoPorCodigoCompletedEventHandler(object sender, GetJsonLancamentoPorCodigoCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetJsonLancamentoPorCodigoCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetJsonLancamentoPorCodigoCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetJsonTransferenciaEntreContasCompletedEventHandler(object sender, GetJsonTransferenciaEntreContasCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetJsonTransferenciaEntreContasCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetJsonTransferenciaEntreContasCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetListaTipoDocumentoJsonCompletedEventHandler(object sender, GetListaTipoDocumentoJsonCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetListaTipoDocumentoJsonCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetListaTipoDocumentoJsonCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetListaPrazosPagamentoJsonCompletedEventHandler(object sender, GetListaPrazosPagamentoJsonCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetListaPrazosPagamentoJsonCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetListaPrazosPagamentoJsonCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetListaUnidadeMedidaJsonCompletedEventHandler(object sender, GetListaUnidadeMedidaJsonCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetListaUnidadeMedidaJsonCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetListaUnidadeMedidaJsonCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void getObjetoContasaReceberIDWSCompletedEventHandler(object sender, getObjetoContasaReceberIDWSCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getObjetoContasaReceberIDWSCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getObjetoContasaReceberIDWSCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TContasaReceber Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TContasaReceber)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetObjContasaPagarIDWSCompletedEventHandler(object sender, GetObjContasaPagarIDWSCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetObjContasaPagarIDWSCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetObjContasaPagarIDWSCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TContasaPagar Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TContasaPagar)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void getObjetoLancamentoIDWSCompletedEventHandler(object sender, getObjetoLancamentoIDWSCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class getObjetoLancamentoIDWSCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal getObjetoLancamentoIDWSCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TLancamentos Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TLancamentos)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetTransferenciaEntreContasIDWSCompletedEventHandler(object sender, GetTransferenciaEntreContasIDWSCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetTransferenciaEntreContasIDWSCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetTransferenciaEntreContasIDWSCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TTransferenciaEntreContas Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TTransferenciaEntreContas)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetMapaResumoIDWSCompletedEventHandler(object sender, GetMapaResumoIDWSCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetMapaResumoIDWSCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetMapaResumoIDWSCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TMapaResumo Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TMapaResumo)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetCupomFiscalIDWSCompletedEventHandler(object sender, GetCupomFiscalIDWSCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetCupomFiscalIDWSCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetCupomFiscalIDWSCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TCupomFiscal Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TCupomFiscal)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetConhecimentoTransporteIDWSCompletedEventHandler(object sender, GetConhecimentoTransporteIDWSCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetConhecimentoTransporteIDWSCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetConhecimentoTransporteIDWSCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TConhecimentoTransporte Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TConhecimentoTransporte)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GetObjInventarioIDWSCompletedEventHandler(object sender, GetObjInventarioIDWSCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetObjInventarioIDWSCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetObjInventarioIDWSCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public TInventario Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((TInventario)(this.results[0]));
             }
         }
     }
