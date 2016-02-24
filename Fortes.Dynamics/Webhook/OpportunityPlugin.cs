@@ -510,7 +510,7 @@ namespace Webhook
             }
             if (opportunityWin.Attributes.ContainsKey("i9_regiao"))
             {
-                this.i9_regiao = opportunityWin["i9_regiao"].ToString();
+                this.i9_regiao = ((EntityReference)opportunityWin["i9_regiao"]).Name;
             }
             if (opportunityWin.Attributes.ContainsKey("i9_retirou_duvidas_aderencia_software"))
             {
@@ -534,7 +534,7 @@ namespace Webhook
             }
             if (opportunityWin.Attributes.ContainsKey("i9_tabela_preco"))
             {
-                this.i9_tabela_preco = opportunityWin["i9_tabela_preco"].ToString();
+                this.i9_tabela_preco = ((EntityReference)opportunityWin["i9_tabela_preco"]).Name;
             }
             if (opportunityWin.Attributes.ContainsKey("i9_tempodefalha"))
             {
@@ -630,7 +630,7 @@ namespace Webhook
             }
             if (opportunityWin.Attributes.ContainsKey("originatingleadid"))
             {
-                this.originatingleadid = opportunityWin["originatingleadid"].ToString();
+                this.originatingleadid = ((EntityReference)opportunityWin["originatingleadid"]).Name;
             }
             if (opportunityWin.Attributes.ContainsKey("overriddencreatedon"))
             {
@@ -658,7 +658,7 @@ namespace Webhook
             }
             if (opportunityWin.Attributes.ContainsKey("parentcontactid"))
             {
-                this.parentcontactid = opportunityWin["parentcontactid"].ToString();
+                this.parentcontactid = ((EntityReference)opportunityWin["parentcontactid"]).Name;
             }
             if (opportunityWin.Attributes.ContainsKey("participatesinworkflow"))
             {
