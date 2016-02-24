@@ -20,9 +20,7 @@ namespace Webhook
             {
                 try
                 {
-                    Microsoft.Xrm.Sdk.IPluginExecutionContext context = (Microsoft.Xrm.Sdk.IPluginExecutionContext)
-                        serviceProvider.GetService(typeof(Microsoft.Xrm.Sdk.IPluginExecutionContext));
-
+                    IPluginExecutionContext context = (IPluginExecutionContext)serviceProvider.GetService(typeof(IPluginExecutionContext));
                     IOrganizationServiceFactory serviceFactory = (IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory));
                     IOrganizationService service = serviceFactory.CreateOrganizationService(context.UserId);
                     var contexto = new OrganizationServiceContext(service);
@@ -33,6 +31,8 @@ namespace Webhook
                     {
                         Entity oppClose = (Entity)context.InputParameters["OpportunityClose"];
                         var opp = new OpportunityLocal();
+                        var aco = new AccountLocal();
+                        opp.accountlocal = aco;
                         if (oppClose.Attributes.Contains("opportunityid"))
                         {
                             //Pega a referência da oportunidade que está sendo fechada            
@@ -41,6 +41,19 @@ namespace Webhook
                             var opportunityWin = service.Retrieve(oppRef.LogicalName, oppRef.Id, new ColumnSet(true));
                             //Atribuir os valores da oportunidade
                             opp.SetOpportunityLocal(opportunityWin);
+
+                            if (opportunityWin.Attributes.ContainsKey("parentaccountid"))
+                            {
+                                //Pega a referência da conta
+                                var acoRef = (EntityReference)opportunityWin["parentaccountid"];
+                                //Recupera produtos da oportunidade
+                                var opportunityWinAccount = service.Retrieve("account", acoRef.Id, new ColumnSet(true));
+                                //Atribuir os valores da conta
+                                aco.SetAccountLocal(opportunityWinAccount);
+
+                                //Montar Oportunidade
+                                opp.accountlocal = aco;
+                            }
                         }
 
                         using (MemoryStream memoryStream = new MemoryStream())
@@ -49,6 +62,7 @@ namespace Webhook
                             serializer.WriteObject(memoryStream, opp);
                             json = Encoding.UTF8.GetString(memoryStream.ToArray());
                         }
+
 
                         string URI = "http://posttestserver.com/post.php?dir=xiaoxiao";
 

@@ -278,6 +278,8 @@ namespace Webhook
         public string utcconversiontimezonecode { get; set; }
         [DataMember]
         public string versionnumber { get; set; }
+        [DataMember]
+        public AccountLocal accountlocal { get; set; }
 
         public OpportunityLocal() { }
         

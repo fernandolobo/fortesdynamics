@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Mensageria.Models;
 
 namespace Mensageria.Models
 {
@@ -141,5 +142,6 @@ namespace Mensageria.Models
         public string traversedpath { get; set; }
         public string utcconversiontimezonecode { get; set; }
         public string versionnumber { get; set; }
+        public Account accountlocal { get; set; }
     }
 }
