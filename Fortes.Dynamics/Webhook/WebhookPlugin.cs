@@ -27,7 +27,7 @@ namespace Webhook
                     IOrganizationService service = serviceFactory.CreateOrganizationService(context.UserId);
                     var contexto = new OrganizationServiceContext(service);
 
-                    string json = "";
+                    string json = string.Empty;
                     if (context.InputParameters.Contains("OpportunityClose") &&
                         context.InputParameters["OpportunityClose"] is Entity)
                     {
