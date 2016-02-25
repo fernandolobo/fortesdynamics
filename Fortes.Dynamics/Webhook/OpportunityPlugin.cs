@@ -280,6 +280,8 @@ namespace Webhook
         public string versionnumber { get; set; }
         [DataMember]
         public AccountLocal accountlocal { get; set; }
+        [DataMember]
+        public ICollection<ProductOpportunityLocal> productopportunitylocal { get; set; }
 
         public OpportunityLocal() { }
         

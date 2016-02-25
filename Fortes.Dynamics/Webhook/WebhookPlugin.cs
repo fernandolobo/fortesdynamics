@@ -7,6 +7,7 @@ using System.Runtime.Serialization.Json;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 using Microsoft.Xrm.Sdk.Client;
+using System.Collections.Generic;
 
 namespace Webhook
 {
@@ -33,6 +34,7 @@ namespace Webhook
                         var opp = new OpportunityLocal();
                         var aco = new AccountLocal();
                         opp.accountlocal = aco;
+                        opp.productopportunitylocal = new List<ProductOpportunityLocal>();
                         if (oppClose.Attributes.Contains("opportunityid"))
                         {
                             //Pega a referência da oportunidade que está sendo fechada            
@@ -53,6 +55,33 @@ namespace Webhook
 
                                 //Montar Oportunidade
                                 opp.accountlocal = aco;
+                            }
+
+                            QueryExpression opportunityProductsQuery = new QueryExpression
+                            {
+                                EntityName = OpportunityProduct.EntityLogicalName,
+                                ColumnSet = new ColumnSet(true),
+                                Criteria = new FilterExpression
+                                {
+                                    Conditions =
+                                {
+                                    new ConditionExpression
+                                    {
+                                        AttributeName = "opportunityid",
+                                        Operator = ConditionOperator.Equal,
+                                        Values = { oppRef.Id }
+                                    }
+                                }
+                                }
+                            };
+
+                            DataCollection<Entity> opportunityProducts = service.RetrieveMultiple(opportunityProductsQuery).Entities;
+                            foreach (Entity entity in opportunityProducts)
+                            {
+                                OpportunityProduct opportunityProduct = (OpportunityProduct)entity;
+                                var pop = new ProductOpportunityLocal();
+                                pop.SetProductOpportunityLocal(opportunityProduct);
+                                opp.productopportunitylocal.Add(pop);
                             }
                         }
 
