@@ -396,760 +396,782 @@ namespace Webhook
         {
             if (account.Attributes.ContainsKey("accountcategorycode"))
             {
-                this.accountcategorycode = account["accountcategorycode"].ToString();
+                this.accountcategorycode = GetValueAttribute(account["accountcategorycode"]);
             }
             if (account.Attributes.ContainsKey("accountclassificationcode"))
             {
-                this.accountclassificationcode = account["accountclassificationcode"].ToString();
+                this.accountclassificationcode = GetValueAttribute(account["accountclassificationcode"]);
             }
             if (account.Attributes.ContainsKey("accountid"))
             {
-                this.accountid = account["accountid"].ToString();
+                this.accountid = GetValueAttribute(account["accountid"]);
             }
             if (account.Attributes.ContainsKey("accountnumber"))
             {
-                this.accountnumber = account["accountnumber"].ToString();
+                this.accountnumber = GetValueAttribute(account["accountnumber"]);
             }
             if (account.Attributes.ContainsKey("accountratingcode"))
             {
-                this.accountratingcode = account["accountratingcode"].ToString();
+                this.accountratingcode = GetValueAttribute(account["accountratingcode"]);
             }
             if (account.Attributes.ContainsKey("address1_addressid"))
             {
-                this.address1_addressid = account["address1_addressid"].ToString();
+                this.address1_addressid = GetValueAttribute(account["address1_addressid"]);
             }
             if (account.Attributes.ContainsKey("address1_addresstypecode"))
             {
-                this.address1_addresstypecode = account["address1_addresstypecode"].ToString();
+                this.address1_addresstypecode = GetValueAttribute(account["address1_addresstypecode"]);
             }
             if (account.Attributes.ContainsKey("address1_city"))
             {
-                this.address1_city = account["address1_city"].ToString();
+                this.address1_city = GetValueAttribute(account["address1_city"]);
             }
             if (account.Attributes.ContainsKey("address1_composite"))
             {
-                this.address1_composite = account["address1_composite"].ToString();
+                this.address1_composite = GetValueAttribute(account["address1_composite"]);
             }
             if (account.Attributes.ContainsKey("address1_country"))
             {
-                this.address1_country = account["address1_country"].ToString();
+                this.address1_country = GetValueAttribute(account["address1_country"]);
             }
             if (account.Attributes.ContainsKey("address1_county"))
             {
-                this.address1_county = account["address1_county"].ToString();
+                this.address1_county = GetValueAttribute(account["address1_county"]);
             }
             if (account.Attributes.ContainsKey("address1_fax"))
             {
-                this.address1_fax = account["address1_fax"].ToString();
+                this.address1_fax = GetValueAttribute(account["address1_fax"]);
             }
             if (account.Attributes.ContainsKey("address1_freighttermscode"))
             {
-                this.address1_freighttermscode = account["address1_freighttermscode"].ToString();
+                this.address1_freighttermscode = GetValueAttribute(account["address1_freighttermscode"]);
             }
             if (account.Attributes.ContainsKey("address1_latitude"))
             {
-                this.address1_latitude = account["address1_latitude"].ToString();
+                this.address1_latitude = GetValueAttribute(account["address1_latitude"]);
             }
             if (account.Attributes.ContainsKey("address1_line1"))
             {
-                this.address1_line1 = account["address1_line1"].ToString();
+                this.address1_line1 = GetValueAttribute(account["address1_line1"]);
             }
             if (account.Attributes.ContainsKey("address1_line2"))
             {
-                this.address1_line2 = account["address1_line2"].ToString();
+                this.address1_line2 = GetValueAttribute(account["address1_line2"]);
             }
             if (account.Attributes.ContainsKey("address1_line3"))
             {
-                this.address1_line3 = account["address1_line3"].ToString();
+                this.address1_line3 = GetValueAttribute(account["address1_line3"]);
             }
             if (account.Attributes.ContainsKey("address1_longitude"))
             {
-                this.address1_longitude = account["address1_longitude"].ToString();
+                this.address1_longitude = GetValueAttribute(account["address1_longitude"]);
             }
             if (account.Attributes.ContainsKey("address1_name"))
             {
-                this.address1_name = account["address1_name"].ToString();
+                this.address1_name = GetValueAttribute(account["address1_name"]);
             }
             if (account.Attributes.ContainsKey("address1_postalcode"))
             {
-                this.address1_postalcode = account["address1_postalcode"].ToString();
+                this.address1_postalcode = GetValueAttribute(account["address1_postalcode"]);
             }
             if (account.Attributes.ContainsKey("address1_postofficebox"))
             {
-                this.address1_postofficebox = account["address1_postofficebox"].ToString();
+                this.address1_postofficebox = GetValueAttribute(account["address1_postofficebox"]);
             }
             if (account.Attributes.ContainsKey("address1_primarycontactname"))
             {
-                this.address1_primarycontactname = account["address1_primarycontactname"].ToString();
+                this.address1_primarycontactname = GetValueAttribute(account["address1_primarycontactname"]);
             }
             if (account.Attributes.ContainsKey("address1_shippingmethodcode"))
             {
-                this.address1_shippingmethodcode = account["address1_shippingmethodcode"].ToString();
+                this.address1_shippingmethodcode = GetValueAttribute(account["address1_shippingmethodcode"]);
             }
             if (account.Attributes.ContainsKey("address1_stateorprovince"))
             {
-                this.address1_stateorprovince = account["address1_stateorprovince"].ToString();
+                this.address1_stateorprovince = GetValueAttribute(account["address1_stateorprovince"]);
             }
             if (account.Attributes.ContainsKey("address1_telephone1"))
             {
-                this.address1_telephone1 = account["address1_telephone1"].ToString();
+                this.address1_telephone1 = GetValueAttribute(account["address1_telephone1"]);
             }
             if (account.Attributes.ContainsKey("address1_telephone2"))
             {
-                this.address1_telephone2 = account["address1_telephone2"].ToString();
+                this.address1_telephone2 = GetValueAttribute(account["address1_telephone2"]);
             }
             if (account.Attributes.ContainsKey("address1_telephone3"))
             {
-                this.address1_telephone3 = account["address1_telephone3"].ToString();
+                this.address1_telephone3 = GetValueAttribute(account["address1_telephone3"]);
             }
             if (account.Attributes.ContainsKey("address1_upszone"))
             {
-                this.address1_upszone = account["address1_upszone"].ToString();
+                this.address1_upszone = GetValueAttribute(account["address1_upszone"]);
             }
             if (account.Attributes.ContainsKey("address1_utcoffset"))
             {
-                this.address1_utcoffset = account["address1_utcoffset"].ToString();
+                this.address1_utcoffset = GetValueAttribute(account["address1_utcoffset"]);
             }
             if (account.Attributes.ContainsKey("address2_addressid"))
             {
-                this.address2_addressid = account["address2_addressid"].ToString();
+                this.address2_addressid = GetValueAttribute(account["address2_addressid"]);
             }
             if (account.Attributes.ContainsKey("address2_addresstypecode"))
             {
-                this.address2_addresstypecode = account["address2_addresstypecode"].ToString();
+                this.address2_addresstypecode = GetValueAttribute(account["address2_addresstypecode"]);
             }
             if (account.Attributes.ContainsKey("address2_city"))
             {
-                this.address2_city = account["address2_city"].ToString();
+                this.address2_city = GetValueAttribute(account["address2_city"]);
             }
             if (account.Attributes.ContainsKey("address2_composite"))
             {
-                this.address2_composite = account["address2_composite"].ToString();
+                this.address2_composite = GetValueAttribute(account["address2_composite"]);
             }
             if (account.Attributes.ContainsKey("address2_country"))
             {
-                this.address2_country = account["address2_country"].ToString();
+                this.address2_country = GetValueAttribute(account["address2_country"]);
             }
             if (account.Attributes.ContainsKey("address2_county"))
             {
-                this.address2_county = account["address2_county"].ToString();
+                this.address2_county = GetValueAttribute(account["address2_county"]);
             }
             if (account.Attributes.ContainsKey("address2_fax"))
             {
-                this.address2_fax = account["address2_fax"].ToString();
+                this.address2_fax = GetValueAttribute(account["address2_fax"]);
             }
             if (account.Attributes.ContainsKey("address2_freighttermscode"))
             {
-                this.address2_freighttermscode = account["address2_freighttermscode"].ToString();
+                this.address2_freighttermscode = GetValueAttribute(account["address2_freighttermscode"]);
             }
             if (account.Attributes.ContainsKey("address2_latitude"))
             {
-                this.address2_latitude = account["address2_latitude"].ToString();
+                this.address2_latitude = GetValueAttribute(account["address2_latitude"]);
             }
             if (account.Attributes.ContainsKey("address2_line1"))
             {
-                this.address2_line1 = account["address2_line1"].ToString();
+                this.address2_line1 = GetValueAttribute(account["address2_line1"]);
             }
             if (account.Attributes.ContainsKey("address2_line2"))
             {
-                this.address2_line2 = account["address2_line2"].ToString();
+                this.address2_line2 = GetValueAttribute(account["address2_line2"]);
             }
             if (account.Attributes.ContainsKey("address2_line3"))
             {
-                this.address2_line3 = account["address2_line3"].ToString();
+                this.address2_line3 = GetValueAttribute(account["address2_line3"]);
             }
             if (account.Attributes.ContainsKey("address2_longitude"))
             {
-                this.address2_longitude = account["address2_longitude"].ToString();
+                this.address2_longitude = GetValueAttribute(account["address2_longitude"]);
             }
             if (account.Attributes.ContainsKey("address2_name"))
             {
-                this.address2_name = account["address2_name"].ToString();
+                this.address2_name = GetValueAttribute(account["address2_name"]);
             }
             if (account.Attributes.ContainsKey("address2_postalcode"))
             {
-                this.address2_postalcode = account["address2_postalcode"].ToString();
+                this.address2_postalcode = GetValueAttribute(account["address2_postalcode"]);
             }
             if (account.Attributes.ContainsKey("address2_postofficebox"))
             {
-                this.address2_postofficebox = account["address2_postofficebox"].ToString();
+                this.address2_postofficebox = GetValueAttribute(account["address2_postofficebox"]);
             }
             if (account.Attributes.ContainsKey("address2_primarycontactname"))
             {
-                this.address2_primarycontactname = account["address2_primarycontactname"].ToString();
+                this.address2_primarycontactname = GetValueAttribute(account["address2_primarycontactname"]);
             }
             if (account.Attributes.ContainsKey("address2_shippingmethodcode"))
             {
-                this.address2_shippingmethodcode = account["address2_shippingmethodcode"].ToString();
+                this.address2_shippingmethodcode = GetValueAttribute(account["address2_shippingmethodcode"]);
             }
             if (account.Attributes.ContainsKey("address2_stateorprovince"))
             {
-                this.address2_stateorprovince = account["address2_stateorprovince"].ToString();
+                this.address2_stateorprovince = GetValueAttribute(account["address2_stateorprovince"]);
             }
             if (account.Attributes.ContainsKey("address2_telephone1"))
             {
-                this.address2_telephone1 = account["address2_telephone1"].ToString();
+                this.address2_telephone1 = GetValueAttribute(account["address2_telephone1"]);
             }
             if (account.Attributes.ContainsKey("address2_telephone2"))
             {
-                this.address2_telephone2 = account["address2_telephone2"].ToString();
+                this.address2_telephone2 = GetValueAttribute(account["address2_telephone2"]);
             }
             if (account.Attributes.ContainsKey("address2_telephone3"))
             {
-                this.address2_telephone3 = account["address2_telephone3"].ToString();
+                this.address2_telephone3 = GetValueAttribute(account["address2_telephone3"]);
             }
             if (account.Attributes.ContainsKey("address2_upszone"))
             {
-                this.address2_upszone = account["address2_upszone"].ToString();
+                this.address2_upszone = GetValueAttribute(account["address2_upszone"]);
             }
             if (account.Attributes.ContainsKey("address2_utcoffset"))
             {
-                this.address2_utcoffset = account["address2_utcoffset"].ToString();
+                this.address2_utcoffset = GetValueAttribute(account["address2_utcoffset"]);
             }
             if (account.Attributes.ContainsKey("aging30"))
             {
-                this.aging30 = account["aging30"].ToString();
+                this.aging30 = GetValueAttribute(account["aging30"]);
             }
             if (account.Attributes.ContainsKey("aging30_base"))
             {
-                this.aging30_base = account["aging30_base"].ToString();
+                this.aging30_base = GetValueAttribute(account["aging30_base"]);
             }
             if (account.Attributes.ContainsKey("aging60"))
             {
-                this.aging60 = account["aging60"].ToString();
+                this.aging60 = GetValueAttribute(account["aging60"]);
             }
             if (account.Attributes.ContainsKey("aging60_base"))
             {
-                this.aging60_base = account["aging60_base"].ToString();
+                this.aging60_base = GetValueAttribute(account["aging60_base"]);
             }
             if (account.Attributes.ContainsKey("aging90"))
             {
-                this.aging90 = account["aging90"].ToString();
+                this.aging90 = GetValueAttribute(account["aging90"]);
             }
             if (account.Attributes.ContainsKey("aging90_base"))
             {
-                this.aging90_base = account["aging90_base"].ToString();
+                this.aging90_base = GetValueAttribute(account["aging90_base"]);
             }
             if (account.Attributes.ContainsKey("businesstypecode"))
             {
-                this.businesstypecode = account["businesstypecode"].ToString();
+                this.businesstypecode = GetValueAttribute(account["businesstypecode"]);
             }
             if (account.Attributes.ContainsKey("createdby"))
             {
-                this.createdby = account["createdby"].ToString();
+                this.createdby = GetValueAttribute(account["createdby"]);
             }
             if (account.Attributes.ContainsKey("createdon"))
             {
-                this.createdon = account["createdon"].ToString();
+                this.createdon = GetValueAttribute(account["createdon"]);
             }
             if (account.Attributes.ContainsKey("createdonbehalfby"))
             {
-                this.createdonbehalfby = account["createdonbehalfby"].ToString();
+                this.createdonbehalfby = GetValueAttribute(account["createdonbehalfby"]);
             }
             if (account.Attributes.ContainsKey("creditlimit"))
             {
-                this.creditlimit = account["creditlimit"].ToString();
+                this.creditlimit = GetValueAttribute(account["creditlimit"]);
             }
             if (account.Attributes.ContainsKey("creditlimit_base"))
             {
-                this.creditlimit_base = account["creditlimit_base"].ToString();
+                this.creditlimit_base = GetValueAttribute(account["creditlimit_base"]);
             }
             if (account.Attributes.ContainsKey("creditonhold"))
             {
-                this.creditonhold = account["creditonhold"].ToString();
+                this.creditonhold = GetValueAttribute(account["creditonhold"]);
             }
             if (account.Attributes.ContainsKey("customersizecode"))
             {
-                this.customersizecode = account["customersizecode"].ToString();
+                this.customersizecode = GetValueAttribute(account["customersizecode"]);
             }
             if (account.Attributes.ContainsKey("customertypecode"))
             {
-                this.customertypecode = account["customertypecode"].ToString();
+                this.customertypecode = GetValueAttribute(account["customertypecode"]);
             }
             if (account.Attributes.ContainsKey("defaultpricelevelid"))
             {
-                this.defaultpricelevelid = account["defaultpricelevelid"].ToString();
+                this.defaultpricelevelid = GetValueAttribute(account["defaultpricelevelid"]);
             }
             if (account.Attributes.ContainsKey("description"))
             {
-                this.description = account["description"].ToString();
+                this.description = GetValueAttribute(account["description"]);
             }
             if (account.Attributes.ContainsKey("donotbulkemail"))
             {
-                this.donotbulkemail = account["donotbulkemail"].ToString();
+                this.donotbulkemail = GetValueAttribute(account["donotbulkemail"]);
             }
             if (account.Attributes.ContainsKey("donotbulkpostalmail"))
             {
-                this.donotbulkpostalmail = account["donotbulkpostalmail"].ToString();
+                this.donotbulkpostalmail = GetValueAttribute(account["donotbulkpostalmail"]);
             }
             if (account.Attributes.ContainsKey("donotemail"))
             {
-                this.donotemail = account["donotemail"].ToString();
+                this.donotemail = GetValueAttribute(account["donotemail"]);
             }
             if (account.Attributes.ContainsKey("donotfax"))
             {
-                this.donotfax = account["donotfax"].ToString();
+                this.donotfax = GetValueAttribute(account["donotfax"]);
             }
             if (account.Attributes.ContainsKey("donotphone"))
             {
-                this.donotphone = account["donotphone"].ToString();
+                this.donotphone = GetValueAttribute(account["donotphone"]);
             }
             if (account.Attributes.ContainsKey("donotpostalmail"))
             {
-                this.donotpostalmail = account["donotpostalmail"].ToString();
+                this.donotpostalmail = GetValueAttribute(account["donotpostalmail"]);
             }
             if (account.Attributes.ContainsKey("donotsendmm"))
             {
-                this.donotsendmm = account["donotsendmm"].ToString();
+                this.donotsendmm = GetValueAttribute(account["donotsendmm"]);
             }
             if (account.Attributes.ContainsKey("emailaddress1"))
             {
-                this.emailaddress1 = account["emailaddress1"].ToString();
+                this.emailaddress1 = GetValueAttribute(account["emailaddress1"]);
             }
             if (account.Attributes.ContainsKey("emailaddress2"))
             {
-                this.emailaddress2 = account["emailaddress2"].ToString();
+                this.emailaddress2 = GetValueAttribute(account["emailaddress2"]);
             }
             if (account.Attributes.ContainsKey("emailaddress3"))
             {
-                this.emailaddress3 = account["emailaddress3"].ToString();
+                this.emailaddress3 = GetValueAttribute(account["emailaddress3"]);
             }
             if (account.Attributes.ContainsKey("entityimage"))
             {
-                this.entityimage = account["entityimage"].ToString();
+                this.entityimage = GetValueAttribute(account["entityimage"]);
             }
             if (account.Attributes.ContainsKey("exchangerate"))
             {
-                this.exchangerate = account["exchangerate"].ToString();
+                this.exchangerate = GetValueAttribute(account["exchangerate"]);
             }
             if (account.Attributes.ContainsKey("fax"))
             {
-                this.fax = account["fax"].ToString();
+                this.fax = GetValueAttribute(account["fax"]);
             }
             if (account.Attributes.ContainsKey("ftpsiteurl"))
             {
-                this.ftpsiteurl = account["ftpsiteurl"].ToString();
+                this.ftpsiteurl = GetValueAttribute(account["ftpsiteurl"]);
             }
             if (account.Attributes.ContainsKey("i9_aliquota"))
             {
-                this.i9_aliquota = account["i9_aliquota"].ToString();
+                this.i9_aliquota = GetValueAttribute(account["i9_aliquota"]);
             }
             if (account.Attributes.ContainsKey("i9_bloquear_atendimento_cliente"))
             {
-                this.i9_bloquear_atendimento_cliente = account["i9_bloquear_atendimento_cliente"].ToString();
+                this.i9_bloquear_atendimento_cliente = GetValueAttribute(account["i9_bloquear_atendimento_cliente"]);
             }
             if (account.Attributes.ContainsKey("i9_bloquear_conta"))
             {
-                this.i9_bloquear_conta = account["i9_bloquear_conta"].ToString();
+                this.i9_bloquear_conta = GetValueAttribute(account["i9_bloquear_conta"]);
             }
             if (account.Attributes.ContainsKey("i9_bloqueia_licenca_uso_cliente"))
             {
-                this.i9_bloqueia_licenca_uso_cliente = account["i9_bloqueia_licenca_uso_cliente"].ToString();
+                this.i9_bloqueia_licenca_uso_cliente = GetValueAttribute(account["i9_bloqueia_licenca_uso_cliente"]);
             }
             if (account.Attributes.ContainsKey("i9_celular_aux"))
             {
-                this.i9_celular_aux = account["i9_celular_aux"].ToString();
+                this.i9_celular_aux = GetValueAttribute(account["i9_celular_aux"]);
             }
             if (account.Attributes.ContainsKey("i9_cidade"))
             {
-                this.i9_cidade = account["i9_cidade"].ToString();
+                this.i9_cidade = GetValueAttribute(account["i9_cidade"]);
             }
             if (account.Attributes.ContainsKey("i9_cliente_pagador"))
             {
-                this.i9_cliente_pagador = account["i9_cliente_pagador"].ToString();
+                this.i9_cliente_pagador = GetValueAttribute(account["i9_cliente_pagador"]);
             }
             if (account.Attributes.ContainsKey("i9_cliente_pagador_centraliza_hrs"))
             {
-                this.i9_cliente_pagador_centraliza_hrs = account["i9_cliente_pagador_centraliza_hrs"].ToString();
+                this.i9_cliente_pagador_centraliza_hrs = GetValueAttribute(account["i9_cliente_pagador_centraliza_hrs"]);
             }
             if (account.Attributes.ContainsKey("i9_cobranca_impressa"))
             {
-                this.i9_cobranca_impressa = account["i9_cobranca_impressa"].ToString();
+                this.i9_cobranca_impressa = GetValueAttribute(account["i9_cobranca_impressa"]);
             }
             if (account.Attributes.ContainsKey("i9_cofins"))
             {
-                this.i9_cofins = account["i9_cofins"].ToString();
+                this.i9_cofins = GetValueAttribute(account["i9_cofins"]);
             }
             if (account.Attributes.ContainsKey("i9_conta_contabil"))
             {
-                this.i9_conta_contabil = account["i9_conta_contabil"].ToString();
+                this.i9_conta_contabil = GetValueAttribute(account["i9_conta_contabil"]);
             }
             if (account.Attributes.ContainsKey("i9_cpf_cnpj"))
             {
-                this.i9_cpf_cnpj = account["i9_cpf_cnpj"].ToString();
+                this.i9_cpf_cnpj = GetValueAttribute(account["i9_cpf_cnpj"]);
             }
             if (account.Attributes.ContainsKey("i9_cpf_cnpj_aux"))
             {
-                this.i9_cpf_cnpj_aux = account["i9_cpf_cnpj_aux"].ToString();
+                this.i9_cpf_cnpj_aux = GetValueAttribute(account["i9_cpf_cnpj_aux"]);
             }
             if (account.Attributes.ContainsKey("i9_csll"))
             {
-                this.i9_csll = account["i9_csll"].ToString();
+                this.i9_csll = GetValueAttribute(account["i9_csll"]);
             }
             if (account.Attributes.ContainsKey("i9_ddd_celular"))
             {
-                this.i9_ddd_celular = account["i9_ddd_celular"].ToString();
+                this.i9_ddd_celular = GetValueAttribute(account["i9_ddd_celular"]);
             }
             if (account.Attributes.ContainsKey("i9_ddd_fax"))
             {
-                this.i9_ddd_fax = account["i9_ddd_fax"].ToString();
+                this.i9_ddd_fax = GetValueAttribute(account["i9_ddd_fax"]);
             }
             if (account.Attributes.ContainsKey("i9_dddfone2"))
             {
-                this.i9_dddfone2 = account["i9_dddfone2"].ToString();
+                this.i9_dddfone2 = GetValueAttribute(account["i9_dddfone2"]);
             }
             if (account.Attributes.ContainsKey("i9_documento_estrangeiro"))
             {
-                this.i9_documento_estrangeiro = account["i9_documento_estrangeiro"].ToString();
+                this.i9_documento_estrangeiro = GetValueAttribute(account["i9_documento_estrangeiro"]);
             }
             if (account.Attributes.ContainsKey("i9_estado"))
             {
-                this.i9_estado = account["i9_estado"].ToString();
+                this.i9_estado = GetValueAttribute(account["i9_estado"]);
             }
             if (account.Attributes.ContainsKey("i9_etiqueta"))
             {
-                this.i9_etiqueta = account["i9_etiqueta"].ToString();
+                this.i9_etiqueta = GetValueAttribute(account["i9_etiqueta"]);
             }
             if (account.Attributes.ContainsKey("i9_exterior"))
             {
-                this.i9_exterior = account["i9_exterior"].ToString();
+                this.i9_exterior = GetValueAttribute(account["i9_exterior"]);
             }
             if (account.Attributes.ContainsKey("i9_fax_aux"))
             {
-                this.i9_fax_aux = account["i9_fax_aux"].ToString();
+                this.i9_fax_aux = GetValueAttribute(account["i9_fax_aux"]);
             }
             if (account.Attributes.ContainsKey("i9_gerar_nf_automatica"))
             {
-                this.i9_gerar_nf_automatica = account["i9_gerar_nf_automatica"].ToString();
+                this.i9_gerar_nf_automatica = GetValueAttribute(account["i9_gerar_nf_automatica"]);
             }
             if (account.Attributes.ContainsKey("i9_grupo"))
             {
-                this.i9_grupo = account["i9_grupo"].ToString();
+                this.i9_grupo = GetValueAttribute(account["i9_grupo"]);
             }
             if (account.Attributes.ContainsKey("i9_indicador_inscricao_estadual_destinatario"))
             {
-                this.i9_indicador_inscricao_estadual_destinatario = account["i9_indicador_inscricao_estadual_destinatario"].ToString();
+                this.i9_indicador_inscricao_estadual_destinatario = GetValueAttribute(account["i9_indicador_inscricao_estadual_destinatario"]);
             }
             if (account.Attributes.ContainsKey("i9_inscricao_estadual"))
             {
-                this.i9_inscricao_estadual = account["i9_inscricao_estadual"].ToString();
+                this.i9_inscricao_estadual = GetValueAttribute(account["i9_inscricao_estadual"]);
             }
             if (account.Attributes.ContainsKey("i9_inscricao_municipal"))
             {
-                this.i9_inscricao_municipal = account["i9_inscricao_municipal"].ToString();
+                this.i9_inscricao_municipal = GetValueAttribute(account["i9_inscricao_municipal"]);
             }
             if (account.Attributes.ContainsKey("i9_irrf"))
             {
-                this.i9_irrf = account["i9_irrf"].ToString();
+                this.i9_irrf = GetValueAttribute(account["i9_irrf"]);
             }
             if (account.Attributes.ContainsKey("i9_isento_inscricao"))
             {
-                this.i9_isento_inscricao = account["i9_isento_inscricao"].ToString();
+                this.i9_isento_inscricao = GetValueAttribute(account["i9_isento_inscricao"]);
             }
             if (account.Attributes.ContainsKey("i9_nao_cobra_atendimento_telefonico"))
             {
-                this.i9_nao_cobra_atendimento_telefonico = account["i9_nao_cobra_atendimento_telefonico"].ToString();
+                this.i9_nao_cobra_atendimento_telefonico = GetValueAttribute(account["i9_nao_cobra_atendimento_telefonico"]);
             }
             if (account.Attributes.ContainsKey("i9_nome_fantasia"))
             {
-                this.i9_nome_fantasia = account["i9_nome_fantasia"].ToString();
+                this.i9_nome_fantasia = GetValueAttribute(account["i9_nome_fantasia"]);
             }
             if (account.Attributes.ContainsKey("i9_observacao"))
             {
-                this.i9_observacao = account["i9_observacao"].ToString();
+                this.i9_observacao = GetValueAttribute(account["i9_observacao"]);
             }
             if (account.Attributes.ContainsKey("i9_observacao_atendimento"))
             {
-                this.i9_observacao_atendimento = account["i9_observacao_atendimento"].ToString();
+                this.i9_observacao_atendimento = GetValueAttribute(account["i9_observacao_atendimento"]);
             }
             if (account.Attributes.ContainsKey("i9_pais"))
             {
-                this.i9_pais = account["i9_pais"].ToString();
+                this.i9_pais = GetValueAttribute(account["i9_pais"]);
             }
             if (account.Attributes.ContainsKey("i9_pis"))
             {
-                this.i9_pis = account["i9_pis"].ToString();
+                this.i9_pis = GetValueAttribute(account["i9_pis"]);
             }
             if (account.Attributes.ContainsKey("i9_receita"))
             {
-                this.i9_receita = account["i9_receita"].ToString();
+                this.i9_receita = GetValueAttribute(account["i9_receita"]);
             }
             if (account.Attributes.ContainsKey("i9_retem_inss"))
             {
-                this.i9_retem_inss = account["i9_retem_inss"].ToString();
+                this.i9_retem_inss = GetValueAttribute(account["i9_retem_inss"]);
             }
             if (account.Attributes.ContainsKey("i9_retem_iss"))
             {
-                this.i9_retem_iss = account["i9_retem_iss"].ToString();
+                this.i9_retem_iss = GetValueAttribute(account["i9_retem_iss"]);
             }
             if (account.Attributes.ContainsKey("i9_rg"))
             {
-                this.i9_rg = account["i9_rg"].ToString();
+                this.i9_rg = GetValueAttribute(account["i9_rg"]);
             }
             if (account.Attributes.ContainsKey("i9_telephone1_aux"))
             {
-                this.i9_telephone1_aux = account["i9_telephone1_aux"].ToString();
+                this.i9_telephone1_aux = GetValueAttribute(account["i9_telephone1_aux"]);
             }
             if (account.Attributes.ContainsKey("i9_transportadora"))
             {
-                this.i9_transportadora = account["i9_transportadora"].ToString();
+                this.i9_transportadora = GetValueAttribute(account["i9_transportadora"]);
             }
             if (account.Attributes.ContainsKey("i9_utilizar_rg_como_cnpj"))
             {
-                this.i9_utilizar_rg_como_cnpj = account["i9_utilizar_rg_como_cnpj"].ToString();
+                this.i9_utilizar_rg_como_cnpj = GetValueAttribute(account["i9_utilizar_rg_como_cnpj"]);
             }
             if (account.Attributes.ContainsKey("importsequencenumber"))
             {
-                this.importsequencenumber = account["importsequencenumber"].ToString();
+                this.importsequencenumber = GetValueAttribute(account["importsequencenumber"]);
             }
             if (account.Attributes.ContainsKey("industrycode"))
             {
-                this.industrycode = account["industrycode"].ToString();
+                this.industrycode = GetValueAttribute(account["industrycode"]);
             }
             if (account.Attributes.ContainsKey("lastusedincampaign"))
             {
-                this.lastusedincampaign = account["lastusedincampaign"].ToString();
+                this.lastusedincampaign = GetValueAttribute(account["lastusedincampaign"]);
             }
             if (account.Attributes.ContainsKey("marketcap"))
             {
-                this.marketcap = account["marketcap"].ToString();
+                this.marketcap = GetValueAttribute(account["marketcap"]);
             }
             if (account.Attributes.ContainsKey("marketcap_base"))
             {
-                this.marketcap_base = account["marketcap_base"].ToString();
+                this.marketcap_base = GetValueAttribute(account["marketcap_base"]);
             }
             if (account.Attributes.ContainsKey("masterid"))
             {
-                this.masterid = account["masterid"].ToString();
+                this.masterid = GetValueAttribute(account["masterid"]);
             }
             if (account.Attributes.ContainsKey("merged"))
             {
-                this.merged = account["merged"].ToString();
+                this.merged = GetValueAttribute(account["merged"]);
             }
             if (account.Attributes.ContainsKey("modifiedby"))
             {
-                this.modifiedby = account["modifiedby"].ToString();
+                this.modifiedby = GetValueAttribute(account["modifiedby"]);
             }
             if (account.Attributes.ContainsKey("modifiedon"))
             {
-                this.modifiedon = account["modifiedon"].ToString();
+                this.modifiedon = GetValueAttribute(account["modifiedon"]);
             }
             if (account.Attributes.ContainsKey("modifiedonbehalfby"))
             {
-                this.modifiedonbehalfby = account["modifiedonbehalfby"].ToString();
+                this.modifiedonbehalfby = GetValueAttribute(account["modifiedonbehalfby"]);
             }
             if (account.Attributes.ContainsKey("name"))
             {
-                this.name = account["name"].ToString();
+                this.name = GetValueAttribute(account["name"]);
             }
             if (account.Attributes.ContainsKey("new_cli_pagador"))
             {
-                this.new_cli_pagador = account["new_cli_pagador"].ToString();
+                this.new_cli_pagador = GetValueAttribute(account["new_cli_pagador"]);
             }
             if (account.Attributes.ContainsKey("new_contato"))
             {
-                this.new_contato = account["new_contato"].ToString();
+                this.new_contato = GetValueAttribute(account["new_contato"]);
             }
             if (account.Attributes.ContainsKey("new_contatoid"))
             {
-                this.new_contatoid = account["new_contatoid"].ToString();
+                this.new_contatoid = GetValueAttribute(account["new_contatoid"]);
             }
             if (account.Attributes.ContainsKey("new_pai_codigo"))
             {
-                this.new_pai_codigo = account["new_pai_codigo"].ToString();
+                this.new_pai_codigo = GetValueAttribute(account["new_pai_codigo"]);
             }
             if (account.Attributes.ContainsKey("new_pk_codigo"))
             {
-                this.new_pk_codigo = account["new_pk_codigo"].ToString();
+                this.new_pk_codigo = GetValueAttribute(account["new_pk_codigo"]);
             }
             if (account.Attributes.ContainsKey("new_pk_emp_codigo"))
             {
-                this.new_pk_emp_codigo = account["new_pk_emp_codigo"].ToString();
+                this.new_pk_emp_codigo = GetValueAttribute(account["new_pk_emp_codigo"]);
             }
             if (account.Attributes.ContainsKey("new_representante_codigo"))
             {
-                this.new_representante_codigo = account["new_representante_codigo"].ToString();
+                this.new_representante_codigo = GetValueAttribute(account["new_representante_codigo"]);
             }
             if (account.Attributes.ContainsKey("new_telefonecomercial"))
             {
-                this.new_telefonecomercial = account["new_telefonecomercial"].ToString();
+                this.new_telefonecomercial = GetValueAttribute(account["new_telefonecomercial"]);
             }
             if (account.Attributes.ContainsKey("numberofemployees"))
             {
-                this.numberofemployees = account["numberofemployees"].ToString();
+                this.numberofemployees = GetValueAttribute(account["numberofemployees"]);
             }
             if (account.Attributes.ContainsKey("opendeals"))
             {
-                this.opendeals = account["opendeals"].ToString();
+                this.opendeals = GetValueAttribute(account["opendeals"]);
             }
             if (account.Attributes.ContainsKey("openrevenue"))
             {
-                this.openrevenue = account["openrevenue"].ToString();
+                this.openrevenue = GetValueAttribute(account["openrevenue"]);
             }
             if (account.Attributes.ContainsKey("openrevenue_base"))
             {
-                this.openrevenue_base = account["openrevenue_base"].ToString();
+                this.openrevenue_base = GetValueAttribute(account["openrevenue_base"]);
             }
             if (account.Attributes.ContainsKey("originatingleadid"))
             {
-                this.originatingleadid = account["originatingleadid"].ToString();
+                this.originatingleadid = GetValueAttribute(account["originatingleadid"]);
             }
             if (account.Attributes.ContainsKey("overriddencreatedon"))
             {
-                this.overriddencreatedon = account["overriddencreatedon"].ToString();
+                this.overriddencreatedon = GetValueAttribute(account["overriddencreatedon"]);
             }
             if (account.Attributes.ContainsKey("ownerid"))
             {
-                this.ownerid = account["ownerid"].ToString();
+                this.ownerid = GetValueAttribute(account["ownerid"]);
             }
             if (account.Attributes.ContainsKey("ownershipcode"))
             {
-                this.ownershipcode = account["ownershipcode"].ToString();
+                this.ownershipcode = GetValueAttribute(account["ownershipcode"]);
             }
             if (account.Attributes.ContainsKey("owningbusinessunit"))
             {
-                this.owningbusinessunit = account["owningbusinessunit"].ToString();
+                this.owningbusinessunit = GetValueAttribute(account["owningbusinessunit"]);
             }
             if (account.Attributes.ContainsKey("owningteam"))
             {
-                this.owningteam = account["owningteam"].ToString();
+                this.owningteam = GetValueAttribute(account["owningteam"]);
             }
             if (account.Attributes.ContainsKey("owninguser"))
             {
-                this.owninguser = account["owninguser"].ToString();
+                this.owninguser = GetValueAttribute(account["owninguser"]);
             }
             if (account.Attributes.ContainsKey("parentaccountid"))
             {
-                this.parentaccountid = account["parentaccountid"].ToString();
+                this.parentaccountid = GetValueAttribute(account["parentaccountid"]);
             }
             if (account.Attributes.ContainsKey("participatesinworkflow"))
             {
-                this.participatesinworkflow = account["participatesinworkflow"].ToString();
+                this.participatesinworkflow = GetValueAttribute(account["participatesinworkflow"]);
             }
             if (account.Attributes.ContainsKey("paymenttermscode"))
             {
-                this.paymenttermscode = account["paymenttermscode"].ToString();
+                this.paymenttermscode = GetValueAttribute(account["paymenttermscode"]);
             }
             if (account.Attributes.ContainsKey("preferredappointmentdaycode"))
             {
-                this.preferredappointmentdaycode = account["preferredappointmentdaycode"].ToString();
+                this.preferredappointmentdaycode = GetValueAttribute(account["preferredappointmentdaycode"]);
             }
             if (account.Attributes.ContainsKey("preferredappointmenttimecode"))
             {
-                this.preferredappointmenttimecode = account["preferredappointmenttimecode"].ToString();
+                this.preferredappointmenttimecode = GetValueAttribute(account["preferredappointmenttimecode"]);
             }
             if (account.Attributes.ContainsKey("preferredcontactmethodcode"))
             {
-                this.preferredcontactmethodcode = account["preferredcontactmethodcode"].ToString();
+                this.preferredcontactmethodcode = GetValueAttribute(account["preferredcontactmethodcode"]);
             }
             if (account.Attributes.ContainsKey("preferredequipmentid"))
             {
-                this.preferredequipmentid = account["preferredequipmentid"].ToString();
+                this.preferredequipmentid = GetValueAttribute(account["preferredequipmentid"]);
             }
             if (account.Attributes.ContainsKey("preferredserviceid"))
             {
-                this.preferredserviceid = account["preferredserviceid"].ToString();
+                this.preferredserviceid = GetValueAttribute(account["preferredserviceid"]);
             }
             if (account.Attributes.ContainsKey("preferredsystemuserid"))
             {
-                this.preferredsystemuserid = account["preferredsystemuserid"].ToString();
+                this.preferredsystemuserid = GetValueAttribute(account["preferredsystemuserid"]);
             }
             if (account.Attributes.ContainsKey("primarycontactid"))
             {
-                this.primarycontactid = account["primarycontactid"].ToString();
+                this.primarycontactid = GetValueAttribute(account["primarycontactid"]);
             }
             if (account.Attributes.ContainsKey("processid"))
             {
-                this.processid = account["processid"].ToString();
+                this.processid = GetValueAttribute(account["processid"]);
             }
             if (account.Attributes.ContainsKey("revenue"))
             {
-                this.revenue = account["revenue"].ToString();
+                this.revenue = GetValueAttribute(account["revenue"]);
             }
             if (account.Attributes.ContainsKey("revenue_base"))
             {
-                this.revenue_base = account["revenue_base"].ToString();
+                this.revenue_base = GetValueAttribute(account["revenue_base"]);
             }
             if (account.Attributes.ContainsKey("sharesoutstanding"))
             {
-                this.sharesoutstanding = account["sharesoutstanding"].ToString();
+                this.sharesoutstanding = GetValueAttribute(account["sharesoutstanding"]);
             }
             if (account.Attributes.ContainsKey("shippingmethodcode"))
             {
-                this.shippingmethodcode = account["shippingmethodcode"].ToString();
+                this.shippingmethodcode = GetValueAttribute(account["shippingmethodcode"]);
             }
             if (account.Attributes.ContainsKey("sic"))
             {
-                this.sic = account["sic"].ToString();
+                this.sic = GetValueAttribute(account["sic"]);
             }
             if (account.Attributes.ContainsKey("stageid"))
             {
-                this.stageid = account["stageid"].ToString();
+                this.stageid = GetValueAttribute(account["stageid"]);
             }
             if (account.Attributes.ContainsKey("statecode"))
             {
-                this.statecode = account["statecode"].ToString();
+                this.statecode = GetValueAttribute(account["statecode"]);
             }
             if (account.Attributes.ContainsKey("statuscode"))
             {
-                this.statuscode = account["statuscode"].ToString();
+                this.statuscode = GetValueAttribute(account["statuscode"]);
             }
             if (account.Attributes.ContainsKey("stockexchange"))
             {
-                this.stockexchange = account["stockexchange"].ToString();
+                this.stockexchange = GetValueAttribute(account["stockexchange"]);
             }
             if (account.Attributes.ContainsKey("telephone1"))
             {
-                this.telephone1 = account["telephone1"].ToString();
+                this.telephone1 = GetValueAttribute(account["telephone1"]);
             }
             if (account.Attributes.ContainsKey("telephone2"))
             {
-                this.telephone2 = account["telephone2"].ToString();
+                this.telephone2 = GetValueAttribute(account["telephone2"]);
             }
             if (account.Attributes.ContainsKey("telephone3"))
             {
-                this.telephone3 = account["telephone3"].ToString();
+                this.telephone3 = GetValueAttribute(account["telephone3"]);
             }
             if (account.Attributes.ContainsKey("territorycode"))
             {
-                this.territorycode = account["territorycode"].ToString();
+                this.territorycode = GetValueAttribute(account["territorycode"]);
             }
             if (account.Attributes.ContainsKey("territoryid"))
             {
-                this.territoryid = account["territoryid"].ToString();
+                this.territoryid = GetValueAttribute(account["territoryid"]);
             }
             if (account.Attributes.ContainsKey("tickersymbol"))
             {
-                this.tickersymbol = account["tickersymbol"].ToString();
+                this.tickersymbol = GetValueAttribute(account["tickersymbol"]);
             }
             if (account.Attributes.ContainsKey("timezoneruleversionnumber"))
             {
-                this.timezoneruleversionnumber = account["timezoneruleversionnumber"].ToString();
+                this.timezoneruleversionnumber = GetValueAttribute(account["timezoneruleversionnumber"]);
             }
             if (account.Attributes.ContainsKey("transactioncurrencyid"))
             {
-                this.transactioncurrencyid = account["transactioncurrencyid"].ToString();
+                this.transactioncurrencyid = GetValueAttribute(account["transactioncurrencyid"]);
             }
             if (account.Attributes.ContainsKey("traversedpath"))
             {
-                this.traversedpath = account["traversedpath"].ToString();
+                this.traversedpath = GetValueAttribute(account["traversedpath"]);
             }
             if (account.Attributes.ContainsKey("utcconversiontimezonecode"))
             {
-                this.utcconversiontimezonecode = account["utcconversiontimezonecode"].ToString();
+                this.utcconversiontimezonecode = GetValueAttribute(account["utcconversiontimezonecode"]);
             }
             if (account.Attributes.ContainsKey("versionnumber"))
             {
-                this.versionnumber = account["versionnumber"].ToString();
+                this.versionnumber = GetValueAttribute(account["versionnumber"]);
             }
             if (account.Attributes.ContainsKey("websiteurl"))
             {
-                this.websiteurl = account["websiteurl"].ToString();
+                this.websiteurl = GetValueAttribute(account["websiteurl"]);
             }
             if (account.Attributes.ContainsKey("yominame"))
             {
-                this.yominame = account["yominame"].ToString();
+                this.yominame = GetValueAttribute(account["yominame"]);
             }
+        }
+
+        public string GetValueAttribute(object oAttribute)
+        {
+            var sReturn = string.Empty;
+            if (oAttribute.GetType().Equals(typeof(Microsoft.Xrm.Sdk.Money)))
+            {
+                sReturn = (oAttribute as Microsoft.Xrm.Sdk.Money).Value.ToString();
+            }
+            else if (oAttribute.GetType().Equals(typeof(Microsoft.Xrm.Sdk.EntityReference)))
+            {
+                sReturn = (oAttribute as Microsoft.Xrm.Sdk.EntityReference).Name;
+            }
+            else if (oAttribute.GetType().Equals(typeof(Microsoft.Xrm.Sdk.OptionSetValue)))
+            {
+                sReturn = (oAttribute as Microsoft.Xrm.Sdk.OptionSetValue).Value.ToString();
+            }
+            else
+            {
+                sReturn = oAttribute.ToString();
+            }
+            return sReturn;
         }
     }
 }

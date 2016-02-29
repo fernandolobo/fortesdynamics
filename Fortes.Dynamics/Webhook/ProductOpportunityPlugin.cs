@@ -243,456 +243,478 @@ namespace Webhook
         {
             if (productOpportunityWin.Attributes.ContainsKey("baseamount"))
             {
-                this.baseamount = productOpportunityWin["baseamount"].ToString();
+                this.baseamount = GetValueAttribute(productOpportunityWin["baseamount"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("baseamount_base"))
             {
-                this.baseamount_base = productOpportunityWin["baseamount_base"].ToString();
+                this.baseamount_base = GetValueAttribute(productOpportunityWin["baseamount_base"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("createdby"))
             {
-                this.createdby = productOpportunityWin["createdby"].ToString();
+                this.createdby = GetValueAttribute(productOpportunityWin["createdby"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("createdon"))
             {
-                this.createdon = productOpportunityWin["createdon"].ToString();
+                this.createdon = GetValueAttribute(productOpportunityWin["createdon"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("createdonbehalfby"))
             {
-                this.createdonbehalfby = productOpportunityWin["createdonbehalfby"].ToString();
+                this.createdonbehalfby = GetValueAttribute(productOpportunityWin["createdonbehalfby"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("description"))
             {
-                this.description = productOpportunityWin["description"].ToString();
+                this.description = GetValueAttribute(productOpportunityWin["description"]);
             }
-            if (productOpportunityWin.Attributes.ContainsKey(""))
+            if (productOpportunityWin.Attributes.ContainsKey("entityimage"))
             {
-                this.entityimage = productOpportunityWin["entityimage"].ToString();
+                this.entityimage = GetValueAttribute(productOpportunityWin["entityimage"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("exchangerate"))
             {
-                this.exchangerate = productOpportunityWin["exchangerate"].ToString();
+                this.exchangerate = GetValueAttribute(productOpportunityWin["exchangerate"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("extendedamount"))
             {
-                this.extendedamount = productOpportunityWin["extendedamount"].ToString();
+                this.extendedamount = GetValueAttribute(productOpportunityWin["extendedamount"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("extendedamount_base"))
             {
-                this.extendedamount_base = productOpportunityWin["extendedamount_base"].ToString();
+                this.extendedamount_base = GetValueAttribute(productOpportunityWin["extendedamount_base"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_autoriaza_doacao"))
             {
-                this.i9_autoriaza_doacao = productOpportunityWin["i9_autoriaza_doacao"].ToString();
+                this.i9_autoriaza_doacao = GetValueAttribute(productOpportunityWin["i9_autoriaza_doacao"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_aux_calculo_produto"))
             {
-                this.i9_aux_calculo_produto = productOpportunityWin["i9_aux_calculo_produto"].ToString();
+                this.i9_aux_calculo_produto = GetValueAttribute(productOpportunityWin["i9_aux_calculo_produto"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_avaliacao_desempenho"))
             {
-                this.i9_avaliacao_desempenho = productOpportunityWin["i9_avaliacao_desempenho"].ToString();
+                this.i9_avaliacao_desempenho = GetValueAttribute(productOpportunityWin["i9_avaliacao_desempenho"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_cargos_salarios"))
             {
-                this.i9_cargos_salarios = productOpportunityWin["i9_cargos_salarios"].ToString();
+                this.i9_cargos_salarios = GetValueAttribute(productOpportunityWin["i9_cargos_salarios"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_conceder_desconto"))
             {
-                this.i9_conceder_desconto = productOpportunityWin["i9_conceder_desconto"].ToString();
+                this.i9_conceder_desconto = GetValueAttribute(productOpportunityWin["i9_conceder_desconto"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_desconto"))
             {
-                this.i9_desconto = productOpportunityWin["i9_desconto"].ToString();
+                this.i9_desconto = GetValueAttribute(productOpportunityWin["i9_desconto"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_desconto1"))
             {
-                this.i9_desconto1 = productOpportunityWin["i9_desconto1"].ToString();
+                this.i9_desconto1 = GetValueAttribute(productOpportunityWin["i9_desconto1"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_desconto2"))
             {
-                this.i9_desconto2 = productOpportunityWin["i9_desconto2"].ToString();
+                this.i9_desconto2 = GetValueAttribute(productOpportunityWin["i9_desconto2"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_desconto3"))
             {
-                this.i9_desconto3 = productOpportunityWin["i9_desconto3"].ToString();
+                this.i9_desconto3 = GetValueAttribute(productOpportunityWin["i9_desconto3"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_desconto4"))
             {
-                this.i9_desconto4 = productOpportunityWin["i9_desconto4"].ToString();
+                this.i9_desconto4 = GetValueAttribute(productOpportunityWin["i9_desconto4"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_descricao_solicitacao"))
             {
-                this.i9_descricao_solicitacao = productOpportunityWin["i9_descricao_solicitacao"].ToString();
+                this.i9_descricao_solicitacao = GetValueAttribute(productOpportunityWin["i9_descricao_solicitacao"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_diretor"))
             {
-                this.i9_diretor = productOpportunityWin["i9_diretor"].ToString();
+                this.i9_diretor = GetValueAttribute(productOpportunityWin["i9_diretor"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_gerente"))
             {
-                this.i9_gerente = productOpportunityWin["i9_gerente"].ToString();
+                this.i9_gerente = GetValueAttribute(productOpportunityWin["i9_gerente"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_gerente_comercial"))
             {
-                this.i9_gerente_comercial = productOpportunityWin["i9_gerente_comercial"].ToString();
+                this.i9_gerente_comercial = GetValueAttribute(productOpportunityWin["i9_gerente_comercial"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_horas_franquia"))
             {
-                this.i9_horas_franquia = productOpportunityWin["i9_horas_franquia"].ToString();
+                this.i9_horas_franquia = GetValueAttribute(productOpportunityWin["i9_horas_franquia"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_lista_preco"))
             {
-                this.i9_lista_preco = productOpportunityWin["i9_lista_preco"].ToString();
+                this.i9_lista_preco = GetValueAttribute(productOpportunityWin["i9_lista_preco"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_modalidade1"))
             {
-                this.i9_modalidade1 = productOpportunityWin["i9_modalidade1"].ToString();
+                this.i9_modalidade1 = GetValueAttribute(productOpportunityWin["i9_modalidade1"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_modalidade2"))
             {
-                this.i9_modalidade2 = productOpportunityWin["i9_modalidade2"].ToString();
+                this.i9_modalidade2 = GetValueAttribute(productOpportunityWin["i9_modalidade2"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_modalidade3"))
             {
-                this.i9_modalidade3 = productOpportunityWin["i9_modalidade3"].ToString();
+                this.i9_modalidade3 = GetValueAttribute(productOpportunityWin["i9_modalidade3"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_modalidade4"))
             {
-                this.i9_modalidade4 = productOpportunityWin["i9_modalidade4"].ToString();
+                this.i9_modalidade4 = GetValueAttribute(productOpportunityWin["i9_modalidade4"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_modulo"))
             {
-                this.i9_modulo = productOpportunityWin["i9_modulo"].ToString();
+                this.i9_modulo = GetValueAttribute(productOpportunityWin["i9_modulo"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_perfil"))
             {
-                this.i9_perfil = productOpportunityWin["i9_perfil"].ToString();
+                this.i9_perfil = GetValueAttribute(productOpportunityWin["i9_perfil"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_pesquisa"))
             {
-                this.i9_pesquisa = productOpportunityWin["i9_pesquisa"].ToString();
+                this.i9_pesquisa = GetValueAttribute(productOpportunityWin["i9_pesquisa"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_porc_aumento_1"))
             {
-                this.i9_porc_aumento_1 = productOpportunityWin["i9_porc_aumento_1"].ToString();
+                this.i9_porc_aumento_1 = GetValueAttribute(productOpportunityWin["i9_porc_aumento_1"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_porc_aumento_2"))
             {
-                this.i9_porc_aumento_2 = productOpportunityWin["i9_porc_aumento_2"].ToString();
+                this.i9_porc_aumento_2 = GetValueAttribute(productOpportunityWin["i9_porc_aumento_2"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_porc_aumento_3"))
             {
-                this.i9_porc_aumento_3 = productOpportunityWin["i9_porc_aumento_3"].ToString();
+                this.i9_porc_aumento_3 = GetValueAttribute(productOpportunityWin["i9_porc_aumento_3"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_porc_aumento_4"))
             {
-                this.i9_porc_aumento_4 = productOpportunityWin["i9_porc_aumento_4"].ToString();
+                this.i9_porc_aumento_4 = GetValueAttribute(productOpportunityWin["i9_porc_aumento_4"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_porc_max_desconto"))
             {
-                this.i9_porc_max_desconto = productOpportunityWin["i9_porc_max_desconto"].ToString();
+                this.i9_porc_max_desconto = GetValueAttribute(productOpportunityWin["i9_porc_max_desconto"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_porcentagem_desconto"))
             {
-                this.i9_porcentagem_desconto = productOpportunityWin["i9_porcentagem_desconto"].ToString();
+                this.i9_porcentagem_desconto = GetValueAttribute(productOpportunityWin["i9_porcentagem_desconto"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_qtd_funcionario"))
             {
-                this.i9_qtd_funcionario = productOpportunityWin["i9_qtd_funcionario"].ToString();
+                this.i9_qtd_funcionario = GetValueAttribute(productOpportunityWin["i9_qtd_funcionario"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_qtd_modalidade1"))
             {
-                this.i9_qtd_modalidade1 = productOpportunityWin["i9_qtd_modalidade1"].ToString();
+                this.i9_qtd_modalidade1 = GetValueAttribute(productOpportunityWin["i9_qtd_modalidade1"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_qtd_modalidade2"))
             {
-                this.i9_qtd_modalidade2 = productOpportunityWin["i9_qtd_modalidade2"].ToString();
+                this.i9_qtd_modalidade2 = GetValueAttribute(productOpportunityWin["i9_qtd_modalidade2"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_qtd_modalidade3"))
             {
-                this.i9_qtd_modalidade3 = productOpportunityWin["i9_qtd_modalidade3"].ToString();
+                this.i9_qtd_modalidade3 = GetValueAttribute(productOpportunityWin["i9_qtd_modalidade3"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_qtd_modalidade4"))
             {
-                this.i9_qtd_modalidade4 = productOpportunityWin["i9_qtd_modalidade4"].ToString();
+                this.i9_qtd_modalidade4 = GetValueAttribute(productOpportunityWin["i9_qtd_modalidade4"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_qtd_modulos"))
             {
-                this.i9_qtd_modulos = productOpportunityWin["i9_qtd_modulos"].ToString();
+                this.i9_qtd_modulos = GetValueAttribute(productOpportunityWin["i9_qtd_modulos"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_qtd_usuario"))
             {
-                this.i9_qtd_usuario = productOpportunityWin["i9_qtd_usuario"].ToString();
+                this.i9_qtd_usuario = GetValueAttribute(productOpportunityWin["i9_qtd_usuario"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_recrut_selecao"))
             {
-                this.i9_recrut_selecao = productOpportunityWin["i9_recrut_selecao"].ToString();
+                this.i9_recrut_selecao = GetValueAttribute(productOpportunityWin["i9_recrut_selecao"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_sesmt"))
             {
-                this.i9_sesmt = productOpportunityWin["i9_sesmt"].ToString();
+                this.i9_sesmt = GetValueAttribute(productOpportunityWin["i9_sesmt"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_tab_ajuste_func_1"))
             {
-                this.i9_tab_ajuste_func_1 = productOpportunityWin["i9_tab_ajuste_func_1"].ToString();
+                this.i9_tab_ajuste_func_1 = GetValueAttribute(productOpportunityWin["i9_tab_ajuste_func_1"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_tab_ajuste_func_2"))
             {
-                this.i9_tab_ajuste_func_2 = productOpportunityWin["i9_tab_ajuste_func_2"].ToString();
+                this.i9_tab_ajuste_func_2 = GetValueAttribute(productOpportunityWin["i9_tab_ajuste_func_2"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_tab_ajuste_func_3"))
             {
-                this.i9_tab_ajuste_func_3 = productOpportunityWin["i9_tab_ajuste_func_3"].ToString();
+                this.i9_tab_ajuste_func_3 = GetValueAttribute(productOpportunityWin["i9_tab_ajuste_func_3"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_tab_ajuste_func_4"))
             {
-                this.i9_tab_ajuste_func_4 = productOpportunityWin["i9_tab_ajuste_func_4"].ToString();
+                this.i9_tab_ajuste_func_4 = GetValueAttribute(productOpportunityWin["i9_tab_ajuste_func_4"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_tab_ajuste_usuario_1"))
             {
-                this.i9_tab_ajuste_usuario_1 = productOpportunityWin["i9_tab_ajuste_usuario_1"].ToString();
+                this.i9_tab_ajuste_usuario_1 = GetValueAttribute(productOpportunityWin["i9_tab_ajuste_usuario_1"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_tab_ajuste_usuario_2"))
             {
-                this.i9_tab_ajuste_usuario_2 = productOpportunityWin["i9_tab_ajuste_usuario_2"].ToString();
+                this.i9_tab_ajuste_usuario_2 = GetValueAttribute(productOpportunityWin["i9_tab_ajuste_usuario_2"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_tab_ajuste_usuario_3"))
             {
-                this.i9_tab_ajuste_usuario_3 = productOpportunityWin["i9_tab_ajuste_usuario_3"].ToString();
+                this.i9_tab_ajuste_usuario_3 = GetValueAttribute(productOpportunityWin["i9_tab_ajuste_usuario_3"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_tab_ajuste_usuario_4"))
             {
-                this.i9_tab_ajuste_usuario_4 = productOpportunityWin["i9_tab_ajuste_usuario_4"].ToString();
+                this.i9_tab_ajuste_usuario_4 = GetValueAttribute(productOpportunityWin["i9_tab_ajuste_usuario_4"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_tabela_preco"))
             {
-                this.i9_tabela_preco = productOpportunityWin["i9_tabela_preco"].ToString();
+                this.i9_tabela_preco = GetValueAttribute(productOpportunityWin["i9_tabela_preco"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_trein_desenvolvimento"))
             {
-                this.i9_trein_desenvolvimento = productOpportunityWin["i9_trein_desenvolvimento"].ToString();
+                this.i9_trein_desenvolvimento = GetValueAttribute(productOpportunityWin["i9_trein_desenvolvimento"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_unidade_negocio"))
             {
-                this.i9_unidade_negocio = productOpportunityWin["i9_unidade_negocio"].ToString();
+                this.i9_unidade_negocio = GetValueAttribute(productOpportunityWin["i9_unidade_negocio"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_valor_com_desconto1"))
             {
-                this.i9_valor_com_desconto1 = productOpportunityWin["i9_valor_com_desconto1"].ToString();
+                this.i9_valor_com_desconto1 = GetValueAttribute(productOpportunityWin["i9_valor_com_desconto1"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_valor_com_desconto1_base"))
             {
-                this.i9_valor_com_desconto1_base = productOpportunityWin["i9_valor_com_desconto1_base"].ToString();
+                this.i9_valor_com_desconto1_base = GetValueAttribute(productOpportunityWin["i9_valor_com_desconto1_base"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_valor_com_desconto2"))
             {
-                this.i9_valor_com_desconto2 = productOpportunityWin["i9_valor_com_desconto2"].ToString();
+                this.i9_valor_com_desconto2 = GetValueAttribute(productOpportunityWin["i9_valor_com_desconto2"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_valor_com_desconto2_base"))
             {
-                this.i9_valor_com_desconto2_base = productOpportunityWin["i9_valor_com_desconto2_base"].ToString();
+                this.i9_valor_com_desconto2_base = GetValueAttribute(productOpportunityWin["i9_valor_com_desconto2_base"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_valor_com_desconto3"))
             {
-                this.i9_valor_com_desconto3 = productOpportunityWin["i9_valor_com_desconto3"].ToString();
+                this.i9_valor_com_desconto3 = GetValueAttribute(productOpportunityWin["i9_valor_com_desconto3"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_valor_com_desconto3_base"))
             {
-                this.i9_valor_com_desconto3_base = productOpportunityWin["i9_valor_com_desconto3_base"].ToString();
+                this.i9_valor_com_desconto3_base = GetValueAttribute(productOpportunityWin["i9_valor_com_desconto3_base"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_valor_com_desconto4"))
             {
-                this.i9_valor_com_desconto4 = productOpportunityWin["i9_valor_com_desconto4"].ToString();
+                this.i9_valor_com_desconto4 = GetValueAttribute(productOpportunityWin["i9_valor_com_desconto4"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_valor_com_desconto4_base"))
             {
-                this.i9_valor_com_desconto4_base = productOpportunityWin["i9_valor_com_desconto4_base"].ToString();
+                this.i9_valor_com_desconto4_base = GetValueAttribute(productOpportunityWin["i9_valor_com_desconto4_base"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_valor1"))
             {
-                this.i9_valor1 = productOpportunityWin["i9_valor1"].ToString();
+                this.i9_valor1 = GetValueAttribute(productOpportunityWin["i9_valor1"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_valor1_base"))
             {
-                this.i9_valor1_base = productOpportunityWin["i9_valor1_base"].ToString();
+                this.i9_valor1_base = GetValueAttribute(productOpportunityWin["i9_valor1_base"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_valor2"))
             {
-                this.i9_valor2 = productOpportunityWin["i9_valor2"].ToString();
+                this.i9_valor2 = GetValueAttribute(productOpportunityWin["i9_valor2"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_valor2_base"))
             {
-                this.i9_valor2_base = productOpportunityWin["i9_valor2_base"].ToString();
+                this.i9_valor2_base = GetValueAttribute(productOpportunityWin["i9_valor2_base"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_valor3"))
             {
-                this.i9_valor3 = productOpportunityWin["i9_valor3"].ToString();
+                this.i9_valor3 = GetValueAttribute(productOpportunityWin["i9_valor3"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_valor3_base"))
             {
-                this.i9_valor3_base = productOpportunityWin["i9_valor3_base"].ToString();
+                this.i9_valor3_base = GetValueAttribute(productOpportunityWin["i9_valor3_base"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_valor4"))
             {
-                this.i9_valor4 = productOpportunityWin["i9_valor4"].ToString();
+                this.i9_valor4 = GetValueAttribute(productOpportunityWin["i9_valor4"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_valor4_base"))
             {
-                this.i9_valor4_base = productOpportunityWin["i9_valor4_base"].ToString();
+                this.i9_valor4_base = GetValueAttribute(productOpportunityWin["i9_valor4_base"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("i9_visualizar_ajustes"))
             {
-                this.i9_visualizar_ajustes = productOpportunityWin["i9_visualizar_ajustes"].ToString();
+                this.i9_visualizar_ajustes = GetValueAttribute(productOpportunityWin["i9_visualizar_ajustes"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("importsequencenumber"))
             {
-                this.importsequencenumber = productOpportunityWin["importsequencenumber"].ToString();
+                this.importsequencenumber = GetValueAttribute(productOpportunityWin["importsequencenumber"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("ispriceoverridden"))
             {
-                this.ispriceoverridden = productOpportunityWin["ispriceoverridden"].ToString();
+                this.ispriceoverridden = GetValueAttribute(productOpportunityWin["ispriceoverridden"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("isproductoverridden"))
             {
-                this.isproductoverridden = productOpportunityWin["isproductoverridden"].ToString();
+                this.isproductoverridden = GetValueAttribute(productOpportunityWin["isproductoverridden"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("lineitemnumber"))
             {
-                this.lineitemnumber = productOpportunityWin["lineitemnumber"].ToString();
+                this.lineitemnumber = GetValueAttribute(productOpportunityWin["lineitemnumber"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("manualdiscountamount"))
             {
-                this.manualdiscountamount = productOpportunityWin["manualdiscountamount"].ToString();
+                this.manualdiscountamount = GetValueAttribute(productOpportunityWin["manualdiscountamount"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("manualdiscountamount_base"))
             {
-                this.manualdiscountamount_base = productOpportunityWin["manualdiscountamount_base"].ToString();
+                this.manualdiscountamount_base = GetValueAttribute(productOpportunityWin["manualdiscountamount_base"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("modifiedby"))
             {
-                this.modifiedby = productOpportunityWin["modifiedby"].ToString();
+                this.modifiedby = GetValueAttribute(productOpportunityWin["modifiedby"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("modifiedon"))
             {
-                this.modifiedon = productOpportunityWin["modifiedon"].ToString();
+                this.modifiedon = GetValueAttribute(productOpportunityWin["modifiedon"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("modifiedonbehalfby"))
             {
-                this.modifiedonbehalfby = productOpportunityWin["modifiedonbehalfby"].ToString();
+                this.modifiedonbehalfby = GetValueAttribute(productOpportunityWin["modifiedonbehalfby"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("new_produtodaoportunidadeid"))
             {
-                this.new_produtodaoportunidadeid = productOpportunityWin["new_produtodaoportunidadeid"].ToString();
+                this.new_produtodaoportunidadeid = GetValueAttribute(productOpportunityWin["new_produtodaoportunidadeid"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("opportunityid"))
             {
-                this.opportunityid = productOpportunityWin["opportunityid"].ToString();
+                this.opportunityid = GetValueAttribute(productOpportunityWin["opportunityid"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("opportunityproductid"))
             {
-                this.opportunityproductid = productOpportunityWin["opportunityproductid"].ToString();
+                this.opportunityproductid = GetValueAttribute(productOpportunityWin["opportunityproductid"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("opportunitystatecode"))
             {
-                this.opportunitystatecode = productOpportunityWin["opportunitystatecode"].ToString();
+                this.opportunitystatecode = GetValueAttribute(productOpportunityWin["opportunitystatecode"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("overriddencreatedon"))
             {
-                this.overriddencreatedon = productOpportunityWin["overriddencreatedon"].ToString();
+                this.overriddencreatedon = GetValueAttribute(productOpportunityWin["overriddencreatedon"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("ownerid"))
             {
-                this.ownerid = productOpportunityWin["ownerid"].ToString();
+                this.ownerid = GetValueAttribute(productOpportunityWin["ownerid"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("owningbusinessunit"))
             {
-                this.owningbusinessunit = productOpportunityWin["owningbusinessunit"].ToString();
+                this.owningbusinessunit = GetValueAttribute(productOpportunityWin["owningbusinessunit"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("owninguser"))
             {
-                this.owninguser = productOpportunityWin["owninguser"].ToString();
+                this.owninguser = GetValueAttribute(productOpportunityWin["owninguser"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("parentbundleid"))
             {
-                this.parentbundleid = productOpportunityWin["parentbundleid"].ToString();
+                this.parentbundleid = GetValueAttribute(productOpportunityWin["parentbundleid"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("priceperunit"))
             {
-                this.priceperunit = productOpportunityWin["priceperunit"].ToString();
+                this.priceperunit = GetValueAttribute(productOpportunityWin["priceperunit"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("priceperunit_base"))
             {
-                this.priceperunit_base = productOpportunityWin["priceperunit_base"].ToString();
+                this.priceperunit_base = GetValueAttribute(productOpportunityWin["priceperunit_base"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("pricingerrorcode"))
             {
-                this.pricingerrorcode = productOpportunityWin["pricingerrorcode"].ToString();
+                this.pricingerrorcode = GetValueAttribute(productOpportunityWin["pricingerrorcode"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("productassociationid"))
             {
-                this.productassociationid = productOpportunityWin["productassociationid"].ToString();
+                this.productassociationid = GetValueAttribute(productOpportunityWin["productassociationid"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("productdescription"))
             {
-                this.productdescription = productOpportunityWin["productdescription"].ToString();
+                this.productdescription = GetValueAttribute(productOpportunityWin["productdescription"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("productid"))
             {
-                this.productid = productOpportunityWin["productid"].ToString();
+                this.productid = GetValueAttribute(productOpportunityWin["productid"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("producttypecode"))
             {
-                this.producttypecode = productOpportunityWin["producttypecode"].ToString();
+                this.producttypecode = GetValueAttribute(productOpportunityWin["producttypecode"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("propertyconfigurationstatus"))
             {
-                this.propertyconfigurationstatus = productOpportunityWin["propertyconfigurationstatus"].ToString();
+                this.propertyconfigurationstatus = GetValueAttribute(productOpportunityWin["propertyconfigurationstatus"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("quantity"))
             {
-                this.quantity = productOpportunityWin["quantity"].ToString();
+                this.quantity = GetValueAttribute(productOpportunityWin["quantity"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("sequencenumber"))
             {
-                this.sequencenumber = productOpportunityWin["sequencenumber"].ToString();
+                this.sequencenumber = GetValueAttribute(productOpportunityWin["sequencenumber"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("tax"))
             {
-                this.tax = productOpportunityWin["tax"].ToString();
+                this.tax = GetValueAttribute(productOpportunityWin["tax"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("tax_base"))
             {
-                this.tax_base = productOpportunityWin["tax_base"].ToString();
+                this.tax_base = GetValueAttribute(productOpportunityWin["tax_base"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("timezoneruleversionnumber"))
             {
-                this.timezoneruleversionnumber = productOpportunityWin["timezoneruleversionnumber"].ToString();
+                this.timezoneruleversionnumber = GetValueAttribute(productOpportunityWin["timezoneruleversionnumber"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("transactioncurrencyid"))
             {
-                this.transactioncurrencyid = productOpportunityWin["transactioncurrencyid"].ToString();
+                this.transactioncurrencyid = GetValueAttribute(productOpportunityWin["transactioncurrencyid"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("uomid"))
             {
-                this.uomid = productOpportunityWin["uomid"].ToString();
+                this.uomid = GetValueAttribute(productOpportunityWin["uomid"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("utcconversiontimezonecode"))
             {
-                this.utcconversiontimezonecode = productOpportunityWin["utcconversiontimezonecode"].ToString();
+                this.utcconversiontimezonecode = GetValueAttribute(productOpportunityWin["utcconversiontimezonecode"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("versionnumber"))
             {
-                this.versionnumber = productOpportunityWin["versionnumber"].ToString();
+                this.versionnumber = GetValueAttribute(productOpportunityWin["versionnumber"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("volumediscountamount"))
             {
-                this.volumediscountamount = productOpportunityWin["volumediscountamount"].ToString();
+                this.volumediscountamount = GetValueAttribute(productOpportunityWin["volumediscountamount"]);
             }
             if (productOpportunityWin.Attributes.ContainsKey("volumediscountamount_base"))
             {
-                this.volumediscountamount_base = productOpportunityWin["volumediscountamount_base"].ToString();
+                this.volumediscountamount_base = GetValueAttribute(productOpportunityWin["volumediscountamount_base"]);
             }
+        }
+
+        public string GetValueAttribute(object oAttribute)
+        {
+            var sReturn = string.Empty;
+            if (oAttribute.GetType().Equals(typeof(Microsoft.Xrm.Sdk.Money)))
+            {
+                sReturn = (oAttribute as Microsoft.Xrm.Sdk.Money).Value.ToString();
+            }
+            else if (oAttribute.GetType().Equals(typeof(Microsoft.Xrm.Sdk.EntityReference)))
+            {
+                sReturn = (oAttribute as Microsoft.Xrm.Sdk.EntityReference).Name;
+            }
+            else if (oAttribute.GetType().Equals(typeof(Microsoft.Xrm.Sdk.OptionSetValue)))
+            {
+                sReturn = (oAttribute as Microsoft.Xrm.Sdk.OptionSetValue).Value.ToString();
+            }
+            else
+            {
+                sReturn = oAttribute.ToString();
+            }
+            return sReturn;
         }
     }
 }

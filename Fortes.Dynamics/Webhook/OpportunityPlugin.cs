@@ -290,536 +290,558 @@ namespace Webhook
             test = "teste";
             if (opportunityWin.Attributes.ContainsKey("actualclosedate"))
             {
-                this.actualclosedate = opportunityWin["actualclosedate"].ToString();
+                this.actualclosedate = GetValueAttribute(opportunityWin["actualclosedate"]);
             }
             if (opportunityWin.Attributes.ContainsKey("actualvalue"))
             {
-                this.actualvalue = ((Money)opportunityWin["actualvalue"]).Value.ToString();
+                this.actualvalue = GetValueAttribute(opportunityWin["actualvalue"]);
             }
             if (opportunityWin.Attributes.ContainsKey("actualvalue_base"))
             {
-                this.actualvalue_base = ((Money)opportunityWin["actualvalue_base"]).Value.ToString();
+                this.actualvalue_base = GetValueAttribute(opportunityWin["actualvalue_base"]);
             }
             if (opportunityWin.Attributes.ContainsKey("budgetamount"))
             {
-                this.budgetamount = ((Money)opportunityWin["budgetamount"]).Value.ToString();
+                this.budgetamount = GetValueAttribute(opportunityWin["budgetamount"]);
             }
             if (opportunityWin.Attributes.ContainsKey("budgetamount_base"))
             {
-                this.budgetamount_base = ((Money)opportunityWin["budgetamount_base"]).Value.ToString();
+                this.budgetamount_base = GetValueAttribute(opportunityWin["budgetamount_base"]);
             }
             if (opportunityWin.Attributes.ContainsKey("budgetstatus"))
             {
-                this.budgetstatus = opportunityWin["budgetstatus"].ToString();
+                this.budgetstatus = GetValueAttribute(opportunityWin["budgetstatus"]);
             }
             if (opportunityWin.Attributes.ContainsKey("campaignid"))
             {
-                this.campaignid = opportunityWin["campaignid"].ToString();
+                this.campaignid = GetValueAttribute(opportunityWin["campaignid"]);
             }
             if (opportunityWin.Attributes.ContainsKey("captureproposalfeedback"))
             {
-                this.captureproposalfeedback = opportunityWin["captureproposalfeedback"].ToString();
+                this.captureproposalfeedback = GetValueAttribute(opportunityWin["captureproposalfeedback"]);
             }
             if (opportunityWin.Attributes.ContainsKey("closeprobability"))
             {
-                this.closeprobability = opportunityWin["closeprobability"].ToString();
+                this.closeprobability = GetValueAttribute(opportunityWin["closeprobability"]);
             }
             if (opportunityWin.Attributes.ContainsKey("completefinalproposal"))
             {
-                this.completefinalproposal = opportunityWin["completefinalproposal"].ToString();
+                this.completefinalproposal = GetValueAttribute(opportunityWin["completefinalproposal"]);
             }
             if (opportunityWin.Attributes.ContainsKey("completeinternalreview"))
             {
-                this.completeinternalreview = opportunityWin["completeinternalreview"].ToString();
+                this.completeinternalreview = GetValueAttribute(opportunityWin["completeinternalreview"]);
             }
             if (opportunityWin.Attributes.ContainsKey("confirminterest"))
             {
-                this.confirminterest = opportunityWin["confirminterest"].ToString();
+                this.confirminterest = GetValueAttribute(opportunityWin["confirminterest"]);
             }
             if (opportunityWin.Attributes.ContainsKey("createdby"))
             {
-                this.createdby = ((EntityReference)opportunityWin["createdby"]).Name;
+                this.createdby = GetValueAttribute(opportunityWin["createdby"]);
             }
             if (opportunityWin.Attributes.ContainsKey("createdon"))
             {
-                this.createdon = opportunityWin["createdon"].ToString();
+                this.createdon = GetValueAttribute(opportunityWin["createdon"]);
             }
             if (opportunityWin.Attributes.ContainsKey("createdonbehalfby"))
             {
-                this.createdonbehalfby = opportunityWin["createdonbehalfby"].ToString();
+                this.createdonbehalfby = GetValueAttribute(opportunityWin["createdonbehalfby"]);
             }
             if (opportunityWin.Attributes.ContainsKey("currentsituation"))
             {
-                this.currentsituation = opportunityWin["currentsituation"].ToString();
+                this.currentsituation = GetValueAttribute(opportunityWin["currentsituation"]);
             }
             if (opportunityWin.Attributes.ContainsKey("customerid"))
             {
-                this.customerid = ((EntityReference)opportunityWin["customerid"]).Name;
+                this.customerid = GetValueAttribute(opportunityWin["customerid"]);
             }
             if (opportunityWin.Attributes.ContainsKey("customerneed"))
             {
-                this.customerneed = opportunityWin["customerneed"].ToString();
+                this.customerneed = GetValueAttribute(opportunityWin["customerneed"]);
             }
             if (opportunityWin.Attributes.ContainsKey("customerpainpoints"))
             {
-                this.customerpainpoints = opportunityWin["customerpainpoints"].ToString();
+                this.customerpainpoints = GetValueAttribute(opportunityWin["customerpainpoints"]);
             }
             if (opportunityWin.Attributes.ContainsKey("decisionmaker"))
             {
-                this.decisionmaker = opportunityWin["decisionmaker"].ToString();
+                this.decisionmaker = GetValueAttribute(opportunityWin["decisionmaker"]);
             }
             if (opportunityWin.Attributes.ContainsKey("description"))
             {
-                this.description = opportunityWin["description"].ToString();
+                this.description = GetValueAttribute(opportunityWin["description"]);
             }
             if (opportunityWin.Attributes.ContainsKey("developproposal"))
             {
-                this.developproposal = opportunityWin["developproposal"].ToString();
+                this.developproposal = GetValueAttribute(opportunityWin["developproposal"]);
             }
             if (opportunityWin.Attributes.ContainsKey("discountamount"))
             {
-                this.discountamount = opportunityWin["discountamount"].ToString();
+                this.discountamount = GetValueAttribute(opportunityWin["discountamount"]);
             }
             if (opportunityWin.Attributes.ContainsKey("discountamount_base"))
             {
-                this.discountamount_base = opportunityWin["discountamount_base"].ToString();
+                this.discountamount_base = GetValueAttribute(opportunityWin["discountamount_base"]);
             }
             if (opportunityWin.Attributes.ContainsKey("discountpercentage"))
             {
-                this.discountpercentage = opportunityWin["discountpercentage"].ToString();
+                this.discountpercentage = GetValueAttribute(opportunityWin["discountpercentage"]);
             }
             if (opportunityWin.Attributes.ContainsKey("estimatedclosedate"))
             {
-                this.estimatedclosedate = opportunityWin["estimatedclosedate"].ToString();
+                this.estimatedclosedate = GetValueAttribute(opportunityWin["estimatedclosedate"]);
             }
             if (opportunityWin.Attributes.ContainsKey("estimatedvalue"))
             {
-                this.estimatedvalue = ((Money)opportunityWin["estimatedvalue"]).Value.ToString();
+                this.estimatedvalue = GetValueAttribute(opportunityWin["estimatedvalue"]);
             }
             if (opportunityWin.Attributes.ContainsKey("estimatedvalue_base"))
             {
-                this.estimatedvalue_base = ((Money)opportunityWin["estimatedvalue_base"]).Value.ToString();
+                this.estimatedvalue_base = GetValueAttribute(opportunityWin["estimatedvalue_base"]);
             }
             if (opportunityWin.Attributes.ContainsKey("evaluatefit"))
             {
-                this.evaluatefit = opportunityWin["evaluatefit"].ToString();
+                this.evaluatefit = GetValueAttribute(opportunityWin["evaluatefit"]);
             }
             if (opportunityWin.Attributes.ContainsKey("exchangerate"))
             {
-                this.exchangerate = opportunityWin["exchangerate"].ToString();
+                this.exchangerate = GetValueAttribute(opportunityWin["exchangerate"]);
             }
             if (opportunityWin.Attributes.ContainsKey("filedebrief"))
             {
-                this.filedebrief = opportunityWin["filedebrief"].ToString();
+                this.filedebrief = GetValueAttribute(opportunityWin["filedebrief"]);
             }
             if (opportunityWin.Attributes.ContainsKey("finaldecisiondate"))
             {
-                this.finaldecisiondate = opportunityWin["finaldecisiondate"].ToString();
+                this.finaldecisiondate = GetValueAttribute(opportunityWin["finaldecisiondate"]);
             }
             if (opportunityWin.Attributes.ContainsKey("freightamount"))
             {
-                this.freightamount = opportunityWin["freightamount"].ToString();
+                this.freightamount = GetValueAttribute(opportunityWin["freightamount"]);
             }
             if (opportunityWin.Attributes.ContainsKey("freightamount_base"))
             {
-                this.freightamount_base = opportunityWin["freightamount_base"].ToString();
+                this.freightamount_base = GetValueAttribute(opportunityWin["freightamount_base"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_antecipo_minuta_contrato"))
             {
-                this.i9_antecipo_minuta_contrato = opportunityWin["i9_antecipo_minuta_contrato"].ToString();
+                this.i9_antecipo_minuta_contrato = GetValueAttribute(opportunityWin["i9_antecipo_minuta_contrato"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_case_sucesso"))
             {
-                this.i9_case_sucesso = opportunityWin["i9_case_sucesso"].ToString();
+                this.i9_case_sucesso = GetValueAttribute(opportunityWin["i9_case_sucesso"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_descricao_pgto_adesao"))
             {
-                this.i9_descricao_pgto_adesao = opportunityWin["i9_descricao_pgto_adesao"].ToString();
+                this.i9_descricao_pgto_adesao = GetValueAttribute(opportunityWin["i9_descricao_pgto_adesao"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_descricao_pgto_ass_usuario"))
             {
-                this.i9_descricao_pgto_ass_usuario = opportunityWin["i9_descricao_pgto_ass_usuario"].ToString();
+                this.i9_descricao_pgto_ass_usuario = GetValueAttribute(opportunityWin["i9_descricao_pgto_ass_usuario"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_descricao_pgto_atualizacao"))
             {
-                this.i9_descricao_pgto_atualizacao = opportunityWin["i9_descricao_pgto_atualizacao"].ToString();
+                this.i9_descricao_pgto_atualizacao = GetValueAttribute(opportunityWin["i9_descricao_pgto_atualizacao"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_descricao_pgto_customizacao"))
             {
-                this.i9_descricao_pgto_customizacao = opportunityWin["i9_descricao_pgto_customizacao"].ToString();
+                this.i9_descricao_pgto_customizacao = GetValueAttribute(opportunityWin["i9_descricao_pgto_customizacao"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_descricao_pgto_implantacao"))
             {
-                this.i9_descricao_pgto_implantacao = opportunityWin["i9_descricao_pgto_implantacao"].ToString();
+                this.i9_descricao_pgto_implantacao = GetValueAttribute(opportunityWin["i9_descricao_pgto_implantacao"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_descricao_pgto_manutencao"))
             {
-                this.i9_descricao_pgto_manutencao = opportunityWin["i9_descricao_pgto_manutencao"].ToString();
+                this.i9_descricao_pgto_manutencao = GetValueAttribute(opportunityWin["i9_descricao_pgto_manutencao"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_descricao_pgto_venda"))
             {
-                this.i9_descricao_pgto_venda = opportunityWin["i9_descricao_pgto_venda"].ToString();
+                this.i9_descricao_pgto_venda = GetValueAttribute(opportunityWin["i9_descricao_pgto_venda"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_forma_pgto_adesao"))
             {
-                this.i9_forma_pgto_adesao = ((OptionSetValue)opportunityWin["i9_forma_pgto_adesao"]).Value.ToString();
+                this.i9_forma_pgto_adesao = GetValueAttribute(opportunityWin["i9_forma_pgto_adesao"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_forma_pgto_ass_por_usuario"))
             {
-                this.i9_forma_pgto_ass_por_usuario = ((OptionSetValue)opportunityWin["i9_forma_pgto_ass_por_usuario"]).Value.ToString();
+                this.i9_forma_pgto_ass_por_usuario = GetValueAttribute(opportunityWin["i9_forma_pgto_ass_por_usuario"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_forma_pgto_atualizacao"))
             {
-                this.i9_forma_pgto_atualizacao = ((OptionSetValue)opportunityWin["i9_forma_pgto_atualizacao"]).Value.ToString();
+                this.i9_forma_pgto_atualizacao = GetValueAttribute(opportunityWin["i9_forma_pgto_atualizacao"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_forma_pgto_customizacao"))
             {
-                this.i9_forma_pgto_customizacao = ((OptionSetValue)opportunityWin["i9_forma_pgto_customizacao"]).Value.ToString();
+                this.i9_forma_pgto_customizacao = GetValueAttribute(opportunityWin["i9_forma_pgto_customizacao"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_forma_pgto_implantacao"))
             {
-                this.i9_forma_pgto_implantacao = ((OptionSetValue)opportunityWin["i9_forma_pgto_implantacao"]).Value.ToString();
+                this.i9_forma_pgto_implantacao = GetValueAttribute(opportunityWin["i9_forma_pgto_implantacao"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_forma_pgto_manutencao"))
             {
-                this.i9_forma_pgto_manutencao = ((OptionSetValue)opportunityWin["i9_forma_pgto_manutencao"]).Value.ToString();
+                this.i9_forma_pgto_manutencao = GetValueAttribute(opportunityWin["i9_forma_pgto_manutencao"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_forma_pgto_venda"))
             {
-                this.i9_forma_pgto_venda = ((OptionSetValue)opportunityWin["i9_forma_pgto_venda"]).Value.ToString();
+                this.i9_forma_pgto_venda = GetValueAttribute(opportunityWin["i9_forma_pgto_venda"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_gerente_desconto"))
             {
-                this.i9_gerente_desconto = opportunityWin["i9_gerente_desconto"].ToString();
+                this.i9_gerente_desconto = GetValueAttribute(opportunityWin["i9_gerente_desconto"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_ligacao_feita"))
             {
-                this.i9_ligacao_feita = opportunityWin["i9_ligacao_feita"].ToString();
+                this.i9_ligacao_feita = GetValueAttribute(opportunityWin["i9_ligacao_feita"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_origem"))
             {
-                this.i9_origem = opportunityWin["i9_origem"].ToString();
+                this.i9_origem = GetValueAttribute(opportunityWin["i9_origem"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_origem_do_cliente"))
             {
-                this.i9_origem_do_cliente = ((OptionSetValue)opportunityWin["i9_origem_do_cliente"]).Value.ToString();
+                this.i9_origem_do_cliente = GetValueAttribute(opportunityWin["i9_origem_do_cliente"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_patrocinadores_decisores"))
             {
-                this.i9_patrocinadores_decisores = opportunityWin["i9_patrocinadores_decisores"].ToString();
+                this.i9_patrocinadores_decisores = GetValueAttribute(opportunityWin["i9_patrocinadores_decisores"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_pesquiso_site_empresa"))
             {
-                this.i9_pesquiso_site_empresa = opportunityWin["i9_pesquiso_site_empresa"].ToString();
+                this.i9_pesquiso_site_empresa = GetValueAttribute(opportunityWin["i9_pesquiso_site_empresa"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_regiao"))
             {
-                this.i9_regiao = ((EntityReference)opportunityWin["i9_regiao"]).Name;
+                this.i9_regiao = GetValueAttribute(opportunityWin["i9_regiao"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_retirou_duvidas_aderencia_software"))
             {
-                this.i9_retirou_duvidas_aderencia_software = opportunityWin["i9_retirou_duvidas_aderencia_software"].ToString();
+                this.i9_retirou_duvidas_aderencia_software = GetValueAttribute(opportunityWin["i9_retirou_duvidas_aderencia_software"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_reuniao_decisores"))
             {
-                this.i9_reuniao_decisores = opportunityWin["i9_reuniao_decisores"].ToString();
+                this.i9_reuniao_decisores = GetValueAttribute(opportunityWin["i9_reuniao_decisores"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_segmento_compativel"))
             {
-                this.i9_segmento_compativel = opportunityWin["i9_segmento_compativel"].ToString();
+                this.i9_segmento_compativel = GetValueAttribute(opportunityWin["i9_segmento_compativel"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_segunda_reuniao"))
             {
-                this.i9_segunda_reuniao = opportunityWin["i9_segunda_reuniao"].ToString();
+                this.i9_segunda_reuniao = GetValueAttribute(opportunityWin["i9_segunda_reuniao"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_solicitacao_desconto"))
             {
-                this.i9_solicitacao_desconto = opportunityWin["i9_solicitacao_desconto"].ToString();
+                this.i9_solicitacao_desconto = GetValueAttribute(opportunityWin["i9_solicitacao_desconto"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_tabela_preco"))
             {
-                this.i9_tabela_preco = ((EntityReference)opportunityWin["i9_tabela_preco"]).Name;
+                this.i9_tabela_preco = GetValueAttribute(opportunityWin["i9_tabela_preco"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_tempodefalha"))
             {
-                this.i9_tempodefalha = opportunityWin["i9_tempodefalha"].ToString();
+                this.i9_tempodefalha = GetValueAttribute(opportunityWin["i9_tempodefalha"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_tempo_medio_abertura"))
             {
-                this.i9_tempo_medio_abertura = opportunityWin["i9_tempo_medio_abertura"].ToString();
+                this.i9_tempo_medio_abertura = GetValueAttribute(opportunityWin["i9_tempo_medio_abertura"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_testandosoma"))
             {
-                this.i9_testandosoma = opportunityWin["i9_testandosoma"].ToString();
+                this.i9_testandosoma = GetValueAttribute(opportunityWin["i9_testandosoma"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_unidade_negocio"))
             {
-                this.i9_unidade_negocio = ((EntityReference)opportunityWin["i9_unidade_negocio"]).Name;
+                this.i9_unidade_negocio = GetValueAttribute(opportunityWin["i9_unidade_negocio"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_vice_presidente_desconto"))
             {
-                this.i9_vice_presidente_desconto = opportunityWin["i9_vice_presidente_desconto"].ToString();
+                this.i9_vice_presidente_desconto = GetValueAttribute(opportunityWin["i9_vice_presidente_desconto"]);
             }
             if (opportunityWin.Attributes.ContainsKey("i9_visita_agendada"))
             {
-                this.i9_visita_agendada = opportunityWin["i9_visita_agendada"].ToString();
+                this.i9_visita_agendada = GetValueAttribute(opportunityWin["i9_visita_agendada"]);
             }
             if (opportunityWin.Attributes.ContainsKey("identifycompetitors"))
             {
-                this.identifycompetitors = opportunityWin["identifycompetitors"].ToString();
+                this.identifycompetitors = GetValueAttribute(opportunityWin["identifycompetitors"]);
             }
             if (opportunityWin.Attributes.ContainsKey("identifycustomercontacts"))
             {
-                this.identifycustomercontacts = opportunityWin["identifycustomercontacts"].ToString();
+                this.identifycustomercontacts = GetValueAttribute(opportunityWin["identifycustomercontacts"]);
             }
             if (opportunityWin.Attributes.ContainsKey("identifypursuitteam"))
             {
-                this.identifypursuitteam = opportunityWin["identifypursuitteam"].ToString();
+                this.identifypursuitteam = GetValueAttribute(opportunityWin["identifypursuitteam"]);
             }
             if (opportunityWin.Attributes.ContainsKey("importsequencenumber"))
             {
-                this.importsequencenumber = opportunityWin["importsequencenumber"].ToString();
+                this.importsequencenumber = GetValueAttribute(opportunityWin["importsequencenumber"]);
             }
             if (opportunityWin.Attributes.ContainsKey("initialcommunication"))
             {
-                this.initialcommunication = opportunityWin["initialcommunication"].ToString();
+                this.initialcommunication = GetValueAttribute(opportunityWin["initialcommunication"]);
             }
             if (opportunityWin.Attributes.ContainsKey("isrevenuesystemcalculated"))
             {
-                this.isrevenuesystemcalculated = opportunityWin["isrevenuesystemcalculated"].ToString();
+                this.isrevenuesystemcalculated = GetValueAttribute(opportunityWin["isrevenuesystemcalculated"]);
             }
             if (opportunityWin.Attributes.ContainsKey("modifiedby"))
             {
-                this.modifiedby = ((EntityReference)opportunityWin["modifiedby"]).Name;
+                this.modifiedby = GetValueAttribute(opportunityWin["modifiedby"]);
             }
             if (opportunityWin.Attributes.ContainsKey("modifiedon"))
             {
-                this.modifiedon = opportunityWin["modifiedon"].ToString();
+                this.modifiedon = GetValueAttribute(opportunityWin["modifiedon"]);
             }
             if (opportunityWin.Attributes.ContainsKey("modifiedonbehalfby"))
             {
-                this.modifiedonbehalfby = opportunityWin["modifiedonbehalfby"].ToString();
+                this.modifiedonbehalfby = GetValueAttribute(opportunityWin["modifiedonbehalfby"]);
             }
             if (opportunityWin.Attributes.ContainsKey("name"))
             {
-                this.name = opportunityWin["name"].ToString();
+                this.name = GetValueAttribute(opportunityWin["name"]);
             }
             if (opportunityWin.Attributes.ContainsKey("need"))
             {
-                this.need = opportunityWin["need"].ToString();
+                this.need = GetValueAttribute(opportunityWin["need"]);
             }
             if (opportunityWin.Attributes.ContainsKey("new_cessodedireitodeusocdu"))
             {
-                this.new_cessodedireitodeusocdu = ((OptionSetValue)opportunityWin["new_cessodedireitodeusocdu"]).Value.ToString();
+                this.new_cessodedireitodeusocdu = GetValueAttribute(opportunityWin["new_cessodedireitodeusocdu"]);
             }
             if (opportunityWin.Attributes.ContainsKey("new_cronograma_ajustado"))
             {
-                this.new_cronograma_ajustado = opportunityWin["new_cronograma_ajustado"].ToString();
+                this.new_cronograma_ajustado = GetValueAttribute(opportunityWin["new_cronograma_ajustado"]);
             }
             if (opportunityWin.Attributes.ContainsKey("new_descrioparaimplantao"))
             {
-                this.new_descrioparaimplantao = opportunityWin["new_descrioparaimplantao"].ToString();
+                this.new_descrioparaimplantao = GetValueAttribute(opportunityWin["new_descrioparaimplantao"]);
             }
             if (opportunityWin.Attributes.ContainsKey("new_parceiro"))
             {
-                this.new_parceiro = opportunityWin["new_parceiro"].ToString();
+                this.new_parceiro = GetValueAttribute(opportunityWin["new_parceiro"]);
             }
             if (opportunityWin.Attributes.ContainsKey("opportunityid"))
             {
-                this.opportunityid = opportunityWin["opportunityid"].ToString();
+                this.opportunityid = GetValueAttribute(opportunityWin["opportunityid"]);
             }
             if (opportunityWin.Attributes.ContainsKey("opportunityratingcode"))
             {
-                this.opportunityratingcode = ((OptionSetValue)opportunityWin["opportunityratingcode"]).Value.ToString();
+                this.opportunityratingcode = GetValueAttribute(opportunityWin["opportunityratingcode"]);
             }
             if (opportunityWin.Attributes.ContainsKey("originatingleadid"))
             {
-                this.originatingleadid = ((EntityReference)opportunityWin["originatingleadid"]).Name;
+                this.originatingleadid = GetValueAttribute(opportunityWin["originatingleadid"]);
             }
             if (opportunityWin.Attributes.ContainsKey("overriddencreatedon"))
             {
-                this.overriddencreatedon = opportunityWin["overriddencreatedon"].ToString();
+                this.overriddencreatedon = GetValueAttribute(opportunityWin["overriddencreatedon"]);
             }
             if (opportunityWin.Attributes.ContainsKey("ownerid"))
             {
-                this.ownerid = ((EntityReference)opportunityWin["ownerid"]).Name;
+                this.ownerid = GetValueAttribute(opportunityWin["ownerid"]);
             }
             if (opportunityWin.Attributes.ContainsKey("owningbusinessunit"))
             {
-                this.owningbusinessunit = ((EntityReference)opportunityWin["owningbusinessunit"]).Name;
+                this.owningbusinessunit = GetValueAttribute(opportunityWin["owningbusinessunit"]);
             }
             if (opportunityWin.Attributes.ContainsKey("owningteam"))
             {
-                this.owningteam = opportunityWin["owningteam"].ToString();
+                this.owningteam = GetValueAttribute(opportunityWin["owningteam"]);
             }
             if (opportunityWin.Attributes.ContainsKey("owninguser"))
             {
-                this.owninguser = ((EntityReference)opportunityWin["owninguser"]).Name;
+                this.owninguser = GetValueAttribute(opportunityWin["owninguser"]);
             }
             if (opportunityWin.Attributes.ContainsKey("parentaccountid"))
             {
-                this.parentaccountid = ((EntityReference)opportunityWin["parentaccountid"]).Name;
+                this.parentaccountid = GetValueAttribute(opportunityWin["parentaccountid"]);
             }
             if (opportunityWin.Attributes.ContainsKey("parentcontactid"))
             {
-                this.parentcontactid = ((EntityReference)opportunityWin["parentcontactid"]).Name;
+                this.parentcontactid = GetValueAttribute(opportunityWin["parentcontactid"]);
             }
             if (opportunityWin.Attributes.ContainsKey("participatesinworkflow"))
             {
-                this.participatesinworkflow = opportunityWin["participatesinworkflow"].ToString();
+                this.participatesinworkflow = GetValueAttribute(opportunityWin["participatesinworkflow"]);
             }
             if (opportunityWin.Attributes.ContainsKey("presentfinalproposal"))
             {
-                this.presentfinalproposal = opportunityWin["presentfinalproposal"].ToString();
+                this.presentfinalproposal = GetValueAttribute(opportunityWin["presentfinalproposal"]);
             }
             if (opportunityWin.Attributes.ContainsKey("processid"))
             {
-                this.processid = opportunityWin["processid"].ToString();
+                this.processid = GetValueAttribute(opportunityWin["processid"]);
             }
             if (opportunityWin.Attributes.ContainsKey("proposedsolution"))
             {
-                this.proposedsolution = opportunityWin["proposedsolution"].ToString();
+                this.proposedsolution = GetValueAttribute(opportunityWin["proposedsolution"]);
             }
             if (opportunityWin.Attributes.ContainsKey("purchaseprocess"))
             {
-                this.purchaseprocess = opportunityWin["purchaseprocess"].ToString();
+                this.purchaseprocess = GetValueAttribute(opportunityWin["purchaseprocess"]);
             }
             if (opportunityWin.Attributes.ContainsKey("purchasetimeframe"))
             {
-                this.purchasetimeframe = opportunityWin["purchasetimeframe"].ToString();
+                this.purchasetimeframe = GetValueAttribute(opportunityWin["purchasetimeframe"]);
             }
             if (opportunityWin.Attributes.ContainsKey("pursuitdecision"))
             {
-                this.pursuitdecision = opportunityWin["pursuitdecision"].ToString();
+                this.pursuitdecision = GetValueAttribute(opportunityWin["pursuitdecision"]);
             }
             if (opportunityWin.Attributes.ContainsKey("qualificationcomments"))
             {
-                this.qualificationcomments = opportunityWin["qualificationcomments"].ToString();
+                this.qualificationcomments = GetValueAttribute(opportunityWin["qualificationcomments"]);
             }
             if (opportunityWin.Attributes.ContainsKey("quotecomments"))
             {
-                this.quotecomments = opportunityWin["quotecomments"].ToString();
+                this.quotecomments = GetValueAttribute(opportunityWin["quotecomments"]);
             }
             if (opportunityWin.Attributes.ContainsKey("resolvefeedback"))
             {
-                this.resolvefeedback = opportunityWin["resolvefeedback"].ToString();
+                this.resolvefeedback = GetValueAttribute(opportunityWin["resolvefeedback"]);
             }
             if (opportunityWin.Attributes.ContainsKey("salesstage"))
             {
-                this.salesstage = ((OptionSetValue)opportunityWin["salesstage"]).Value.ToString();
+                this.salesstage = GetValueAttribute(opportunityWin["salesstage"]);
             }
             if (opportunityWin.Attributes.ContainsKey("salesstagecode"))
             {
-                this.salesstagecode = ((OptionSetValue)opportunityWin["salesstagecode"]).Value.ToString();
+                this.salesstagecode = GetValueAttribute(opportunityWin["salesstagecode"]);
             }
             if (opportunityWin.Attributes.ContainsKey("schedulefollowup_prospect"))
             {
-                this.schedulefollowup_prospect = opportunityWin["schedulefollowup_prospect"].ToString();
+                this.schedulefollowup_prospect = GetValueAttribute(opportunityWin["schedulefollowup_prospect"]);
             }
             if (opportunityWin.Attributes.ContainsKey("schedulefollowup_qualify"))
             {
-                this.schedulefollowup_qualify = opportunityWin["schedulefollowup_qualify"].ToString();
+                this.schedulefollowup_qualify = GetValueAttribute(opportunityWin["schedulefollowup_qualify"]);
             }
             if (opportunityWin.Attributes.ContainsKey("scheduleproposalmeeting"))
             {
-                this.scheduleproposalmeeting = opportunityWin["scheduleproposalmeeting"].ToString();
+                this.scheduleproposalmeeting = GetValueAttribute(opportunityWin["scheduleproposalmeeting"]);
             }
             if (opportunityWin.Attributes.ContainsKey("sendthankyounote"))
             {
-                this.sendthankyounote = opportunityWin["sendthankyounote"].ToString();
+                this.sendthankyounote = GetValueAttribute(opportunityWin["sendthankyounote"]);
             }
             if (opportunityWin.Attributes.ContainsKey("stageid"))
             {
-                this.stageid = opportunityWin["stageid"].ToString();
+                this.stageid = GetValueAttribute(opportunityWin["stageid"]);
             }
             if (opportunityWin.Attributes.ContainsKey("statecode"))
             {
-                this.statecode = ((OptionSetValue)opportunityWin["statecode"]).Value.ToString();
+                this.statecode = GetValueAttribute(opportunityWin["statecode"]);
             }
             if (opportunityWin.Attributes.ContainsKey("statuscode"))
             {
-                this.statuscode = ((OptionSetValue)opportunityWin["statuscode"]).Value.ToString();
+                this.statuscode = GetValueAttribute(opportunityWin["statuscode"]);
             }
             if (opportunityWin.Attributes.ContainsKey("stepid"))
             {
-                this.stepid = opportunityWin["stepid"].ToString();
+                this.stepid = GetValueAttribute(opportunityWin["stepid"]);
             }
             if (opportunityWin.Attributes.ContainsKey("stepname"))
             {
-                this.stepname = opportunityWin["stepname"].ToString();
+                this.stepname = GetValueAttribute(opportunityWin["stepname"]);
             }
             if (opportunityWin.Attributes.ContainsKey("timeline"))
             {
-                this.timeline = opportunityWin["timeline"].ToString();
+                this.timeline = GetValueAttribute(opportunityWin["timeline"]);
             }
             if (opportunityWin.Attributes.ContainsKey("timezoneruleversionnumber"))
             {
-                this.timezoneruleversionnumber = opportunityWin["timezoneruleversionnumber"].ToString();
+                this.timezoneruleversionnumber = GetValueAttribute(opportunityWin["timezoneruleversionnumber"]);
             }
             if (opportunityWin.Attributes.ContainsKey("totalamount"))
             {
-                this.totalamount = ((Money)opportunityWin["totalamount"]).Value.ToString();
+                this.totalamount = GetValueAttribute(opportunityWin["totalamount"]);
             }
             if (opportunityWin.Attributes.ContainsKey("totalamountlessfreight"))
             {
-                this.totalamountlessfreight = ((Money)opportunityWin["totalamountlessfreight"]).Value.ToString();
+                this.totalamountlessfreight = GetValueAttribute(opportunityWin["totalamountlessfreight"]);
             }
             if (opportunityWin.Attributes.ContainsKey("totalamountlessfreight_base"))
             {
-                this.totalamountlessfreight_base = ((Money)opportunityWin["totalamountlessfreight_base"]).Value.ToString();
+                this.totalamountlessfreight_base = GetValueAttribute(opportunityWin["totalamountlessfreight_base"]);
             }
             if (opportunityWin.Attributes.ContainsKey("totalamount_base"))
             {
-                this.totalamount_base = ((Money)opportunityWin["totalamount_base"]).Value.ToString();
+                this.totalamount_base = GetValueAttribute(opportunityWin["totalamount_base"]);
             }
             if (opportunityWin.Attributes.ContainsKey("totaldiscountamount"))
             {
-                this.totaldiscountamount = ((Money)opportunityWin["totaldiscountamount"]).Value.ToString();
+                this.totaldiscountamount = GetValueAttribute(opportunityWin["totaldiscountamount"]);
             }
             if (opportunityWin.Attributes.ContainsKey("totaldiscountamount_base"))
             {
-                this.totaldiscountamount_base = ((Money)opportunityWin["totaldiscountamount_base"]).Value.ToString();
+                this.totaldiscountamount_base = GetValueAttribute(opportunityWin["totaldiscountamount_base"]);
             }
             if (opportunityWin.Attributes.ContainsKey("totallineitemamount"))
             {
-                this.totallineitemamount = ((Money)opportunityWin["totallineitemamount"]).Value.ToString();
+                this.totallineitemamount = GetValueAttribute(opportunityWin["totallineitemamount"]);
             }
             if (opportunityWin.Attributes.ContainsKey("totallineitemamount_base"))
             {
-                this.totallineitemamount_base = ((Money)opportunityWin["totallineitemamount_base"]).Value.ToString();
+                this.totallineitemamount_base = GetValueAttribute(opportunityWin["totallineitemamount_base"]);
             }
             if (opportunityWin.Attributes.ContainsKey("totallineitemdiscountamount"))
             {
-                this.totallineitemdiscountamount = ((Money)opportunityWin["totallineitemdiscountamount"]).Value.ToString();
+                this.totallineitemdiscountamount = GetValueAttribute(opportunityWin["totallineitemdiscountamount"]);
             }
             if (opportunityWin.Attributes.ContainsKey("totallineitemdiscountamount_base"))
             {
-                this.totallineitemdiscountamount_base = ((Money)opportunityWin["totallineitemdiscountamount_base"]).Value.ToString();
+                this.totallineitemdiscountamount_base = GetValueAttribute(opportunityWin["totallineitemdiscountamount_base"]);
             }
             if (opportunityWin.Attributes.ContainsKey("totaltax"))
             {
-                this.totaltax = ((Money)opportunityWin["totaltax"]).Value.ToString();
+                this.totaltax = GetValueAttribute(opportunityWin["totaltax"]);
             }
             if (opportunityWin.Attributes.ContainsKey("totaltax_base"))
             {
-                this.totaltax_base = ((Money)opportunityWin["totaltax_base"]).Value.ToString();
+                this.totaltax_base = GetValueAttribute(opportunityWin["totaltax_base"]);
             }
             if (opportunityWin.Attributes.ContainsKey("transactioncurrencyid"))
             {
-                this.transactioncurrencyid = ((EntityReference)opportunityWin["transactioncurrencyid"]).Name;
+                this.transactioncurrencyid = GetValueAttribute(opportunityWin["transactioncurrencyid"]);
             }
             if (opportunityWin.Attributes.ContainsKey("traversedpath"))
             {
-                this.traversedpath = opportunityWin["traversedpath"].ToString();
+                this.traversedpath = GetValueAttribute(opportunityWin["traversedpath"]);
             }
             if (opportunityWin.Attributes.ContainsKey("utcconversiontimezonecode"))
             {
-                this.utcconversiontimezonecode = opportunityWin["utcconversiontimezonecode"].ToString();
+                this.utcconversiontimezonecode = GetValueAttribute(opportunityWin["utcconversiontimezonecode"]);
             }
             if (opportunityWin.Attributes.ContainsKey("versionnumber"))
             {
-                this.versionnumber = opportunityWin["versionnumber"].ToString();
+                this.versionnumber = GetValueAttribute(opportunityWin["versionnumber"]);
             }
+        }
+
+        public string GetValueAttribute(object oAttribute)
+        {
+            var sReturn = string.Empty;
+            if (oAttribute.GetType().Equals(typeof(Microsoft.Xrm.Sdk.Money)))
+            {
+                sReturn = (oAttribute as Microsoft.Xrm.Sdk.Money).Value.ToString();
+            }
+            else if (oAttribute.GetType().Equals(typeof(Microsoft.Xrm.Sdk.EntityReference)))
+            {
+                sReturn = (oAttribute as Microsoft.Xrm.Sdk.EntityReference).Name;
+            }
+            else if (oAttribute.GetType().Equals(typeof(Microsoft.Xrm.Sdk.OptionSetValue)))
+            {
+                sReturn = (oAttribute as Microsoft.Xrm.Sdk.OptionSetValue).Value.ToString();
+            }
+            else
+            {
+                sReturn = oAttribute.ToString();
+            }
+            return sReturn;
         }
     }
 }
