@@ -143,5 +143,6 @@ namespace Mensageria.Models
         public string utcconversiontimezonecode { get; set; }
         public string versionnumber { get; set; }
         public Account accountlocal { get; set; }
+        public ICollection<ProductOpportunity> productopportunitylocal { get; set; }
     }
 }
